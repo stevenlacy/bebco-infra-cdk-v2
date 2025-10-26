@@ -29,6 +29,7 @@ import { BanksStack } from '../lib/stacks/domains/banks-stack';
 import { StatementsStack } from '../lib/stacks/domains/statements-stack';
 import { IntegrationsStack } from '../lib/stacks/domains/integrations-stack';
 import { MiscStack } from '../lib/stacks/domains/misc-stack';
+import { SharedServicesStack } from '../lib/stacks/shared-services-stack';
 
 // API stacks
 import { BorrowerApiStack } from '../lib/stacks/api/borrower-api-stack-generated';
@@ -84,6 +85,15 @@ const storageStack = new StorageStack(app, getStackId('Storage'), {
   description: 'S3 buckets for documents, statements, and deployments',
 });
 
+const sharedServicesStack = new SharedServicesStack(app, getStackId('SharedServices'), {
+  env,
+  config,
+  resourceNames,
+  buckets: storageStack.buckets,
+  description: 'Shared services (Textract role, SNS topics, cross-cutting IAM resources)',
+});
+sharedServicesStack.addDependency(storageStack);
+
 const dataStack = new DataStack(app, getStackId('Data'), {
   env,
   config,
@@ -112,11 +122,14 @@ const accountsStack = new AccountsStack(app, getStackId('Accounts'), {
   userPoolId: authStack.userPool.userPoolId,
   userPoolClientId: authStack.userPoolClient.userPoolClientId,
   identityPoolId: authStack.identityPool.ref,
+  textractRole: sharedServicesStack.textractRole,
+  textractResultsTopic: sharedServicesStack.textractResultsTopic,
   description: '9 Account management Lambda functions',
 });
 accountsStack.addDependency(dataStack);
 accountsStack.addDependency(storageStack);
 accountsStack.addDependency(authStack);
+accountsStack.addDependency(sharedServicesStack);
 
 const usersStack = new UsersStack(app, getStackId('Users'), {
   env,
@@ -273,10 +286,13 @@ const integrationsStack = new IntegrationsStack(app, getStackId('Integrations'),
   resourceNames,
   tables: dataStack.tables,
   buckets: storageStack.buckets,
+  textractRole: sharedServicesStack.textractRole,
+  textractResultsTopic: sharedServicesStack.textractResultsTopic,
   description: '8 Integration Lambda functions (SharePoint, OCR, Excel, Agents)',
 });
 integrationsStack.addDependency(dataStack);
 integrationsStack.addDependency(storageStack);
+integrationsStack.addDependency(sharedServicesStack);
 
 const miscStack = new MiscStack(app, getStackId('Misc'), {
   env,
@@ -369,6 +385,7 @@ const queuesStack = new QueuesStack(app, getStackId('Queues'), {
   config,
   resourceNames,
   lambdaFunctions: allLambdaFunctions,
+  textractResultsTopic: sharedServicesStack.textractResultsTopic,
   description: 'SQS Queues, SNS Topics, and EventBridge Rules',
 });
 queuesStack.addDependency(plaidStack);
@@ -377,6 +394,7 @@ queuesStack.addDependency(integrationsStack);
 queuesStack.addDependency(statementsStack);
 queuesStack.addDependency(reportingStack);
 queuesStack.addDependency(miscStack);
+queuesStack.addDependency(sharedServicesStack);
 
 // Monitoring Stack (CloudWatch Alarms, Dashboards, Log Groups)
 const monitoringStack = new MonitoringStack(app, getStackId('Monitoring'), {

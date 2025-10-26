@@ -19,6 +19,13 @@ export class BorrowerApiStack extends cdk.Stack {
     super(scope, id, props);
     
     const { config, resourceNames, userPool } = props;
+    const withEnvSuffix = (name: string) => {
+      const suffix = config.naming.environmentSuffix;
+      if (!suffix || suffix === 'dev') {
+        return name;
+      }
+      return name.endsWith(`-${suffix}`) ? name : `${name}-${suffix}`;
+    };
     
     // Create REST API
     this.api = new apigateway.RestApi(this, 'Api', {
@@ -46,70 +53,70 @@ export class BorrowerApiStack extends cdk.Stack {
     
     // Lambda functions
 
-    const fn0 = lambda.Function.fromFunctionName(this, 'Fn0', 'bebco-docusign-send_envelope');
-    const fn1 = lambda.Function.fromFunctionName(this, 'Fn1', 'bebco-dev-accounts-create');
-    const fn2 = lambda.Function.fromFunctionName(this, 'Fn2', 'bebco-dev-accounts-get');
-    const fn3 = lambda.Function.fromFunctionName(this, 'Fn3', 'bebco-dev-accounts-list');
-    const fn4 = lambda.Function.fromFunctionName(this, 'Fn4', 'bebco-dev-plaid-accounts-preview');
-    const fn5 = lambda.Function.fromFunctionName(this, 'Fn5', 'bebco-dev-accounts-upload-statement');
-    const fn6 = lambda.Function.fromFunctionName(this, 'Fn6', 'bebco-dev-admin-borrowers-loan-summary-function');
-    const fn7 = lambda.Function.fromFunctionName(this, 'Fn7', 'bebco-dev-analyze-documents');
-    const fn8 = lambda.Function.fromFunctionName(this, 'Fn8', 'bebco-dev-annual-reports-create-annual-report');
-    const fn9 = lambda.Function.fromFunctionName(this, 'Fn9', 'bebco-dev-annual-reports-delete-annual-report');
-    const fn10 = lambda.Function.fromFunctionName(this, 'Fn10', 'bebco-dev-annual-reports-get-annual-report');
-    const fn11 = lambda.Function.fromFunctionName(this, 'Fn11', 'bebco-dev-annual-reports-list-annual-reports');
-    const fn12 = lambda.Function.fromFunctionName(this, 'Fn12', 'bebco-dev-annual-reports-update-annual-report');
-    const fn13 = lambda.Function.fromFunctionName(this, 'Fn13', 'bebco-dev-auth-check-user-status');
-    const fn14 = lambda.Function.fromFunctionName(this, 'Fn14', 'bebco-dev-auth-complete-setup');
-    const fn15 = lambda.Function.fromFunctionName(this, 'Fn15', 'bebco-dev-auth-refresh-token');
-    const fn16 = lambda.Function.fromFunctionName(this, 'Fn16', 'bebco-dev-auth-validate-password');
-    const fn17 = lambda.Function.fromFunctionName(this, 'Fn17', 'bebco-dev-cases-close');
-    const fn18 = lambda.Function.fromFunctionName(this, 'Fn18', 'bebco-dev-cases-create');
-    const fn19 = lambda.Function.fromFunctionName(this, 'Fn19', 'bebco-dev-cases-docket-verification');
-    const fn20 = lambda.Function.fromFunctionName(this, 'Fn20', 'bebco-dev-cases-get');
-    const fn21 = lambda.Function.fromFunctionName(this, 'Fn21', 'bebco-dev-cases-list');
-    const fn22 = lambda.Function.fromFunctionName(this, 'Fn22', 'bebco-dev-cases-update');
-    const fn23 = lambda.Function.fromFunctionName(this, 'Fn23', 'bebco-dev-draws-approve');
-    const fn24 = lambda.Function.fromFunctionName(this, 'Fn24', 'bebco-dev-draws-create');
-    const fn25 = lambda.Function.fromFunctionName(this, 'Fn25', 'bebco-dev-draws-get');
-    const fn26 = lambda.Function.fromFunctionName(this, 'Fn26', 'bebco-dev-draws-list');
-    const fn27 = lambda.Function.fromFunctionName(this, 'Fn27', 'bebco-dev-draws-submit');
-    const fn28 = lambda.Function.fromFunctionName(this, 'Fn28', 'bebco-dev-expenses-create-bulk');
-    const fn29 = lambda.Function.fromFunctionName(this, 'Fn29', 'bebco-dev-expenses-get');
-    const fn30 = lambda.Function.fromFunctionName(this, 'Fn30', 'bebco-dev-expenses-list');
-    const fn31 = lambda.Function.fromFunctionName(this, 'Fn31', 'bebco-dev-expenses-update');
-    const fn32 = lambda.Function.fromFunctionName(this, 'Fn32', 'bebco-dev-generate-loan-statements');
-    const fn33 = lambda.Function.fromFunctionName(this, 'Fn33', 'bebco-dev-invoices-create');
-    const fn34 = lambda.Function.fromFunctionName(this, 'Fn34', 'bebco-dev-invoices-generate-monthly');
-    const fn35 = lambda.Function.fromFunctionName(this, 'Fn35', 'bebco-dev-invoices-get');
-    const fn36 = lambda.Function.fromFunctionName(this, 'Fn36', 'bebco-dev-invoices-list');
-    const fn37 = lambda.Function.fromFunctionName(this, 'Fn37', 'bebco-dev-invoices-update');
-    const fn38 = lambda.Function.fromFunctionName(this, 'Fn38', 'bebco-dev-monthly-report-sharepoint-upload');
-    const fn39 = lambda.Function.fromFunctionName(this, 'Fn39', 'bebco-dev-monthly-reports-create');
-    const fn40 = lambda.Function.fromFunctionName(this, 'Fn40', 'bebco-dev-monthly-reports-get');
-    const fn41 = lambda.Function.fromFunctionName(this, 'Fn41', 'bebco-dev-monthly-reports-list');
-    const fn42 = lambda.Function.fromFunctionName(this, 'Fn42', 'bebco-dev-monthly-reports-submit');
-    const fn43 = lambda.Function.fromFunctionName(this, 'Fn43', 'bebco-dev-monthly-reports-update');
-    const fn44 = lambda.Function.fromFunctionName(this, 'Fn44', 'bebco-dev-payments-ach-consent-create');
-    const fn45 = lambda.Function.fromFunctionName(this, 'Fn45', 'bebco-dev-payments-create');
-    const fn46 = lambda.Function.fromFunctionName(this, 'Fn46', 'bebco-dev-payments-get');
-    const fn47 = lambda.Function.fromFunctionName(this, 'Fn47', 'bebco-dev-payments-list');
-    const fn48 = lambda.Function.fromFunctionName(this, 'Fn48', 'bebco-dev-plaid-accounts-preview');
-    const fn49 = lambda.Function.fromFunctionName(this, 'Fn49', 'bebco-dev-plaid-link-token-create');
-    const fn50 = lambda.Function.fromFunctionName(this, 'Fn50', 'bebco-dev-plaid-token-exchange');
-    const fn51 = lambda.Function.fromFunctionName(this, 'Fn51', 'bebco-dev-plaid-webhook-handler');
-    const fn52 = lambda.Function.fromFunctionName(this, 'Fn52', 'bebco-dev-statements-financials');
-    const fn53 = lambda.Function.fromFunctionName(this, 'Fn53', 'bebco-dev-statements-get-url');
-    const fn54 = lambda.Function.fromFunctionName(this, 'Fn54', 'bebco-dev-users-create');
-    const fn55 = lambda.Function.fromFunctionName(this, 'Fn55', 'bebco-dev-users-delete');
-    const fn56 = lambda.Function.fromFunctionName(this, 'Fn56', 'bebco-dev-users-get');
-    const fn57 = lambda.Function.fromFunctionName(this, 'Fn57', 'bebco-dev-users-list');
-    const fn58 = lambda.Function.fromFunctionName(this, 'Fn58', 'bebco-dev-users-password');
-    const fn59 = lambda.Function.fromFunctionName(this, 'Fn59', 'bebco-dev-users-profile');
-    const fn60 = lambda.Function.fromFunctionName(this, 'Fn60', 'bebco-dev-users-send2fa');
-    const fn61 = lambda.Function.fromFunctionName(this, 'Fn61', 'bebco-dev-users-update');
-    const fn62 = lambda.Function.fromFunctionName(this, 'Fn62', 'bebco-dev-users-verify2fa');
-    const fn63 = lambda.Function.fromFunctionName(this, 'Fn63', 'bebcodev-generate-plaid-monthly-account-statement');
+    const fn0 = lambda.Function.fromFunctionName(this, 'Fn0', withEnvSuffix('bebco-docusign-send_envelope'));
+    const fn1 = lambda.Function.fromFunctionName(this, 'Fn1', withEnvSuffix('bebco-dev-accounts-create'));
+    const fn2 = lambda.Function.fromFunctionName(this, 'Fn2', withEnvSuffix('bebco-dev-accounts-get'));
+    const fn3 = lambda.Function.fromFunctionName(this, 'Fn3', withEnvSuffix('bebco-dev-accounts-list'));
+    const fn4 = lambda.Function.fromFunctionName(this, 'Fn4', withEnvSuffix('bebco-dev-plaid-accounts-preview'));
+    const fn5 = lambda.Function.fromFunctionName(this, 'Fn5', withEnvSuffix('bebco-dev-accounts-upload-statement'));
+    const fn6 = lambda.Function.fromFunctionName(this, 'Fn6', withEnvSuffix('bebco-dev-admin-borrowers-loan-summary-function'));
+    const fn7 = lambda.Function.fromFunctionName(this, 'Fn7', withEnvSuffix('bebco-dev-analyze-documents'));
+    const fn8 = lambda.Function.fromFunctionName(this, 'Fn8', withEnvSuffix('bebco-dev-annual-reports-create-annual-report'));
+    const fn9 = lambda.Function.fromFunctionName(this, 'Fn9', withEnvSuffix('bebco-dev-annual-reports-delete-annual-report'));
+    const fn10 = lambda.Function.fromFunctionName(this, 'Fn10', withEnvSuffix('bebco-dev-annual-reports-get-annual-report'));
+    const fn11 = lambda.Function.fromFunctionName(this, 'Fn11', withEnvSuffix('bebco-dev-annual-reports-list-annual-reports'));
+    const fn12 = lambda.Function.fromFunctionName(this, 'Fn12', withEnvSuffix('bebco-dev-annual-reports-update-annual-report'));
+    const fn13 = lambda.Function.fromFunctionName(this, 'Fn13', withEnvSuffix('bebco-dev-auth-check-user-status'));
+    const fn14 = lambda.Function.fromFunctionName(this, 'Fn14', withEnvSuffix('bebco-dev-auth-complete-setup'));
+    const fn15 = lambda.Function.fromFunctionName(this, 'Fn15', withEnvSuffix('bebco-dev-auth-refresh-token'));
+    const fn16 = lambda.Function.fromFunctionName(this, 'Fn16', withEnvSuffix('bebco-dev-auth-validate-password'));
+    const fn17 = lambda.Function.fromFunctionName(this, 'Fn17', withEnvSuffix('bebco-dev-cases-close'));
+    const fn18 = lambda.Function.fromFunctionName(this, 'Fn18', withEnvSuffix('bebco-dev-cases-create'));
+    const fn19 = lambda.Function.fromFunctionName(this, 'Fn19', withEnvSuffix('bebco-dev-cases-docket-verification'));
+    const fn20 = lambda.Function.fromFunctionName(this, 'Fn20', withEnvSuffix('bebco-dev-cases-get'));
+    const fn21 = lambda.Function.fromFunctionName(this, 'Fn21', withEnvSuffix('bebco-dev-cases-list'));
+    const fn22 = lambda.Function.fromFunctionName(this, 'Fn22', withEnvSuffix('bebco-dev-cases-update'));
+    const fn23 = lambda.Function.fromFunctionName(this, 'Fn23', withEnvSuffix('bebco-dev-draws-approve'));
+    const fn24 = lambda.Function.fromFunctionName(this, 'Fn24', withEnvSuffix('bebco-dev-draws-create'));
+    const fn25 = lambda.Function.fromFunctionName(this, 'Fn25', withEnvSuffix('bebco-dev-draws-get'));
+    const fn26 = lambda.Function.fromFunctionName(this, 'Fn26', withEnvSuffix('bebco-dev-draws-list'));
+    const fn27 = lambda.Function.fromFunctionName(this, 'Fn27', withEnvSuffix('bebco-dev-draws-submit'));
+    const fn28 = lambda.Function.fromFunctionName(this, 'Fn28', withEnvSuffix('bebco-dev-expenses-create-bulk'));
+    const fn29 = lambda.Function.fromFunctionName(this, 'Fn29', withEnvSuffix('bebco-dev-expenses-get'));
+    const fn30 = lambda.Function.fromFunctionName(this, 'Fn30', withEnvSuffix('bebco-dev-expenses-list'));
+    const fn31 = lambda.Function.fromFunctionName(this, 'Fn31', withEnvSuffix('bebco-dev-expenses-update'));
+    const fn32 = lambda.Function.fromFunctionName(this, 'Fn32', withEnvSuffix('bebco-dev-generate-loan-statements'));
+    const fn33 = lambda.Function.fromFunctionName(this, 'Fn33', withEnvSuffix('bebco-dev-invoices-create'));
+    const fn34 = lambda.Function.fromFunctionName(this, 'Fn34', withEnvSuffix('bebco-dev-invoices-generate-monthly'));
+    const fn35 = lambda.Function.fromFunctionName(this, 'Fn35', withEnvSuffix('bebco-dev-invoices-get'));
+    const fn36 = lambda.Function.fromFunctionName(this, 'Fn36', withEnvSuffix('bebco-dev-invoices-list'));
+    const fn37 = lambda.Function.fromFunctionName(this, 'Fn37', withEnvSuffix('bebco-dev-invoices-update'));
+    const fn38 = lambda.Function.fromFunctionName(this, 'Fn38', withEnvSuffix('bebco-dev-monthly-report-sharepoint-upload'));
+    const fn39 = lambda.Function.fromFunctionName(this, 'Fn39', withEnvSuffix('bebco-dev-monthly-reports-create'));
+    const fn40 = lambda.Function.fromFunctionName(this, 'Fn40', withEnvSuffix('bebco-dev-monthly-reports-get'));
+    const fn41 = lambda.Function.fromFunctionName(this, 'Fn41', withEnvSuffix('bebco-dev-monthly-reports-list'));
+    const fn42 = lambda.Function.fromFunctionName(this, 'Fn42', withEnvSuffix('bebco-dev-monthly-reports-submit'));
+    const fn43 = lambda.Function.fromFunctionName(this, 'Fn43', withEnvSuffix('bebco-dev-monthly-reports-update'));
+    const fn44 = lambda.Function.fromFunctionName(this, 'Fn44', withEnvSuffix('bebco-dev-payments-ach-consent-create'));
+    const fn45 = lambda.Function.fromFunctionName(this, 'Fn45', withEnvSuffix('bebco-dev-payments-create'));
+    const fn46 = lambda.Function.fromFunctionName(this, 'Fn46', withEnvSuffix('bebco-dev-payments-get'));
+    const fn47 = lambda.Function.fromFunctionName(this, 'Fn47', withEnvSuffix('bebco-dev-payments-list'));
+    const fn48 = lambda.Function.fromFunctionName(this, 'Fn48', withEnvSuffix('bebco-dev-plaid-accounts-preview'));
+    const fn49 = lambda.Function.fromFunctionName(this, 'Fn49', withEnvSuffix('bebco-dev-plaid-link-token-create'));
+    const fn50 = lambda.Function.fromFunctionName(this, 'Fn50', withEnvSuffix('bebco-dev-plaid-token-exchange'));
+    const fn51 = lambda.Function.fromFunctionName(this, 'Fn51', withEnvSuffix('bebco-dev-plaid-webhook-handler'));
+    const fn52 = lambda.Function.fromFunctionName(this, 'Fn52', withEnvSuffix('bebco-dev-statements-financials'));
+    const fn53 = lambda.Function.fromFunctionName(this, 'Fn53', withEnvSuffix('bebco-dev-statements-get-url'));
+    const fn54 = lambda.Function.fromFunctionName(this, 'Fn54', withEnvSuffix('bebco-dev-users-create'));
+    const fn55 = lambda.Function.fromFunctionName(this, 'Fn55', withEnvSuffix('bebco-dev-users-delete'));
+    const fn56 = lambda.Function.fromFunctionName(this, 'Fn56', withEnvSuffix('bebco-dev-users-get'));
+    const fn57 = lambda.Function.fromFunctionName(this, 'Fn57', withEnvSuffix('bebco-dev-users-list'));
+    const fn58 = lambda.Function.fromFunctionName(this, 'Fn58', withEnvSuffix('bebco-dev-users-password'));
+    const fn59 = lambda.Function.fromFunctionName(this, 'Fn59', withEnvSuffix('bebco-dev-users-profile'));
+    const fn60 = lambda.Function.fromFunctionName(this, 'Fn60', withEnvSuffix('bebco-dev-users-send2fa'));
+    const fn61 = lambda.Function.fromFunctionName(this, 'Fn61', withEnvSuffix('bebco-dev-users-update'));
+    const fn62 = lambda.Function.fromFunctionName(this, 'Fn62', withEnvSuffix('bebco-dev-users-verify2fa'));
+    const fn63 = lambda.Function.fromFunctionName(this, 'Fn63', withEnvSuffix('bebcodev-generate-plaid-monthly-account-statement'));
 
     // API Resources
 

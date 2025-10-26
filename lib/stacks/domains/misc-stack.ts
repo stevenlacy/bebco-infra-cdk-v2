@@ -21,12 +21,16 @@ export class MiscStack extends cdk.Stack {
     super(scope, id, props);
 
     const { resourceNames, tables, buckets } = props;
+    const baseLambdaProps = {
+      resourceNames,
+      config: props.config,
+      environmentSuffix: props.config.naming.environmentSuffix,
+    };
 
     // 1. bebco-change-tracker
     const changeTracker = new BebcoLambda(this, 'ChangeTracker', {
+      ...baseLambdaProps,
       sourceFunctionName: 'bebco-change-tracker',
-      resourceNames,
-      environmentSuffix: props.config.naming.environmentSuffix,
       environment: {
         REGION: this.region,
         CHANGE_TRACKING_BUCKET: buckets.changeTracking.bucketName,
@@ -41,9 +45,8 @@ export class MiscStack extends cdk.Stack {
 
     // 2. bebco-lambda-backup-function
     const lambdaBackup = new BebcoLambda(this, 'LambdaBackup', {
+      ...baseLambdaProps,
       sourceFunctionName: 'bebco-lambda-backup-function',
-      resourceNames,
-      environmentSuffix: props.config.naming.environmentSuffix,
       environment: {
         REGION: this.region,
         BACKUP_BUCKET: buckets.lambdaDeployments.bucketName, // Using lambda deployments bucket for backups
@@ -55,13 +58,12 @@ export class MiscStack extends cdk.Stack {
 
     // 3. bebco-borrower-staging-admin-nacha-download
     const adminNachaDownload = new BebcoLambda(this, 'AdminNachaDownload', {
+      ...baseLambdaProps,
       sourceFunctionName: 'bebco-borrower-staging-admin-nacha-download',
-      resourceNames,
-      environmentSuffix: props.config.naming.environmentSuffix,
       environment: {
         REGION: this.region,
-        PAYMENTS_TABLE: tables.payments?.tableName || 'bebco-borrower-dev-payments', // Fallback
-        ACH_BATCHES_TABLE: tables.achBatches?.tableName || 'bebco-borrower-dev-ach-batches', // Fallback
+        PAYMENTS_TABLE: tables.payments?.tableName ?? resourceNames.table('borrower', 'payments'),
+        ACH_BATCHES_TABLE: tables.achBatches?.tableName ?? resourceNames.table('borrower', 'ach-batches'),
       },
     });
     if (tables.payments) {

@@ -5,6 +5,7 @@
     "bebco-infra-cdk-v2": "bin/bebco-infra-cdk-v2.js"
   },
   "scripts": {
+    "lint": "tsc --noEmit",
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",

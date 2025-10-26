@@ -11,6 +11,7 @@ interface QueuesStackProps extends cdk.StackProps {
   config: any;
   resourceNames: ResourceNames;
   lambdaFunctions: { [key: string]: lambda.IFunction };
+  textractResultsTopic: sns.ITopic;
 }
 
 export class QueuesStack extends cdk.Stack {
@@ -20,7 +21,7 @@ export class QueuesStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props: QueuesStackProps) {
     super(scope, id, props);
 
-    const { config, resourceNames, lambdaFunctions } = props;
+    const { config, resourceNames, lambdaFunctions, textractResultsTopic } = props;
 
     // ============================================================
     // SQS QUEUES
@@ -89,11 +90,7 @@ export class QueuesStack extends cdk.Stack {
     });
     this.topics['backup-notifications'] = backupNotificationsTopic;
 
-    // 2. Textract Results Topic
-    const textractResultsTopic = new sns.Topic(this, 'TextractResultsTopic', {
-      topicName: resourceNames.topic('textract-results'),
-      displayName: 'BEBCO Textract Results',
-    });
+    // 2. Textract Results Topic (provided by shared services stack)
     this.topics['textract-results'] = textractResultsTopic;
 
     // ============================================================
@@ -207,10 +204,6 @@ export class QueuesStack extends cdk.Stack {
       description: 'Plaid Transactions Sync FIFO Queue URL',
     });
 
-    new cdk.CfnOutput(this, 'TextractResultsTopicArn', {
-      value: textractResultsTopic.topicArn,
-      description: 'Textract Results Topic ARN',
-    });
   }
 }
 

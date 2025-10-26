@@ -6,6 +6,7 @@ export interface EnvironmentConfig {
   environment: string;
   region: string;
   account: string;
+  stackPrefix?: string;
   naming: {
     prefix: string;
     environmentSuffix: string;
@@ -27,9 +28,33 @@ export interface EnvironmentConfig {
   integrations: {
     plaidClientId: string;
     plaidEnvironment: string;
+    plaidWebhookBaseUrl?: string;
+    plaidSyncQueueName?: string;
+    plaidSyncQueueFifoName?: string;
+    plaidSyncQueueDlqName?: string;
+    plaidSyncQueueDlqFifoName?: string;
     docusignSecretName: string;
+    docusignLegacySecretName?: string;
+    docusignHost?: string;
+    docusignRequestsTableName?: string;
     sharepointSecretName: string;
+    sharepointHost?: string;
+    sharepointSitePath?: string;
+    sharepointDriveName?: string;
+    sharepointTenantId?: string;
+    sharepointClientId?: string;
+    sharepointPortReconFilePath?: string;
+    sharepointS3Prefix?: string;
+    sharepointBankId?: string;
     sendgridSecretName: string;
+    sendgridFromAddress?: string;
+    sendgridApiKeyId?: string;
+  };
+  textract: {
+    roleName: string;
+    snsTopicName: string;
+    roleArn?: string;
+    snsTopicArn?: string;
   };
   lambdaDefaults: {
     runtime: string;

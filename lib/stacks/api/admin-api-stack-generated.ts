@@ -19,6 +19,13 @@ export class AdminApiStack extends cdk.Stack {
     super(scope, id, props);
     
     const { config, resourceNames, userPool } = props;
+    const withEnvSuffix = (name: string) => {
+      const suffix = config.naming.environmentSuffix;
+      if (!suffix || suffix === 'dev') {
+        return name;
+      }
+      return name.endsWith(`-${suffix}`) ? name : `${name}-${suffix}`;
+    };
     
     // Create REST API
     this.api = new apigateway.RestApi(this, 'Api', {
@@ -46,50 +53,101 @@ export class AdminApiStack extends cdk.Stack {
     
     // Lambda functions
 
-    const fn0 = lambda.Function.fromFunctionName(this, 'Fn0', 'bebco-admin-users-change-password');
-    const fn1 = lambda.Function.fromFunctionName(this, 'Fn1', 'bebco-admin-users-mfa-status');
-    const fn2 = lambda.Function.fromFunctionName(this, 'Fn2', 'bebco-admin-users-mfa-totp-begin');
-    const fn3 = lambda.Function.fromFunctionName(this, 'Fn3', 'bebco-admin-users-mfa-totp-verify');
-    const fn4 = lambda.Function.fromFunctionName(this, 'Fn4', 'bebco-admin-users-mfa-totp-verify-login');
-    const fn5 = lambda.Function.fromFunctionName(this, 'Fn5', 'bebco-admin-users-update-name');
-    const fn6 = lambda.Function.fromFunctionName(this, 'Fn6', 'bebco-borrower-dev-admin-account-statements-download');
-    const fn7 = lambda.Function.fromFunctionName(this, 'Fn7', 'bebco-borrower-dev-admin-nacha-download');
-    const fn8 = lambda.Function.fromFunctionName(this, 'Fn8', 'bebco-borrower-dev-payments-update');
-    const fn9 = lambda.Function.fromFunctionName(this, 'Fn9', 'bebco-dev-account-transaction-counts');
-    const fn10 = lambda.Function.fromFunctionName(this, 'Fn10', 'bebco-dev-admin-borrower-settings');
-    const fn11 = lambda.Function.fromFunctionName(this, 'Fn11', 'bebco-dev-admin-borrowers-create-borrower-function');
-    const fn12 = lambda.Function.fromFunctionName(this, 'Fn12', 'bebco-dev-admin-borrowers-get-borrower-function');
-    const fn13 = lambda.Function.fromFunctionName(this, 'Fn13', 'bebco-dev-admin-borrowers-get-borrower-summary-function');
-    const fn14 = lambda.Function.fromFunctionName(this, 'Fn14', 'bebco-dev-admin-borrowers-get-borrower-transactions-function');
-    const fn15 = lambda.Function.fromFunctionName(this, 'Fn15', 'bebco-dev-admin-borrowers-list-borrowers-function');
-    const fn16 = lambda.Function.fromFunctionName(this, 'Fn16', 'bebco-dev-admin-borrowers-loan-summary-function');
-    const fn17 = lambda.Function.fromFunctionName(this, 'Fn17', 'bebco-dev-admin-borrowers-update-borrower-function');
-    const fn18 = lambda.Function.fromFunctionName(this, 'Fn18', 'bebco-dev-admin-list-statements');
-    const fn19 = lambda.Function.fromFunctionName(this, 'Fn19', 'bebco-dev-admin-notes-monthly-reports');
-    const fn20 = lambda.Function.fromFunctionName(this, 'Fn20', 'bebco-dev-admin-payments-waive');
-    const fn21 = lambda.Function.fromFunctionName(this, 'Fn21', 'bebco-dev-admin-upload-statements');
-    const fn22 = lambda.Function.fromFunctionName(this, 'Fn22', 'bebco-dev-analyze-documents');
-    const fn23 = lambda.Function.fromFunctionName(this, 'Fn23', 'bebco-dev-annual-reports-create-annual-report');
-    const fn24 = lambda.Function.fromFunctionName(this, 'Fn24', 'bebco-dev-annual-reports-delete-annual-report');
-    const fn25 = lambda.Function.fromFunctionName(this, 'Fn25', 'bebco-dev-annual-reports-list-annual-reports');
-    const fn26 = lambda.Function.fromFunctionName(this, 'Fn26', 'bebco-dev-annual-reports-update-annual-report');
-    const fn27 = lambda.Function.fromFunctionName(this, 'Fn27', 'bebco-dev-cases-create');
-    const fn28 = lambda.Function.fromFunctionName(this, 'Fn28', 'bebco-dev-cases-list');
-    const fn29 = lambda.Function.fromFunctionName(this, 'Fn29', 'bebco-dev-cases-update');
-    const fn30 = lambda.Function.fromFunctionName(this, 'Fn30', 'bebco-dev-draws-list');
-    const fn31 = lambda.Function.fromFunctionName(this, 'Fn31', 'bebco-dev-invoices-create');
-    const fn32 = lambda.Function.fromFunctionName(this, 'Fn32', 'bebco-dev-invoices-list');
-    const fn33 = lambda.Function.fromFunctionName(this, 'Fn33', 'bebco-dev-payments-ach-batches');
-    const fn34 = lambda.Function.fromFunctionName(this, 'Fn34', 'bebco-dev-plaid-account-transactions');
-    const fn35 = lambda.Function.fromFunctionName(this, 'Fn35', 'bebco-dev-plaid-transactions-sync');
-    const fn36 = lambda.Function.fromFunctionName(this, 'Fn36', 'bebco-dev-users-create');
-    const fn37 = lambda.Function.fromFunctionName(this, 'Fn37', 'bebco-dev-users-list');
-    const fn38 = lambda.Function.fromFunctionName(this, 'Fn38', 'bebco-dev-users-password-complete');
-    const fn39 = lambda.Function.fromFunctionName(this, 'Fn39', 'bebco-dev-users-password-start');
-    const fn40 = lambda.Function.fromFunctionName(this, 'Fn40', 'bebco-dev-users-send2fa');
-    const fn41 = lambda.Function.fromFunctionName(this, 'Fn41', 'bebco-dev-users-verify2fa');
-    const fn42 = lambda.Function.fromFunctionName(this, 'Fn42', 'bebcoborroweradmin-known-accounts-dev');
-    const fn43 = lambda.Function.fromFunctionName(this, 'Fn43', 'bebcoborroweradmin-update-loan-dev');
+    const lambdaNames = [
+      'bebco-admin-users-change-password',
+      'bebco-admin-users-mfa-status',
+      'bebco-admin-users-mfa-totp-begin',
+      'bebco-admin-users-mfa-totp-verify',
+      'bebco-admin-users-mfa-totp-verify-login',
+      'bebco-admin-users-update-name',
+      'bebco-borrower-dev-admin-account-statements-download',
+      'bebco-borrower-dev-admin-nacha-download',
+      'bebco-borrower-dev-payments-update',
+      'bebco-dev-account-transaction-counts',
+      'bebco-dev-admin-borrower-settings',
+      'bebco-dev-admin-borrowers-create-borrower-function',
+      'bebco-dev-admin-borrowers-get-borrower-function',
+      'bebco-dev-admin-borrowers-get-borrower-summary-function',
+      'bebco-dev-admin-borrowers-get-borrower-transactions-function',
+      'bebco-dev-admin-borrowers-list-borrowers-function',
+      'bebco-dev-admin-borrowers-loan-summary-function',
+      'bebco-dev-admin-borrowers-update-borrower-function',
+      'bebco-dev-admin-list-statements',
+      'bebco-dev-admin-notes-monthly-reports',
+      'bebco-dev-admin-payments-waive',
+      'bebco-dev-admin-upload-statements',
+      'bebco-dev-analyze-documents',
+      'bebco-dev-annual-reports-create-annual-report',
+      'bebco-dev-annual-reports-delete-annual-report',
+      'bebco-dev-annual-reports-list-annual-reports',
+      'bebco-dev-annual-reports-update-annual-report',
+      'bebco-dev-cases-create',
+      'bebco-dev-cases-list',
+      'bebco-dev-cases-update',
+      'bebco-dev-draws-list',
+      'bebco-dev-invoices-create',
+      'bebco-dev-invoices-list',
+      'bebco-dev-payments-ach-batches',
+      'bebco-dev-plaid-account-transactions',
+      'bebco-dev-plaid-transactions-sync',
+      'bebco-dev-users-create',
+      'bebco-dev-users-list',
+      'bebco-dev-users-password-complete',
+      'bebco-dev-users-password-start',
+      'bebco-dev-users-send2fa',
+      'bebco-dev-users-verify2fa',
+      'bebcoborroweradmin-known-accounts-dev',
+      'bebcoborroweradmin-update-loan-dev',
+    ];
+
+    const [
+      fn0,
+      fn1,
+      fn2,
+      fn3,
+      fn4,
+      fn5,
+      fn6,
+      fn7,
+      fn8,
+      fn9,
+      fn10,
+      fn11,
+      fn12,
+      fn13,
+      fn14,
+      fn15,
+      fn16,
+      fn17,
+      fn18,
+      fn19,
+      fn20,
+      fn21,
+      fn22,
+      fn23,
+      fn24,
+      fn25,
+      fn26,
+      fn27,
+      fn28,
+      fn29,
+      fn30,
+      fn31,
+      fn32,
+      fn33,
+      fn34,
+      fn35,
+      fn36,
+      fn37,
+      fn38,
+      fn39,
+      fn40,
+      fn41,
+      fn42,
+      fn43,
+    ] = lambdaNames.map((name, index) =>
+      lambda.Function.fromFunctionName(this, `Fn${index}`, withEnvSuffix(name))
+    );
 
     // API Resources
 
