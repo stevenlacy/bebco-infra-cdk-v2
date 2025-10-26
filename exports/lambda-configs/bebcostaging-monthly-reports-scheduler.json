@@ -1,0 +1,52 @@
+{
+    "Configuration": {
+        "FunctionName": "bebcostaging-monthly-reports-scheduler",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebcostaging-monthly-reports-scheduler",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-staging-plaid-transactions-sync-lambda-role",
+        "Handler": "monthly_reports_scheduler.lambda_handler",
+        "CodeSize": 5890,
+        "Description": "",
+        "Timeout": 300,
+        "MemorySize": 512,
+        "LastModified": "2025-09-01T18:36:51.000+0000",
+        "CodeSha256": "N8yOdDunc3v4YmdDZmwrdaTCVfcEF8O5VAngoBlI/HE=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "MONTHLY_REPORTS_TABLE": "bebco-borrower-staging-monthly-reportings",
+                "TRANSACTIONS_TABLE": "bebco-borrower-staging-transactions",
+                "COMPANIES_TABLE": "bebco-borrower-staging-companies",
+                "ACCOUNTS_TABLE": "bebco-borrower-staging-accounts"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "f2c6718f-dd38-4341-be4a-39955ae014ef",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:37f2a22b6df6b3d6c4d8ad1cbfd84eb865b6c4e810c097e722b65a41742c7d19"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebcostaging-monthly-reports-scheduler"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebcostaging-monthly-reports-scheduler-d099717b-3e8f-46e0-8d2a-8ab45c6a631c?versionId=ism0Fs3ApcDFkvB9OEdnY7HDCVVKQbgr&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCeDLKT%2B7%2FdBeNy5Acs2S4CJtB%2BNW7pH%2BCtF7AGSG5kmwIgaQVZdU6DEhkqDzM8tqSJEHEXdwzKPY0X6ewiTsex6ToqiwIIeBAEGgw0NzkyMzMwMjUzNzkiDEKEDQNq4ayBRGXPxyroAS5%2B4F%2BTnePHHkX1VnZF31eXQGzpRAYAczPqrth4lbJ7%2F0RGvCutux0sr%2BnJ68iqUuhGTK%2B2Xw2Y3OLtNzVzkgJbp3B0fBO2F2aGbRbxHG%2B%2FquNvT24P%2FTNWYP%2BaK6NjfHU9ocN4hratpSSGTMyjWbMtxdTPRjoFwrAqV2NxiTjuZrG5TTNYROiF0chDyfQEyt45HE4WEPK%2B%2BZI903khSO86eKs%2Fa2EgFcB%2BP2iN3xmIAEKyQfwususmhlM9ySMgMHvMjQU40dmE4qECAjpiEjMvJNPmtlC%2FZ%2BDGWE5DDN1Bg7fAqJYjXLcwttXzxwY6jQFs25R7ZgNlJYT7YVmb8KNsHocUyxlQcneH42Npd3nsOXY3N6E0qRj5wwQIbd36VILiOfEsod2zHp2OzhuvXkNRqBE07SXQjb1Tj290nOPYa0Nmotl%2B%2FRlpLbFbDCmHbvkZsf6jFMNZyZ1ybd9QN4v817x6P7QD92Pfk6WKlo2TQ3Xiyirk4eG6OBu6SeQ%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210639Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVRZ3PTOLBR%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=f6c404c1fb94892b619d51a9d6b65acf3a64caf9902f46a8f1084c9cec0b5bbe"
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-borrower-staging-admin-nacha-download",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-borrower-staging-admin-nacha-download",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::303555290462:role/lambda-execution-role",
+        "Handler": "lambda_function.lambda_handler",
+        "CodeSize": 22365441,
+        "Description": "",
+        "Timeout": 30,
+        "MemorySize": 256,
+        "LastModified": "2025-10-06T02:47:45.000+0000",
+        "CodeSha256": "Aonv7tPcTXTV8ebilTxrHBVAO9NZjO1+5Rb60PoaPl4=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+                "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "e2599a59-c508-4dfe-bd27-cc9ecb1a1c3e",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:d6935992cddc0c573a0cb7ac0214699a5676aefd38a43d64192dce8a044a3724"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-borrower-staging-admin-nacha-download"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-borrower-staging-admin-nacha-download-ebf35060-d135-4bc2-8de2-2d58787cb6ab?versionId=2lKAqgBUGWX9vYz15vEI4E_NZ_mn5knb&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCq3cJ3ddnWZp7fM7zxyNgCqDsk2F9p70JpjUlbWbMr5gIgUJ%2B2i8KSohRo5rSj3WmxBtQ07koltIyTM7014G6PutUqiwIIeRAEGgw0NzkyMzMwMjUzNzkiDBzSy1Jz6eUCq%2Fx0%2BSroAeNLLnL2PK6DHeiM5G2F6mY9Suy1vvtSKy4V%2Bem9Vd%2BgP5X%2F3bsGm4Crg%2BvEgpwdW5TbeBWFivuN9kYJvYHfyUSfGGd6Kg5JTzEN49BUxp1RTkAntGfDu7n7mwFRHMUk9S1zkIcH2bEPmvWOmaWjoKiAd0%2FOJmdLpH2DZg8JaOzPaQyyKcUXp0VHVI1NxBKadLyLCHKhsxclSaq4YC4qpstzfJ9r4jEhBwoXC2xDSi2Id0pI4tl84d0ymrK%2FC3jibPi18j7zxto945EtX%2FsOry%2F98a9jmB4X3iVi%2ByhvWJ%2Bxt32jB%2FI7%2Fzow1NjzxwY6jQFVQMZSefD9Moyx8hGXN13o26EP6Fj68Bo86tssQKi4jCwvNQGE%2BGo0xZFirx9t3nOJ6Hetb7SB1lWuTHg%2BJT7qkXWzI0Vx1I2X%2BP3s3gQBuGMwW%2FrXlVhg2bHGeYFoftm3upSfYS93jPfOHmyZF%2F3eXXxrXwKyorZ6R0jEHyG99tRJSKYxKZPPLL0rZNQ%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210447Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVRWEKRIUF4%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=08b0910a57069b34f5d7bd1be3f0867da01b986b615bfea89e0258db4396b6a7"
+    }
+}

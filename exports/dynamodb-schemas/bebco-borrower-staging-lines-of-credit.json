@@ -1,0 +1,114 @@
+{
+    "Table": {
+        "AttributeDefinitions": [
+            {
+                "AttributeName": "company_id",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "id",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "loc_number",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "status",
+                "AttributeType": "S"
+            }
+        ],
+        "TableName": "bebco-borrower-staging-lines-of-credit",
+        "KeySchema": [
+            {
+                "AttributeName": "id",
+                "KeyType": "HASH"
+            }
+        ],
+        "TableStatus": "ACTIVE",
+        "CreationDateTime": "2025-08-12T02:56:48.476000-07:00",
+        "ProvisionedThroughput": {
+            "NumberOfDecreasesToday": 0,
+            "ReadCapacityUnits": 0,
+            "WriteCapacityUnits": 0
+        },
+        "TableSizeBytes": 0,
+        "ItemCount": 0,
+        "TableArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-lines-of-credit",
+        "TableId": "83d6ef13-f422-436f-90f0-b0fde4cb1ca1",
+        "BillingModeSummary": {
+            "BillingMode": "PAY_PER_REQUEST",
+            "LastUpdateToPayPerRequestDateTime": "2025-08-12T02:56:48.476000-07:00"
+        },
+        "GlobalSecondaryIndexes": [
+            {
+                "IndexName": "LOCNumberIndex",
+                "KeySchema": [
+                    {
+                        "AttributeName": "loc_number",
+                        "KeyType": "HASH"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "ACTIVE",
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                },
+                "IndexSizeBytes": 0,
+                "ItemCount": 0,
+                "IndexArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-lines-of-credit/index/LOCNumberIndex",
+                "WarmThroughput": {
+                    "ReadUnitsPerSecond": 12000,
+                    "WriteUnitsPerSecond": 4000,
+                    "Status": "ACTIVE"
+                }
+            },
+            {
+                "IndexName": "CompanyIndex",
+                "KeySchema": [
+                    {
+                        "AttributeName": "company_id",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "status",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "ACTIVE",
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                },
+                "IndexSizeBytes": 0,
+                "ItemCount": 0,
+                "IndexArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-lines-of-credit/index/CompanyIndex",
+                "WarmThroughput": {
+                    "ReadUnitsPerSecond": 12000,
+                    "WriteUnitsPerSecond": 4000,
+                    "Status": "ACTIVE"
+                }
+            }
+        ],
+        "StreamSpecification": {
+            "StreamEnabled": true,
+            "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "LatestStreamLabel": "2025-10-06T05:01:09.155",
+        "LatestStreamArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-lines-of-credit/stream/2025-10-06T05:01:09.155",
+        "DeletionProtectionEnabled": true,
+        "WarmThroughput": {
+            "ReadUnitsPerSecond": 12000,
+            "WriteUnitsPerSecond": 4000,
+            "Status": "ACTIVE"
+        }
+    }
+}

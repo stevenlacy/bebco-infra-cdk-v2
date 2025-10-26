@@ -1,0 +1,74 @@
+{
+  "TableName": "bebco-borrower-accounts-dev",
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "account_id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "company_id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "status",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "user_id",
+      "AttributeType": "S"
+    }
+  ],
+  "KeySchema": [
+    {
+      "AttributeName": "id",
+      "KeyType": "HASH"
+    }
+  ],
+  "BillingMode": "PAY_PER_REQUEST",
+  "GlobalSecondaryIndexes": [
+    {
+      "IndexName": "UserIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "user_id",
+          "KeyType": "HASH"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    },
+    {
+      "IndexName": "AccountIdIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "account_id",
+          "KeyType": "HASH"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    },
+    {
+      "IndexName": "CompanyIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "company_id",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "status",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    }
+  ]
+}

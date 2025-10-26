@@ -1,0 +1,57 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-staging-users-get",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-users-get",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+        "Handler": "get_user.lambda_handler",
+        "CodeSize": 10405,
+        "Description": "",
+        "Timeout": 30,
+        "MemorySize": 256,
+        "LastModified": "2025-08-27T20:23:22.000+0000",
+        "CodeSha256": "PnEZm9twtV74EMpJQkwtTjGYBzZIP6M+dnP+a+OmN/A=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+                "OTP_TABLE": "bebco-borrower-staging-otp-codes",
+                "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+                "USERS_TABLE": "bebco-borrower-staging-users",
+                "FILES_TABLE": "bebco-borrower-staging-files",
+                "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+                "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+                "USER_POOL_ID": "us-east-1_Uba3sK7HT",
+                "ACCOUNTS_TABLE": "bebco-borrower-staging-accounts"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "7d29a146-13b8-47bd-b92a-034d2863eb0b",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:37f2a22b6df6b3d6c4d8ad1cbfd84eb865b6c4e810c097e722b65a41742c7d19"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-staging-users-get"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-staging-users-get-c1e2d520-0346-4c0b-afa9-6d0d1d26cde6?versionId=fMlI6KjZ2K21GAUnKNq1f83aM3zk8v31&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEL7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCIFIbEyv9zl0B97xGSc65Lee28k3O5Sp%2BDCyn50aynTRuAiAwh72atHgdreo3Jd5lOQpHhkuMnN6fgVlOY%2Fhf7Bg5%2BCqLAgh3EAQaDDQ3OTIzMzAyNTM3OSIM%2BJXI83DbO0ojlMFOKugBRgjowMgoMvA8VcKsEBBNXESJGLPzyGwuJlKOFIbyp%2BBmy81IhXtuWEBv%2B3jqVhWuoXreTuUoqWqvi7RZJKFtiETXRlBMNQ0iQ4zFl81qq1vQI6Zb7L5l4Nep5rLD9JnPsjjLW8nPp%2Fr6lT%2FJpaGRzdtEMMYe9M4fvCauEUcglyf5WNAOgyUM4nlDLS8QDdIvWrxjKWwTp4o%2BgkMyUFryhl2Gd%2B1OBhVOXGuu3gOGsLlV5CSGJe7FC7HsYdolHJ1siB9QgLw2WIMze8edpHv2Jg1WMgLuCOVht3hgLAS8JEo7%2BzxiO7TxiDD%2BsPPHBjqOAapcc8vXiU9ICbVn5FiTWJe3qb6cJsm5QCcVX60nTN1%2Bhb6GBA%2F8dvrH%2Be3GgXzUgKJ6daYLCJr9FgqDJp8Uyab57xUsXQcfDs8fSswioRl9oLl7bPDbnqhtOJjm%2Bote0pFmpWyxMAk2j5Rl67DfjWttAre9IYivRwEY%2FLBFGeno2I%2FY5OOmslus%2B6oIUPg%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210643Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVRUUYBWJXX%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=a23d2d78032e410a6c1ddefc6ed4c91c13c3051293bcd60ac79c2cc0421149d0"
+    }
+}

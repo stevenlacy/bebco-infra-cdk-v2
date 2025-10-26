@@ -6,3 +6,15 @@ node_modules
 # CDK asset staging directory
 .cdk.staging
 cdk.out
+cdk.out.*
+
+# Build artifacts
+dist/
+*.zip
+
+# Logs
+*.log
+
+# Exports (temporary migration data)
+exports/*.json
+!exports/schema*.graphql

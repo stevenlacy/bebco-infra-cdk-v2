@@ -1,0 +1,116 @@
+{
+    "Table": {
+        "AttributeDefinitions": [
+            {
+                "AttributeName": "case_id",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "company_id",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "matter_type_1",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "settlement_date",
+                "AttributeType": "S"
+            }
+        ],
+        "TableName": "bebco-borrower-staging-settlement-success-tracking",
+        "KeySchema": [
+            {
+                "AttributeName": "case_id",
+                "KeyType": "HASH"
+            },
+            {
+                "AttributeName": "settlement_date",
+                "KeyType": "RANGE"
+            }
+        ],
+        "TableStatus": "ACTIVE",
+        "CreationDateTime": "2025-10-21T15:35:43.001000-07:00",
+        "ProvisionedThroughput": {
+            "NumberOfDecreasesToday": 0,
+            "ReadCapacityUnits": 0,
+            "WriteCapacityUnits": 0
+        },
+        "TableSizeBytes": 0,
+        "ItemCount": 0,
+        "TableArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-settlement-success-tracking",
+        "TableId": "925738a8-a26a-4f3d-bb6c-bcd3b5e36139",
+        "BillingModeSummary": {
+            "BillingMode": "PAY_PER_REQUEST",
+            "LastUpdateToPayPerRequestDateTime": "2025-10-21T15:35:43.001000-07:00"
+        },
+        "GlobalSecondaryIndexes": [
+            {
+                "IndexName": "matter_type_1-settlement_date-index",
+                "KeySchema": [
+                    {
+                        "AttributeName": "matter_type_1",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "settlement_date",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "ACTIVE",
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                },
+                "IndexSizeBytes": 0,
+                "ItemCount": 0,
+                "IndexArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-settlement-success-tracking/index/matter_type_1-settlement_date-index",
+                "WarmThroughput": {
+                    "ReadUnitsPerSecond": 12000,
+                    "WriteUnitsPerSecond": 4000,
+                    "Status": "ACTIVE"
+                }
+            },
+            {
+                "IndexName": "company_id-settlement_date-index",
+                "KeySchema": [
+                    {
+                        "AttributeName": "company_id",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "settlement_date",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "ACTIVE",
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                },
+                "IndexSizeBytes": 0,
+                "ItemCount": 0,
+                "IndexArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-settlement-success-tracking/index/company_id-settlement_date-index",
+                "WarmThroughput": {
+                    "ReadUnitsPerSecond": 12000,
+                    "WriteUnitsPerSecond": 4000,
+                    "Status": "ACTIVE"
+                }
+            }
+        ],
+        "DeletionProtectionEnabled": false,
+        "WarmThroughput": {
+            "ReadUnitsPerSecond": 12000,
+            "WriteUnitsPerSecond": 4000,
+            "Status": "ACTIVE"
+        }
+    }
+}

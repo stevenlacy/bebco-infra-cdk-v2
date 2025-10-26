@@ -1,0 +1,55 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-change-tracker",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-change-tracker",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-change-tracker-role",
+        "Handler": "change-tracker-lambda/lambda_function.lambda_handler",
+        "CodeSize": 4906,
+        "Description": "DynamoDB change tracking function for 14 tables",
+        "Timeout": 300,
+        "MemorySize": 256,
+        "LastModified": "2025-10-06T05:10:36.588+0000",
+        "CodeSha256": "NWjUeMuGpP6u6dbLXuVbqyAaRhwdeXbd+pZaVRZ5BH8=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "RETENTION_DAYS": "14",
+                "BUCKET_NAME": "bebco-change-tracking-303555290462"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "e36dc608-0c04-4580-9379-4a6c079944ca",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:82d9ed4427e5b65dd5ccb05b83e6c85772032dd44913231bd8fafeacba7aae8a"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-change-tracker"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-change-tracker-35277783-dfc4-4a6c-ac37-f6e61ec7a96c?versionId=.tA13TIrQgOdcq4tzHCwJQoRDjbdAicw&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCIEFInmw1suFSJ0TBayfQdC0sPR5ioalc3YFHd2CYVP%2BsAiBW%2F%2Fd9M0ZllkCgs7168%2BRX63aLzn246qZ2P2%2FFqvyRDCqLAgh5EAQaDDQ3OTIzMzAyNTM3OSIMCKR0DEGTXL1Z4mkEKugBKZ4EiHVvQXpHjQSgC%2BD8kT5J5uQyDeCQQt8W7NClJxEAiYuwD73%2BYrfF8HoOugdn8r3El1%2BTmdasQnsDYAT6P565aOrqXmqUgk81tL234RET3Njw212478x%2BVco5uu2Tx%2Fi1aTZRm45sKa8bHa1Y%2B1sip2GAZLpa7ZCKMj40KF7NN19mrEbo0YDizs%2FD5lkw21RQ99OKnO3jKDuFCi941xXZKhxbkFMwb8owQMQUyJkMMEooUI63noi9Okct7AAHbaNFQ%2BxmgMsWEd0wESisTBuwG8x7qndR1OozHJ5day5tf%2BljCgEYEDCI1%2FPHBjqOAT8pf5%2FpgFab1IczzqgY2VdaVU1Gw2QiH6c0uwqciHE7d4%2BadV5ZBy8pbdBDXSJEnla4d3TnUSxdBg6YRHOwZdz9gtURS4uVH1wkB1Otoe6O7sZCdlvL%2BkcYdvuECMSecDsl8qMqZUu7%2BnNy3mNWqamNjdfWklimrpZiqLTOuj84FcQEKrcFYTch0ozJR7U%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210603Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVR6V56YJUK%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=a11b2644a8d6bc7beeb853710c2aabd98ac7ab63a713034df8a91100bdc65a2a"
+    },
+    "Tags": {
+        "ManagedBy": "aws-cli",
+        "Environment": "production",
+        "Purpose": "change-tracking"
+    }
+}

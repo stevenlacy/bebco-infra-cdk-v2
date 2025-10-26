@@ -1,0 +1,162 @@
+{
+  "TableName": "bebco-borrower-loans-dev",
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "bank_id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "company_id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "loan_no",
+      "AttributeType": "N"
+    },
+    {
+      "AttributeName": "maturity_date",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "settle_date",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "state",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "status",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "transaction_date",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "transaction_type",
+      "AttributeType": "S"
+    }
+  ],
+  "KeySchema": [
+    {
+      "AttributeName": "id",
+      "KeyType": "HASH"
+    }
+  ],
+  "BillingMode": "PAY_PER_REQUEST",
+  "GlobalSecondaryIndexes": [
+    {
+      "IndexName": "TransactionTypeIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "transaction_type",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "transaction_date",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    },
+    {
+      "IndexName": "MaturityIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "maturity_date",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "status",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    },
+    {
+      "IndexName": "StateIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "state",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "settle_date",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    },
+    {
+      "IndexName": "CompanyIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "company_id",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "status",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    },
+    {
+      "IndexName": "StatusDateIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "status",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "settle_date",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    },
+    {
+      "IndexName": "LoanNumberIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "loan_no",
+          "KeyType": "HASH"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    },
+    {
+      "IndexName": "BankCompanyIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "bank_id",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "company_id",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    }
+  ]
+}

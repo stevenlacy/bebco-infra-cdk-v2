@@ -1,0 +1,86 @@
+{
+    "Table": {
+        "AttributeDefinitions": [
+            {
+                "AttributeName": "company_id",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "created_at",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "mass_tort_id",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "plaintiff_id",
+                "AttributeType": "S"
+            }
+        ],
+        "TableName": "bebco-borrower-staging-mass-tort-plaintiffs",
+        "KeySchema": [
+            {
+                "AttributeName": "mass_tort_id",
+                "KeyType": "HASH"
+            },
+            {
+                "AttributeName": "plaintiff_id",
+                "KeyType": "RANGE"
+            }
+        ],
+        "TableStatus": "ACTIVE",
+        "CreationDateTime": "2025-10-21T15:36:09.954000-07:00",
+        "ProvisionedThroughput": {
+            "NumberOfDecreasesToday": 0,
+            "ReadCapacityUnits": 0,
+            "WriteCapacityUnits": 0
+        },
+        "TableSizeBytes": 0,
+        "ItemCount": 0,
+        "TableArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-mass-tort-plaintiffs",
+        "TableId": "8075a49e-6077-4e1f-8228-6e5b0173fe84",
+        "BillingModeSummary": {
+            "BillingMode": "PAY_PER_REQUEST",
+            "LastUpdateToPayPerRequestDateTime": "2025-10-21T15:36:09.954000-07:00"
+        },
+        "GlobalSecondaryIndexes": [
+            {
+                "IndexName": "company_id-created_at-index",
+                "KeySchema": [
+                    {
+                        "AttributeName": "company_id",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "created_at",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "ACTIVE",
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                },
+                "IndexSizeBytes": 0,
+                "ItemCount": 0,
+                "IndexArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-mass-tort-plaintiffs/index/company_id-created_at-index",
+                "WarmThroughput": {
+                    "ReadUnitsPerSecond": 12000,
+                    "WriteUnitsPerSecond": 4000,
+                    "Status": "ACTIVE"
+                }
+            }
+        ],
+        "DeletionProtectionEnabled": false,
+        "WarmThroughput": {
+            "ReadUnitsPerSecond": 12000,
+            "WriteUnitsPerSecond": 4000,
+            "Status": "ACTIVE"
+        }
+    }
+}

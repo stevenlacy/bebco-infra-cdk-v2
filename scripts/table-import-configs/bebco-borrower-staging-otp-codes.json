@@ -1,0 +1,58 @@
+{
+  "TableName": "bebco-borrower-otp-codes-dev",
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "channel",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "expires_at",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "user_id",
+      "AttributeType": "S"
+    }
+  ],
+  "KeySchema": [
+    {
+      "AttributeName": "id",
+      "KeyType": "HASH"
+    }
+  ],
+  "BillingMode": "PAY_PER_REQUEST",
+  "GlobalSecondaryIndexes": [
+    {
+      "IndexName": "ExpiryIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "expires_at",
+          "KeyType": "HASH"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    },
+    {
+      "IndexName": "UserChannelIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "user_id",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "channel",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    }
+  ]
+}

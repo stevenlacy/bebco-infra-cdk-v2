@@ -1,0 +1,699 @@
+{
+    "items": [
+        {
+            "id": "0kz50w",
+            "parentId": "ssfpc7",
+            "pathPart": "{batch_id}",
+            "path": "/admin/payments/nacha/{batch_id}"
+        },
+        {
+            "id": "140yf8",
+            "parentId": "ruju8v",
+            "pathPart": "users",
+            "path": "/admin/users",
+            "resourceMethods": {
+                "GET": {},
+                "OPTIONS": {},
+                "POST": {}
+            }
+        },
+        {
+            "id": "1djqpw",
+            "parentId": "8q2pg6",
+            "pathPart": "transactions",
+            "path": "/admin/borrowers/{borrower_id}/transactions",
+            "resourceMethods": {
+                "GET": {},
+                "OPTIONS": {}
+            }
+        },
+        {
+            "id": "1ego6b",
+            "parentId": "140yf8",
+            "pathPart": "{userId}",
+            "path": "/admin/users/{userId}",
+            "resourceMethods": {
+                "DELETE": {},
+                "OPTIONS": {}
+            }
+        },
+        {
+            "id": "1kyzb2",
+            "parentId": "2dznh9",
+            "pathPart": "summary",
+            "path": "/admin/borrowers/summary",
+            "resourceMethods": {
+                "GET": {},
+                "OPTIONS": {}
+            }
+        },
+        {
+            "id": "1vvzhh",
+            "parentId": "73yx4r",
+            "pathPart": "notes",
+            "path": "/admin/monthly-reports/{reportId}/notes",
+            "resourceMethods": {
+                "DELETE": {},
+                "GET": {},
+                "OPTIONS": {},
+                "POST": {}
+            }
+        },
+        {
+            "id": "2dznh9",
+            "parentId": "ruju8v",
+            "pathPart": "borrowers",
+            "path": "/admin/borrowers",
+            "resourceMethods": {
+                "GET": {},
+                "OPTIONS": {},
+                "POST": {}
+            }
+        },
+        {
+            "id": "2jb6fr",
+            "parentId": "1ego6b",
+            "pathPart": "password",
+            "path": "/admin/users/{userId}/password"
+        },
+        {
+            "id": "2lzu2rejk8",
+            "path": "/"
+        },
+        {
+            "id": "3hyafv",
+            "parentId": "hnd7rm",
+            "pathPart": "approve",
+            "path": "/admin/companies/{companyId}/users/{userId}/approve",
+            "resourceMethods": {
+                "OPTIONS": {},
+                "PUT": {}
+            }
+        },
+        {
+            "id": "3yrb3l",
+            "parentId": "1ego6b",
+            "pathPart": "deny",
+            "path": "/admin/users/{userId}/deny",
+            "resourceMethods": {
+                "OPTIONS": {},
+                "PUT": {}
+            }
+        },
+        {
+            "id": "42burl",
+            "parentId": "xnwshf",
+            "pathPart": "return-to-pending",
+            "path": "/banks/{bankId}/draws/{drawId}/return-to-pending",
+            "resourceMethods": {
+                "OPTIONS": {},
+                "PUT": {}
+            }
+        },
+        {
+            "id": "4hxcyq",
+            "parentId": "j7e7rn",
+            "pathPart": "users",
+            "path": "/admin/companies/{companyId}/users",
+            "resourceMethods": {
+                "GET": {},
+                "OPTIONS": {}
+            }
+        },
+        {
+            "id": "57iydn",
+            "parentId": "j7e7rn",
+            "pathPart": "loans",
+            "path": "/admin/companies/{companyId}/loans"
+        },
+        {
+            "id": "5s8q1a",
+            "parentId": "hv2t32",
+            "pathPart": "borrowers",
+            "path": "/banks/{bankId}/borrowers"
+        },
+        {
+            "id": "5swlox",
+            "parentId": "bdd98r",
+            "pathPart": "verify-code",
+            "path": "/auth/password/verify-code",
+            "resourceMethods": {
+                "OPTIONS": {},
+                "POST": {}
+            }
+        },
+        {
+            "id": "717ref",
+            "parentId": "xnwshf",
+            "pathPart": "reject",
+            "path": "/banks/{bankId}/draws/{drawId}/reject",
+            "resourceMethods": {
+                "OPTIONS": {},
+                "PUT": {}
+            }
+        },
+        {
+            "id": "73yx4r",
+            "parentId": "g7ymnd",
+            "pathPart": "{reportId}",
+            "path": "/admin/monthly-reports/{reportId}"
+        },
+        {
+            "id": "7p7gl5",
+            "parentId": "2jb6fr",
+            "pathPart": "start",
+            "path": "/admin/users/{userId}/password/start",
+            "resourceMethods": {
+                "POST": {}
+            }
+        },
+        {
+            "id": "7rlkgo",
+            "parentId": "djmbya",
+            "pathPart": "totp",
+            "path": "/profile/mfa/totp"
+        },
+        {
+            "id": "7xc1pr",
+            "parentId": "ruju8v",
+            "pathPart": "accounts",
+            "path": "/admin/accounts"
+        },
+        {
+            "id": "80of5y",
+            "parentId": "g69dh3",
+            "pathPart": "upload",
+            "path": "/admin/statements/upload",
+            "resourceMethods": {
+                "OPTIONS": {},
+                "POST": {}
+            }
+        },
+        {
+            "id": "8785uv",
+            "parentId": "no2sv7",
+            "pathPart": "{reportId}",
+            "path": "/admin/annual-reports/{reportId}",
+            "resourceMethods": {
+                "DELETE": {},
+                "OPTIONS": {},
+                "PUT": {}
+            }
+        },
+        {
+            "id": "8q2pg6",
+            "parentId": "2dznh9",
+            "pathPart": "{borrower_id}",
+            "path": "/admin/borrowers/{borrower_id}",
+            "resourceMethods": {
+                "GET": {},
+                "OPTIONS": {},
+                "PUT": {}
+            }
+        },
+        {
+            "id": "9fwrzx",
+            "parentId": "j7e7rn",
+            "pathPart": "settings",
+            "path": "/admin/companies/{companyId}/settings",
+            "resourceMethods": {
+                "GET": {},
+                "OPTIONS": {},
+                "PUT": {}
+            }
+        },
+        {
+            "id": "9o652v",
+            "parentId": "ijjmtm",
+            "pathPart": "allocations",
+            "path": "/admin/payments/{paymentId}/allocations",
+            "resourceMethods": {
+                "GET": {},
+                "OPTIONS": {},
+                "PUT": {}
+            }
+        },
+        {
+            "id": "9pg73a",
+            "parentId": "j7e7rn",
+            "pathPart": "statements",
+            "path": "/admin/companies/{companyId}/statements",
+            "resourceMethods": {
+                "GET": {},
+                "OPTIONS": {}
+            }
+        },
+        {
+            "id": "9sltk0",
+            "parentId": "7xc1pr",
+            "pathPart": "transaction-counts",
+            "path": "/admin/accounts/transaction-counts",
+            "resourceMethods": {
+                "OPTIONS": {},
+                "POST": {}
+            }
+        },
+        {
+            "id": "a5x495",
+            "parentId": "j7e7rn",
+            "pathPart": "cases",
+            "path": "/admin/companies/{companyId}/cases",
+            "resourceMethods": {
+                "GET": {},
+                "OPTIONS": {},
+                "POST": {}
+            }
+        },
+        {
+            "id": "as3ugg",
+            "parentId": "hv2t32",
+            "pathPart": "draws",
+            "path": "/banks/{bankId}/draws",
+            "resourceMethods": {
+                "GET": {},
+                "OPTIONS": {}
+            }
+        },
+        {
+            "id": "bdd98r",
+            "parentId": "qcx0q1",
+            "pathPart": "password",
+            "path": "/auth/password"
+        },
+        {
+            "id": "ber8w5",
+            "parentId": "ruju8v",
+            "pathPart": "plaid",
+            "path": "/admin/plaid"
+        },
+        {
+            "id": "bfaflk",
+            "parentId": "ysmput",
+            "pathPart": "invoices",
+            "path": "/banks/{bankId}/borrowers/{borrowerId}/invoices",
+            "resourceMethods": {
+                "OPTIONS": {},
+                "POST": {}
+            }
+        },
+        {
+            "id": "c2f96n",
+            "parentId": "j4tkux",
+            "pathPart": "{accountId}",
+            "path": "/admin/companies/{companyId}/known-accounts/{accountId}",
+            "resourceMethods": {
+                "DELETE": {},
+                "GET": {},
+                "OPTIONS": {},
+                "PUT": {}
+            }
+        },
+        {
+            "id": "cpta20",
+            "parentId": "0kz50w",
+            "pathPart": "download",
+            "path": "/admin/payments/nacha/{batch_id}/download",
+            "resourceMethods": {
+                "GET": {},
+                "OPTIONS": {}
+            }
+        },
+        {
+            "id": "d016wd",
+            "parentId": "ruju8v",
+            "pathPart": "companies",
+            "path": "/admin/companies"
+        },
+        {
+            "id": "djmbya",
+            "parentId": "tmkasf",
+            "pathPart": "mfa",
+            "path": "/profile/mfa"
+        },
+        {
+            "id": "eacdoq",
+            "parentId": "57iydn",
+            "pathPart": "{loanNo}",
+            "path": "/admin/companies/{companyId}/loans/{loanNo}",
+            "resourceMethods": {
+                "GET": {},
+                "OPTIONS": {},
+                "PUT": {}
+            }
+        },
+        {
+            "id": "fmqf8v",
+            "parentId": "73yx4r",
+            "pathPart": "waive",
+            "path": "/admin/monthly-reports/{reportId}/waive",
+            "resourceMethods": {
+                "GET": {},
+                "OPTIONS": {},
+                "POST": {}
+            }
+        },
+        {
+            "id": "g69dh3",
+            "parentId": "ruju8v",
+            "pathPart": "statements",
+            "path": "/admin/statements"
+        },
+        {
+            "id": "g7ymnd",
+            "parentId": "ruju8v",
+            "pathPart": "monthly-reports",
+            "path": "/admin/monthly-reports"
+        },
+        {
+            "id": "hnd7rm",
+            "parentId": "4hxcyq",
+            "pathPart": "{userId}",
+            "path": "/admin/companies/{companyId}/users/{userId}"
+        },
+        {
+            "id": "hokkpf",
+            "parentId": "eacdoq",
+            "pathPart": "summary",
+            "path": "/admin/companies/{companyId}/loans/{loanNo}/summary",
+            "resourceMethods": {
+                "GET": {},
+                "OPTIONS": {},
+                "PUT": {}
+            }
+        },
+        {
+            "id": "hv2t32",
+            "parentId": "n61shx",
+            "pathPart": "{bankId}",
+            "path": "/banks/{bankId}"
+        },
+        {
+            "id": "ijjmtm",
+            "parentId": "uyq7jb",
+            "pathPart": "{paymentId}",
+            "path": "/admin/payments/{paymentId}",
+            "resourceMethods": {
+                "OPTIONS": {},
+                "PUT": {}
+            }
+        },
+        {
+            "id": "iomoua",
+            "parentId": "pytos2",
+            "pathPart": "{accountId}",
+            "path": "/banks/{bankId}/borrowers/{borrowerId}/accounts/{accountId}"
+        },
+        {
+            "id": "j4tkux",
+            "parentId": "j7e7rn",
+            "pathPart": "known-accounts",
+            "path": "/admin/companies/{companyId}/known-accounts",
+            "resourceMethods": {
+                "GET": {},
+                "OPTIONS": {},
+                "POST": {}
+            }
+        },
+        {
+            "id": "j51g42",
+            "parentId": "7rlkgo",
+            "pathPart": "verify",
+            "path": "/profile/mfa/totp/verify",
+            "resourceMethods": {
+                "OPTIONS": {},
+                "POST": {}
+            }
+        },
+        {
+            "id": "j7e7rn",
+            "parentId": "d016wd",
+            "pathPart": "{companyId}",
+            "path": "/admin/companies/{companyId}"
+        },
+        {
+            "id": "jpj0bx",
+            "parentId": "zecf9k",
+            "pathPart": "sync",
+            "path": "/admin/accounts/{accountId}/sync",
+            "resourceMethods": {
+                "OPTIONS": {},
+                "POST": {}
+            }
+        },
+        {
+            "id": "klzj4b",
+            "parentId": "1ego6b",
+            "pathPart": "approve",
+            "path": "/admin/users/{userId}/approve",
+            "resourceMethods": {
+                "OPTIONS": {},
+                "PUT": {}
+            }
+        },
+        {
+            "id": "ldin8i",
+            "parentId": "g69dh3",
+            "pathPart": "download",
+            "path": "/admin/statements/download",
+            "resourceMethods": {
+                "OPTIONS": {},
+                "POST": {}
+            }
+        },
+        {
+            "id": "m3y9cf",
+            "parentId": "ruju8v",
+            "pathPart": "analyze-documents",
+            "path": "/admin/analyze-documents",
+            "resourceMethods": {
+                "OPTIONS": {},
+                "POST": {}
+            }
+        },
+        {
+            "id": "mc8lrj",
+            "parentId": "2jb6fr",
+            "pathPart": "complete",
+            "path": "/admin/users/{userId}/password/complete",
+            "resourceMethods": {
+                "OPTIONS": {},
+                "POST": {}
+            }
+        },
+        {
+            "id": "mn6qai",
+            "parentId": "ber8w5",
+            "pathPart": "sync",
+            "path": "/admin/plaid/sync",
+            "resourceMethods": {
+                "OPTIONS": {},
+                "POST": {}
+            }
+        },
+        {
+            "id": "mwhswh",
+            "parentId": "ysmput",
+            "pathPart": "users",
+            "path": "/banks/{bankId}/borrowers/{borrowerId}/users",
+            "resourceMethods": {
+                "OPTIONS": {},
+                "POST": {}
+            }
+        },
+        {
+            "id": "n61shx",
+            "parentId": "2lzu2rejk8",
+            "pathPart": "banks",
+            "path": "/banks"
+        },
+        {
+            "id": "ncenf9",
+            "parentId": "uyq7jb",
+            "pathPart": "process-batch",
+            "path": "/admin/payments/process-batch",
+            "resourceMethods": {
+                "OPTIONS": {},
+                "POST": {}
+            }
+        },
+        {
+            "id": "no2sv7",
+            "parentId": "ruju8v",
+            "pathPart": "annual-reports",
+            "path": "/admin/annual-reports",
+            "resourceMethods": {
+                "GET": {},
+                "OPTIONS": {},
+                "POST": {}
+            }
+        },
+        {
+            "id": "pytos2",
+            "parentId": "ysmput",
+            "pathPart": "accounts",
+            "path": "/banks/{bankId}/borrowers/{borrowerId}/accounts"
+        },
+        {
+            "id": "qcx0q1",
+            "parentId": "2lzu2rejk8",
+            "pathPart": "auth",
+            "path": "/auth"
+        },
+        {
+            "id": "rf5kuo",
+            "parentId": "ruju8v",
+            "pathPart": "invoices",
+            "path": "/admin/invoices",
+            "resourceMethods": {
+                "GET": {},
+                "OPTIONS": {}
+            }
+        },
+        {
+            "id": "rhhsay",
+            "parentId": "djmbya",
+            "pathPart": "status",
+            "path": "/profile/mfa/status",
+            "resourceMethods": {
+                "GET": {},
+                "OPTIONS": {}
+            }
+        },
+        {
+            "id": "ruju8v",
+            "parentId": "2lzu2rejk8",
+            "pathPart": "admin",
+            "path": "/admin"
+        },
+        {
+            "id": "sdu7ua",
+            "parentId": "bdd98r",
+            "pathPart": "send-code",
+            "path": "/auth/password/send-code",
+            "resourceMethods": {
+                "OPTIONS": {},
+                "POST": {}
+            }
+        },
+        {
+            "id": "ssfpc7",
+            "parentId": "uyq7jb",
+            "pathPart": "nacha",
+            "path": "/admin/payments/nacha"
+        },
+        {
+            "id": "t5eafp",
+            "parentId": "tmkasf",
+            "pathPart": "name",
+            "path": "/profile/name",
+            "resourceMethods": {
+                "OPTIONS": {},
+                "PATCH": {}
+            }
+        },
+        {
+            "id": "tmkasf",
+            "parentId": "2lzu2rejk8",
+            "pathPart": "profile",
+            "path": "/profile"
+        },
+        {
+            "id": "tyirmk",
+            "parentId": "iomoua",
+            "pathPart": "transactions",
+            "path": "/banks/{bankId}/borrowers/{borrowerId}/accounts/{accountId}/transactions",
+            "resourceMethods": {
+                "GET": {},
+                "OPTIONS": {}
+            }
+        },
+        {
+            "id": "u0yuei",
+            "parentId": "tmkasf",
+            "pathPart": "password",
+            "path": "/profile/password",
+            "resourceMethods": {
+                "OPTIONS": {},
+                "POST": {}
+            }
+        },
+        {
+            "id": "unc7z9",
+            "parentId": "ssfpc7",
+            "pathPart": "latest",
+            "path": "/admin/payments/nacha/latest",
+            "resourceMethods": {
+                "GET": {},
+                "OPTIONS": {}
+            }
+        },
+        {
+            "id": "uyq7jb",
+            "parentId": "ruju8v",
+            "pathPart": "payments",
+            "path": "/admin/payments",
+            "resourceMethods": {
+                "GET": {},
+                "OPTIONS": {}
+            }
+        },
+        {
+            "id": "vhk3gi",
+            "parentId": "a5x495",
+            "pathPart": "key",
+            "path": "/admin/companies/{companyId}/cases/key",
+            "resourceMethods": {
+                "OPTIONS": {},
+                "POST": {}
+            }
+        },
+        {
+            "id": "w6i0hz",
+            "parentId": "7rlkgo",
+            "pathPart": "begin",
+            "path": "/profile/mfa/totp/begin",
+            "resourceMethods": {
+                "OPTIONS": {},
+                "POST": {}
+            }
+        },
+        {
+            "id": "xnwshf",
+            "parentId": "as3ugg",
+            "pathPart": "{drawId}",
+            "path": "/banks/{bankId}/draws/{drawId}"
+        },
+        {
+            "id": "ysmput",
+            "parentId": "5s8q1a",
+            "pathPart": "{borrowerId}",
+            "path": "/banks/{bankId}/borrowers/{borrowerId}"
+        },
+        {
+            "id": "yyoeq4",
+            "parentId": "7rlkgo",
+            "pathPart": "verify-login",
+            "path": "/profile/mfa/totp/verify-login",
+            "resourceMethods": {
+                "OPTIONS": {},
+                "POST": {}
+            }
+        },
+        {
+            "id": "zecf9k",
+            "parentId": "7xc1pr",
+            "pathPart": "{accountId}",
+            "path": "/admin/accounts/{accountId}"
+        },
+        {
+            "id": "zlq65d",
+            "parentId": "xnwshf",
+            "pathPart": "approve",
+            "path": "/banks/{bankId}/draws/{drawId}/approve",
+            "resourceMethods": {
+                "OPTIONS": {},
+                "PUT": {}
+            }
+        }
+    ]
+}

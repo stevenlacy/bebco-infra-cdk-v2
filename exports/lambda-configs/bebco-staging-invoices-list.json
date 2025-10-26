@@ -1,0 +1,53 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-staging-invoices-list",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-invoices-list",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+        "Handler": "invoices.list_invoices.lambda_handler",
+        "CodeSize": 5217425,
+        "Description": "",
+        "Timeout": 60,
+        "MemorySize": 4096,
+        "LastModified": "2025-10-10T08:42:19.000+0000",
+        "CodeSha256": "1TIsFicHACAL/WhLafDDUiPtUboSx8546KKd2ZY1F/g=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "LEDGER_TABLE": "bebco-borrower-staging-ledger-entries",
+                "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+                "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+                "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+                "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "9ef27638-046c-4dd8-9e84-87fdcac199be",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:82d9ed4427e5b65dd5ccb05b83e6c85772032dd44913231bd8fafeacba7aae8a"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-staging-invoices-list"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-staging-invoices-list-4fb8f55a-6cfc-4b7a-9e33-347a3d0f1ab3?versionId=NjWGoOHio9_qoiWwnqCBuf8cfalg65cn&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEL7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCPUO3gIwsFdWsijPasXZydI886It4Ut%2BCuymJ6ll4hFAIgbElO4gqhMgNp8WYsPNoPlNsHPEHWwX2tVR%2BhMcYGrgYqiwIIdxAEGgw0NzkyMzMwMjUzNzkiDC%2FQX1%2BPY549pEEuLCroAXnanfS%2F3ac7C0BFdnavCPxwirV35fOPY7y%2B%2BKM%2FWIc%2FSFSmmMtaXj8XL6%2BINlGDEw9AefPGUbC67dmIF%2F7%2FjJpbBWXmGMd3BhnTl1cnq1y38EjmlHFRmA9%2B61MgpLGYUQo2vGYdG9vRTxAff4Rt6oVwK%2F4y8t0nTK0GCrvvRIjDGIry%2B6doPwrU9womCfPu6CtqEXsU1F7mQCOpEJ2LWSGnRF2m%2Bk0aM8RcdPM5VCLxCVc%2FUHvt5jAE71AjyAYHYzCF5Oezi2OlFAYk5X2p7CHkG7Lc%2FzFeiMP%2BPvR6zdxv%2BYros%2Be25powl6%2FzxwY6jQFy%2FDAmcIDX3SDhfdZTm0Q60MnG7Wumz4koyqxTRgV47BYqS2WjjqIFHhj%2BIHVqR036%2FfA%2FjWKQ%2BwXtUPTdOaplGN41PgQkP3c9hgb55SRofRvy2fMOMKCYS7xCJYzbDUvFwa%2FV75Q%2BJUdZ26zVYQ%2FmcRbOirWsZQQ%2FrDMvFKHIGny15jsDP84faUFjqxs%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210546Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVRTOLEVQJY%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=f5a164303d9e46ad8d959f5d6a8c34388a7604120de062f780c479f42d09d8f7"
+    }
+}

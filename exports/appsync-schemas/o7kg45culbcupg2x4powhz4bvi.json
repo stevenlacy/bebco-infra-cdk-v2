@@ -1,0 +1,24 @@
+{
+    "graphqlApi": {
+        "name": "bebco-borrowers-api",
+        "apiId": "o7kg45culbcupg2x4powhz4bvi",
+        "authenticationType": "API_KEY",
+        "arn": "arn:aws:appsync:us-east-1:303555290462:apis/o7kg45culbcupg2x4powhz4bvi",
+        "uris": {
+            "REALTIME": "wss://6ympeefwe5go7lfk7q2myjd5jq.appsync-realtime-api.us-east-1.amazonaws.com/graphql",
+            "GRAPHQL": "https://6ympeefwe5go7lfk7q2myjd5jq.appsync-api.us-east-1.amazonaws.com/graphql"
+        },
+        "tags": {},
+        "xrayEnabled": false,
+        "dns": {
+            "REALTIME": "6ympeefwe5go7lfk7q2myjd5jq.appsync-realtime-api.us-east-1.amazonaws.com",
+            "GRAPHQL": "6ympeefwe5go7lfk7q2myjd5jq.appsync-api.us-east-1.amazonaws.com"
+        },
+        "visibility": "GLOBAL",
+        "apiType": "GRAPHQL",
+        "owner": "303555290462",
+        "introspectionConfig": "ENABLED",
+        "queryDepthLimit": 0,
+        "resolverCountLimit": 0
+    }
+}

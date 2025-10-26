@@ -1,0 +1,84 @@
+{
+    "Table": {
+        "AttributeDefinitions": [
+            {
+                "AttributeName": "date",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "id",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "loan_id",
+                "AttributeType": "S"
+            }
+        ],
+        "TableName": "bebco-borrower-staging-payments",
+        "KeySchema": [
+            {
+                "AttributeName": "id",
+                "KeyType": "HASH"
+            }
+        ],
+        "TableStatus": "ACTIVE",
+        "CreationDateTime": "2025-08-12T03:05:30.505000-07:00",
+        "ProvisionedThroughput": {
+            "NumberOfDecreasesToday": 0,
+            "ReadCapacityUnits": 0,
+            "WriteCapacityUnits": 0
+        },
+        "TableSizeBytes": 615008,
+        "ItemCount": 2267,
+        "TableArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-payments",
+        "TableId": "a6e9c6c8-c8df-456a-a6f5-67a6145b836f",
+        "BillingModeSummary": {
+            "BillingMode": "PAY_PER_REQUEST",
+            "LastUpdateToPayPerRequestDateTime": "2025-08-12T03:05:30.505000-07:00"
+        },
+        "GlobalSecondaryIndexes": [
+            {
+                "IndexName": "LoanDateIndex",
+                "KeySchema": [
+                    {
+                        "AttributeName": "loan_id",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "date",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "ACTIVE",
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                },
+                "IndexSizeBytes": 327512,
+                "ItemCount": 1163,
+                "IndexArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-payments/index/LoanDateIndex",
+                "WarmThroughput": {
+                    "ReadUnitsPerSecond": 12000,
+                    "WriteUnitsPerSecond": 4000,
+                    "Status": "ACTIVE"
+                }
+            }
+        ],
+        "StreamSpecification": {
+            "StreamEnabled": true,
+            "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "LatestStreamLabel": "2025-10-06T05:01:05.243",
+        "LatestStreamArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-payments/stream/2025-10-06T05:01:05.243",
+        "DeletionProtectionEnabled": true,
+        "WarmThroughput": {
+            "ReadUnitsPerSecond": 12000,
+            "WriteUnitsPerSecond": 4000,
+            "Status": "ACTIVE"
+        }
+    }
+}

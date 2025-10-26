@@ -1,0 +1,51 @@
+[
+  {
+    "path": "/admin/banks/{id}",
+    "method": "PUT",
+    "lambdaFunction": "bebco-staging-banks-update",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-banks-update/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/admin/monthly-reports",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-monthly-reports-list",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-monthly-reports-list/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/draws",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-draws-list",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-draws-list/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/admin/accounts",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-accounts-list",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-accounts-list/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/admin/accounts",
+    "method": "OPTIONS",
+    "lambdaFunction": "bebco-staging-accounts-list",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-accounts-list/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/admin/banks",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-banks-list",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-banks-list/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/admin/banks",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-banks-create",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-banks-create/invocations",
+    "integrationType": "AWS_PROXY"
+  }
+]

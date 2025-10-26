@@ -1,0 +1,49 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-admin-users-mfa-totp-verify-login",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-admin-users-mfa-totp-verify-login",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-admin-users-mfa-totp-verify-login-role",
+        "Handler": "handler.handler",
+        "CodeSize": 1977,
+        "Description": "",
+        "Timeout": 15,
+        "MemorySize": 256,
+        "LastModified": "2025-09-27T00:52:53.000+0000",
+        "CodeSha256": "1EJOcBl20VWQGU0S3dX6ZsE1qeACBP0iX0zF8jW+wbo=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "USERS_TABLE": "bebco-borrower-staging-users"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "3cb10881-4537-413e-94f2-1781172b60f8",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:37f2a22b6df6b3d6c4d8ad1cbfd84eb865b6c4e810c097e722b65a41742c7d19"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-admin-users-mfa-totp-verify-login"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-admin-users-mfa-totp-verify-login-02a83ae0-dc40-4a2f-97dc-4d451bfd1527?versionId=Xikdz4h99LHYqxcQoLMjZIJBJHQv7T_r&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCIB1bb4LhOW5RaTV6HYooAswY7mEuUMaI2NwRZ5uMv%2FKCAiAS8FAr2ciWNMSs2JAyu702zHXeODotrKHzmCq%2FfirEQyqLAgh3EAQaDDQ3OTIzMzAyNTM3OSIMuTQ9IWUFKnC31n0bKugBAd5pByEaWJ2HQbsl7EgVV8TQuUPQ%2BvFdP9jszDyjpLu6S9zWUPnDvBR8U704PO6ZhgFyFYKsuKayGhTZonGqPcECgalCS9vWN4RFclGPXBunm7strB2AwALVgySjuperaOF68oWaEg%2FsDUWby1eob3v53BOOkr5wfh%2BrpyOhlHp6%2FN0z4HhkxiXyLmCaM6K4tiXw6Pkn8NVqnyzmk%2BXv0dBreioyLTawDbInzhyDUvHxU7JjMHI7YjLUyEqorGu2gL4aLSDPOwCH5nKkqlozIdMpEdsOfhjRglkdaeMFCyBPOIbzh%2FrRMjCStPPHBjqOAYtyG2rbCH6hoXazSkfkNj4zfmP83CXV%2BUmjqVmzl%2F%2B3JdPDs1E2LUc5F9WGhu9oj%2BpTcCbRpJFcku%2F2Fkqk%2Bu1ifNljOemc1Mv1emc%2BwE5p8i%2Biu8R5EzkzukTuhqsaTXU2NvlsjiNPN7rZJ%2FM7VYR2LqMyvmmSJ1PWJg5hThbWIGm5Bf5EsjsNbuCjSfQ%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210450Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVRTRGT6RVP%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=a41088d2487c7d8aec2f1067103d9306cf04411766ffc3cbf31eafa41ac75d91"
+    }
+}

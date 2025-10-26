@@ -1,0 +1,140 @@
+{
+    "Table": {
+        "AttributeDefinitions": [
+            {
+                "AttributeName": "bank_id",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "company_id",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "id",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "loan_no",
+                "AttributeType": "N"
+            }
+        ],
+        "TableName": "bebco-borrower-staging-statements",
+        "KeySchema": [
+            {
+                "AttributeName": "id",
+                "KeyType": "HASH"
+            }
+        ],
+        "TableStatus": "ACTIVE",
+        "CreationDateTime": "2025-09-04T05:39:33.725000-07:00",
+        "ProvisionedThroughput": {
+            "NumberOfDecreasesToday": 0,
+            "ReadCapacityUnits": 0,
+            "WriteCapacityUnits": 0
+        },
+        "TableSizeBytes": 3038993,
+        "ItemCount": 7216,
+        "TableArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-statements",
+        "TableId": "5c1d60c6-018c-4b42-ac4c-63dffadf8790",
+        "BillingModeSummary": {
+            "BillingMode": "PAY_PER_REQUEST",
+            "LastUpdateToPayPerRequestDateTime": "2025-09-04T05:39:33.725000-07:00"
+        },
+        "GlobalSecondaryIndexes": [
+            {
+                "IndexName": "CompanyIndex",
+                "KeySchema": [
+                    {
+                        "AttributeName": "company_id",
+                        "KeyType": "HASH"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "ACTIVE",
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                },
+                "IndexSizeBytes": 3038048,
+                "ItemCount": 7212,
+                "IndexArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-statements/index/CompanyIndex",
+                "WarmThroughput": {
+                    "ReadUnitsPerSecond": 12000,
+                    "WriteUnitsPerSecond": 4000,
+                    "Status": "ACTIVE"
+                }
+            },
+            {
+                "IndexName": "LoanNumberIndex",
+                "KeySchema": [
+                    {
+                        "AttributeName": "loan_no",
+                        "KeyType": "HASH"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "ACTIVE",
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                },
+                "IndexSizeBytes": 3038993,
+                "ItemCount": 7216,
+                "IndexArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-statements/index/LoanNumberIndex",
+                "WarmThroughput": {
+                    "ReadUnitsPerSecond": 12000,
+                    "WriteUnitsPerSecond": 4000,
+                    "Status": "ACTIVE"
+                }
+            },
+            {
+                "IndexName": "BankCompanyIndex",
+                "KeySchema": [
+                    {
+                        "AttributeName": "bank_id",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "company_id",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "ACTIVE",
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                },
+                "IndexSizeBytes": 3038048,
+                "ItemCount": 7212,
+                "IndexArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-statements/index/BankCompanyIndex",
+                "WarmThroughput": {
+                    "ReadUnitsPerSecond": 12000,
+                    "WriteUnitsPerSecond": 4000,
+                    "Status": "ACTIVE"
+                }
+            }
+        ],
+        "StreamSpecification": {
+            "StreamEnabled": true,
+            "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "LatestStreamLabel": "2025-09-18T14:26:20.934",
+        "LatestStreamArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-statements/stream/2025-09-18T14:26:20.934",
+        "DeletionProtectionEnabled": true,
+        "WarmThroughput": {
+            "ReadUnitsPerSecond": 12000,
+            "WriteUnitsPerSecond": 4000,
+            "Status": "ACTIVE"
+        }
+    }
+}

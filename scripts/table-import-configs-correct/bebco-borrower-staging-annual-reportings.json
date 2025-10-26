@@ -1,0 +1,62 @@
+{
+  "TableName": "bebco-borrower-annual-reportings-dev",
+  "KeySchema": [
+    {
+      "AttributeName": "id",
+      "KeyType": "HASH"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "company_id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "status",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "year",
+      "AttributeType": "S"
+    }
+  ],
+  "BillingMode": "PAY_PER_REQUEST",
+  "GlobalSecondaryIndexes": [
+    {
+      "IndexName": "StatusIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "status",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "year",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    },
+    {
+      "IndexName": "CompanyYearIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "company_id",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "year",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    }
+  ]
+}

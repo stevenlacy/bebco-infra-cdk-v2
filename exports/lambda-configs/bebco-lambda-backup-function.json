@@ -1,0 +1,49 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-lambda-backup-function",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-lambda-backup-function",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-lambda-backup-role",
+        "Handler": "lambda-backup/lambda_function.lambda_handler",
+        "CodeSize": 4839,
+        "Description": "Automated backup function for all Lambda functions",
+        "Timeout": 900,
+        "MemorySize": 512,
+        "LastModified": "2025-10-06T04:34:11.295+0000",
+        "CodeSha256": "7lDhWeAu0MAw8XFV1B8i3GJDCpL120C5dsr+5y8ga4I=",
+        "Version": "$LATEST",
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "4816f615-f687-48e0-a9ad-7794d4a50144",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:82d9ed4427e5b65dd5ccb05b83e6c85772032dd44913231bd8fafeacba7aae8a"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-lambda-backup-function"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-lambda-backup-function-a4b45586-73c6-4c0b-ad6d-6058f2efa6ce?versionId=Rw.bA3h0QTyAGHoGHMS5G6vD5TsqkArj&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCIFF7JpLk8jEvHqFdEN%2Bo3lAU%2BOm0whAxV8ekvE6hm7CwAiBK0jB96FO1bqE2ovgR3AfFnlRqb0G4GnZMeIHFYn37JiqLAgh3EAQaDDQ3OTIzMzAyNTM3OSIMshPIvTjn%2Ba2emrWhKugBlgwAc%2BBfFLKt5lpSXt3WS94Qhq%2Bv1amA14F8mrJ4GMzJj32CnYxg%2BhLh9nDxg3k2BI7exvBArBFqVflXE5XD1KrUuwYfBEP9QzMfKf5sTDfmsiE598ZzypHR7dOMEWGwOMr6KbJRrjngvVl8UsVTDjLEjqkNZwQLkBJibXfMFuJrpk4q4OuQ2%2FPIXmXofVSIoTdWB3L6GAX4hJVVjge6ikyr%2FfttNMyUWo0%2FAqyazmUQdYEq6mElzQpOmdEXe1%2BLrlUSk8T%2BgRJspogzudgNYBrffloG0v8ELbGj%2FAXkn4Kt7YN1cyGKNjC0svPHBjqOARmy1jh3nmJD2F2AYGQrqM2hDqqKgIjkfV7CZIUig%2FSRwTFojWpjAj4Li8UEIUK7FhFf7fz%2BdYfKoB%2BtQqliEbBRTR71HyBbsNtEPLVdydOFz3ZVrW2kRMwxa0x69SUbvO6vJ7XVW4TxnGHL54TY3HvyE8YxLcb679jtU%2FHd88V4aHo%2BTeKtW5U06j%2Ffcbk%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210623Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVRZUQM7FFE%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=d83fa059ce884829d7f62d48f6bdc01ac1e922109699146929af62adb443b7ea"
+    },
+    "Tags": {
+        "ManagedBy": "aws-cli",
+        "Environment": "production",
+        "Purpose": "backup"
+    }
+}

@@ -1,0 +1,44 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-staging-monthly-reports-submit",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-monthly-reports-submit",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+        "Handler": "lambda_function.lambda_handler",
+        "CodeSize": 16959217,
+        "Description": "",
+        "Timeout": 30,
+        "MemorySize": 256,
+        "LastModified": "2025-10-13T20:51:20.000+0000",
+        "CodeSha256": "RbEzkjldQKYvUQLy8mRaguk79Rf7sayZs3YvpocNxr4=",
+        "Version": "$LATEST",
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "37f1f8f3-1c47-437c-836b-a4a1c8783a0f",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:82d9ed4427e5b65dd5ccb05b83e6c85772032dd44913231bd8fafeacba7aae8a"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-staging-monthly-reports-submit"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-staging-monthly-reports-submit-e27b43c9-941b-491c-8f97-b059e488b5a3?versionId=hz25QV3iQ0mG3R7Pib3Fx_HsDUvHSgmN&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEL3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCIAP1OsxBVOY4kxxhLUvN5S0EmA%2B98f1n4Dloa2AaShQfAiBqfxhnMbaWb7WNlNZya8nUQbxwpjy86%2FbSrl53NZeN5iqLAgh2EAQaDDQ3OTIzMzAyNTM3OSIM%2B3KZKVYHzi2QLQOGKugBYyTYtaj0CTKhsNsPRgHuy1jjYF2xQwLlHBxebqPyytAMMsv5Wm%2BwkHOpZMrpJ0UkXWPsldp%2BdtqGogo591E8vq8qcYMLfM36AVC9jVN8AhfKMtRCzmE2H4YUt8glV7s0M0jNHSRsihE9hMBNoxhag4eK84S0wgbtHOZ%2Bdj513mndZ9Y8aFN%2BfnzSdpd3yo2h93vM7OPDlZ7N8lcvY3MyUSJ9WfKIVM8zlx55YQJMaHgw2ANBgdAGeMKojVAOiGwM%2BQkc%2FnX067tJAcAUAZ1fX3XO7P%2FTmJq6gRz1edsartmlG6AjXrTHYDCyhvPHBjqOATiBYZIhK8chhbjP3%2FpjT7Xfwltpy30AnBiQwSTsfZpYzK0HNZiENxlSnVyGmGDX4KmpmkH0C9%2Ff4tGXhP1OyVcJfz%2F7YZvJhALW3XpzXoHe5QwVzi1UXuf7QQE9cR8kRjkY5IP5Y2g3867S3fCrwqOm9MDTuoG3EMnGFwopMN1NAL4%2FHwrQDY08LRd2y78%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210645Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVRTITYBVEV%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=3d2c9a16750443804a8e5be97ead74ef161cefb08e40b806e9086340a3a92c83"
+    }
+}

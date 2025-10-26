@@ -1,0 +1,282 @@
+{
+    "Table": {
+        "AttributeDefinitions": [
+            {
+                "AttributeName": "bank_id",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "company_id",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "id",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "loan_no",
+                "AttributeType": "N"
+            },
+            {
+                "AttributeName": "maturity_date",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "settle_date",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "state",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "status",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "transaction_date",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "transaction_type",
+                "AttributeType": "S"
+            }
+        ],
+        "TableName": "bebco-borrower-staging-loans",
+        "KeySchema": [
+            {
+                "AttributeName": "id",
+                "KeyType": "HASH"
+            }
+        ],
+        "TableStatus": "ACTIVE",
+        "CreationDateTime": "2025-08-12T03:04:07.392000-07:00",
+        "ProvisionedThroughput": {
+            "NumberOfDecreasesToday": 0,
+            "ReadCapacityUnits": 0,
+            "WriteCapacityUnits": 0
+        },
+        "TableSizeBytes": 11065903,
+        "ItemCount": 22824,
+        "TableArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-loans",
+        "TableId": "a14a7149-aba6-4a34-8095-c436c772b5fa",
+        "BillingModeSummary": {
+            "BillingMode": "PAY_PER_REQUEST",
+            "LastUpdateToPayPerRequestDateTime": "2025-08-12T03:04:07.392000-07:00"
+        },
+        "GlobalSecondaryIndexes": [
+            {
+                "IndexName": "TransactionTypeIndex",
+                "KeySchema": [
+                    {
+                        "AttributeName": "transaction_type",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "transaction_date",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "ACTIVE",
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                },
+                "IndexSizeBytes": 10878874,
+                "ItemCount": 22465,
+                "IndexArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-loans/index/TransactionTypeIndex",
+                "WarmThroughput": {
+                    "ReadUnitsPerSecond": 12000,
+                    "WriteUnitsPerSecond": 4000,
+                    "Status": "ACTIVE"
+                }
+            },
+            {
+                "IndexName": "MaturityIndex",
+                "KeySchema": [
+                    {
+                        "AttributeName": "maturity_date",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "status",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "ACTIVE",
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                },
+                "IndexSizeBytes": 89380,
+                "ItemCount": 136,
+                "IndexArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-loans/index/MaturityIndex",
+                "WarmThroughput": {
+                    "ReadUnitsPerSecond": 12000,
+                    "WriteUnitsPerSecond": 4000,
+                    "Status": "ACTIVE"
+                }
+            },
+            {
+                "IndexName": "StateIndex",
+                "KeySchema": [
+                    {
+                        "AttributeName": "state",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "settle_date",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "ACTIVE",
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                },
+                "IndexSizeBytes": 0,
+                "ItemCount": 0,
+                "IndexArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-loans/index/StateIndex",
+                "WarmThroughput": {
+                    "ReadUnitsPerSecond": 12000,
+                    "WriteUnitsPerSecond": 4000,
+                    "Status": "ACTIVE"
+                }
+            },
+            {
+                "IndexName": "CompanyIndex",
+                "KeySchema": [
+                    {
+                        "AttributeName": "company_id",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "status",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "ACTIVE",
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                },
+                "IndexSizeBytes": 89380,
+                "ItemCount": 136,
+                "IndexArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-loans/index/CompanyIndex",
+                "WarmThroughput": {
+                    "ReadUnitsPerSecond": 12000,
+                    "WriteUnitsPerSecond": 4000,
+                    "Status": "ACTIVE"
+                }
+            },
+            {
+                "IndexName": "StatusDateIndex",
+                "KeySchema": [
+                    {
+                        "AttributeName": "status",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "settle_date",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "ACTIVE",
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                },
+                "IndexSizeBytes": 89380,
+                "ItemCount": 136,
+                "IndexArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-loans/index/StatusDateIndex",
+                "WarmThroughput": {
+                    "ReadUnitsPerSecond": 12000,
+                    "WriteUnitsPerSecond": 4000,
+                    "Status": "ACTIVE"
+                }
+            },
+            {
+                "IndexName": "LoanNumberIndex",
+                "KeySchema": [
+                    {
+                        "AttributeName": "loan_no",
+                        "KeyType": "HASH"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "ACTIVE",
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                },
+                "IndexSizeBytes": 11065903,
+                "ItemCount": 22824,
+                "IndexArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-loans/index/LoanNumberIndex",
+                "WarmThroughput": {
+                    "ReadUnitsPerSecond": 12000,
+                    "WriteUnitsPerSecond": 4000,
+                    "Status": "ACTIVE"
+                }
+            },
+            {
+                "IndexName": "BankCompanyIndex",
+                "KeySchema": [
+                    {
+                        "AttributeName": "bank_id",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "company_id",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "ACTIVE",
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                },
+                "IndexSizeBytes": 11065903,
+                "ItemCount": 22824,
+                "IndexArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-loans/index/BankCompanyIndex",
+                "WarmThroughput": {
+                    "ReadUnitsPerSecond": 12000,
+                    "WriteUnitsPerSecond": 4000,
+                    "Status": "ACTIVE"
+                }
+            }
+        ],
+        "DeletionProtectionEnabled": true,
+        "WarmThroughput": {
+            "ReadUnitsPerSecond": 12000,
+            "WriteUnitsPerSecond": 4000,
+            "Status": "ACTIVE"
+        }
+    }
+}

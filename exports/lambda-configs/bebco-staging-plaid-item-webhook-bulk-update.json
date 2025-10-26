@@ -1,0 +1,57 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-staging-plaid-item-webhook-bulk-update",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-plaid-item-webhook-bulk-update",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-staging-plaid-item-webhook-bulk-role",
+        "Handler": "item_webhook_bulk_update.lambda_handler",
+        "CodeSize": 1605,
+        "Description": "",
+        "Timeout": 900,
+        "MemorySize": 512,
+        "LastModified": "2025-09-04T00:09:35.219+0000",
+        "CodeSha256": "NE4SQaCxCZOEqYjEKDY/S70tX7783gUGUh7NYHYM3Es=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "PLAID_SECRET_SECRET_NAME": "PLAID_SECRET",
+                "PLAID_CLIENT_ID_SECRET_NAME": "PLAID_CLIENT_ID",
+                "PLAID_ENVIRONMENT": "production",
+                "NEW_WEBHOOK_URL": "https://re0v1hyrdf.execute-api.us-east-1.amazonaws.com/prod/plaid/webhook",
+                "LOG_LEVEL": "INFO",
+                "PLAID_ITEMS_TABLE": "bebco-borrower-staging-plaid-items"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "834843a5-7112-42ce-ac9f-da0935ece666",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:37f2a22b6df6b3d6c4d8ad1cbfd84eb865b6c4e810c097e722b65a41742c7d19"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-staging-plaid-item-webhook-bulk-update"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-staging-plaid-item-webhook-bulk-update-93fc31da-be9d-4e7d-8504-6c6b93de81fb?versionId=TDO0EuGExEDeD0Ah2BnUOCjPmAH.mpXO&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIFX%2BDu9MeiuZLP8NejKm8b3PQNjZyzh6oO%2BNnHsHz7m2AiEAm5aAfGr319YlQuSHOQ%2BO6BJ3Y2T8fzYNQ%2FQYL1RSZ3UqiwIIeBAEGgw0NzkyMzMwMjUzNzkiDOQARKe4uvWBOdh0miroAQ%2BMrnqGa8gOoTONbdeyW1Tl1hLTehgWAqcPnAIlT3g24L%2FQTJtnCLkl%2BAFImoMtxD%2BKY3Rjf2l8WZxyFKzWnf1o2BKt7%2BGNdy%2BLjG2JSQUlfymxN30wk%2BaapqugTPost5kApYgkd6YwxtzHYMMKSKfWMyjCHj59uXl5yUo%2F7wmkadsrMT3Ww6W8DnhzPYKtezIFfi4ITSmSDng1IvvIZSS1BrlC20NgMDzzyuyhJWLRdC8LnADc4Wu8BfWxep52XlIIj%2BwW%2BkqAMaLNY2wzUWE9v5c%2FSPDIoXhALbClQ1SGkXh9%2F9tHTQkws9XzxwY6jQGZYGl67hUNJ6SQP2hXyrBw8hPi%2BiMNPNmTChFAWwtQk5Ph42oouPdJBQaGczmXsI%2B6oo%2FQE%2B7esgk7vzN9u57J%2FlcYFvfIz6fOPbRz%2BX8a6k05C07fRNKL3uQAs1wn3UxmDMi7LVqMyQDsyTP1lcbb96PQaZAyzkJDXwlndYLSMOU9FoX4U54E9i3rdNI%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210544Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVRVCOUJU3M%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=f7ed0bb2fc73d041a343a44deb5c77c6ef2ee34f8126c2bab224ce124758c7a5"
+    },
+    "Concurrency": {
+        "ReservedConcurrentExecutions": 1
+    }
+}

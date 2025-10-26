@@ -1,0 +1,55 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-staging-draws-approve",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-draws-approve",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-staging-draws-lambda-role",
+        "Handler": "approve_draw.lambda_handler",
+        "CodeSize": 6507875,
+        "Description": "Approves pending draw requests with OTP verification",
+        "Timeout": 60,
+        "MemorySize": 512,
+        "LastModified": "2025-08-18T22:26:47.000+0000",
+        "CodeSha256": "jd6Aki02UDK3tf0km1RT/tMZYOFO6fiQd6Lu7gNBI/s=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+                "OTP_TABLE": "bebco-borrower-staging-otp-codes",
+                "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+                "USERS_TABLE": "bebco-borrower-staging-users",
+                "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+                "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+                "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "cf17ac04-661a-4245-afa5-aaaa35a232dd",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:af29e10439856e364100c5dec1ce9c55d44feb2772258f7a7e480a95474aa18f"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-staging-draws-approve"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-staging-draws-approve-5999e028-1de3-47e5-9393-ce151b3d8d8f?versionId=CEiq.7ey4UN99mVE6fbHCg4nTYaFICM.&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCIC9PS7df5V%2FU46yso9Zotk0Gu%2FVZTuJi1cXbhjxbDCzmAiBryij%2BoxwZdLD8cZsUr62Z4dIs15VZ3YeEk7bWmxM%2BWiqLAgh4EAQaDDQ3OTIzMzAyNTM3OSIMNPq%2F%2FcwfPhMLTQkwKugBBrHh1zFiGfBKUqf0s3FtXQGsPMWCaparet16ceUUqkzvR4X500S0FZH0WsHSe1DDe4iCqD3jMEn%2BvdcI4SgaZRfLpajk%2FTPON9K1RKLnNNqhYt5gi7%2BogmFit5aQe65rXY3G0pKRJGRUak4EFfYtoz1Tfo2p583ju%2FP24JQJGPWe8h%2BFKuhyEVsSaMWM3brZ6O8vOUPxUpTzq9bfQJn03HG20kLpB1d00EYd%2FsqB0kebCNa8hW8TjLNaufPSaGbhZFesRy0BjG%2F1jzh7AT4Dzcq561Gr%2BIyBFUJwmya8HD0qgZyhGD%2BjYTD00%2FPHBjqOAYZ3gSOv4HSw%2FSuU5UISXekVhdHzEvniQDsR8EPWxeev1sTpOtK99fpJZ72hSfd%2Be7yP5yAnvE5tr6nuks5gd%2BfL1jyljVYGSWu3vFDT1vj7WoIeF%2FhXoPArlAs9%2F5yslTcQICL%2B%2FMUYbX7tB9RF56l7sACGVDoVPKxCo5mg4TwZ4MFCmEuj9UIhVLaQ8zY%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210512Z&X-Amz-SignedHeaders=host&X-Amz-Expires=599&X-Amz-Credential=ASIAW7FEDUVRVG2V2C2O%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=9de765cb4d0e6d09b93479085cc5ad44c075340e21d23208f6f626919adf33e9"
+    }
+}

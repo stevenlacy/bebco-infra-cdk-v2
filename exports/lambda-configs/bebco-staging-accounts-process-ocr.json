@@ -1,0 +1,52 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-staging-accounts-process-ocr",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-accounts-process-ocr",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-staging-ocr-lambda-role",
+        "Handler": "process_ocr.lambda_handler",
+        "CodeSize": 10142,
+        "Description": "Process OCR for account statements using Textract",
+        "Timeout": 300,
+        "MemorySize": 512,
+        "LastModified": "2025-09-12T23:45:35.000+0000",
+        "CodeSha256": "YYaWmBu+GmBKs2JNz8CsY0t5+Tj2SDU+xRsmBzpoiQI=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+                "TEXTRACT_ROLE_ARN": "arn:aws:iam::303555290462:role/bebco-staging-textract-sns-role",
+                "FILES_TABLE": "bebco-borrower-staging-files",
+                "OCR_RESULTS_TOPIC_ARN": "arn:aws:sns:us-east-1:303555290462:bebco-staging-textract-results"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "123d92f8-5991-47c3-ac52-1465e71248c1",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:37f2a22b6df6b3d6c4d8ad1cbfd84eb865b6c4e810c097e722b65a41742c7d19"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-staging-accounts-process-ocr"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-staging-accounts-process-ocr-9dc91f59-afcd-4f24-9684-fdd179baa29e?versionId=BtgSDgVMpXeDbn1B0rRFhAG_kbqrZp07&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEL3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQDpAfWpesy5DfEJQ1EXyUxcrudi3VhFAXJQePfv6N16pAIhANkPFtQ07W%2BMhAyKyI874r3W53zn9DLpNBwCu8iXVcJJKosCCHYQBBoMNDc5MjMzMDI1Mzc5Igwul0BSVUyad8n6VIoq6AHR2E71zbolLmgwy5Wnx4snNs2rnHaTOnwiQoY%2FPsmiBe5Vv4DKx87p921ZqXukcTeFzDMU2U2sl7KNuXqy1ukPMUG4L%2FX2nBqJPbEWvFSOo0L4fXDkjMJw6q0Nj%2FfD1Wr7m65b4RnRXVy7QKZKs1%2BbOkutvUFjDP%2F0r2rcBu%2BGT8XZT6cyey1RKb9%2Bgch%2BKU%2B2aEcBJyLY6oQyFzTGUoiIDyhocb0ZfXETC4N%2BwGUeLrcDVJ%2BvA6L8oNgX4W1qp6sp3i3yJaNLw5cWIs6gg9yL2%2BA39SvMD%2FyPH1hji%2BoliT8Hk0zWF%2FhNMI6J88cGOowBGzu8tkvat2tOX7ClXNjN4ToP3vo%2Fnptrco1CotFnEu1yKt%2FmYTXIAF%2F10D60%2F0t9DVFhF0Z2swt%2FnNDqQRfqBpU7InkG5LrGtWcCxhaNIzH3DlaoEMkfmdeBAjxWRRRstrn1wMOwyoisI11PYmTmA2LBoXxn%2B13c7Qsyjj0b544QoBe1fcikn91bdGo%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210558Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVR3NT6A77L%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=18a048155e43215adeb43535c6a09638ad8ffd6583cf1090d24883ce056e7ca4"
+    }
+}

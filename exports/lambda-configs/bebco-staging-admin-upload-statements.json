@@ -1,0 +1,53 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-staging-admin-upload-statements",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-admin-upload-statements",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::303555290462:role/bebco-staging-admin-upload-statements-role",
+        "Handler": "app.handler",
+        "CodeSize": 2892,
+        "Description": "",
+        "Timeout": 60,
+        "MemorySize": 512,
+        "LastModified": "2025-09-18T14:08:47.000+0000",
+        "CodeSha256": "D73FB7G905jfebuDPgsGLoVgKkSHoTnJG1vRw8Ed2KY=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "S3_BUCKET": "bebco-borrower-staging-documents",
+                "LOANS_TABLE": "bebco-borrower-staging-loans",
+                "STATEMENTS_TABLE": "bebco-borrower-staging-statements",
+                "COMPANIES_TABLE": "bebco-borrower-staging-companies",
+                "ALLOWED_ORIGIN": "*"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "d164f51b-e1be-4edc-bc3c-5736c560adf8",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:0517e723fa8dfc41b11b2324c8c497c137d4a3442c2e280cd9deb3ccfd45d0bd"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-staging-admin-upload-statements"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-staging-admin-upload-statements-0a5948ae-ef68-4822-9108-96ecdf34d202?versionId=AEkEFV8dGJJtCeTHXgHGd2AHwRxkDzUD&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEL3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIGHktsJor9vfxn9uUrUJhJvteAaaP233mjEYrZZpvZuhAiEA1okbFtGPk1FS9bjKDMmzX4Tw%2F9ofZxhu8PYSfQNCHZAqiwIIdhAEGgw0NzkyMzMwMjUzNzkiDDG5dKCGGpIXMVE3IiroARtTBc07e4ceWkbbMsX61WV8crWqheSNQDQ%2B75OoiUMxZ8q5HVmWgedjHPKyXSZf9ASWElUHViOmwrgZlG3l%2B3iYfgu%2Bdo8URLtaK2MIofEDzRGkLK1Wcl3m0fZNlHklDiXG1%2B8%2FDlz6OL%2FUTh%2BefIYqTE1Y02yH2Z1TYSAcszwXalq5k4%2FDxJ%2Bt2iXHRS%2FvUtO3gtlr1gPwhZyo1BYXK09jnV2%2BleLYYj349qgtU3Okqw%2BR0k0S%2FtQutYxem8URQ%2BjjR%2Flljzu%2BSl17umg1BcHeWp1%2BKzdSqLrRAFg3q%2FU%2BhT3R1uufUsUw3ITzxwY6jQEJSKFP9ZITs%2FMcR55FPocS73KWEQ1Pxn0bZP%2BJA1GVt4Frjmy%2FAYcvl%2FZFFM9gM3t%2FBoyiz%2FghJlnYsj1nwsJVCMAmtbInf3THnVGicocrlv4cVrtsJ7cSRz23DXKb3Ghij8dfZCQYTDTYWka2Ug06Li1i6sbV%2B86TKMHP0PfYR9MQua18hgdb2I6QJN8%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210453Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVRS4WM3BE4%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=8b27822573d4cae3e3a1ad4cbd02927fb4282fe35ea40f293a294ff8178a6588"
+    }
+}

@@ -1,0 +1,57 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-docusign-webhook_complete",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-docusign-webhook_complete",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-docusign-lambda-role",
+        "Handler": "app.handler",
+        "CodeSize": 15660386,
+        "Description": "",
+        "Timeout": 30,
+        "MemorySize": 512,
+        "LastModified": "2025-09-09T20:03:11.000+0000",
+        "CodeSha256": "b3o1AyIvyOcG7vtLgZtw8AL3gSZ2gCA8t4W2FLz+oss=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "SHAREPOINT_SECRET_NAME": "SharePoint/Prod",
+                "DOCUSIGN_SECRET_NAME": "DocuSign/Prod",
+                "DYNAMODB_DOCUSIGN_REQUESTS_TABLE": "DocusignRequests"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "ba3604f7-8c78-48bd-ac79-476f969e9920",
+        "Layers": [
+            {
+                "Arn": "arn:aws:lambda:us-east-1:303555290462:layer:bebco-docusign-layer:1",
+                "CodeSize": 34264494
+            }
+        ],
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:37f2a22b6df6b3d6c4d8ad1cbfd84eb865b6c4e810c097e722b65a41742c7d19"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-docusign-webhook_complete"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-docusign-webhook_complete-e9cb8d26-9be0-4b2b-9e3e-e83f48d8b559?versionId=jK0r8wtYCmsaRm5EWDiIGSs7BlNJHVVh&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEL7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIA00KPI4G3YgsvRC0RxKBY4xLrCY0PtftGXs%2FQmUHfkKAiEA0tIY%2ByIZKGkvAxUEbBGn33S4c7x90KOeDt6JBycgNzMqiwIIdxAEGgw0NzkyMzMwMjUzNzkiDAEOG9qeq9fwqhtwzCroAaVW%2BD5l%2BtidOEK%2F4pT82t%2Fa0QPMMvqPcRAf4Bdw5qVdlG8zaaj0Ws2PqGjaGbdTmM0p0NYPG3jIXUxigq%2BfaWBMgzaOFy%2FgQg9CTdUAfSK%2F5%2FARFyoxAib%2Fepf2DeRwyNP%2FiT8Qd4SAmfuksdht3O9SGeFDMKGxH4pLcOT%2Fw%2Bb30iAHqBHZt8Zy1HGq8%2FbvFzubBgT1VDz5BF5vRYxtH9WVSyi25CiQ8aa%2Bx8Gk5pPKmiXL54c6M%2Fdub5B1USE6wce93iOLGhJE1nmXmwzUyDWg0nHTx3ZGsNeBzrv855qwU45G0iBNMc8w%2FrDzxwY6jQFRd7qcYn9BTrB0hm1RmCDoohxGySwN77Otb5OFXpebRJ2hwKbuTEWA0aIoKDtLZpU%2FQpZqjl7nRtOt8w4ZRp8Z8u86DJ2vSbPOVs%2BiCOqebL9EjdHS0w0dg%2FX3bNl1QFK79qbboD7w1S0HO8nvib%2BLRi5bDzV3P%2BhnIx0Qbu8eWzyofr3hpyWyKAJxEVU%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210632Z&X-Amz-SignedHeaders=host&X-Amz-Expires=599&X-Amz-Credential=ASIAW7FEDUVR7LBNO4BR%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=73c03c14f7d7d9f266327af29c059e63dd32d20b19964ac81c1920776f68b535"
+    }
+}

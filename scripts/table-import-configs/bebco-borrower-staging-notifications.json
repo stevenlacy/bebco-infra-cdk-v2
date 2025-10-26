@@ -1,0 +1,34 @@
+{
+  "TableName": "bebco-borrower-notifications-dev",
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "company_id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "id",
+      "AttributeType": "S"
+    }
+  ],
+  "KeySchema": [
+    {
+      "AttributeName": "id",
+      "KeyType": "HASH"
+    }
+  ],
+  "BillingMode": "PAY_PER_REQUEST",
+  "GlobalSecondaryIndexes": [
+    {
+      "IndexName": "CompanyIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "company_id",
+          "KeyType": "HASH"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    }
+  ]
+}

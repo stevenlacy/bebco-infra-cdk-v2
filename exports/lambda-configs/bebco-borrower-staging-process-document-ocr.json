@@ -1,0 +1,51 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-borrower-staging-process-document-ocr",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-borrower-staging-process-document-ocr",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-staging-document-ocr-lambda-role",
+        "Handler": "process_document_ocr.lambda_handler",
+        "CodeSize": 32113,
+        "Description": "Async OCR processor for annual report documents (tax returns, insurance policies)",
+        "Timeout": 900,
+        "MemorySize": 2048,
+        "LastModified": "2025-10-15T00:05:11.000+0000",
+        "CodeSha256": "Sswtyi6cmO3++bMiCOnDSl14zSkY5/j0ToP7FnRPrRc=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "ANNUAL_REPORTS_TABLE": "bebco-borrower-staging-annual-reportings",
+                "TEXTRACT_ROLE_ARN": "arn:aws:iam::303555290462:role/bebco-staging-textract-sns-role",
+                "OCR_RESULTS_TOPIC_ARN": "arn:aws:sns:us-east-1:303555290462:bebco-staging-textract-results"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "0f48c8b0-eebe-447b-a63d-e7f45fd7611b",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:82d9ed4427e5b65dd5ccb05b83e6c85772032dd44913231bd8fafeacba7aae8a"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-borrower-staging-process-document-ocr"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-borrower-staging-process-document-ocr-d6e04908-6ba7-4c56-937b-0697f93ed9f5?versionId=ZDibTBxRWWQTUAT_GicaIZFkDl3W8rgR&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQDA3GzerHXHUhNCRU%2BxLe5dUa66uOygcLphQbciQGcnDgIgIhYtjEvhbBAhxwsco2BD97oCZzg7NNU0dWBE%2Fbd2WU4qiwIIdxAEGgw0NzkyMzMwMjUzNzkiDPHaW6gyjt%2By5%2F7avCroAX2HYZGaoL%2FC4Kp0SXp101cw6QWZU8%2BpX6iSHi4pvpN0SA5rhknC4oMEw7xEOQgji0Zx9STuSP0ysFn6FnDkDVjbolCA0A0gtcr0hyyddERU7YAmcAsDepCnXYVFRr3TY8ydDraEDXcjo91jG23Rty5wP0Uoy%2Fxn9Izk%2FYzK6LBFW3O1zOE8%2BjPztB6Sfa3lK%2BBJh9hwQtBSrOvWxut%2FNAA5AuZPRowD%2FLFdwRXnkJydKlWmd28LhROyMEyRkQG7zqkRnutdaYSzmH7Y56Zg6%2FNxWSgMp0C9uYV8fdxgclGwsptRe0GgnWMw8rPzxwY6jQG%2BKUfyELCdzmQ1SrnEECJ0hA%2FDVjtTQ8jgWJw0pAtSXOL2T8m02rNcTs61EZnjiNIqr8SCJJNkQcHu%2Bn8TadiPZttVjKnnJzJN2%2BasYEF%2BFP48exq9qY9ebTRY2W36AWFc2ZxImFFhLHc9OQsFuoxulJc3D0xMpyG%2FvfgBkzRH10OL7Kt3hn1SuSqzX9o%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210440Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVR3UIMTAEZ%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=96a40a606f167b91bc5f1e1b77e07339aaecc8c3251331f18266ae3acd5b8493"
+    }
+}

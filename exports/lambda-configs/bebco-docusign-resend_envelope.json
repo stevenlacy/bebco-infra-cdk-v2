@@ -1,0 +1,57 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-docusign-resend_envelope",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-docusign-resend_envelope",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-docusign-lambda-role",
+        "Handler": "app.handler",
+        "CodeSize": 15659826,
+        "Description": "",
+        "Timeout": 30,
+        "MemorySize": 512,
+        "LastModified": "2025-09-09T20:02:40.000+0000",
+        "CodeSha256": "L8U3IJXKMs6ruNTPrn53LPWQJKkNpuESSGudSm2e2F0=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "SHAREPOINT_SECRET_NAME": "SharePoint/Prod",
+                "DOCUSIGN_SECRET_NAME": "DocuSign/Prod",
+                "DYNAMODB_DOCUSIGN_REQUESTS_TABLE": "DocusignRequests"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "19477ae8-575b-4d8e-b5cb-97d15f614cc7",
+        "Layers": [
+            {
+                "Arn": "arn:aws:lambda:us-east-1:303555290462:layer:bebco-docusign-layer:1",
+                "CodeSize": 34264494
+            }
+        ],
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:37f2a22b6df6b3d6c4d8ad1cbfd84eb865b6c4e810c097e722b65a41742c7d19"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-docusign-resend_envelope"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-docusign-resend_envelope-33c0b8f4-2d85-4a9b-a31d-b781ff1004f5?versionId=SZ2Km2_Vi06dh55S7TqckPZgJjNX2rsH&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCeDLKT%2B7%2FdBeNy5Acs2S4CJtB%2BNW7pH%2BCtF7AGSG5kmwIgaQVZdU6DEhkqDzM8tqSJEHEXdwzKPY0X6ewiTsex6ToqiwIIeBAEGgw0NzkyMzMwMjUzNzkiDEKEDQNq4ayBRGXPxyroAS5%2B4F%2BTnePHHkX1VnZF31eXQGzpRAYAczPqrth4lbJ7%2F0RGvCutux0sr%2BnJ68iqUuhGTK%2B2Xw2Y3OLtNzVzkgJbp3B0fBO2F2aGbRbxHG%2B%2FquNvT24P%2FTNWYP%2BaK6NjfHU9ocN4hratpSSGTMyjWbMtxdTPRjoFwrAqV2NxiTjuZrG5TTNYROiF0chDyfQEyt45HE4WEPK%2B%2BZI903khSO86eKs%2Fa2EgFcB%2BP2iN3xmIAEKyQfwususmhlM9ySMgMHvMjQU40dmE4qECAjpiEjMvJNPmtlC%2FZ%2BDGWE5DDN1Bg7fAqJYjXLcwttXzxwY6jQFs25R7ZgNlJYT7YVmb8KNsHocUyxlQcneH42Npd3nsOXY3N6E0qRj5wwQIbd36VILiOfEsod2zHp2OzhuvXkNRqBE07SXQjb1Tj290nOPYa0Nmotl%2B%2FRlpLbFbDCmHbvkZsf6jFMNZyZ1ybd9QN4v817x6P7QD92Pfk6WKlo2TQ3Xiyirk4eG6OBu6SeQ%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210542Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVRZ3PTOLBR%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=9b94d6db578d97b2c2d58465e960c52e3176f696bf0788b95672b0f77e3e11d6"
+    }
+}

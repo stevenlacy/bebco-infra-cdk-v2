@@ -1,0 +1,68 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-staging-plaid-sync-manual",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-plaid-sync-manual",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-staging-plaid-sync-manual-lambda-role",
+        "Handler": "plaid_sync_manual.lambda_handler",
+        "CodeSize": 8070222,
+        "Description": "",
+        "Timeout": 60,
+        "MemorySize": 512,
+        "LastModified": "2025-08-25T23:47:23.000+0000",
+        "CodeSha256": "r4ch4iy9nH0IoneEjNfnTGwsIqeXlwSdqbO2SVqwJkI=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "PLAID_CLIENT_ID": "6244b486e15ce5001ab88980",
+                "WEBHOOK_BASE_URL": "https://api.bebco.com",
+                "TRANSACTIONS_SYNC_QUEUE_URL": "https://sqs.us-east-1.amazonaws.com/303555290462/bebco-staging-plaid-transactions-sync",
+                "SYNC_WORKER_FUNCTION_NAME": "bebco-staging-plaid-transactions-sync",
+                "TRANSACTIONS_TABLE": "bebco-borrower-staging-transactions",
+                "PLAID_WEBHOOK_SECRET": "your_webhook_secret_here",
+                "USER_POOL_ID": "us-east-1_Uba3sK7HT",
+                "PLAID_SECRET": "05cfb8e62192096f341a5216d82dd6",
+                "PLAID_ENVIRONMENT": "production",
+                "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+                "FILES_TABLE": "bebco-borrower-staging-files",
+                "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+                "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+                "ACCOUNTS_TABLE": "bebco-borrower-staging-accounts",
+                "PLAID_ITEMS_TABLE": "bebco-borrower-staging-plaid-items"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "faa19c1b-dc98-4cc7-a9a9-22992b729080",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:af29e10439856e364100c5dec1ce9c55d44feb2772258f7a7e480a95474aa18f"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-staging-plaid-sync-manual"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-staging-plaid-sync-manual-9a6eac90-303d-4961-8e35-846e3094ee68?versionId=SEgZ38B6sthVMirTEFZUqtkkl3uyjzwT&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEL3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQD6fwPo%2FDhDXU6H7q8vJ597pPGcHPhTXsxZ%2B%2Fm2VJdJvAIhANUpHxvymyJq3C445cbzZSYQJcb8NHG51zTnHiXZgh5tKosCCHYQBBoMNDc5MjMzMDI1Mzc5IgzjCWFVP9C7ddCW15Uq6AFAC7qs5vID7rDYSZhB60%2B2aC4DeXeeZ4pj3Lfa8mYjsrLcEgks5u6sb6cvRPhVtDxKPtiqbjlHDneswauG4CPM%2Boa%2BudFoFN79oYLy9pP39tg3G5EE9FmePue48yxscUgyG75pKvOlo0GzOdbHVOGbiqm9Tod%2ByAOM8hZaZ15U8pBxoB2yRsjfgkgmfwO%2BUbZeI8Obg0qi2c365oPVKHkbtK89bfAvcYvCfHBqbOlTV8HW8vOQv6MJmcA5YL8%2Ff%2Bf6jKn1BFcHQJv%2FWxtrkuA92RAZk93qS9eP1dKart8oz1SgscdgtX0IMOuG88cGOowBncO6m%2FLoB3haa8flUHJsXy40ZhmDmN8VuqYZtd7Rso4WGDEvlyCizNjbpSfUH3kzIWI4fWZgNExtd7yvjHzTGDfS3heSEVztxndU4f76AVhY5u8CG8Pym5pLQt%2F1eiApAVldBuhNEiElpUTT6NNjR3zgnfCTY6zwk0rn5nTv%2BReyYXBZUlTT%2Ft8wvUc%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210448Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVRTGAQSNSJ%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=49d86a2efaedca12b9aa19cf663df218420e1af8f3a54981cc7bf60ca404d97d"
+    },
+    "Tags": {
+        "Environment": "staging",
+        "Purpose": "plaid-integration",
+        "Application": "bebco-borrower-portal"
+    }
+}

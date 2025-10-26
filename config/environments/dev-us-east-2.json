@@ -1,0 +1,36 @@
+{
+  "environment": "dev",
+  "region": "us-east-2",
+  "account": "303555290462",
+  "naming": {
+    "prefix": "bebco",
+    "environmentSuffix": "dev"
+  },
+  "cognito": {
+    "userPoolName": "bebco-borrower-portal-dev",
+    "passwordPolicy": {
+      "minLength": 8,
+      "requireUppercase": true,
+      "requireLowercase": true,
+      "requireNumbers": true,
+      "requireSymbols": true
+    }
+  },
+  "domains": {
+    "api": "api.dev.bebco.com",
+    "graphql": "graphql.dev.bebco.com"
+  },
+  "integrations": {
+    "plaidClientId": "6244b486e15ce5001ab88980",
+    "plaidEnvironment": "production",
+    "docusignSecretName": "DocuSign/Prod",
+    "sharepointSecretName": "SharePoint/Prod",
+    "sendgridSecretName": "SendGrid/Prod"
+  },
+  "lambdaDefaults": {
+    "runtime": "python3.11",
+    "timeout": 30,
+    "memorySize": 512
+  }
+}
+

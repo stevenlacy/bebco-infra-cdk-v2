@@ -1,0 +1,58 @@
+{
+  "TableName": "bebco-borrower-lines-of-credit-dev",
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "company_id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "loc_number",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "status",
+      "AttributeType": "S"
+    }
+  ],
+  "KeySchema": [
+    {
+      "AttributeName": "id",
+      "KeyType": "HASH"
+    }
+  ],
+  "BillingMode": "PAY_PER_REQUEST",
+  "GlobalSecondaryIndexes": [
+    {
+      "IndexName": "LOCNumberIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "loc_number",
+          "KeyType": "HASH"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    },
+    {
+      "IndexName": "CompanyIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "company_id",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "status",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    }
+  ]
+}

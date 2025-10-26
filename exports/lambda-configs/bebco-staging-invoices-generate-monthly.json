@@ -1,0 +1,53 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-staging-invoices-generate-monthly",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-invoices-generate-monthly",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+        "Handler": "invoices.generate_monthly_invoice.lambda_handler",
+        "CodeSize": 25136867,
+        "Description": "",
+        "Timeout": 210,
+        "MemorySize": 4096,
+        "LastModified": "2025-09-17T08:33:46.000+0000",
+        "CodeSha256": "Z4bKGZRaDTUfNHYcthmMpA0Pe22tXvX1rBlxQzTytRI=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "LEDGER_TABLE": "bebco-borrower-staging-ledger-entries",
+                "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+                "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+                "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+                "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "a7f08fc5-f782-40ab-b9d1-0c922ebd7255",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:37f2a22b6df6b3d6c4d8ad1cbfd84eb865b6c4e810c097e722b65a41742c7d19"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-staging-invoices-generate-monthly"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-staging-invoices-generate-monthly-81a4e951-b021-4fba-9df6-e005a9271698?versionId=gyVE6f0QCsW1XVCaoZPa.Dr7hpH949ll&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQDzxUGTUKqphQ2yL3hV3e%2Fusqk%2Be8CGKemXdjnLvlYarQIhALMI%2Fz%2BU9U3tm9J1MU8bVz6FFEaNH7bWzCw9%2FWmM5Rc8KosCCHcQBBoMNDc5MjMzMDI1Mzc5Igw2tSwWPi%2FubRAd6ycq6AG%2Bhexe5iCaYTgEiZuAC7WtFZT0Bczub3cQvtYHqVCY3ZdfPX599%2Bjh%2BzPRElFPvHq6L6Zo2p4jKJGoavxy6VjEma9FRAHw2lQLccWqtuGGfpHboGtZpZdCDq7pAje0FUzHE9F9jeX8a2ghMB0dwa3y0UmQCVJTAVpWdplz3uvUzY%2BC462jO0lkQP%2Fzax1D%2B7veWzwgSrIqAUcILZWigTytx3kADwKRfH7UQ9Dvv001ANqn8xgvvYakpgXioshMxicfzirwiXzpYMVGzxWr8P88cV09ZY2sLmf3z8z6gbjh0tgUXkduRxiiMJ%2B088cGOowB%2FPl7iw5ocOaXSpo8I%2BL5ZWsl4vcoxQP23Q9M07kPMxRld9iHgRvjAV2s0goJHl9abhSb6qnDLVZmUEUk2K%2BgZRg59XxUxlxKlaGejayEbl8AgeVzRXbkGCxK9syumRKSO9an9OM%2F1ay8Z3StW%2FTya4UyjUNwzbvPC5yj82W0pYRNDe7hNrjxOnZSodU%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210624Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVRRGAFUQ3P%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=69e924c4401c7714cb1ec782cf687062f49327bd2ef51d5cc98ccf9b1a5ad8b6"
+    }
+}

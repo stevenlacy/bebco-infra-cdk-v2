@@ -1,0 +1,68 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-staging-plaid-link-token-create",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-plaid-link-token-create",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-staging-plaid-link-token-create-lambda-role",
+        "Handler": "plaid_link_token_create.lambda_handler",
+        "CodeSize": 57520317,
+        "Description": "",
+        "Timeout": 60,
+        "MemorySize": 512,
+        "LastModified": "2025-09-04T05:53:02.000+0000",
+        "CodeSha256": "JtRWckIYy7CiqCEYaJbQQ5iiEVhv1peaYKsCFjzZZM0=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "PLAID_CLIENT_ID": "6244b486e15ce5001ab88980",
+                "WEBHOOK_BASE_URL": "https://24o2865t5h.execute-api.us-east-1.amazonaws.com/staging/plaid/webhook",
+                "TRANSACTIONS_SYNC_QUEUE_URL": "https://sqs.us-east-1.amazonaws.com/303555290462/bebco-staging-plaid-transactions-sync",
+                "SYNC_WORKER_FUNCTION_NAME": "bebco-staging-plaid-transactions-sync",
+                "TRANSACTIONS_TABLE": "bebco-borrower-staging-transactions",
+                "PLAID_WEBHOOK_SECRET": "your_webhook_secret_here",
+                "USER_POOL_ID": "us-east-1_Uba3sK7HT",
+                "PLAID_SECRET": "05cfb8e62192096f341a5216d82dd6",
+                "PLAID_ENVIRONMENT": "production",
+                "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+                "FILES_TABLE": "bebco-borrower-staging-files",
+                "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+                "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+                "ACCOUNTS_TABLE": "bebco-borrower-staging-accounts",
+                "PLAID_ITEMS_TABLE": "bebco-borrower-staging-plaid-items"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "679e40ee-07cf-4317-be7b-79e0c06132d4",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:37f2a22b6df6b3d6c4d8ad1cbfd84eb865b6c4e810c097e722b65a41742c7d19"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-staging-plaid-link-token-create"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-staging-plaid-link-token-create-b4979e54-a7be-4633-9b06-cc30624e30a1?versionId=xbfC7y_lXKijxXOea33p88EyDWv.u3Ir&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEL3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQCnqWk96kNVCG0HWQHmkTnURF1tueddGgew2CuXjAjsCQIhAOguvef1eFxbKDA4RcSriYukN0SYi7JeRfGanwANHShYKosCCHYQBBoMNDc5MjMzMDI1Mzc5IgzfssDkbw0fD0R274cq6AHKOp1GFQeKoLxDx92y2XDL%2FoGSAi51SvlV1cImbgOG3gG%2F1BacAagm0EggJdGoEgaFrwEoSM2ZeA3%2BsZqutI3XWobNVmM9BLR89kCpJDaKIDYtNRv%2BCn%2Fx2GuBYZsi%2BHEyxWyymd00GyH69hEiUsk9yyyDbkQ7b7PZB6KryJ9g4cjGEsJCflcggrcvdQkuGdyVBsmlKeRFB1udwVj%2FiQU%2BxSDljfJrc0fekyFDjMjqhxlfeSstIRvbyrVwVh3d7xHtoFLkBq9mK2fvuKuVAL2QxcPbE4ggKfnVLO4DkdIiA6f512JFWHBGMNyE88cGOowBjhf44ecRoQsCiyyWG%2FKIHgaXZv9SbnvDYQIym8VUJXBdZX79E1MoZAGAvqEHYJnPpf7NJdC%2FOq%2Fes00o7gl1qwBRN4loAj7OdM8stpooX1zNDwkHOQTfXZkLY5mccyLu0lDrH1xACD%2BKmlCwk5GRQEEo8ngyVgN8YHCcK2tbd5yziq6DIC7hNpxOBDs%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210549Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVRVJQYYS3Z%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=6777daf74860adc1de3ace80f8014bd0998fe9a2cc48fabed6ed615c7596008a"
+    },
+    "Tags": {
+        "Environment": "staging",
+        "Purpose": "plaid-integration",
+        "Application": "bebco-borrower-portal"
+    }
+}

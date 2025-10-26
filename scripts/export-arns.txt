@@ -1,0 +1,19 @@
+arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-accounts/export/01761491210219-9467cc23|bebco-borrower-staging-accounts
+arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-ach-batches/export/01761491211178-07030c6a|bebco-borrower-staging-ach-batches
+arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-annual-reportings/export/01761491212176-15a5b336|bebco-borrower-staging-annual-reportings
+arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-approvals/export/01761491213087-1d7702e2|bebco-borrower-staging-approvals
+arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-banks/export/01761491214067-be69e5dd|bebco-borrower-staging-banks
+✓ arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-companies/export/01761491290254-220602c8|bebco-borrower-staging-companies
+✓ arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-files/export/01761491303789-1f133734|bebco-borrower-staging-files
+✓ arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-ledger-entries/export/01761491305805-a8f5cf3c|bebco-borrower-staging-ledger-entries
+✓ arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-lines-of-credit/export/01761491307787-350a3bb8|bebco-borrower-staging-lines-of-credit
+✓ arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-loan-loc/export/01761491309798-b330d767|bebco-borrower-staging-loan-loc
+✓ arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-loans/export/01761491311802-369ba09d|bebco-borrower-staging-loans
+✓ arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-monthly-reportings/export/01761491317766-c121345a|bebco-borrower-staging-monthly-reportings
+✓ arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-notifications/export/01761491319736-c358545c|bebco-borrower-staging-notifications
+✓ arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-otp-codes/export/01761491321717-8a08e88b|bebco-borrower-staging-otp-codes
+✓ arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-payments/export/01761491323726-3c2b7b3b|bebco-borrower-staging-payments
+✓ arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-plaid-items/export/01761491325696-528c4c5d|bebco-borrower-staging-plaid-items
+✓ arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-statements/export/01761491329515-ec0ea626|bebco-borrower-staging-statements
+✓ arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-transactions/export/01761491331454-a57b2b2f|bebco-borrower-staging-transactions
+✓ arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-users/export/01761491333424-430e4e94|bebco-borrower-staging-users

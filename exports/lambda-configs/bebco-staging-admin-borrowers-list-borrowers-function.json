@@ -1,0 +1,53 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-staging-admin-borrowers-list-borrowers-function",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-admin-borrowers-list-borrowers-function",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-staging-admin-borrowers-role",
+        "Handler": "list_borrowers.lambda_handler",
+        "CodeSize": 15027871,
+        "Description": "",
+        "Timeout": 300,
+        "MemorySize": 4096,
+        "LastModified": "2025-10-10T21:39:13.000+0000",
+        "CodeSha256": "DI5sCISjL+3FpLoYYc+RylrcJZ10wf2v70ggz2QzYhk=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "LOANS_TABLE": "bebco-borrower-staging-loans",
+                "BANKS_TABLE": "bebco-borrower-staging-banks",
+                "COMPANIES_TABLE": "bebco-borrower-staging-companies",
+                "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+                "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "09a0369d-1e65-4093-a8e4-0da7a3976d2b",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:82d9ed4427e5b65dd5ccb05b83e6c85772032dd44913231bd8fafeacba7aae8a"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-staging-admin-borrowers-list-borrowers-function"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-staging-admin-borrowers-list-borrowers-function-6e97142d-0d26-4633-a962-7986bf38b781?versionId=U.sglOz.WyJKfyleib.S3coInF.VkIMU&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEL3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIAxxGOph5ThAH%2FFMCZWAmFFkp9%2FEqmBcbN%2FiQWo3sseJAiEAjp22i6WDDKzQbp%2BMeIb1Kb6Bkb4K4eCfqqpkGGJfjzoqiwIIdhAEGgw0NzkyMzMwMjUzNzkiDCQuxLGQ9%2FrTEuwfGCroAZWLoKKDqPmyOOzztK02pqkxU0Jt6BiZzBDGDitESDiZ8uowczEuDZ63ZCtndAwoihSi9T8p5CAKWJ64%2BCkgT2uKTuIvcCc4iZDjjPLHxF9ByFM8DkaYXIYdk71m5MUxQP63nnS19bAGi8j9Irf%2B2ccf4z5eITBJVNSu%2FDrJIVWRccMPae%2BT%2FQT5A92qGgm%2FPbGHEjf%2BUqLheWpgIUEBESDd3RiUpelxpJJ%2Be2zq0mniSgP0U28oAulJkeEnBoyBhqT83rivi1zHPexGNfVBgoUagIhvxx9bQG%2FHtHDEzdiaUgSYtKYDnNkw4ITzxwY6jQFQ%2BbkuDlhqfMVOzhMVERZ5e0EOwlktr%2B5IbeEQA7i8ffIydfSQs2wKN5Zi2%2Fy5QQaBxgTDJ0BkMHwQoIFT3%2B8lMjr7axd4%2B3UxgtqvU3VgmT%2B%2FC%2FyKGlWeiedBww%2BTk%2FsNVJ5FoEpoVGdWOTMBkZWlg8pwbxo%2FBhTolrzvwr75YoriCZ%2BKGgEdeBJDfWU%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210642Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVRV4HVNJOO%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=b144aedb8188d517c2f60ff73bf2692a6ac494a8bc6ee56f0694ad3aa5a7c52f"
+    }
+}

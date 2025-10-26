@@ -1,0 +1,49 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-staging-admin-borrowers-create-borrower-function",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-admin-borrowers-create-borrower-function",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-staging-admin-borrowers-role",
+        "Handler": "create_borrower.lambda_handler",
+        "CodeSize": 6592743,
+        "Description": "",
+        "Timeout": 30,
+        "MemorySize": 256,
+        "LastModified": "2025-08-20T17:59:32.000+0000",
+        "CodeSha256": "P6pK3/WqyGQfzhh7EkOxDRWSmLySqNtNUhPEaAtjv/s=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "COMPANIES_TABLE": "bebco-borrower-staging-companies"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "5927892e-daeb-4f17-8686-e012f76a92e8",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:af29e10439856e364100c5dec1ce9c55d44feb2772258f7a7e480a95474aa18f"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-staging-admin-borrowers-create-borrower-function"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-staging-admin-borrowers-create-borrower-function-fc11f70c-7929-468c-b8a1-fe5d7119dc3e?versionId=3FAj.mmmfat_Jh0hG3h3_CyRms2yyq2b&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEL3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQD6fwPo%2FDhDXU6H7q8vJ597pPGcHPhTXsxZ%2B%2Fm2VJdJvAIhANUpHxvymyJq3C445cbzZSYQJcb8NHG51zTnHiXZgh5tKosCCHYQBBoMNDc5MjMzMDI1Mzc5IgzjCWFVP9C7ddCW15Uq6AFAC7qs5vID7rDYSZhB60%2B2aC4DeXeeZ4pj3Lfa8mYjsrLcEgks5u6sb6cvRPhVtDxKPtiqbjlHDneswauG4CPM%2Boa%2BudFoFN79oYLy9pP39tg3G5EE9FmePue48yxscUgyG75pKvOlo0GzOdbHVOGbiqm9Tod%2ByAOM8hZaZ15U8pBxoB2yRsjfgkgmfwO%2BUbZeI8Obg0qi2c365oPVKHkbtK89bfAvcYvCfHBqbOlTV8HW8vOQv6MJmcA5YL8%2Ff%2Bf6jKn1BFcHQJv%2FWxtrkuA92RAZk93qS9eP1dKart8oz1SgscdgtX0IMOuG88cGOowBncO6m%2FLoB3haa8flUHJsXy40ZhmDmN8VuqYZtd7Rso4WGDEvlyCizNjbpSfUH3kzIWI4fWZgNExtd7yvjHzTGDfS3heSEVztxndU4f76AVhY5u8CG8Pym5pLQt%2F1eiApAVldBuhNEiElpUTT6NNjR3zgnfCTY6zwk0rn5nTv%2BReyYXBZUlTT%2Ft8wvUc%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210606Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVRTGAQSNSJ%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=e13cca75ab435390c9bc35db878828787683db3f2245f00736b03d1b6a74a7aa"
+    }
+}

@@ -1,0 +1,70 @@
+{
+  "TableName": "bebco-borrower-statements-dev",
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "bank_id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "company_id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "loan_no",
+      "AttributeType": "N"
+    }
+  ],
+  "KeySchema": [
+    {
+      "AttributeName": "id",
+      "KeyType": "HASH"
+    }
+  ],
+  "BillingMode": "PAY_PER_REQUEST",
+  "GlobalSecondaryIndexes": [
+    {
+      "IndexName": "CompanyIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "company_id",
+          "KeyType": "HASH"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    },
+    {
+      "IndexName": "LoanNumberIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "loan_no",
+          "KeyType": "HASH"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    },
+    {
+      "IndexName": "BankCompanyIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "bank_id",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "company_id",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    }
+  ]
+}

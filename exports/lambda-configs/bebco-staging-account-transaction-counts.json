@@ -1,0 +1,49 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-staging-account-transaction-counts",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-account-transaction-counts",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-staging-account-transaction-counts-role",
+        "Handler": "app.lambda_handler",
+        "CodeSize": 2339,
+        "Description": "",
+        "Timeout": 30,
+        "MemorySize": 10240,
+        "LastModified": "2025-10-16T21:18:40.000+0000",
+        "CodeSha256": "OQlSGyjwuGmPC6lOfPpFY3XxjHCXdcZNIr4NRKQE5fo=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "TRANSACTIONS_TABLE": "bebco-borrower-staging-transactions"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "a3bea7bc-2ff1-45c0-948d-89d09e9e5a7d",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 2080
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:135242d7c34858d81f7e9d62d65e5164b1d6afc6d6d3a1289380dbb6d2cb48dd"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-staging-account-transaction-counts"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-staging-account-transaction-counts-ea95ec23-7375-41d3-9f31-fb848434af70?versionId=DuoCl8gG1VXY3gbNIwJqZXsnm1iJgiBG&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIHSiVYz7EaHRnBJD8zhFl9fV8ajN2Nq7L9Kt3OYsKcKkAiEA%2FItieziGBuBQ7Ne6wOhM0sCSmRP1TMiYADeWHoocKdgqiwIIeBAEGgw0NzkyMzMwMjUzNzkiDKQjWE00nPLKITHUrCroAYMpCUxZd1dbLQTmenfAi%2B9aVFT5Xu4pSZyD%2BRCZC68vWKV0VGvPa71bDBcusJqhkkHJknMLNn6jD7di%2FRIVfQUKSPaFwRHCAdu%2BjQyDn3QfR45Q5fUWEHblTEfOeclccASa0IU3SMMtEhQ5cIWeS%2FJLB0dj02U82QJl0EYuEGzKFpc%2Bq%2Fu48P4AOVVGErxsPLasOkR%2BHErFgPI87J1hOob3gxS8QRMelLwY4i%2B764SxWlDe7IVwmi2xtkjP9Ny5sLs9%2FwunTtD1KeNsFeeNkIJmiH7IHTqwxOGZ11tEeLgigcAUcbwmOQgwhdTzxwY6jQF7jM7EFvOSdALmWgPQVfsQ3mRTYGWKDJaUMIcCWbb2dIshnSU8g%2FHdr%2BJ%2Bo2naNWUZDTBvzfF9MijX%2FDVnRHGYDK0qSesnhdgciyR5%2FJAVPVhzp2hJfF4DxlGn%2FzMdZPdCTqQvD3ehDGuERzL%2FRkn9dPI%2BcGe%2B%2BpgJrweXNiZlUnUU3h9b4zhi4GcCs4Y%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210436Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVR3LL4KWCH%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=ed337c59971501c35da8163018082888e0baefd4d141ff5cadc040e40589e4a5"
+    }
+}

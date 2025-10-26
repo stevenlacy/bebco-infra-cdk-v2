@@ -1,0 +1,34 @@
+{
+    "graphqlApi": {
+        "name": "bebco-statements-events",
+        "apiId": "23g2klwmmbgmbhaerlmy2eww4e",
+        "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+        "userPoolConfig": {
+            "userPoolId": "us-east-1_Uba3sK7HT",
+            "awsRegion": "us-east-1",
+            "defaultAction": "ALLOW"
+        },
+        "arn": "arn:aws:appsync:us-east-1:303555290462:apis/23g2klwmmbgmbhaerlmy2eww4e",
+        "uris": {
+            "REALTIME": "wss://bvbezblvgfdkdko7oque5lgg7e.appsync-realtime-api.us-east-1.amazonaws.com/graphql",
+            "GRAPHQL": "https://bvbezblvgfdkdko7oque5lgg7e.appsync-api.us-east-1.amazonaws.com/graphql"
+        },
+        "tags": {},
+        "additionalAuthenticationProviders": [
+            {
+                "authenticationType": "AWS_IAM"
+            }
+        ],
+        "xrayEnabled": false,
+        "dns": {
+            "REALTIME": "bvbezblvgfdkdko7oque5lgg7e.appsync-realtime-api.us-east-1.amazonaws.com",
+            "GRAPHQL": "bvbezblvgfdkdko7oque5lgg7e.appsync-api.us-east-1.amazonaws.com"
+        },
+        "visibility": "GLOBAL",
+        "apiType": "GRAPHQL",
+        "owner": "303555290462",
+        "introspectionConfig": "ENABLED",
+        "queryDepthLimit": 0,
+        "resolverCountLimit": 0
+    }
+}

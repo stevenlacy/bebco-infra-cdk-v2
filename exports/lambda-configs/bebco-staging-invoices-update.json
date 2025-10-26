@@ -1,0 +1,53 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-staging-invoices-update",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-invoices-update",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+        "Handler": "lambda_function.lambda_handler",
+        "CodeSize": 25099532,
+        "Description": "",
+        "Timeout": 30,
+        "MemorySize": 256,
+        "LastModified": "2025-08-14T16:47:59.588+0000",
+        "CodeSha256": "yVZek3kDwkoIacdwrNTuLwUC5Jjbq6eF35pAQ8joHvc=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "LEDGER_TABLE": "bebco-borrower-staging-ledger-entries",
+                "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+                "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+                "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+                "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "ef3c9942-5767-4833-8149-39b5892e15fe",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:af29e10439856e364100c5dec1ce9c55d44feb2772258f7a7e480a95474aa18f"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-staging-invoices-update"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-staging-invoices-update-5427a370-a78d-48ef-8d36-f344b0f9cf5e?versionId=lpZg2K5eqVnPqxUcrUm8gbS1ZB7bmAvJ&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIGfvtniPbEZc2gDe0e4PklHcozfHo%2FINBOZeLOMLlV0rAiEA0fyRivQ7ieXm1EDrQGT7F1VR0CRplTF%2Fqpx%2FnbVCZT0qiwIIdxAEGgw0NzkyMzMwMjUzNzkiDJpbkBveTfiyrIEQmyroAYTC8pojdq4G0CQHOOt6nJSrhXlhe5n0E5iDqdJ3LR25v%2B3be1aLJ6cVwlVZpLeLVUZD9Xzcdjz0DlN1fe1EQRJ3Kd38XcFgUA7HN0vKXQ9O0OJQruYF%2BvzJWWoB7K3a%2FrL1Vzr6XEKHQJyXz4AJN1q9e%2BP6BOC%2F6Es9bZHxZ7MHQ579%2BDffIQlSVxh68P5YvQtmjwjVLZFVIkO%2F%2BY0JRe%2FwVwAlCtVtgoF6s1YU9xaFl67%2FBCqBBmQNAjFdASQIOea%2FgsEEd2Px7L82IQohPKQksHWii%2BCOgbVVqlI5jjs8230v2nwtnO0wjbTzxwY6jQHRqYuscLBU3s9YFJBZRDkuR9duRT%2FG2BfeE1ZdVRXrprGrphUDFTq51iIotTDRyvPzyY9GwuKMPb6N3TvQvU1fCrx1CKNaDZxwjg%2BLzLKaOKkJUyJOSQ68ZgBcNFYZGs9IIFCi%2Ftuti1C0Fkpq9orkgWR15Oxt4xUtBvzdVSnchItziUHG%2FqB%2F0fGn9bQ%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210552Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVRQOOLE5KN%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=24f028875b061f448039768efae00b19b5c2d4d84525daac860cc3599c8c45d8"
+    }
+}

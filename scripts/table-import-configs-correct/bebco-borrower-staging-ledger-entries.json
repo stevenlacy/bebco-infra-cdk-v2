@@ -1,0 +1,102 @@
+{
+  "TableName": "bebco-borrower-ledger-entries-dev",
+  "KeySchema": [
+    {
+      "AttributeName": "id",
+      "KeyType": "HASH"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "case_id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "company_id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "line_of_credit_id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "posted_at",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "type",
+      "AttributeType": "S"
+    }
+  ],
+  "BillingMode": "PAY_PER_REQUEST",
+  "GlobalSecondaryIndexes": [
+    {
+      "IndexName": "LOCIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "line_of_credit_id",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "posted_at",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    },
+    {
+      "IndexName": "TypeIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "type",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "posted_at",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    },
+    {
+      "IndexName": "CaseIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "case_id",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "posted_at",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    },
+    {
+      "IndexName": "CompanyTimeIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "company_id",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "posted_at",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    }
+  ]
+}

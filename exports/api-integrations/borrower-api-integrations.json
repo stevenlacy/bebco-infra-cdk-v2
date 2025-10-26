@@ -1,0 +1,520 @@
+[
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/monthly-reports",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-monthly-reports-list",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-monthly-reports-list/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/monthly-reports",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-monthly-reports-create",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-monthly-reports-create/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/users/{userId}",
+    "method": "DELETE",
+    "lambdaFunction": "bebco-staging-users-delete",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-users-delete/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/users/{userId}",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-users-get",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-users-get/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/users/{userId}",
+    "method": "PUT",
+    "lambdaFunction": "bebco-staging-users-update",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-users-update/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/invoices/{invoiceId}",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-invoices-get",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-invoices-get/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/invoices/{invoiceId}",
+    "method": "PUT",
+    "lambdaFunction": "bebco-staging-invoices-update",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-invoices-update/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/auth/validate-password",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-auth-validate-password",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-auth-validate-password/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/auth/check-user-status",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-auth-check-user-status",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-auth-check-user-status/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/send-2fa-code",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-users-send2fa",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-users-send2fa/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/generate-account-statements",
+    "method": "POST",
+    "lambdaFunction": "bebcostaging-generate-plaid-monthly-account-statement",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebcostaging-generate-plaid-monthly-account-statement/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/accounts",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-accounts-list",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-accounts-list/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/accounts",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-accounts-create",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-accounts-create/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/analyze-documents",
+    "method": "OPTIONS",
+    "lambdaFunction": "bebco-staging-analyze-documents",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-analyze-documents/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/analyze-documents",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-analyze-documents",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-analyze-documents/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/draws",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-draws-list",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-draws-list/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/draws",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-draws-create",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-draws-create/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/accounts/{accountId}/statements",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-accounts-upload-statement",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-accounts-upload-statement/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/ach-consent",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-payments-ach-consent-create",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-payments-ach-consent-create/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/ach-consent",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-payments-ach-consent-create",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-payments-ach-consent-create/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/statements/generate",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-generate-loan-statements",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-generate-loan-statements/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/cases/{caseId}/close",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-cases-close",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-cases-close/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/docusign/send-envelope",
+    "method": "POST",
+    "lambdaFunction": "bebco-docusign-send_envelope",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-docusign-send_envelope/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/accounts/{accountId}",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-accounts-get",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-accounts-get/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/monthly-reports/{reportId}/submit",
+    "method": "PUT",
+    "lambdaFunction": "bebco-staging-monthly-reports-submit",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-monthly-reports-submit/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/plaid/link-token",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-plaid-link-token-create",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-plaid-link-token-create/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/cases/{caseId}/expenses/{expenseId}",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-expenses-get",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-expenses-get/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/cases/{caseId}/expenses/{expenseId}",
+    "method": "PUT",
+    "lambdaFunction": "bebco-staging-expenses-update",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-expenses-update/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/annual-reports",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-annual-reports-list-annual-reports",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-annual-reports-list-annual-reports/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/annual-reports",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-annual-reports-create-annual-report",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-annual-reports-create-annual-report/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/draws/{drawId}/submit",
+    "method": "PUT",
+    "lambdaFunction": "bebco-staging-draws-submit",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-draws-submit/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/invoices",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-invoices-list",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-invoices-list/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/invoices",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-invoices-create",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-invoices-create/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/change-password",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-users-password",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-users-password/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/verify-2fa-code",
+    "method": "OPTIONS",
+    "lambdaFunction": "bebco-staging-users-verify2fa",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-users-verify2fa/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/verify-2fa-code",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-users-verify2fa",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-users-verify2fa/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/expenses/{expenseId}",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-expenses-get",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-expenses-get/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/expenses/{expenseId}",
+    "method": "PUT",
+    "lambdaFunction": "bebco-staging-expenses-update",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-expenses-update/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/payments",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-payments-list",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-payments-list/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/payments",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-payments-create",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-payments-create/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/invoices/generate-monthly",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-invoices-generate-monthly",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-invoices-generate-monthly/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/plaid/accounts",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-accounts-plaid-get-accounts",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-accounts-plaid-get-accounts/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/plaid/accounts",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-plaid-accounts-preview",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-plaid-accounts-preview/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/plaid/token-exchange",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-plaid-token-exchange",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-plaid-token-exchange/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/cases/{caseId}",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-cases-get",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-cases-get/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/cases/{caseId}",
+    "method": "PUT",
+    "lambdaFunction": "bebco-staging-cases-update",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-cases-update/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/auth/send-2fa",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-users-send2fa",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-users-send2fa/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/statements/financials",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-statements-financials",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-statements-financials/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/statements/financials",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-statements-financials",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-statements-financials/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/cases/{caseId}/expenses",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-expenses-list",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-expenses-list/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/cases/{caseId}/expenses",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-expenses-create-bulk",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-expenses-create-bulk/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/draws/{drawId}/approve",
+    "method": "PUT",
+    "lambdaFunction": "bebco-staging-draws-approve",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-draws-approve/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/cases/{caseId}/docket-verification",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-cases-docket-verification",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-cases-docket-verification/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/plaid/webhook",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-plaid-webhook-handler",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-plaid-webhook-handler/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/cases",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-cases-list",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-cases-list/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/cases",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-cases-create",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-cases-create/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/payments/{paymentId}",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-payments-get",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-payments-get/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/profile",
+    "method": "PUT",
+    "lambdaFunction": "bebco-staging-users-profile",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-users-profile/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/monthly-reports/sharepoint-upload",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-monthly-report-sharepoint-upload",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-monthly-report-sharepoint-upload/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/auth/verify-2fa",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-users-verify2fa",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-users-verify2fa/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/expenses",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-expenses-list",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-expenses-list/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/expenses",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-expenses-create-bulk",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-expenses-create-bulk/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/annual-reports/{reportId}",
+    "method": "DELETE",
+    "lambdaFunction": "bebco-staging-annual-reports-delete-annual-report",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-annual-reports-delete-annual-report/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/annual-reports/{reportId}",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-annual-reports-get-annual-report",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-annual-reports-get-annual-report/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/annual-reports/{reportId}",
+    "method": "PUT",
+    "lambdaFunction": "bebco-staging-annual-reports-update-annual-report",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-annual-reports-update-annual-report/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/users",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-users-list",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-users-list/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/users",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-users-create",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-users-create/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/auth/complete-setup",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-auth-complete-setup",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-auth-complete-setup/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/statements/{statementId}/url",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-statements-get-url",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-statements-get-url/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/draws/{drawId}",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-draws-get",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-draws-get/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/loan-summary",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-admin-borrowers-loan-summary-function",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-admin-borrowers-loan-summary-function/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/monthly-reports/{reportId}",
+    "method": "GET",
+    "lambdaFunction": "bebco-staging-monthly-reports-get",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-monthly-reports-get/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/banks/{bankId}/borrowers/{borrowerId}/monthly-reports/{reportId}",
+    "method": "PUT",
+    "lambdaFunction": "bebco-staging-monthly-reports-update",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-monthly-reports-update/invocations",
+    "integrationType": "AWS_PROXY"
+  },
+  {
+    "path": "/auth/refresh",
+    "method": "POST",
+    "lambdaFunction": "bebco-staging-auth-refresh-token",
+    "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-auth-refresh-token/invocations",
+    "integrationType": "AWS_PROXY"
+  }
+]

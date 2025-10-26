@@ -1,0 +1,59 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-staging-sharepoint-sync-portfolio",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-sharepoint-sync-portfolio",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-portfolio-sync-lambda-execution-role",
+        "Handler": "lambda_function.lambda_handler",
+        "CodeSize": 21372523,
+        "Description": "",
+        "Timeout": 900,
+        "MemorySize": 4096,
+        "LastModified": "2025-08-25T16:46:31.000+0000",
+        "CodeSha256": "f+iWrwOT3eiw2R3dhbY80ua6Qn8OUrPI6hpqtrMpd9U=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "SHAREPOINT_HOST": "netorgft3435832.sharepoint.com",
+                "S3_STAGING_BUCKET": "bebco-borrower-staging-documents",
+                "PORT_RECON_FILE_PATH": "Port Recon Data/Port Recon Data.xlsx",
+                "LOANS_TABLE": "bebco-borrower-staging-loans",
+                "COMPANIES_TABLE": "bebco-borrower-staging-companies",
+                "SHAREPOINT_CLIENT_SECRET": "PLACEHOLDER_AZURE_AD_SECRET",
+                "SHAREPOINT_SITE_PATH": "/sites/Portal",
+                "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+                "USER_POOL_ID": "us-east-1_Uba3sK7HT",
+                "EAJF_BANK_ID": "8641460d-e1f1-4540-b513-a9548d83bb6c",
+                "SHAREPOINT_CLIENT_ID": "ac9357a3-b2c9-4ed9-a900-c846a34227a3"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "37301510-bdfd-42b7-b139-e4655fcbf643",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 2048
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:af29e10439856e364100c5dec1ce9c55d44feb2772258f7a7e480a95474aa18f"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-staging-sharepoint-sync-portfolio"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-staging-sharepoint-sync-portfolio-94c85c48-2e0a-4004-bdf1-307d0be4b181?versionId=nz2aEWNZnOwV7FNx_zyvMSYnGwkUjKXM&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIBF0QUqVzmgqrwLChKo1I%2Fs4vw0shXjxx%2BF88HBhJqCOAiEAiTMHVxYVLRjqMF6Vxy8YOY5ik7%2FY7H2P0ERIcl2WYWkqiwIIeRAEGgw0NzkyMzMwMjUzNzkiDBzYCmxIXW16jNQH7iroAdCcU3hunbEaA3Yvh%2FuW4V4Z7XJvNA9O3Op3WpNfxRMlbMbSIevlKEMLQggv39NFZoSo9UtoS8y1qpdcoiZKgiZgXHFa8rC%2BEIPIF7beL5tksnOgG%2BZtPi%2B5q18zjlcRX8e1FNOgqsnhJzE36uVVU1HuwnpkOohZnarQwtMD60wctG55Z0hya7PSUqSFqQemxu2b4B5vGN0K20VCxtAXgqTzC%2BrG6%2FmDqnC7BNV1mxkKxZI3kSVD23oBsetNOg9txE8t2nyK%2BGc1n0wLGqCUVbncVhwbb5Z69aXJJ%2FAN6ITut51Q5cTNWU4wjdfzxwY6jQEITsLu2M0htK9uewsbizAaFMux5W5TwFdfiwURUk2q8j4aZCg8RWWyf8%2F2WS52Bpc%2BZG8zYKiGaveVW4a4XUM75flsWVUi1Aebkj8q%2FI%2Fic7kzH41gyMArzhOXNBQ5rfzWOWpPjzZ%2BVtlZSC550JhororolvqBt1vAMcCHGhGFQHZCXs8DzZ1qmcT1D0k%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210633Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVR533RPU44%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=07540f51abb9c61b7a66ad8e3f954dab9a080a943660217eff352a616e3be8da"
+    }
+}

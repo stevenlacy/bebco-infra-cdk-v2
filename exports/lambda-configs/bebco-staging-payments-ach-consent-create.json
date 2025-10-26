@@ -1,0 +1,51 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-staging-payments-ach-consent-create",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-payments-ach-consent-create",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-staging-payments-role",
+        "Handler": "ach_consent.lambda_handler",
+        "CodeSize": 6216423,
+        "Description": "ACH Consent management - check and create ACH consent for borrowers",
+        "Timeout": 30,
+        "MemorySize": 256,
+        "LastModified": "2025-09-12T22:22:29.000+0000",
+        "CodeSha256": "lZcqeEGtkLE/RdVSrA6Esa7m6OO3+OD8uRY2qmQ+FIU=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "STAGE": "staging",
+                "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+                "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "a5d2b4d0-1ab8-4200-a09f-a41349990837",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:37f2a22b6df6b3d6c4d8ad1cbfd84eb865b6c4e810c097e722b65a41742c7d19"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-staging-payments-ach-consent-create"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-staging-payments-ach-consent-create-d5b3a9e8-509d-4744-98ec-dd1714be62f0?versionId=SjYHYZstrmK7Co4spHGxo0.U4.EaWlxp&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEL3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCKxYM3YOpUe4JmK3MGZF0dAnRyCC5JCRWO84zy3nS7OAIgGj3WWa%2BQNoE%2FoPSHH2cl41jqjT0l8SkzJAEMURgvm4EqiwIIdhAEGgw0NzkyMzMwMjUzNzkiDKCtNPMen4CDJYedGyroAVk6Y6RFBbIh7mCNfBgTfv6QvmtmTfMSXlzhtcnvrNKNAHANLaEhfxU52xpM7tslSXmpRULH0o7dZPlg3rt8xrbxbrlahSTXZvYUkv9bH4nhYmKbES6%2FztqFlKrZrEFc1nPYayc4SnNFz4R8k3LBf9jWjJhABNJ6QcbKOwKPx3WCKkE1jdPUHPLodxz%2FaBkBl16F4Mp%2FW%2FnSvSlDbpCLo8%2FTSZvA9c70L0NhuHkjzZlOqXRUvRNcCD%2BkN3tEEcHp3jKXHa%2FXu%2F9fT12%2Fwi41VPqVq8SHD2RLQ%2BZ8uh5oVffagmAdUM6D0hww3ITzxwY6jQEUgRSSRWi1cfoGrOcH28p%2BRdK0LVwRmGPRt3neOXxroJxlR742hp8KxjDXBvqSIde%2BhUdCxiZumydO2q%2B%2BbwiK1M%2FZlSUVublPANngz4e57Di3vbKkOnRW9MYLyuYJl%2FCkN7bqpU0y1dRYuF9fyq3hqw5gg2kNOEPnyjJlRTQpmGLgT8W5QVCsEiny1Do%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210537Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVR4PRZJPXZ%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=27a9a8d5208b1bb1e4bd0250968c7242629f01bf44125d02ca7f8a7e758bb9cc"
+    }
+}

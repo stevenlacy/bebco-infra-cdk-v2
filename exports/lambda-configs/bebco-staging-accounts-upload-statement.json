@@ -1,0 +1,55 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-staging-accounts-upload-statement",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-accounts-upload-statement",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-staging-accounts-lambda-role",
+        "Handler": "upload_statement.lambda_handler",
+        "CodeSize": 1480819,
+        "Description": "Upload account statements to S3",
+        "Timeout": 180,
+        "MemorySize": 8192,
+        "LastModified": "2025-09-13T19:39:26.000+0000",
+        "CodeSha256": "VMqFn4gLQBZWmBhPMXMJ+Z8f0V+EpWPi7SV+9z2LH/Q=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "MONTHLY_REPORTS_TABLE": "bebco-borrower-staging-monthly-reportings",
+                "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+                "FILES_TABLE": "bebco-borrower-staging-files",
+                "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+                "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+                "USER_POOL_ID": "us-east-1_Uba3sK7HT",
+                "ACCOUNTS_TABLE": "bebco-borrower-staging-accounts"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "37796b77-9cc0-42a3-b539-a08976253e98",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 4096
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:37f2a22b6df6b3d6c4d8ad1cbfd84eb865b6c4e810c097e722b65a41742c7d19"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-staging-accounts-upload-statement"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-staging-accounts-upload-statement-ee14601b-af6f-44bb-a6ce-23f81a7e3d34?versionId=re7PH6t6Xgk7HDgfpKWHcsl_1dyJpsgv&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEL3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCIFwJwHkqA%2BvYLwldaS7r9wrRY91VXfhOtheVKQIWlHosAiAhriYfnwZWFoglI%2FxhPL5PWUvwQvdbTYCAvYmUp2QEzCqLAgh2EAQaDDQ3OTIzMzAyNTM3OSIMTMA%2BY2ZPplfa9vLcKugBWRnoiYLU%2B42FCzrcN9uz%2BekSLgX11gjgIZX7qsgiZjHfusf3xC2ByrfgCVCk9KUgh9R9h1kQ3AiPciwzX5wzEHk652abZmQj5qokRckPQMCnnSVLQEgcNCvkXFC3aGVhQfPm5292JxNz22Es990pbot191DGhWRAamqGT5mp%2ByrvhYb6g24ZRcSOq9ZkK%2BJZQatfBbM6%2FGS1S1Vdcl721oXChMfcJYAkE9va%2BW%2BXwvqqMPX1%2F%2F79aIKvWJUsF0WMWdEywsvrBvEwz3T8UZw61h2WVaUMZ6oevAwHYyG7ZXWTpihNDyRYizDchPPHBjqOAS4teBu1HWg%2Fyi1a9Ygm3GiWRJU7QMxpJegF1Bx%2FY6Ky8dpWu829cO3vX7oLJI1n7Cvjsnh31ihATi6Lk1PjJFNd417PMV2CsAT6e5F%2F4Ody6MREswibmyNnrbugn7u5pqdqEKMBezsRLEbgL7ZQgEJ5sMDHcbcXXWqMdKCziIevOp2uQZNCYKf6EWDiiUg%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210446Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVRXMCV7FKD%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=19f6a17b3f477c1a316d3212e80f946c01ca5408f3711752c547054a04c5ba0a"
+    }
+}

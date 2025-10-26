@@ -1,0 +1,54 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-borrowers-api-batchGetFinancialOverviews",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-borrowers-api-batchGetFinancialOverviews",
+        "Runtime": "nodejs18.x",
+        "Role": "arn:aws:iam::303555290462:role/bebco-borrowers-appsync-LambdaExecutionRole-Aprde829FkjT",
+        "Handler": "batchGetFinancialOverviews.handler",
+        "CodeSize": 3755723,
+        "Description": "",
+        "Timeout": 60,
+        "MemorySize": 512,
+        "LastModified": "2025-10-16T13:05:55.309+0000",
+        "CodeSha256": "YJQI6SLsarGJSeZ5ji2TiaMDB9kuiCSVnRP5TyFwZ2Y=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "TABLE_NAME": "bebco-borrower-staging-loans"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "0b1ca7a9-e93d-41cf-aec4-13e9582059e4",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:7bac5529aae370669aee21ded4150a745ac2ca42884ac7c7ebaaafeec0a23e7b"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-borrowers-api-batchGetFinancialOverviews"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-borrowers-api-batchGetFinancialOverviews-6f2d9c3c-188e-4f8c-961f-620928cfa18e?versionId=z15rLadftgjGYRNSqHn0NP3SuccoaWRt&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCIGlZr8zrk2hmSW7WTe3SpBzyQKYTTzArLn8S77ShMtfhAiA1z0wDXk%2FhPaYeiyY6XygZJSqbPHtqYHwavyGh1GksPyqLAgh4EAQaDDQ3OTIzMzAyNTM3OSIMf%2B6fpAm9dZtbLg9VKugBDtjHBn59g1Dmfq2%2BZpyoyPxDjnzfNKwS1gij0SGMylTMrBPm934KlVh1IpBd2AkmV0ZJUTnxCnkU21tuvpxcxCqL%2Ba1Fy0ccC5gESy3EBzBcPkpavR0XGlq2%2BRYM37Gi0gAh7hxVN5Jm0oY8sZ8Qzxj3hfaHMfU%2FTHhkRqPSO%2B46Fye9wxiGr73KkWJQmxVWL8HqdaHM3C2Uh3Hq%2BWl%2Fzc0dWdGjmKi%2BLNU5lOSnJW0lwcIC3pfYud76DqxMTtJ3YroVTvdhN7gCUITG%2BvWyA6JU%2Be44o%2BTHR2pvd8Lk%2FEFWrMkKcAXF2jC00vPHBjqOAZ%2FXoc7cL%2FEe9UH%2FAFQ9nCKBZxiO45yyD0KQpTjndaY9e7zK4VhbuRGT2sf8fj0SkWjwWL8za%2BcXOAbfMwm5WsLxJSvrW0kieRtjMpZ%2BE2ALluR%2BQu0YJgquOAdSF3uxJMcA6lvjyMpQmDcielRfOCKWS8vXX2nk35cPZyXLJsG3Y6H0fbEE%2F7H1J2f0QAU%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210438Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVR3YBI6MIG%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=faff88913a18d949a3585c5b593a07d615cdae67b91142e4536b4c3d18a4a8f7"
+    },
+    "Tags": {
+        "aws:cloudformation:stack-name": "bebco-borrowers-appsync",
+        "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:303555290462:stack/bebco-borrowers-appsync/8b264980-95ca-11f0-92f9-12eb8dbf4435",
+        "aws:cloudformation:logical-id": "BatchFinancialOverviewsLambda"
+    }
+}

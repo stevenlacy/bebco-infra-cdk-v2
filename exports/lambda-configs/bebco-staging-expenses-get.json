@@ -1,0 +1,59 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-staging-expenses-get",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-expenses-get",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-staging-expenses-lambda-role",
+        "Handler": "get_expense.lambda_handler",
+        "CodeSize": 11425,
+        "Description": "Get expense details with document context",
+        "Timeout": 60,
+        "MemorySize": 512,
+        "LastModified": "2025-08-13T06:41:35.000+0000",
+        "CodeSha256": "cA2bUFPPMUTh7dEIUjM1YM+wGh5bp/tmdNfXu52O4sU=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+                "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+                "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+                "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+                "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "b16616b9-24c9-4ad4-aea1-ca2f8a2ec835",
+        "Layers": [
+            {
+                "Arn": "arn:aws:lambda:us-east-1:303555290462:layer:bebco-staging-python-deps:4",
+                "CodeSize": 5441474
+            }
+        ],
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:af29e10439856e364100c5dec1ce9c55d44feb2772258f7a7e480a95474aa18f"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-staging-expenses-get"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-staging-expenses-get-bf693560-945d-4bb6-9e90-3e6770047e1b?versionId=h4gwU0MbHL2cfMeMK5xCu5twzTn0iv71&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEL3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQDo1tu%2FziYboGWXon2gD93DZnhna8lV7ibNBEiwHepizwIgdZd8c8K32%2FLCxrApwIW1IvK5NsuCIBp5Z4gCdRk7sMIqiwIIdhAEGgw0NzkyMzMwMjUzNzkiDH%2BTi1bAUo3glg8LhSroAew54xG%2BNpHqnO9oLk5zszdqLaHFGUSUJIeRmHLMycOzl%2F2AKhMBuY8fGey21IfXJqEG0i9EIw%2BUkBm9anFxtUsOzXgRtZDuJs0q5naiUoUXOowPL1JmFiVlFTE%2BMG6t6PPU5mnILH93zu0K4hqQsIZZXu6QFmiiJEhhzyS7EyzYBzhBHFQoKK3rw6h4uFCdZyDHi%2FCQtM349SGEl0vj3anJAAIdza5FJnTYnbW5wxrRswZEayJU8QzinBJkyl%2FYvP1PrLzKgq0x3spv3m9Z8WprA5ccDr0B%2FO1KzquypDZJmoRn3pvZ%2F4QwrIvzxwY6jQFQHkwLy62P0Pe9sewH93xbWkudkQIicmec5%2BGgQlB3Oy23GQIZ8IUDj8j9X09DnGf3V9t%2FAorwexN0YPXM%2B2etUpqHBzPR8MEYprv1udL5RzwaQtpGTSTbphrPWl75xbYIwJ78DS0Wy%2F3dlSxPbD2ZoJDdUhvyGyZK8Vf36S4A0n6lzcggPOGvoNOPC9w%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210507Z&X-Amz-SignedHeaders=host&X-Amz-Expires=599&X-Amz-Credential=ASIAW7FEDUVRSIPW7UCS%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=290f76d09e4a25c991b6c35ebd09efcd6fafc9d9fcccb7998a82e22ef5519058"
+    }
+}

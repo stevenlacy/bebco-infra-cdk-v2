@@ -1,0 +1,78 @@
+{
+  "TableName": "bebco-borrower-plaid-items-dev",
+  "KeySchema": [
+    {
+      "AttributeName": "item_id",
+      "KeyType": "HASH"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "bank_id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "company_id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "institution_id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "item_id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "status",
+      "AttributeType": "S"
+    }
+  ],
+  "BillingMode": "PAY_PER_REQUEST",
+  "GlobalSecondaryIndexes": [
+    {
+      "IndexName": "BankIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "bank_id",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "status",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    },
+    {
+      "IndexName": "InstitutionIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "institution_id",
+          "KeyType": "HASH"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    },
+    {
+      "IndexName": "CompanyIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "company_id",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "status",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    }
+  ]
+}

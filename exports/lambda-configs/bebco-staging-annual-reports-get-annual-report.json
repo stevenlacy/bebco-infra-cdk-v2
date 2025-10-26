@@ -1,0 +1,52 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-staging-annual-reports-get-annual-report",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-annual-reports-get-annual-report",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-staging-annual-reports-lambda-role",
+        "Handler": "annual_reports.get_annual_report.lambda_handler",
+        "CodeSize": 15339321,
+        "Description": "",
+        "Timeout": 30,
+        "MemorySize": 256,
+        "LastModified": "2025-08-14T19:57:57.000+0000",
+        "CodeSha256": "XhB/R/uF+KpGCPDeibSc/N3HQ5wT2ZjfkRlySmRsQXE=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "DYNAMODB_TABLE": "bebco-borrower-staging-annual-reportings",
+                "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+                "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+                "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "d06a3caf-99e5-4d90-8f3b-954536e745e1",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:af29e10439856e364100c5dec1ce9c55d44feb2772258f7a7e480a95474aa18f"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-staging-annual-reports-get-annual-report"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-staging-annual-reports-get-annual-report-5a8be71e-ac31-4102-8e91-cbb5dfb24c35?versionId=yM102Gqvm83JS9t1wi3orPgINZZv8ooZ&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEL3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIChRLi7WneprUUEb6p4f9ygtgauJdJV5761ESmE%2FEmKCAiEAtaGdcHAtys9ovagA53Oo6peR%2FnvgF7wyBbxEVRlILAIqiwIIdhAEGgw0NzkyMzMwMjUzNzkiDCN7%2FNLNwE%2FhfpboZCroAe7Sd5ZwpLpQuccueR5y4mrZhjjs5xz479yyz%2FP22rE70wBrnqN0R4aUiay76To%2FsbnRQND5avEqvqcbNN0QqrDYIcKJk9GBgy0CBZdmYp75rw0iepgj2hZjgSKTnknsCiSkGOiFWc3MOM1%2FC%2Bo3h4LzVzlHl9%2BD0Y6Axm5w17d6EhzkuqQnNXwlRl6OFPCAhE7nNYGX4Xm2Cnt1JaKh%2BM2eo%2Br40kGMrXp08L0LbLWequuOJrdtHhVxobrn7BrHRvb91X26mBcQQna3Ha4vjeyTDko03Yk6hlxl5S4nDGXLMoPJDjgh3jwwionzxwY6jQE80mMiKvcgwX57yo60bM80sccUdUX%2FgY%2FdXXrndcalHGhtX7xn2cR4abYFwY3ub3niad9HCKVvDW1phN98GhZGTbzqidZmQQ9wL9mHxFaffpGqAoLFWBysI5pgWM7HtdlfGQIr%2F65WDBYaQyS8JFDG1FZFoHDRy3iNz4Ub2f0GMJYFS3n%2FyKFmFMLXvuk%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210454Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVRVB2KXLGA%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=37dc708659f31e1ab7de613bf81d4257fca37db038949ccb1077669d30091abc"
+    }
+}

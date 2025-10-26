@@ -1,0 +1,122 @@
+{
+    "Table": {
+        "AttributeDefinitions": [
+            {
+                "AttributeName": "GSI1PK",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "GSI1SK",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "PK",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "SK",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "short_name",
+                "AttributeType": "S"
+            }
+        ],
+        "TableName": "bebco-borrower-staging-banks",
+        "KeySchema": [
+            {
+                "AttributeName": "PK",
+                "KeyType": "HASH"
+            },
+            {
+                "AttributeName": "SK",
+                "KeyType": "RANGE"
+            }
+        ],
+        "TableStatus": "ACTIVE",
+        "CreationDateTime": "2025-08-12T04:06:00.625000-07:00",
+        "ProvisionedThroughput": {
+            "NumberOfDecreasesToday": 0,
+            "ReadCapacityUnits": 0,
+            "WriteCapacityUnits": 0
+        },
+        "TableSizeBytes": 3904,
+        "ItemCount": 9,
+        "TableArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-banks",
+        "TableId": "20d2d5fb-9d54-466b-bd1d-4ed167bf6c90",
+        "BillingModeSummary": {
+            "BillingMode": "PAY_PER_REQUEST",
+            "LastUpdateToPayPerRequestDateTime": "2025-08-12T04:06:00.625000-07:00"
+        },
+        "GlobalSecondaryIndexes": [
+            {
+                "IndexName": "GSI1",
+                "KeySchema": [
+                    {
+                        "AttributeName": "GSI1PK",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "GSI1SK",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "ACTIVE",
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                },
+                "IndexSizeBytes": 3904,
+                "ItemCount": 9,
+                "IndexArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-banks/index/GSI1",
+                "WarmThroughput": {
+                    "ReadUnitsPerSecond": 12000,
+                    "WriteUnitsPerSecond": 4000,
+                    "Status": "ACTIVE"
+                }
+            },
+            {
+                "IndexName": "ShortNameIndex",
+                "KeySchema": [
+                    {
+                        "AttributeName": "short_name",
+                        "KeyType": "HASH"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "ACTIVE",
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                },
+                "IndexSizeBytes": 2143,
+                "ItemCount": 4,
+                "IndexArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-banks/index/ShortNameIndex",
+                "WarmThroughput": {
+                    "ReadUnitsPerSecond": 12000,
+                    "WriteUnitsPerSecond": 4000,
+                    "Status": "ACTIVE"
+                }
+            }
+        ],
+        "StreamSpecification": {
+            "StreamEnabled": true,
+            "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "LatestStreamLabel": "2025-08-12T11:06:00.625",
+        "LatestStreamArn": "arn:aws:dynamodb:us-east-1:303555290462:table/bebco-borrower-staging-banks/stream/2025-08-12T11:06:00.625",
+        "DeletionProtectionEnabled": true,
+        "WarmThroughput": {
+            "ReadUnitsPerSecond": 12000,
+            "WriteUnitsPerSecond": 4000,
+            "Status": "ACTIVE"
+        }
+    }
+}

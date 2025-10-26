@@ -1,0 +1,52 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-docusignLegacy-send-envelope",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-docusignLegacy-send-envelope",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::303555290462:role/bebco-docusign-lambda-role",
+        "Handler": "send_envelope.handler",
+        "CodeSize": 605073,
+        "Description": "",
+        "Timeout": 30,
+        "MemorySize": 256,
+        "LastModified": "2025-10-02T16:44:47.000+0000",
+        "CodeSha256": "HNxiToo6AQfnCmNmqDcOsePecYo3e6inWbZbeFkh2J4=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "COMPANIES_TABLE": "bebco-borrower-staging-companies",
+                "DOCUSIGN_LEGACY_SECRET_NAME": "docusignLegacyAuth",
+                "LOG_LEVEL": "INFO",
+                "DOCUSIGN_HOST": "https://na4.docusign.net"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "ce89ab53-4a8b-485d-a3e1-3bdbd11e27e7",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:d6935992cddc0c573a0cb7ac0214699a5676aefd38a43d64192dce8a044a3724"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-docusignLegacy-send-envelope"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-docusignLegacy-send-envelope-e3aca4ac-0a4f-4b07-9eaf-2a6c5c2ffbff?versionId=pIMHPJBkp9wnKJfTEGx7xpFW9CPjdLUt&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIEiEHRYA37Wrg7w687MYbpHsDXLKQZj1crbo0ZHlmlVrAiEA3olHhCR5eGskE2886jd%2FpyGvD4%2F%2F7jCqvW73aCO4OdUqiwIIeBAEGgw0NzkyMzMwMjUzNzkiDLKldBFTz6ryjdAkayroAcV5fuefG%2FRtS8d6Y32Y0K1kSeiWSvUhx2qlL298NY17t2YVBAyC0xDeJwRoPiXRw0a6ba%2BYKYnhUflj0X1GVqABracvMkc14y0JU7Gy9I7zcNQMvLOom%2F%2F39drccKSHnchXJPO29IfqKGc2ELvh9z7reUcs2%2Bu2hDf7zXqYjLLN1y8VnOerRXEtTntj2%2F%2BWVORvVKVE3fG9vyChUIuQJo53wIAA0HDQGUxjhRPhiegqlwyA%2ByUtYUbMnLNyzTaCFRXdwhQXnitmBM2MrpIW2pKlNblA1IwiVcR4R5EhKPCu%2FekfzXBmrQ4wt9XzxwY6jQGbQF%2BZNk6qEwP2rwxlZMLjgpmBEKsbu2Lq1p98numg2j6qALC9MsVCYcCkYpP6z3q%2BtlCCm13iL9D1IjbfdwdtB%2Fd1dHDMWR8pGbAFb2MmezCOOv0zf1v2UCF9MEcE6mb%2BizclJ62ggEpbM%2FJDnZwCYK7r8LcqA2P%2FCLYq2QozIx0np4Iunagm72OZ99Q%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210635Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVR56HLSQ6H%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=e85ddba332754af659846799d3e4af84927f9451c0c493a9296059a61a33159f"
+    }
+}

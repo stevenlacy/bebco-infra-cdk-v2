@@ -1,0 +1,53 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-staging-draws-fund",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-draws-fund",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-staging-draws-lambda-role",
+        "Handler": "fund_draw.lambda_handler",
+        "CodeSize": 575159,
+        "Description": "Processes approved draw requests funding with ledger entries",
+        "Timeout": 60,
+        "MemorySize": 512,
+        "LastModified": "2025-08-13T17:56:02.888+0000",
+        "CodeSha256": "yawraTQyp1DlIQo3EMZyRI87uTPVGN/tAZqlidousD4=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+                "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+                "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+                "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+                "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "c20ef553-522f-4829-acc2-3045b1319896",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:af29e10439856e364100c5dec1ce9c55d44feb2772258f7a7e480a95474aa18f"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-staging-draws-fund"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-staging-draws-fund-8bea81ce-aa6b-448d-94b7-1ff8c28676ad?versionId=Hy89bg.1hMxUTAsfDGowFfuKU6uSZUA8&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEL3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQC4S5mwi5gy2kuxWqQIK5CMUfg%2FBM6NeyiSYHmUCbMo8gIhAO5NGZm1%2F7fmSVmSGAGHPuCh0pW0%2BiK%2FmjsTCdWciLuyKosCCHYQBBoMNDc5MjMzMDI1Mzc5Igx6D%2BT3XNfnqnb3YZ4q6AGy1eNvx0LCvR7dNpR9OUYK%2FEFp9ckg4KKJHjjIA8ga21CSX7rC5y9vUTMPNkNZndWT4Dup9K5lgFmqp6fYeuxw7MD5LIudhuQLWPSvEhyCz9UWNunBRlvbsfgLvAj8jnSJuxllR052I5xxwaEEchqbpvFDL6HkRDgiD%2BOgj1lbKxukRf5HkOxZzJhoxGtq9m6RDKb2Bg9xI%2B4CEgo%2BWBQEltEZogIeTJrocyNSVSxFlRMlbm8MKwSqAVzIyBurjzGxz1kMKjJ4sVHu%2BDGqBooP5onTeIs6%2BkQEZjzQnNrijqsz9%2FPYyLkPML%2BG88cGOowBiJ3HilMkeoHqlkHaoJg2oD4IvkWRPK4zhuBn%2Bbs3q3Z9zRuR56O7Qob6EyC5RJHWgmQ9M2AZfm0sRajj5PL8bZoQRmYN5WE4Ty0wJsC%2BfzFtrpJUCqIOZ5bbOxiLkyrGDYpnDvgnqQxVjwEHZP1A3gVs3xliJxEvFMDPwA%2FmydMgEEG5D%2FykbQM73aI%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210559Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVRSAOR62UT%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=75814f3d6c8990f114d76d52663d286b97a275a791048627457731a76645e3c0"
+    }
+}

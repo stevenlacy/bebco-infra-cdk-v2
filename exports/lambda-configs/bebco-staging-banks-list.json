@@ -1,0 +1,51 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-staging-banks-list",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-banks-list",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-banks-lambda-execution-role",
+        "Handler": "list_banks.lambda_handler",
+        "CodeSize": 6592790,
+        "Description": "",
+        "Timeout": 30,
+        "MemorySize": 256,
+        "LastModified": "2025-08-19T19:07:46.000+0000",
+        "CodeSha256": "ToUEwDQjBXJGtVw41I4diJukU2CG4ZBFlK1CcT7/bYE=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "BANKS_TABLE": "bebco-borrower-staging-banks",
+                "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+                "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "ef6a7927-b713-46df-a4fe-81e24c0fa495",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:af29e10439856e364100c5dec1ce9c55d44feb2772258f7a7e480a95474aa18f"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-staging-banks-list"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-staging-banks-list-13efa3fb-ef50-4282-abda-7879cb2a1f2a?versionId=PpW4BOZ99LSISld.wGdHLwSgLxmgt4t1&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCVOumgGI%2BcXEA2Y76f23pDhcwXxqhHDm%2FeHCGqAm0MvwIgUiqua6iH00wxxtyl7wNRRF39g2CA6ZEzZtuNUqY4jFcqiwIIeBAEGgw0NzkyMzMwMjUzNzkiDL8%2BQOb%2BgUW3h%2BiD9CroAfoH1gEdbQbXW%2FZHecq4GaVbWFTkupJ51vZaO%2BilqMI3nxgMDeleB5AWmci5nFoI9E%2FRM3XA1xoz1RdUoueWB%2BrzVEB3a8x3t%2BwE3RqHLXoBrY20DnOXDEnaH%2FZguJ1XtZb8XfAuX%2Bq%2B1dizfWJlsKJJMeml7gHlTqTSfNUSIjlOz06JjH8TskrUDXBsWgHqswKHR0SGGuCGYgzLij2uXCZuWkFsYJ5JiGE2%2Fo725LHEu2rC9P1f4%2BJaCZqzbYunkT5hPeRPq3zXUspGEoLCocrobJxY5TfWmglohIMBr6h3%2BzndJFfIuMEwuNLzxwY6jQF1WX9azTOxYgkdpE7mb4pwOD42SKdWU7MMbeQhYhIyzXp00LgLk2n3Qe6LpvM8CJ4Zk%2F77ujtppSCuhBnOcVOFXvmyDKHqhVGKade%2Fk6qwy0CyPcuUVzLn7Vxem1suPjSS5VM6wUaGxIIPo6nhaqve9UW0qHdBb%2B%2FEyjq56Q%2FZTyWy4rMKE5Ktdfo0n6A%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210622Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVR3DN7VGPV%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=d20f01c6ac16ef4503897078919ff548290863a7a843b21754638394b09305aa"
+    }
+}

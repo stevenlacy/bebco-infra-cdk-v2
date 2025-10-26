@@ -1,0 +1,5438 @@
+[
+  {
+    "FunctionName": "bebco-docusign-send_envelope",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-docusign-send_envelope",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-docusign-lambda-role",
+    "Handler": "app.handler",
+    "CodeSize": 15661252,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 512,
+    "LastModified": "2025-09-11T02:04:39.000+0000",
+    "CodeSha256": "sxDUMAaEsVdtbjP0ewtY0h00cIpHbldtv3/kHVC7pRc=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "SHAREPOINT_SECRET_NAME": "SharePoint/Prod",
+        "DOCUSIGN_SECRET_NAME": "DocuSign/Prod",
+        "DYNAMODB_DOCUSIGN_REQUESTS_TABLE": "DocusignRequests"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "22f42832-9933-46ea-ba16-a30e8f4faed2",
+    "Layers": [
+      {
+        "Arn": "arn:aws:lambda:us-east-1:303555290462:layer:bebco-docusign-layer:1",
+        "CodeSize": 34264494
+      }
+    ],
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-docusign-send_envelope"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-users-delete",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-users-delete",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+    "Handler": "delete_user.lambda_handler",
+    "CodeSize": 2318723,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 128,
+    "LastModified": "2025-08-18T18:49:17.000+0000",
+    "CodeSha256": "AZ4hDke7LK2Lqu4aq5Te7/+HchTyLbB1DA1nqtm8hNs=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "OTP_TABLE": "bebco-borrower-staging-otp-codes",
+        "USERS_TABLE": "bebco-borrower-staging-users",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "ab9e35df-1a6c-44f2-bb99-f178eab99f4b",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-users-delete"
+    }
+  },
+  {
+    "FunctionName": "bebco-docusign-get_envelope",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-docusign-get_envelope",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-docusign-lambda-role",
+    "Handler": "app.handler",
+    "CodeSize": 15659596,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 512,
+    "LastModified": "2025-09-09T20:02:09.000+0000",
+    "CodeSha256": "cid/rZGoQcVHxwETE3sSxP0Dm2shbSpfRRo+zGOOXIo=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "SHAREPOINT_SECRET_NAME": "SharePoint/Prod",
+        "DOCUSIGN_SECRET_NAME": "DocuSign/Prod",
+        "DYNAMODB_DOCUSIGN_REQUESTS_TABLE": "DocusignRequests"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "c9c3d262-5bbb-40ef-82f3-52c31b79e5ef",
+    "Layers": [
+      {
+        "Arn": "arn:aws:lambda:us-east-1:303555290462:layer:bebco-docusign-layer:1",
+        "CodeSize": 34264494
+      }
+    ],
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-docusign-get_envelope"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-cases-create",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-cases-create",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+    "Handler": "cases.create_case.lambda_handler",
+    "CodeSize": 6359865,
+    "Description": "Creates new litigation cases with validation and DynamoDB storage",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-10-13T18:18:49.000+0000",
+    "CodeSha256": "b1Chw0rmUSfUELuEeRsMhxbl1KwBv3+kDB14cwuqAmE=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "c3b1ff04-6799-41eb-ae16-1edec507cdb3",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-cases-create"
+    }
+  },
+  {
+    "FunctionName": "bebco-docusign-templates_sync",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-docusign-templates_sync",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-docusign-lambda-role",
+    "Handler": "app.handler",
+    "CodeSize": 15659618,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 512,
+    "LastModified": "2025-09-09T20:01:00.000+0000",
+    "CodeSha256": "EEVkpH5PrgThhHlQ/A+5eMbCw8fy8GZ4oLbes09183U=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "SHAREPOINT_SECRET_NAME": "SharePoint/Prod",
+        "DOCUSIGN_SECRET_NAME": "DocuSign/Prod",
+        "DYNAMODB_DOCUSIGN_REQUESTS_TABLE": "DocusignRequests"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "3ccd7af0-4cb9-48d6-92a4-0d00eee2a3d4",
+    "Layers": [
+      {
+        "Arn": "arn:aws:lambda:us-east-1:303555290462:layer:bebco-docusign-layer:1",
+        "CodeSize": 34264494
+      }
+    ],
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-docusign-templates_sync"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-account-transaction-counts",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-account-transaction-counts",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-account-transaction-counts-role",
+    "Handler": "app.lambda_handler",
+    "CodeSize": 2339,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 10240,
+    "LastModified": "2025-10-16T21:18:40.000+0000",
+    "CodeSha256": "OQlSGyjwuGmPC6lOfPpFY3XxjHCXdcZNIr4NRKQE5fo=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "TRANSACTIONS_TABLE": "bebco-borrower-staging-transactions"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "a3bea7bc-2ff1-45c0-948d-89d09e9e5a7d",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 2080
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-account-transaction-counts"
+    }
+  },
+  {
+    "FunctionName": "bebco-admin-auth-validate-password",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-admin-auth-validate-password",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/lambda-execution-role",
+    "Handler": "lambda_function.lambda_handler",
+    "CodeSize": 16122929,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-10-06T20:31:47.000+0000",
+    "CodeSha256": "OM8QYtF8TwB9hC7Jug57HrwRmSEHwicwgcchqlIe3iE=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "OTP_TABLE": "bebco-borrower-staging-otp-codes",
+        "USERS_TABLE": "bebco-borrower-staging-users",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "e61e39bb-d80b-4e93-977f-ae0af6fd2892",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-admin-auth-validate-password"
+    }
+  },
+  {
+    "FunctionName": "bebco-borrowers-api-batchGetFinancialOverviews",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-borrowers-api-batchGetFinancialOverviews",
+    "Runtime": "nodejs18.x",
+    "Role": "arn:aws:iam::303555290462:role/bebco-borrowers-appsync-LambdaExecutionRole-Aprde829FkjT",
+    "Handler": "batchGetFinancialOverviews.handler",
+    "CodeSize": 3755723,
+    "Description": "",
+    "Timeout": 60,
+    "MemorySize": 512,
+    "LastModified": "2025-10-16T13:05:55.309+0000",
+    "CodeSha256": "YJQI6SLsarGJSeZ5ji2TiaMDB9kuiCSVnRP5TyFwZ2Y=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "TABLE_NAME": "bebco-borrower-staging-loans"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "0b1ca7a9-e93d-41cf-aec4-13e9582059e4",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-borrowers-api-batchGetFinancialOverviews"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-monthly-reports-list",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-monthly-reports-list",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+    "Handler": "lambda_function.lambda_handler",
+    "CodeSize": 16960284,
+    "Description": "",
+    "Timeout": 120,
+    "MemorySize": 4096,
+    "LastModified": "2025-10-13T22:03:25.000+0000",
+    "CodeSha256": "ST5urKAqiz6Pj+9Q1TEHujfFBWIuTecdD62Lmb6U2hU=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "COMPANIES_TABLE": "bebco-borrower-staging-companies"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "78a1c85c-d388-44c3-a308-a80eb486aef5",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-monthly-reports-list"
+    }
+  },
+  {
+    "FunctionName": "bebco-borrower-staging-process-document-ocr",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-borrower-staging-process-document-ocr",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-document-ocr-lambda-role",
+    "Handler": "process_document_ocr.lambda_handler",
+    "CodeSize": 32113,
+    "Description": "Async OCR processor for annual report documents (tax returns, insurance policies)",
+    "Timeout": 900,
+    "MemorySize": 2048,
+    "LastModified": "2025-10-15T00:05:11.000+0000",
+    "CodeSha256": "Sswtyi6cmO3++bMiCOnDSl14zSkY5/j0ToP7FnRPrRc=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "ANNUAL_REPORTS_TABLE": "bebco-borrower-staging-annual-reportings",
+        "TEXTRACT_ROLE_ARN": "arn:aws:iam::303555290462:role/bebco-staging-textract-sns-role",
+        "OCR_RESULTS_TOPIC_ARN": "arn:aws:sns:us-east-1:303555290462:bebco-staging-textract-results"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "0f48c8b0-eebe-447b-a63d-e7f45fd7611b",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-borrower-staging-process-document-ocr"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-users-password",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-users-password",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+    "Handler": "change_password.lambda_handler",
+    "CodeSize": 6506118,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-10-01T18:34:47.000+0000",
+    "CodeSha256": "9/6fUY7XdQh3EM/KXAWw+c2wWgvuQBzo4GeAwIs6WPQ=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "OTP_TABLE": "bebco-borrower-staging-otp-codes",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "USERS_TABLE": "bebco-borrower-staging-users",
+        "FILES_TABLE": "bebco-borrower-staging-files",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT",
+        "ACCOUNTS_TABLE": "bebco-borrower-staging-accounts"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "758792dd-17c2-4f97-8d3f-cae3f9cd9f7f",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-users-password"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-sharepoint-manual-sync",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-sharepoint-manual-sync",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-portfolio-sync-lambda-execution-role",
+    "Handler": "lambda_function.manual_sync_handler",
+    "CodeSize": 26017736,
+    "Description": "",
+    "Timeout": 900,
+    "MemorySize": 4096,
+    "LastModified": "2025-08-24T23:35:24.000+0000",
+    "CodeSha256": "n9cmo25cWg80Li81n1Ln84Ky1JOkE7W41dw2xO0UvcE=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "SHAREPOINT_HOST": "netorgft3435832.sharepoint.com",
+        "S3_STAGING_BUCKET": "bebco-borrower-staging-documents",
+        "PORT_RECON_FILE_PATH": "Port Recon Data/Port Recon Data.xlsx",
+        "LOANS_TABLE": "bebco-borrower-staging-loans",
+        "COMPANIES_TABLE": "bebco-borrower-staging-companies",
+        "SHAREPOINT_CLIENT_SECRET": "PLACEHOLDER_AZURE_AD_SECRET",
+        "SHAREPOINT_SITE_PATH": "/sites/Portal",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT",
+        "EAJF_BANK_ID": "8641460d-e1f1-4540-b513-a9548d83bb6c",
+        "SHAREPOINT_CLIENT_ID": "ac9357a3-b2c9-4ed9-a900-c846a34227a3"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "253ac973-219e-4a15-9174-0fbdff222c7e",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 2048
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-sharepoint-manual-sync"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-monthly-reports-create",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-monthly-reports-create",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+    "Handler": "lambda_function.lambda_handler",
+    "CodeSize": 17131909,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-08-14T05:00:39.000+0000",
+    "CodeSha256": "mLN9be7sVi1ncae6ZyIf0/bTM8MgIAINVzv+06/vX6w=",
+    "Version": "$LATEST",
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "93080e28-5b50-424d-84d8-f144a7cdd3d8",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-monthly-reports-create"
+    }
+  },
+  {
+    "FunctionName": "bebco-admin-users-send2fa",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-admin-users-send2fa",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/lambda-execution-role",
+    "Handler": "lambda_function.lambda_handler",
+    "CodeSize": 16123844,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-10-03T19:55:51.000+0000",
+    "CodeSha256": "EIPe7+vu4IpwDeuW0qfIaxUBoQujeG6n8TI8m66aMQs=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "ENABLE_SES": "false",
+        "OTP_TABLE": "bebco-borrower-staging-otp-codes",
+        "USERS_TABLE": "bebco-borrower-staging-users",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT",
+        "SendGrid_Secret": "PLACEHOLDER_SENDGRID_API_KEY"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "9ab4870d-e684-4b5c-8935-1d3d35c49d54",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-admin-users-send2fa"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-accounts-upload-statement",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-accounts-upload-statement",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-accounts-lambda-role",
+    "Handler": "upload_statement.lambda_handler",
+    "CodeSize": 1480819,
+    "Description": "Upload account statements to S3",
+    "Timeout": 180,
+    "MemorySize": 8192,
+    "LastModified": "2025-09-13T19:39:26.000+0000",
+    "CodeSha256": "VMqFn4gLQBZWmBhPMXMJ+Z8f0V+EpWPi7SV+9z2LH/Q=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "MONTHLY_REPORTS_TABLE": "bebco-borrower-staging-monthly-reportings",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "FILES_TABLE": "bebco-borrower-staging-files",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT",
+        "ACCOUNTS_TABLE": "bebco-borrower-staging-accounts"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "37796b77-9cc0-42a3-b539-a08976253e98",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 4096
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-accounts-upload-statement"
+    }
+  },
+  {
+    "FunctionName": "bebco-borrower-staging-admin-nacha-download",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-borrower-staging-admin-nacha-download",
+    "Runtime": "python3.11",
+    "Role": "arn:aws:iam::303555290462:role/lambda-execution-role",
+    "Handler": "lambda_function.lambda_handler",
+    "CodeSize": 22365441,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-10-06T02:47:45.000+0000",
+    "CodeSha256": "Aonv7tPcTXTV8ebilTxrHBVAO9NZjO1+5Rb60PoaPl4=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "e2599a59-c508-4dfe-bd27-cc9ecb1a1c3e",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-borrower-staging-admin-nacha-download"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-plaid-sync-manual",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-plaid-sync-manual",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-plaid-sync-manual-lambda-role",
+    "Handler": "plaid_sync_manual.lambda_handler",
+    "CodeSize": 8070222,
+    "Description": "",
+    "Timeout": 60,
+    "MemorySize": 512,
+    "LastModified": "2025-08-25T23:47:23.000+0000",
+    "CodeSha256": "r4ch4iy9nH0IoneEjNfnTGwsIqeXlwSdqbO2SVqwJkI=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "PLAID_CLIENT_ID": "6244b486e15ce5001ab88980",
+        "WEBHOOK_BASE_URL": "https://api.bebco.com",
+        "TRANSACTIONS_SYNC_QUEUE_URL": "https://sqs.us-east-1.amazonaws.com/303555290462/bebco-staging-plaid-transactions-sync",
+        "SYNC_WORKER_FUNCTION_NAME": "bebco-staging-plaid-transactions-sync",
+        "TRANSACTIONS_TABLE": "bebco-borrower-staging-transactions",
+        "PLAID_WEBHOOK_SECRET": "your_webhook_secret_here",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT",
+        "PLAID_SECRET": "05cfb8e62192096f341a5216d82dd6",
+        "PLAID_ENVIRONMENT": "production",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "FILES_TABLE": "bebco-borrower-staging-files",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "ACCOUNTS_TABLE": "bebco-borrower-staging-accounts",
+        "PLAID_ITEMS_TABLE": "bebco-borrower-staging-plaid-items"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "faa19c1b-dc98-4cc7-a9a9-22992b729080",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-plaid-sync-manual"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-admin-borrowers-get-borrower-summary-function",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-admin-borrowers-get-borrower-summary-function",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-admin-borrowers-role",
+    "Handler": "get_borrower_summary.lambda_handler",
+    "CodeSize": 6593597,
+    "Description": "",
+    "Timeout": 150,
+    "MemorySize": 10240,
+    "LastModified": "2025-09-11T19:01:00.000+0000",
+    "CodeSha256": "5tiQwjP9ybUh3bCvLZ5WV/4MelAi/dQWlWaMhybLQCs=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "LOANS_TABLE": "bebco-borrower-staging-loans",
+        "BANKS_TABLE": "bebco-borrower-staging-banks",
+        "COMPANIES_TABLE": "bebco-borrower-staging-companies",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "305e9a02-3500-4c8d-91ed-cb77ad8a20b7",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-admin-borrowers-get-borrower-summary-function"
+    }
+  },
+  {
+    "FunctionName": "bebco-admin-users-mfa-totp-verify-login",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-admin-users-mfa-totp-verify-login",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-admin-users-mfa-totp-verify-login-role",
+    "Handler": "handler.handler",
+    "CodeSize": 1977,
+    "Description": "",
+    "Timeout": 15,
+    "MemorySize": 256,
+    "LastModified": "2025-09-27T00:52:53.000+0000",
+    "CodeSha256": "1EJOcBl20VWQGU0S3dX6ZsE1qeACBP0iX0zF8jW+wbo=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "USERS_TABLE": "bebco-borrower-staging-users"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "3cb10881-4537-413e-94f2-1781172b60f8",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-admin-users-mfa-totp-verify-login"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-auth-complete-setup",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-auth-complete-setup",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/lambda-execution-role",
+    "Handler": "lambda_function.lambda_handler",
+    "CodeSize": 16116,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-09-29T23:32:30.000+0000",
+    "CodeSha256": "Zlou3TLluaYcHTTNzwt7UpH/pxWQeBzFhK06OQlehGU=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "OTP_TABLE": "bebco-borrower-staging-otp-codes",
+        "USERS_TABLE": "bebco-borrower-staging-users",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "b24474fc-b646-45b1-9327-c1e2ccb170bf",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-auth-complete-setup"
+    }
+  },
+  {
+    "FunctionName": "bebco-borrowers-api-listBorrowers",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-borrowers-api-listBorrowers",
+    "Runtime": "nodejs18.x",
+    "Role": "arn:aws:iam::303555290462:role/bebco-borrowers-appsync-LambdaExecutionRole-Aprde829FkjT",
+    "Handler": "listBorrowers.handler",
+    "CodeSize": 3073605,
+    "Description": "",
+    "Timeout": 60,
+    "MemorySize": 512,
+    "LastModified": "2025-10-10T21:47:50.000+0000",
+    "CodeSha256": "3neCztTGzbd+bwItg36EM+VJdO3j86capHm9LgKYME8=",
+    "Version": "$LATEST",
+    "VpcConfig": {
+      "SubnetIds": [],
+      "SecurityGroupIds": [],
+      "VpcId": "",
+      "Ipv6AllowedForDualStack": false
+    },
+    "Environment": {
+      "Variables": {
+        "TABLE_NAME": "bebco-borrower-staging-loans",
+        "COMPANIES_TABLE": "bebco-borrower-staging-companies"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "6d24495b-7e2b-4140-8a1c-a536dab09b00",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-borrowers-api-listBorrowers"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-admin-upload-statements",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-admin-upload-statements",
+    "Runtime": "python3.11",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-admin-upload-statements-role",
+    "Handler": "app.handler",
+    "CodeSize": 2892,
+    "Description": "",
+    "Timeout": 60,
+    "MemorySize": 512,
+    "LastModified": "2025-09-18T14:08:47.000+0000",
+    "CodeSha256": "D73FB7G905jfebuDPgsGLoVgKkSHoTnJG1vRw8Ed2KY=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "S3_BUCKET": "bebco-borrower-staging-documents",
+        "LOANS_TABLE": "bebco-borrower-staging-loans",
+        "STATEMENTS_TABLE": "bebco-borrower-staging-statements",
+        "COMPANIES_TABLE": "bebco-borrower-staging-companies",
+        "ALLOWED_ORIGIN": "*"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "d164f51b-e1be-4edc-bc3c-5736c560adf8",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-admin-upload-statements"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-annual-reports-get-annual-report",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-annual-reports-get-annual-report",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-annual-reports-lambda-role",
+    "Handler": "annual_reports.get_annual_report.lambda_handler",
+    "CodeSize": 15339321,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-08-14T19:57:57.000+0000",
+    "CodeSha256": "XhB/R/uF+KpGCPDeibSc/N3HQ5wT2ZjfkRlySmRsQXE=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-annual-reportings",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "d06a3caf-99e5-4d90-8f3b-954536e745e1",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-annual-reports-get-annual-report"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-users-verify2fa",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-users-verify2fa",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+    "Handler": "verify_2fa_code.lambda_handler",
+    "CodeSize": 60568,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-10-03T17:36:14.000+0000",
+    "CodeSha256": "z6jLC3oiSxZbHrfqo4Dpz8zOY9do5zB+vmrmzLVEPh4=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "OTP_TABLE": "bebco-borrower-staging-otp-codes",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "USERS_TABLE": "bebco-borrower-staging-users",
+        "FILES_TABLE": "bebco-borrower-staging-files",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT",
+        "ACCOUNTS_TABLE": "bebco-borrower-staging-accounts"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "06019ccf-532f-45d6-b954-d1302f0608d1",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-users-verify2fa"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-plaid-token-exchange",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-plaid-token-exchange",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-plaid-token-exchange-lambda-role",
+    "Handler": "plaid_token_exchange.lambda_handler",
+    "CodeSize": 53289676,
+    "Description": "",
+    "Timeout": 60,
+    "MemorySize": 512,
+    "LastModified": "2025-08-27T18:20:04.000+0000",
+    "CodeSha256": "ULvEC5WOB3TJFinXGnUocK0VAqOWdyYBIRlZHIIsNbQ=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "PLAID_CLIENT_ID": "6244b486e15ce5001ab88980",
+        "WEBHOOK_BASE_URL": "https://api.bebco.com",
+        "TRANSACTIONS_SYNC_QUEUE_URL": "https://sqs.us-east-1.amazonaws.com/303555290462/bebco-staging-plaid-transactions-sync",
+        "SYNC_WORKER_FUNCTION_NAME": "bebco-staging-plaid-transactions-sync",
+        "TRANSACTIONS_TABLE": "bebco-borrower-staging-transactions",
+        "PLAID_WEBHOOK_SECRET": "your_webhook_secret_here",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT",
+        "PLAID_SECRET": "05cfb8e62192096f341a5216d82dd6",
+        "PLAID_ENVIRONMENT": "production",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "FILES_TABLE": "bebco-borrower-staging-files",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "ACCOUNTS_TABLE": "bebco-borrower-staging-accounts",
+        "PLAID_ITEMS_TABLE": "bebco-borrower-staging-plaid-items"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "9d449464-763a-427d-8665-74a9240c389a",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-plaid-token-exchange"
+    }
+  },
+  {
+    "FunctionName": "bebco-admin-users-mfa-totp-verify",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-admin-users-mfa-totp-verify",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-admin-users-mfa-totp-verify-role",
+    "Handler": "handler.handler",
+    "CodeSize": 2113,
+    "Description": "",
+    "Timeout": 15,
+    "MemorySize": 256,
+    "LastModified": "2025-09-27T00:03:16.000+0000",
+    "CodeSha256": "QDTSNE7KkL0LrlrD7KNr2prHgqkwYP4G5JVbD+mpe5E=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "b4dfae57-1b6d-4126-8a49-ed2e0f5e3452",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-admin-users-mfa-totp-verify"
+    }
+  },
+  {
+    "FunctionName": "bebco-admin-users-mfa-totp-begin",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-admin-users-mfa-totp-begin",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-admin-users-mfa-totp-begin-role",
+    "Handler": "handler.handler",
+    "CodeSize": 1668,
+    "Description": "",
+    "Timeout": 15,
+    "MemorySize": 256,
+    "LastModified": "2025-09-27T00:00:27.000+0000",
+    "CodeSha256": "fI+gqvi02NYcP+9y/abtaRl6Yjp+wD2p6Wf/YdfMz1s=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "9ac46a51-095c-41dd-a3b1-8aff094ae563",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-admin-users-mfa-totp-begin"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-monthly-report-sharepoint-upload",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-monthly-report-sharepoint-upload",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/lambda-execution-role",
+    "Handler": "monthly_reports.upload_statement_sharepoint.lambda_handler",
+    "CodeSize": 23092182,
+    "Description": "",
+    "Timeout": 60,
+    "MemorySize": 512,
+    "LastModified": "2025-10-25T00:04:12.000+0000",
+    "CodeSha256": "LjuPeozY1pH/QDnQ+4YPgTm9fEFyhTjo0+oEvAqTYdg=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "SHAREPOINT_HOST": "netorgft3435832.sharepoint.com",
+        "SHAREPOINT_S3_PREFIX": "sharepoint",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "SHAREPOINT_DRIVE_NAME": "Documents",
+        "LOANS_BANK_COMPANY_INDEX": "BankCompanyIndex",
+        "SHAREPOINT_CLIENT_SECRET": "PLACEHOLDER_AZURE_AD_SECRET",
+        "LOANS_TABLE_NAME": "bebco-borrower-staging-loans",
+        "LOANS_TRANSACTION_INDEX": "TransactionTypeIndex",
+        "SHAREPOINT_SITE_PATH": "/sites/Portal",
+        "SHAREPOINT_TENANT_ID": "84b99de2-124c-4e49-89f1-c81d9d1ddd3e",
+        "SHAREPOINT_CLIENT_ID": "ac9357a3-b2c9-4ed9-a900-c846a34227a3"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "97748c50-7376-47ab-ab60-5f7fbd17b95b",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-monthly-report-sharepoint-upload"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-generate-loan-statements",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-generate-loan-statements",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-lambda-loan-statements-role",
+    "Handler": "generate_borrower_statements.lambda_handler",
+    "CodeSize": 8815210,
+    "Description": "",
+    "Timeout": 60,
+    "MemorySize": 2080,
+    "LastModified": "2025-10-21T15:36:23.000+0000",
+    "CodeSha256": "Uh53CEKVqoWzgkuAUsyCv9SpdRuFlnl+nxH2AUlT98Q=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "LOANS_TABLE": "bebco-borrower-staging-loans",
+        "STATEMENTS_TABLE": "bebco-borrower-staging-statements",
+        "COMPANIES_TABLE": "bebco-borrower-staging-companies",
+        "ALLOWED_ORIGIN": "*"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "146277c7-1ad2-4d53-bd21-565b389b66bd",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-generate-loan-statements"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-accounts-get",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-accounts-get",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-accounts-lambda-role",
+    "Handler": "get_account.lambda_handler",
+    "CodeSize": 1498178,
+    "Description": "Get account details with statements",
+    "Timeout": 60,
+    "MemorySize": 512,
+    "LastModified": "2025-08-16T00:27:55.000+0000",
+    "CodeSha256": "UsnV5QkfZRNYoi7MaIKhbb8iNRPtfzxtNmCR0+BrVTA=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "FILES_TABLE": "bebco-borrower-staging-files",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT",
+        "ACCOUNTS_TABLE": "bebco-borrower-staging-accounts"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "e090d98e-bc55-4a84-ad21-0c19d58d4a52",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-accounts-get"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-draws-reject",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-draws-reject",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-draws-lambda-role",
+    "Handler": "reject_draw.lambda_handler",
+    "CodeSize": 575159,
+    "Description": "Rejects draw requests with reason tracking",
+    "Timeout": 60,
+    "MemorySize": 512,
+    "LastModified": "2025-08-13T17:55:52.626+0000",
+    "CodeSha256": "yawraTQyp1DlIQo3EMZyRI87uTPVGN/tAZqlidousD4=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "e03200d4-0afa-435c-9e04-850decb09047",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-draws-reject"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-users-password-start",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-users-password-start",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+    "Handler": "password_start.lambda_handler",
+    "CodeSize": 2073,
+    "Description": "",
+    "Timeout": 3,
+    "MemorySize": 128,
+    "LastModified": "2025-10-02T20:10:44.000+0000",
+    "CodeSha256": "MCI2qmHcCtWebJCt3z9M48UaAIVCy0uTOxl42KHsLb4=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "ADMIN_PORTAL_BASE_URL": "https://admin.lexlink.ai",
+        "SES_FROM_ADDRESS": "hello@lexlink.ai",
+        "USERS_TABLE": "bebco-borrower-staging-users",
+        "SEND2FA_FUNCTION": "bebco-staging-users-send2fa",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "a7e3b9e0-c090-4232-90f7-e15c9cd6414f",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-users-password-start"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-annual-reports-update-annual-report",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-annual-reports-update-annual-report",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-annual-reports-lambda-role",
+    "Handler": "annual_reports.update_annual_report.lambda_handler",
+    "CodeSize": 22293967,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-10-20T22:56:06.000+0000",
+    "CodeSha256": "pepH8Ga9o2RU8fDZ6k46oC1dpaXNBRg0Z7paayzDk/c=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-annual-reportings",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "9ac4c103-76ec-4dd7-958a-d61de5ad9633",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-annual-reports-update-annual-report"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-monthly-reports-get",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-monthly-reports-get",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+    "Handler": "lambda_function.lambda_handler",
+    "CodeSize": 16957978,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-10-16T01:18:59.000+0000",
+    "CodeSha256": "PyTfgYGZudXHsizEzs4VTf7AQJ2IryKTnKaT3Alve/g=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "TRANSACTIONS_TABLE": "bebco-borrower-staging-transactions",
+        "OUTPUT_BUCKET": "bebco-borrower-staging-documents",
+        "ACCOUNTS_TABLE": "bebco-borrower-staging-accounts"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "b7de6db4-81a6-43e1-9c58-0bebb3acf72b",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-monthly-reports-get"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-statements-financials",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-statements-financials",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-lambda-statements-financials-role",
+    "Handler": "calculate_statement_financials.lambda_handler",
+    "CodeSize": 4537,
+    "Description": "",
+    "Timeout": 300,
+    "MemorySize": 512,
+    "LastModified": "2025-10-04T19:03:34.000+0000",
+    "CodeSha256": "BxIRaE8oi/PqEwb1yJGcbcXR/ZNbu5NFGLFuG3HMIPQ=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "LOANS_TABLE": "bebco-borrower-staging-loans",
+        "STATEMENTS_TABLE": "bebco-borrower-staging-statements",
+        "ALLOWED_ORIGIN": "*"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "5af4b536-3217-4fdf-a094-91e81b92d1d0",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-statements-financials"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-expenses-get",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-expenses-get",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-expenses-lambda-role",
+    "Handler": "get_expense.lambda_handler",
+    "CodeSize": 11425,
+    "Description": "Get expense details with document context",
+    "Timeout": 60,
+    "MemorySize": 512,
+    "LastModified": "2025-08-13T06:41:35.000+0000",
+    "CodeSha256": "cA2bUFPPMUTh7dEIUjM1YM+wGh5bp/tmdNfXu52O4sU=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "b16616b9-24c9-4ad4-aea1-ca2f8a2ec835",
+    "Layers": [
+      {
+        "Arn": "arn:aws:lambda:us-east-1:303555290462:layer:bebco-staging-python-deps:4",
+        "CodeSize": 5441474
+      }
+    ],
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-expenses-get"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-annual-reports-delete-annual-report",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-annual-reports-delete-annual-report",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-annual-reports-lambda-role",
+    "Handler": "delete_annual_report.lambda_handler",
+    "CodeSize": 22980631,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-10-15T04:43:54.000+0000",
+    "CodeSha256": "1XOr3u7zzKpi77YIq7phebblcuqNmyCsTEL+rZ+04BE=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-annual-reportings",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "840ec65a-ef2a-443e-a075-6c18cd59c15d",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-annual-reports-delete-annual-report"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-payments-ach-batches",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-payments-ach-batches",
+    "Runtime": "python3.12",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-payments-ach-batches-role",
+    "Handler": "process_batch_payments.lambda_handler",
+    "CodeSize": 21007523,
+    "Description": "",
+    "Timeout": 120,
+    "MemorySize": 4096,
+    "LastModified": "2025-10-16T17:06:11.000+0000",
+    "CodeSha256": "QFQ8DS3UMVAWs/C1KWofv2pkO7ResXjv6kudOQWXuec=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT",
+        "SendGrid_Secret": "PLACEHOLDER_SENDGRID_API_KEY"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "6a89ee8f-4679-4cf1-9cef-d469e7dbfe8e",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-payments-ach-batches"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-draws-get",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-draws-get",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-draws-lambda-role",
+    "Handler": "get_draw.lambda_handler",
+    "CodeSize": 17134414,
+    "Description": "Gets detailed draw request information",
+    "Timeout": 60,
+    "MemorySize": 512,
+    "LastModified": "2025-08-13T21:41:31.000+0000",
+    "CodeSha256": "MkpLe7KGicd/dSOD7m0USsJjE9/r34cfMvuDediMgag=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "64e37005-a098-4e83-a4ab-c6a0c5c0f318",
+    "Layers": [
+      {
+        "Arn": "arn:aws:lambda:us-east-1:303555290462:layer:bebco-staging-python-deps:4",
+        "CodeSize": 5441474
+      }
+    ],
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-draws-get"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-expenses-list",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-expenses-list",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-expenses-lambda-role",
+    "Handler": "list_expenses.lambda_handler",
+    "CodeSize": 11995,
+    "Description": "List expenses with filtering and pagination",
+    "Timeout": 60,
+    "MemorySize": 512,
+    "LastModified": "2025-08-13T06:09:14.000+0000",
+    "CodeSha256": "kJcN5ubXkJhEJw4YtlbyYZdy2Lb5Cc3V65VRm94RNyE=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "dfa80e4d-3fd8-4a4a-9b24-5890b5880947",
+    "Layers": [
+      {
+        "Arn": "arn:aws:lambda:us-east-1:303555290462:layer:bebco-staging-python-deps:3",
+        "CodeSize": 49635921
+      }
+    ],
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-expenses-list"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-draws-approve",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-draws-approve",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-draws-lambda-role",
+    "Handler": "approve_draw.lambda_handler",
+    "CodeSize": 6507875,
+    "Description": "Approves pending draw requests with OTP verification",
+    "Timeout": 60,
+    "MemorySize": 512,
+    "LastModified": "2025-08-18T22:26:47.000+0000",
+    "CodeSha256": "jd6Aki02UDK3tf0km1RT/tMZYOFO6fiQd6Lu7gNBI/s=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "OTP_TABLE": "bebco-borrower-staging-otp-codes",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "USERS_TABLE": "bebco-borrower-staging-users",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "cf17ac04-661a-4245-afa5-aaaa35a232dd",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-draws-approve"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-accounts-ocr-results",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-accounts-ocr-results",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-ocr-lambda-role",
+    "Handler": "ocr_results.lambda_handler",
+    "CodeSize": 10094,
+    "Description": "Process Textract OCR results and store in S3/DynamoDB",
+    "Timeout": 900,
+    "MemorySize": 4096,
+    "LastModified": "2025-09-13T19:25:27.000+0000",
+    "CodeSha256": "s1ZOqWbGdW/S5nZUQK8f656mvv9GgO5LdrQSk3KFRt8=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "FILES_TABLE": "bebco-borrower-staging-files"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "aaa90022-e71f-4024-a09a-1ec8cbd8e3d3",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-accounts-ocr-results"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-annual-reports-list-annual-reports",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-annual-reports-list-annual-reports",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-annual-reports-lambda-role",
+    "Handler": "annual_reports.list_annual_reports.lambda_handler",
+    "CodeSize": 15183546,
+    "Description": "",
+    "Timeout": 120,
+    "MemorySize": 4096,
+    "LastModified": "2025-10-15T06:07:17.000+0000",
+    "CodeSha256": "1WEDnBgG+WFILVaTUNPS6whedl9nFDPEbs0OF3iqYx0=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-annual-reportings",
+        "LOANS_TABLE": "bebco-borrower-staging-loans",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "COMPANIES_TABLE": "bebco-borrower-staging-companies",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "163c3ef1-64ea-433f-87ef-0fbec2b77dc3",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 2048
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-annual-reports-list-annual-reports"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-payments-get",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-payments-get",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-payments-role",
+    "Handler": "payments.get_payments.lambda_handler",
+    "CodeSize": 5366360,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 512,
+    "LastModified": "2025-09-11T05:58:30.000+0000",
+    "CodeSha256": "u3hLfOFpQyK6Kcm9rHzWE7WsIBabg4MzO9NRZ+JNmc8=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "STAGE": "staging",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "7902213e-c095-4c01-8822-2e6744560104",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-payments-get"
+    }
+  },
+  {
+    "FunctionName": "bebcostaging-plaid-daily-sync",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebcostaging-plaid-daily-sync",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-plaid-transactions-sync-lambda-role",
+    "Handler": "plaid_daily_sync_scheduler.lambda_handler",
+    "CodeSize": 1693,
+    "Description": "",
+    "Timeout": 60,
+    "MemorySize": 256,
+    "LastModified": "2025-09-01T17:45:44.000+0000",
+    "CodeSha256": "BbhP7K42DVmlifz7zVijLl3JDyUN3SJ5W4IGuepV3EA=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "TRANSACTIONS_SYNC_QUEUE_URL": "https://sqs.us-east-1.amazonaws.com/303555290462/bebco-staging-plaid-transactions-sync",
+        "PLAID_ITEMS_TABLE": "bebco-borrower-staging-plaid-items"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "b90b2d12-d368-4b1a-84de-db13447d6af8",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebcostaging-plaid-daily-sync"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-auth-validate-password",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-auth-validate-password",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/lambda-execution-role",
+    "Handler": "lambda_function.lambda_handler",
+    "CodeSize": 2940,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-09-29T22:53:01.000+0000",
+    "CodeSha256": "S+GlYcMEF5y6Y72BRZHGz2f46ZYGTspp5rVUloSZQ+g=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "OTP_TABLE": "bebco-borrower-staging-otp-codes",
+        "USERS_TABLE": "bebco-borrower-staging-users",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "0cb6a1cd-f634-415f-a3d4-bf9c4cc9960e",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-auth-validate-password"
+    }
+  },
+  {
+    "FunctionName": "bebco-agent-run-partiql-tool",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-agent-run-partiql-tool",
+    "Runtime": "nodejs20.x",
+    "Role": "arn:aws:iam::303555290462:role/chatkit-dynamodb-agent-RunPartiqlToolRole-MvBqnFpVhhe9",
+    "Handler": "index.handler",
+    "CodeSize": 126601,
+    "Description": "",
+    "Timeout": 29,
+    "MemorySize": 256,
+    "LastModified": "2025-10-13T06:55:39.675+0000",
+    "CodeSha256": "4z2TAFHoiK2Q26igdV53Q6zafBvyQB3/Sd+DX9MzmX4=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "COMPANIES_TABLE": "bebco-borrower-staging-companies",
+        "PAYMENTS_TABLE": "bebco-borrower-staging-payments",
+        "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "7108619f-e858-4462-9dbd-02a3bd7fc081",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-agent-run-partiql-tool"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-plaid-account-transactions",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-plaid-account-transactions",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-plaid-account-transactions-role",
+    "Handler": "app.lambda_handler",
+    "CodeSize": 2583,
+    "Description": "",
+    "Timeout": 300,
+    "MemorySize": 4096,
+    "LastModified": "2025-10-16T21:03:15.000+0000",
+    "CodeSha256": "F2Gx5hBgKY3bx/PKUKOS9l4voS4ulZwDoww7mavd3Mg=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "TRANSACTIONS_TABLE": "bebco-borrower-staging-transactions",
+        "ACCOUNTS_TABLE": "bebco-borrower-staging-accounts"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "c06e28e3-55da-4420-b812-d7a0359060a9",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 2080
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-plaid-account-transactions"
+    }
+  },
+  {
+    "FunctionName": "bebco-admin-auth-check-user-status",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-admin-auth-check-user-status",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/lambda-execution-role",
+    "Handler": "lambda_function.lambda_handler",
+    "CodeSize": 16122167,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-10-06T17:07:45.000+0000",
+    "CodeSha256": "wXOTiyuoILSID51EyThtEAEGujEOORVtuiretPev/eg=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "OTP_TABLE": "bebco-borrower-staging-otp-codes",
+        "USERS_TABLE": "bebco-borrower-staging-users",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "8046d05d-812c-4595-98dd-4ae74c01bf22",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-admin-auth-check-user-status"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-annual-reports-create-annual-report",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-annual-reports-create-annual-report",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-annual-reports-lambda-role",
+    "Handler": "annual_reports.create_annual_report.lambda_handler",
+    "CodeSize": 22294344,
+    "Description": "",
+    "Timeout": 900,
+    "MemorySize": 4096,
+    "LastModified": "2025-10-24T20:48:02.000+0000",
+    "CodeSha256": "5OUWYKSgLXSq54ku4GbELHCj164bLf1kQp4e3UyEOeg=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-annual-reportings",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "8b08246d-ffeb-4f73-9d38-cc27801b4a55",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 2048
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-annual-reports-create-annual-report"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-draws-list",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-draws-list",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-draws-lambda-role",
+    "Handler": "list_draws.lambda_handler",
+    "CodeSize": 15375,
+    "Description": "Lists draw requests with filtering and pagination",
+    "Timeout": 120,
+    "MemorySize": 4096,
+    "LastModified": "2025-10-20T06:08:23.000+0000",
+    "CodeSha256": "ARVsieiAB3sHHalTonobyGePOfo2aNG+wBPz/RJvA8I=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "ede852c1-d0fa-4353-a185-dd223f946044",
+    "Layers": [
+      {
+        "Arn": "arn:aws:lambda:us-east-1:303555290462:layer:bebco-staging-python-deps:4",
+        "CodeSize": 5441474
+      }
+    ],
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-draws-list"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-analyze-documents",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-analyze-documents",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-analyze-documents-lambda-role",
+    "Handler": "analyze_document.lambda_handler",
+    "CodeSize": 22274207,
+    "Description": "",
+    "Timeout": 120,
+    "MemorySize": 4096,
+    "LastModified": "2025-10-14T19:26:36.000+0000",
+    "CodeSha256": "2maJiyZkg89W9dgHCngEAdVsU0FWFm+Ct6A19xdgrV0=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "ANTHROPIC_API_KEY": "PLACEHOLDER_ANTHROPIC_API_KEY"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "4a33d6ac-ab4a-4b38-9dd5-153917fff625",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 1028
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-analyze-documents"
+    }
+  },
+  {
+    "FunctionName": "bebco-borrower-staging-admin-account-statements-download",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-borrower-staging-admin-account-statements-download",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/lambda-execution-role",
+    "Handler": "handler.lambda_handler",
+    "CodeSize": 4829,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 128,
+    "LastModified": "2025-10-07T20:08:54.000+0000",
+    "CodeSha256": "W2kcoIwHn84HWwrllMAwu1GlUBbOwo4VRjQsPuiBTGA=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DOCUMENTS_BUCKET": "bebco-borrower-staging-documents"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "84744360-6650-4d33-baa6-489239f02e9f",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-borrower-staging-admin-account-statements-download"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-admin-list-statements",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-admin-list-statements",
+    "Runtime": "python3.12",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-admin-list-statements-role",
+    "Handler": "app.handler",
+    "CodeSize": 1177,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-09-04T12:54:03.350+0000",
+    "CodeSha256": "dEmxVxNRknyjtQSBxiNQky7rcjOktePVRwgvuSsM2rY=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "TABLE_NAME": "bebco-borrower-staging-statements",
+        "COMPANY_INDEX": "CompanyIndex",
+        "ALLOWED_ORIGIN": "*"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "c3abe00b-1134-42fe-9172-8ce8d0c3ef25",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-admin-list-statements"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-admin-borrowers-loan-summary-function",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-admin-borrowers-loan-summary-function",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-admin-borrowers-role",
+    "Handler": "loan_summary.lambda_handler",
+    "CodeSize": 4713,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-09-22T00:26:19.000+0000",
+    "CodeSha256": "AugoPnbErkgSzVT+KI6H6tu1pdStWyre5DPdaLSWdIY=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "LOANS_TABLE": "bebco-borrower-staging-loans",
+        "BANKS_TABLE": "bebco-borrower-staging-banks",
+        "COMPANIES_TABLE": "bebco-borrower-staging-companies"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "d7144ad7-8b15-4260-9bf2-7881b20b869d",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-admin-borrowers-loan-summary-function"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-admin-borrower-settings",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-admin-borrower-settings",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-admin-borrowers-role",
+    "Handler": "get_company_settings.lambda_handler",
+    "CodeSize": 10393,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-10-16T17:44:41.000+0000",
+    "CodeSha256": "xx+Rsjf/Ix9Kt0CgBPv/O0DdHy4+qBKlSNh32HMb+fU=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "LOANS_TABLE": "bebco-borrower-staging-loans",
+        "BANKS_TABLE": "bebco-borrower-staging-banks",
+        "COMPANIES_TABLE": "bebco-borrower-staging-companies"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "8b1c2d9c-ae10-486c-bf9d-04d156b1d1bf",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-admin-borrower-settings"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-banks-update",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-banks-update",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-update-bank-lambda-role-staging",
+    "Handler": "update_bank.lambda_handler",
+    "CodeSize": 6504434,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-08-19T21:34:53.000+0000",
+    "CodeSha256": "VT+gp4y1uz8RWDFytn+yoHSMqGqieWhj3Xh4U0WFCE0=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "BANKS_TABLE": "bebco-borrower-staging-banks",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "b2aabc36-6f25-4f27-b8ea-cda4fee9af30",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-banks-update"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-invoices-get",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-invoices-get",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+    "Handler": "lambda_function.lambda_handler",
+    "CodeSize": 24906763,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-08-14T18:32:16.000+0000",
+    "CodeSha256": "66cnSEQLkq4t2qqT2PuhOZIeuC8OmKEgEhsktpw+oqc=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "LEDGER_TABLE": "bebco-borrower-staging-ledger-entries",
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "669422ea-e390-4da1-a2df-d09f79f2b015",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-invoices-get"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-invoices-create",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-invoices-create",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+    "Handler": "lambda_function.lambda_handler",
+    "CodeSize": 18615685,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-10-05T19:17:57.000+0000",
+    "CodeSha256": "/sza0oGD7YdVlAwAlyeOxcL57souIjiDAxT1HVdSaoY=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "LEDGER_TABLE": "bebco-borrower-staging-ledger-entries",
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "c333e800-ec3a-404e-9883-735da3bf8478",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-invoices-create"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-admin-borrowers-get-borrower-function",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-admin-borrowers-get-borrower-function",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-admin-borrowers-role",
+    "Handler": "get_borrower.lambda_handler",
+    "CodeSize": 6506249,
+    "Description": "",
+    "Timeout": 150,
+    "MemorySize": 4096,
+    "LastModified": "2025-10-14T20:57:12.000+0000",
+    "CodeSha256": "Z5aOSABd/icoWd8I3iOxJ3RRPFRVMUo1S/bkFa6T2/4=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "LOANS_TABLE": "bebco-borrower-staging-loans",
+        "BANKS_TABLE": "bebco-borrower-staging-banks",
+        "COMPANIES_TABLE": "bebco-borrower-staging-companies",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "7cefc26e-d25a-4b27-909e-f378babd906c",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 2080
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-admin-borrowers-get-borrower-function"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-payments-list",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-payments-list",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-payments-role",
+    "Handler": "payments.list_payments.lambda_handler",
+    "CodeSize": 5442269,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 512,
+    "LastModified": "2025-10-02T16:31:37.000+0000",
+    "CodeSha256": "PmhFZPDppfVztJGnJ27rZx42NSmA8Jk+9Pq0bJ1Bsv4=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "STAGE": "staging",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "3446657e-c444-401f-b256-0962997b1573",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-payments-list"
+    }
+  },
+  {
+    "FunctionName": "bebcoborroweradmin-update-loan-staging",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebcoborroweradmin-update-loan-staging",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-admin-update-loan-role",
+    "Handler": "app.handler",
+    "CodeSize": 1906,
+    "Description": "",
+    "Timeout": 10,
+    "MemorySize": 256,
+    "LastModified": "2025-09-07T21:22:34.000+0000",
+    "CodeSha256": "JMPROV7DCRhUREKfVk/bnhy4FD/GoN1Bql6O6lEU3hw=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "TABLE_NAME": "bebco-borrower-staging-loans"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "f9b4a31b-351b-4c24-a109-7373056e03e0",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebcoborroweradmin-update-loan-staging"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-create-account-from-plaid",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-create-account-from-plaid",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-create-account-from-plaid-lambda-role",
+    "Handler": "create_account_from_plaid.lambda_handler",
+    "CodeSize": 53289634,
+    "Description": "",
+    "Timeout": 60,
+    "MemorySize": 512,
+    "LastModified": "2025-08-27T17:45:38.000+0000",
+    "CodeSha256": "DaIBG98aZom8t4BXnhy7RvzwtVMOMzZs11lWgA8qo0U=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "PLAID_CLIENT_ID": "6244b486e15ce5001ab88980",
+        "WEBHOOK_BASE_URL": "https://api.bebco.com",
+        "TRANSACTIONS_SYNC_QUEUE_URL": "https://sqs.us-east-1.amazonaws.com/303555290462/bebco-staging-plaid-transactions-sync",
+        "SYNC_WORKER_FUNCTION_NAME": "bebco-staging-plaid-transactions-sync",
+        "TRANSACTIONS_TABLE": "bebco-borrower-staging-transactions",
+        "PLAID_WEBHOOK_SECRET": "your_webhook_secret_here",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT",
+        "PLAID_SECRET": "05cfb8e62192096f341a5216d82dd6",
+        "PLAID_ENVIRONMENT": "production",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "FILES_TABLE": "bebco-borrower-staging-files",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "ACCOUNTS_TABLE": "bebco-borrower-staging-accounts",
+        "PLAID_ITEMS_TABLE": "bebco-borrower-staging-plaid-items"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "094d9437-b92b-4c3d-ae86-4d7f926fcd03",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-create-account-from-plaid"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-admin-notes-monthly-reports",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-admin-notes-monthly-reports",
+    "Runtime": "python3.11",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-admin-notes-role",
+    "Handler": "app.handler",
+    "CodeSize": 2413,
+    "Description": "",
+    "Timeout": 15,
+    "MemorySize": 256,
+    "LastModified": "2025-09-15T17:57:30.000+0000",
+    "CodeSha256": "lvUYmuciRT7Xjikac6ynDvll7laxNqAugQS2TZ+0SLE=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "TABLE_NAME": "bebco-borrower-staging-monthly-reportings",
+        "PRIMARY_KEY": "id",
+        "ALLOWED_ORIGIN": "*"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "851e07c0-d6d2-46f8-86d4-122d4abffa25",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-admin-notes-monthly-reports"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-payments-ach-consent-create",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-payments-ach-consent-create",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-payments-role",
+    "Handler": "ach_consent.lambda_handler",
+    "CodeSize": 6216423,
+    "Description": "ACH Consent management - check and create ACH consent for borrowers",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-09-12T22:22:29.000+0000",
+    "CodeSha256": "lZcqeEGtkLE/RdVSrA6Esa7m6OO3+OD8uRY2qmQ+FIU=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "STAGE": "staging",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "a5d2b4d0-1ab8-4200-a09f-a41349990837",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-payments-ach-consent-create"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-admin-payments-waive",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-admin-payments-waive",
+    "Runtime": "python3.11",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-admin-payments-waive-role",
+    "Handler": "app.handler",
+    "CodeSize": 3999,
+    "Description": "",
+    "Timeout": 20,
+    "MemorySize": 256,
+    "LastModified": "2025-10-09T04:44:57.000+0000",
+    "CodeSha256": "MI2VKEpVyLQrQGqhLZRiwfrs3Xuv4ONmzrsjXLlR810=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "MONTHLY_REPORTS_TABLE": "bebco-borrower-staging-monthly-reportings",
+        "INVOICES_TABLE": "bebco-borrower-staging-loan-loc",
+        "MONTHLY_REPORTS_PK": "id",
+        "MONTHLY_REPORT_INDEX": "MonthlyReportIndex",
+        "ALLOWED_ORIGIN": "*"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "50b20c3c-acba-4cf8-86bb-0b4dc5f09665",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-admin-payments-waive"
+    }
+  },
+  {
+    "FunctionName": "bebco-admin-users-update-name",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-admin-users-update-name",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-admin-users-update-name-role",
+    "Handler": "handler.handler",
+    "CodeSize": 2272,
+    "Description": "",
+    "Timeout": 15,
+    "MemorySize": 256,
+    "LastModified": "2025-09-26T16:54:43.000+0000",
+    "CodeSha256": "WU6Vi79Q2J2gOoxKCuAE9lju0jOIz+1c0k2m59PdPt8=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "USERS_TABLE": "bebco-borrower-staging-users",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "d4c7a682-fdce-4fac-bb1f-201131f3049b",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-admin-users-update-name"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-expenses-update",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-expenses-update",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-expenses-lambda-role",
+    "Handler": "update_expense.lambda_handler",
+    "CodeSize": 12654,
+    "Description": "Update expense with validation and audit trail",
+    "Timeout": 60,
+    "MemorySize": 512,
+    "LastModified": "2025-08-14T01:01:16.000+0000",
+    "CodeSha256": "POR+G0ryQTvdNeg4HQqysK0577z8spYgZGL9kbF/Z2o=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "4262a828-ec80-48c2-a138-f178a713458d",
+    "Layers": [
+      {
+        "Arn": "arn:aws:lambda:us-east-1:303555290462:layer:bebco-staging-python-deps:3",
+        "CodeSize": 49635921
+      }
+    ],
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-expenses-update"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-cases-get",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-cases-get",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+    "Handler": "cases.get_case.lambda_handler",
+    "CodeSize": 6391915,
+    "Description": "Retrieves detailed case information including expenses and statistics",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-08-13T03:14:57.000+0000",
+    "CodeSha256": "6+8CVlHbEPuQx5D3phcGKk5P+f+Hr5ewNHuGxH+j1Iw=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "bb9faf4f-2066-4e49-841e-0de918f4e476",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-cases-get"
+    }
+  },
+  {
+    "FunctionName": "bebco-docusign-resend_envelope",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-docusign-resend_envelope",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-docusign-lambda-role",
+    "Handler": "app.handler",
+    "CodeSize": 15659826,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 512,
+    "LastModified": "2025-09-09T20:02:40.000+0000",
+    "CodeSha256": "L8U3IJXKMs6ruNTPrn53LPWQJKkNpuESSGudSm2e2F0=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "SHAREPOINT_SECRET_NAME": "SharePoint/Prod",
+        "DOCUSIGN_SECRET_NAME": "DocuSign/Prod",
+        "DYNAMODB_DOCUSIGN_REQUESTS_TABLE": "DocusignRequests"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "19477ae8-575b-4d8e-b5cb-97d15f614cc7",
+    "Layers": [
+      {
+        "Arn": "arn:aws:lambda:us-east-1:303555290462:layer:bebco-docusign-layer:1",
+        "CodeSize": 34264494
+      }
+    ],
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-docusign-resend_envelope"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-cases-list",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-cases-list",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+    "Handler": "cases.list_cases.lambda_handler",
+    "CodeSize": 93957,
+    "Description": "Lists cases with filtering, pagination, and sorting capabilities",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-10-13T19:22:27.000+0000",
+    "CodeSha256": "DdNK+Rf6twukxV2cAUBHhveIZVwSqgx2qkeyPDofALQ=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "6ababc24-adc3-4a01-b649-685fb331005c",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-cases-list"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-plaid-item-webhook-bulk-update",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-plaid-item-webhook-bulk-update",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-plaid-item-webhook-bulk-role",
+    "Handler": "item_webhook_bulk_update.lambda_handler",
+    "CodeSize": 1605,
+    "Description": "",
+    "Timeout": 900,
+    "MemorySize": 512,
+    "LastModified": "2025-09-04T00:09:35.219+0000",
+    "CodeSha256": "NE4SQaCxCZOEqYjEKDY/S70tX7783gUGUh7NYHYM3Es=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "PLAID_SECRET_SECRET_NAME": "PLAID_SECRET",
+        "PLAID_CLIENT_ID_SECRET_NAME": "PLAID_CLIENT_ID",
+        "PLAID_ENVIRONMENT": "production",
+        "NEW_WEBHOOK_URL": "https://re0v1hyrdf.execute-api.us-east-1.amazonaws.com/prod/plaid/webhook",
+        "LOG_LEVEL": "INFO",
+        "PLAID_ITEMS_TABLE": "bebco-borrower-staging-plaid-items"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "834843a5-7112-42ce-ac9f-da0935ece666",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-plaid-item-webhook-bulk-update"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-invoices-list",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-invoices-list",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+    "Handler": "invoices.list_invoices.lambda_handler",
+    "CodeSize": 5217425,
+    "Description": "",
+    "Timeout": 60,
+    "MemorySize": 4096,
+    "LastModified": "2025-10-10T08:42:19.000+0000",
+    "CodeSha256": "1TIsFicHACAL/WhLafDDUiPtUboSx8546KKd2ZY1F/g=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "LEDGER_TABLE": "bebco-borrower-staging-ledger-entries",
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "9ef27638-046c-4dd8-9e84-87fdcac199be",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-invoices-list"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-sharepoint-sync-status",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-sharepoint-sync-status",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-portfolio-sync-lambda-execution-role",
+    "Handler": "lambda_function.lambda_handler",
+    "CodeSize": 26226941,
+    "Description": "",
+    "Timeout": 60,
+    "MemorySize": 256,
+    "LastModified": "2025-08-24T21:03:43.240+0000",
+    "CodeSha256": "vdPp5g5hrHmLSAOSa94DXUJdbUm3ZhCZ7FXbbucmL7k=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "LOANS_TABLE": "bebco-borrower-staging-loans",
+        "COMPANIES_TABLE": "bebco-borrower-staging-companies",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "6a884217-33d3-4102-b8e7-85851536325c",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-sharepoint-sync-status"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-statements-get-url",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-statements-get-url",
+    "Runtime": "python3.12",
+    "Role": "arn:aws:iam::303555290462:role/bebco-lambda-statements-role",
+    "Handler": "get_statement_url.lambda_handler",
+    "CodeSize": 3143,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-10-03T21:02:20.341+0000",
+    "CodeSha256": "h40i4cc2tSIWuGuDOahJziRwfDVfdskCBG8oiRhwrNQ=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "S3_BUCKET": "bebco-borrower-staging-documents",
+        "LOANS_TABLE": "bebco-borrower-staging-loans",
+        "STATEMENTS_TABLE": "bebco-borrower-staging-statements",
+        "URL_EXPIRY_SECONDS": "3600",
+        "ALLOWED_ORIGIN": "*"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "75f357af-307d-4b7f-b72b-ed72e09a2f53",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-statements-get-url"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-plaid-link-token-create",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-plaid-link-token-create",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-plaid-link-token-create-lambda-role",
+    "Handler": "plaid_link_token_create.lambda_handler",
+    "CodeSize": 57520317,
+    "Description": "",
+    "Timeout": 60,
+    "MemorySize": 512,
+    "LastModified": "2025-09-04T05:53:02.000+0000",
+    "CodeSha256": "JtRWckIYy7CiqCEYaJbQQ5iiEVhv1peaYKsCFjzZZM0=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "PLAID_CLIENT_ID": "6244b486e15ce5001ab88980",
+        "WEBHOOK_BASE_URL": "https://24o2865t5h.execute-api.us-east-1.amazonaws.com/staging/plaid/webhook",
+        "TRANSACTIONS_SYNC_QUEUE_URL": "https://sqs.us-east-1.amazonaws.com/303555290462/bebco-staging-plaid-transactions-sync",
+        "SYNC_WORKER_FUNCTION_NAME": "bebco-staging-plaid-transactions-sync",
+        "TRANSACTIONS_TABLE": "bebco-borrower-staging-transactions",
+        "PLAID_WEBHOOK_SECRET": "your_webhook_secret_here",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT",
+        "PLAID_SECRET": "05cfb8e62192096f341a5216d82dd6",
+        "PLAID_ENVIRONMENT": "production",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "FILES_TABLE": "bebco-borrower-staging-files",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "ACCOUNTS_TABLE": "bebco-borrower-staging-accounts",
+        "PLAID_ITEMS_TABLE": "bebco-borrower-staging-plaid-items"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "679e40ee-07cf-4317-be7b-79e0c06132d4",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-plaid-link-token-create"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-users-create",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-users-create",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+    "Handler": "create_user.lambda_handler",
+    "CodeSize": 6516699,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 128,
+    "LastModified": "2025-10-01T18:31:56.000+0000",
+    "CodeSha256": "y3SttJp4qM+y3HXJGQLWTAN2PETJEzLOfiA2An3JhCI=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "OTP_TABLE": "bebco-borrower-staging-otp-codes",
+        "USERS_TABLE": "bebco-borrower-staging-users",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "267b4d88-9131-45f8-8bdd-5dac3857b113",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-users-create"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-monthly-reports-update",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-monthly-reports-update",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+    "Handler": "lambda_function.lambda_handler",
+    "CodeSize": 16956404,
+    "Description": "",
+    "Timeout": 60,
+    "MemorySize": 1023,
+    "LastModified": "2025-09-13T21:06:48.000+0000",
+    "CodeSha256": "Xr72FJVUDsunvKsCrmzlCnggu2nN4Dfu9v7okzObnBQ=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "725754e6-024a-49d0-a903-4b6ea977fd5d",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-monthly-reports-update"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-invoices-update",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-invoices-update",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+    "Handler": "lambda_function.lambda_handler",
+    "CodeSize": 25099532,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-08-14T16:47:59.588+0000",
+    "CodeSha256": "yVZek3kDwkoIacdwrNTuLwUC5Jjbq6eF35pAQ8joHvc=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "LEDGER_TABLE": "bebco-borrower-staging-ledger-entries",
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "ef3c9942-5767-4833-8149-39b5892e15fe",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-invoices-update"
+    }
+  },
+  {
+    "FunctionName": "bebco-admin-users-verify2fa",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-admin-users-verify2fa",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/lambda-execution-role",
+    "Handler": "lambda_function.lambda_handler",
+    "CodeSize": 16122961,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-10-03T19:55:17.000+0000",
+    "CodeSha256": "sq+4y45+LXqshNHASJlTMOhHchTF6ZMayjMJLPYL1L8=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "OTP_TABLE": "bebco-borrower-staging-otp-codes",
+        "USERS_TABLE": "bebco-borrower-staging-users",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "463eb1d6-80e9-4c15-92e0-9e0311168578",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-admin-users-verify2fa"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-plaid-transactions-sync",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-plaid-transactions-sync",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-plaid-transactions-sync-lambda-role",
+    "Handler": "plaid_transactions_sync.lambda_handler",
+    "CodeSize": 8054062,
+    "Description": "",
+    "Timeout": 600,
+    "MemorySize": 10240,
+    "LastModified": "2025-10-12T22:17:37.000+0000",
+    "CodeSha256": "/juFAr7WdDDp2um66EeaIBfda7jj3GqiitXr2PIijn8=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "PLAID_CLIENT_ID": "6244b486e15ce5001ab88980",
+        "TRANSACTIONS_SYNC_QUEUE_URL": "https://sqs.us-east-1.amazonaws.com/303555290462/bebco-staging-plaid-transactions-sync",
+        "SYNC_WORKER_FUNCTION_NAME": "bebco-staging-plaid-transactions-sync",
+        "TRANSACTIONS_TABLE": "bebco-borrower-staging-transactions",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT",
+        "PLAID_SECRET": "05cfb8e62192096f341a5216d82dd6",
+        "PLAID_ENVIRONMENT": "production",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "FILES_TABLE": "bebco-borrower-staging-files",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "ACCOUNTS_TABLE": "bebco-borrower-staging-accounts",
+        "PLAID_ITEMS_TABLE": "bebco-borrower-staging-plaid-items"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "e3981aa2-64ec-4f34-9835-457ecc0f89ff",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 2045
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-plaid-transactions-sync"
+    }
+  },
+  {
+    "FunctionName": "bebco-admin-auth-refresh-token",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-admin-auth-refresh-token",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/lambda-execution-role",
+    "Handler": "lambda_function.lambda_handler",
+    "CodeSize": 16121833,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-10-06T20:38:06.000+0000",
+    "CodeSha256": "HvgHkpOkyBJW2bqjr2z3U4iv5/oZMiA0kOhRVk/oFgo=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "OTP_TABLE": "bebco-borrower-staging-otp-codes",
+        "USERS_TABLE": "bebco-borrower-staging-users",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "6e9e712a-6249-4ea6-8210-58ebc38a04ec",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-admin-auth-refresh-token"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-excel-parser",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-excel-parser",
+    "Runtime": "python3.11",
+    "Role": "arn:aws:iam::303555290462:role/bebco-portfolio-sync-lambda-execution-role",
+    "Handler": "excel_parser_function.lambda_handler",
+    "CodeSize": 46465339,
+    "Description": "",
+    "Timeout": 900,
+    "MemorySize": 10240,
+    "LastModified": "2025-10-20T03:03:43.000+0000",
+    "CodeSha256": "syc2BbjGuyCEL7AaTVG0yjOGyPnTxZDZMUocAqaOuXI=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "PYTHONPATH": "/var/task:/var/task/shared",
+        "LOANS_TABLE": "bebco-borrower-staging-loans",
+        "BANKS_TABLE": "bebco-borrower-staging-banks",
+        "COMPANIES_TABLE": "bebco-borrower-staging-companies"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "914538f1-e570-4161-9877-7c4bd324248f",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 2048
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-excel-parser"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-cases-close",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-cases-close",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+    "Handler": "cases.close_case.lambda_handler",
+    "CodeSize": 5228972,
+    "Description": "Closes cases with outcome details and supporting documentation",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-08-13T03:14:58.000+0000",
+    "CodeSha256": "pgGDzT69kbp7TJnlQxM1G6A8ZspWHMZKpIaqAOuYM8g=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "4cb425c5-dab6-4ca6-b19f-e60ee8161cfc",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-cases-close"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-accounts-process-ocr",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-accounts-process-ocr",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-ocr-lambda-role",
+    "Handler": "process_ocr.lambda_handler",
+    "CodeSize": 10142,
+    "Description": "Process OCR for account statements using Textract",
+    "Timeout": 300,
+    "MemorySize": 512,
+    "LastModified": "2025-09-12T23:45:35.000+0000",
+    "CodeSha256": "YYaWmBu+GmBKs2JNz8CsY0t5+Tj2SDU+xRsmBzpoiQI=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "TEXTRACT_ROLE_ARN": "arn:aws:iam::303555290462:role/bebco-staging-textract-sns-role",
+        "FILES_TABLE": "bebco-borrower-staging-files",
+        "OCR_RESULTS_TOPIC_ARN": "arn:aws:sns:us-east-1:303555290462:bebco-staging-textract-results"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "123d92f8-5991-47c3-ac52-1465e71248c1",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-accounts-process-ocr"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-draws-fund",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-draws-fund",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-draws-lambda-role",
+    "Handler": "fund_draw.lambda_handler",
+    "CodeSize": 575159,
+    "Description": "Processes approved draw requests funding with ledger entries",
+    "Timeout": 60,
+    "MemorySize": 512,
+    "LastModified": "2025-08-13T17:56:02.888+0000",
+    "CodeSha256": "yawraTQyp1DlIQo3EMZyRI87uTPVGN/tAZqlidousD4=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "c20ef553-522f-4829-acc2-3045b1319896",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-draws-fund"
+    }
+  },
+  {
+    "FunctionName": "bebcostaging-generate-plaid-monthly-account-statement",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebcostaging-generate-plaid-monthly-account-statement",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-plaid-transactions-sync-lambda-role",
+    "Handler": "monthly_statements_generator.lambda_handler",
+    "CodeSize": 11070112,
+    "Description": "",
+    "Timeout": 600,
+    "MemorySize": 10240,
+    "LastModified": "2025-10-16T01:58:44.000+0000",
+    "CodeSha256": "rB+DXTLlbRRFwlQOc8GzsyI9sT6o/guTzQv2H+RbYL0=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "TRANSACTIONS_TABLE": "bebco-borrower-staging-transactions",
+        "OUTPUT_BUCKET": "bebco-borrower-staging-documents",
+        "ACCOUNTS_TABLE": "bebco-borrower-staging-accounts"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "698c6750-c4f4-46b6-b980-a8267bd5e29b",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 4096
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebcostaging-generate-plaid-monthly-account-statement"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-accounts-create",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-accounts-create",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-accounts-lambda-role",
+    "Handler": "create_account.lambda_handler",
+    "CodeSize": 6507393,
+    "Description": "Create account for monthly reporting",
+    "Timeout": 60,
+    "MemorySize": 512,
+    "LastModified": "2025-08-28T15:12:37.000+0000",
+    "CodeSha256": "smMPEIIJeE45mEf9qmkewE0g8n+v/S1naY/yf7XT3R8=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "FILES_TABLE": "bebco-borrower-staging-files",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT",
+        "ACCOUNTS_TABLE": "bebco-borrower-staging-accounts"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "f38df2ab-5a3e-4e43-b3a9-2b4482eeb066",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-accounts-create"
+    }
+  },
+  {
+    "FunctionName": "bebco-appsync-annual-reporting-dashboard",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-appsync-annual-reporting-dashboard",
+    "Runtime": "nodejs18.x",
+    "Role": "arn:aws:iam::303555290462:role/bebco-borrowers-appsync-LambdaExecutionRole-Aprde829FkjT",
+    "Handler": "getAnnualReportingDashboard.handler",
+    "CodeSize": 3750535,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 128,
+    "LastModified": "2025-10-16T13:11:25.000+0000",
+    "CodeSha256": "R16JaSzcS/6dsjq7PYK2M/iwEzMkOzD8oKtBdcsuMYU=",
+    "Version": "$LATEST",
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "d41d4aa5-f062-4b4a-b2cf-09e7416e2e94",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-appsync-annual-reporting-dashboard"
+    }
+  },
+  {
+    "FunctionName": "bebco-change-tracker",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-change-tracker",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-change-tracker-role",
+    "Handler": "change-tracker-lambda/lambda_function.lambda_handler",
+    "CodeSize": 4906,
+    "Description": "DynamoDB change tracking function for 14 tables",
+    "Timeout": 300,
+    "MemorySize": 256,
+    "LastModified": "2025-10-06T05:10:36.588+0000",
+    "CodeSha256": "NWjUeMuGpP6u6dbLXuVbqyAaRhwdeXbd+pZaVRZ5BH8=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "RETENTION_DAYS": "14",
+        "BUCKET_NAME": "bebco-change-tracking-303555290462"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "e36dc608-0c04-4580-9379-4a6c079944ca",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-change-tracker"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-payments-create",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-payments-create",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-payments-role",
+    "Handler": "payments.create_payments.lambda_handler",
+    "CodeSize": 5348259,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 4096,
+    "LastModified": "2025-10-14T20:26:36.000+0000",
+    "CodeSha256": "ugwhgp+8qUMq1bhflpV5ylpa5qEpiaT3L1BA4cMXQ04=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "STAGE": "staging",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "161e33dd-8f9d-4dda-ae17-98b46600dd9a",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-payments-create"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-users-update",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-users-update",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+    "Handler": "update_user.lambda_handler",
+    "CodeSize": 6506968,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 128,
+    "LastModified": "2025-08-18T19:43:40.000+0000",
+    "CodeSha256": "C1Ir08tA1GZaYuNvdm0OmKxophP0PX8YyAUYwkUZDpk=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "OTP_TABLE": "bebco-borrower-staging-otp-codes",
+        "USERS_TABLE": "bebco-borrower-staging-users",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "1a0b8931-3322-4695-902b-9703200856f6",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-users-update"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-admin-borrowers-create-borrower-function",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-admin-borrowers-create-borrower-function",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-admin-borrowers-role",
+    "Handler": "create_borrower.lambda_handler",
+    "CodeSize": 6592743,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-08-20T17:59:32.000+0000",
+    "CodeSha256": "P6pK3/WqyGQfzhh7EkOxDRWSmLySqNtNUhPEaAtjv/s=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "COMPANIES_TABLE": "bebco-borrower-staging-companies"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "5927892e-daeb-4f17-8686-e012f76a92e8",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-admin-borrowers-create-borrower-function"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-cases-docket-verification",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-cases-docket-verification",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/lambda-execution-role",
+    "Handler": "cases.get_docket_verification_simple.lambda_handler",
+    "CodeSize": 5214016,
+    "Description": "Docket verification using Unicourt API for case closure",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-08-15T02:18:13.000+0000",
+    "CodeSha256": "nlB9NkBveAa/a6oQJB/3VlR82ICSlr5Ix2mqMZS9+Tg=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "UNICOURT_CLIENT_SECRET": "67WtH1fhaJwhCQfueUxdd11otIThga9Z69AK4SeLfVB75g7DgvWCjJowdt05kaUl",
+        "DYNAMODB_TABLE_NAME": "bebco-borrower-staging-loan-loc",
+        "UNICOURT_CLIENT_ID": "I52RDF9UBUnSsZap5hRKxyU2XQ7NdzAx",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "9bb185c7-b30d-4269-aaf0-19cd97e67fec",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-cases-docket-verification"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-expenses-create-bulk",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-expenses-create-bulk",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-expenses-lambda-role",
+    "Handler": "create_expenses_bulk.lambda_handler",
+    "CodeSize": 6342470,
+    "Description": "Create expenses in bulk with OCR and S3 upload",
+    "Timeout": 60,
+    "MemorySize": 512,
+    "LastModified": "2025-08-13T17:23:30.000+0000",
+    "CodeSha256": "aZCp6yKyhg3vmQ0N5zOBWCSZRhzeaY5PCmEq28jkI48=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "d1bbef9f-f756-4ff0-962d-e11a85f2dce5",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-expenses-create-bulk"
+    }
+  },
+  {
+    "FunctionName": "bebcoborroweradmin-known-accounts-staging",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebcoborroweradmin-known-accounts-staging",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-admin-known-accounts-role",
+    "Handler": "app.handler",
+    "CodeSize": 2404,
+    "Description": "",
+    "Timeout": 10,
+    "MemorySize": 256,
+    "LastModified": "2025-09-07T22:30:12.000+0000",
+    "CodeSha256": "UQ5+tnd4KvgaDAK4pFGgMjXSewCePmxsjYzuiC1NA8U=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "TABLE_NAME": "bebco-borrower-staging-accounts"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "5973c2f9-4ca0-4f0c-8137-c80814ed9082",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebcoborroweradmin-known-accounts-staging"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-plaid-webhook-handler",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-plaid-webhook-handler",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-plaid-webhook-handler-lambda-role",
+    "Handler": "plaid_webhook_handler.lambda_handler",
+    "CodeSize": 31139586,
+    "Description": "",
+    "Timeout": 60,
+    "MemorySize": 512,
+    "LastModified": "2025-10-11T20:19:40.000+0000",
+    "CodeSha256": "Ys80MecYeNFx5cEh9Tu9IaVhM6hOjg86VnVzrwLiLSA=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "TRANSACTIONS_SYNC_QUEUE_URL": "https://sqs.us-east-1.amazonaws.com/303555290462/bebco-staging-plaid-transactions-sync",
+        "DISABLE_SIGNATURE_VERIFICATION": "true",
+        "LOG_LEVEL": "INFO"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "37f09309-937b-4146-bad5-3d9c2fe27d83",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-plaid-webhook-handler"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-admin-borrowers-update-borrower-function",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-admin-borrowers-update-borrower-function",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-admin-borrowers-role",
+    "Handler": "update_borrower.lambda_handler",
+    "CodeSize": 21759316,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-10-16T17:47:08.000+0000",
+    "CodeSha256": "8wbeqwSMp0OFgPiamfkWC/jYYcQIlEfzCKeDwYkdzFM=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "COMPANIES_TABLE": "bebco-borrower-staging-companies",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "bd3a3904-12a6-4062-80c2-983c6502bcbe",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-admin-borrowers-update-borrower-function"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-admin-borrowers-get-borrower-transactions-function",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-admin-borrowers-get-borrower-transactions-function",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-admin-borrowers-role",
+    "Handler": "get_borrower_transactions.lambda_handler",
+    "CodeSize": 6506171,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-10-14T20:49:38.000+0000",
+    "CodeSha256": "klxtQd2+f4TY5jQq+cIMkDWuW++AKAr8061vypaeofU=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "LOANS_TABLE": "bebco-borrower-staging-loans",
+        "BANKS_TABLE": "bebco-borrower-staging-banks",
+        "COMPANIES_TABLE": "bebco-borrower-staging-companies",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "1ec6bb82-1116-4774-a67d-898f08b9dcfd",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-admin-borrowers-get-borrower-transactions-function"
+    }
+  },
+  {
+    "FunctionName": "bebco-admin-auth-complete-setup",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-admin-auth-complete-setup",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/lambda-execution-role",
+    "Handler": "lambda_function.lambda_handler",
+    "CodeSize": 16286651,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-10-02T20:56:45.000+0000",
+    "CodeSha256": "V4LRmkXR9GWa34LQsNvTFsXLz4nhDcMzx/AepKksP1w=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "OTP_TABLE": "bebco-borrower-staging-otp-codes",
+        "USERS_TABLE": "bebco-borrower-staging-users",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "eca2466a-1ba9-41b2-a043-d30d1d51b925",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-admin-auth-complete-setup"
+    }
+  },
+  {
+    "FunctionName": "bebco-statements-stream-publisher",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-statements-stream-publisher",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/StatementsStreamPublisherRole",
+    "Handler": "stream_publisher.lambda_handler",
+    "CodeSize": 5940,
+    "Description": "",
+    "Timeout": 3,
+    "MemorySize": 128,
+    "LastModified": "2025-09-18T18:04:38.000+0000",
+    "CodeSha256": "TQ0Bu7cZYoKbnFktUmUJmUDqfpGhtrSf1mdX6Ej9BSQ=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "APPSYNC_API_ID": "y2w7tmzakjb53pounh4a536p6u",
+        "APPSYNC_URL": "https://z4yaiyjpbvhk5gwsofqz5ozl2q.appsync-api.us-east-1.amazonaws.com/graphql"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "e3c68776-1581-4d67-9bec-b679dbf554c1",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-statements-stream-publisher"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-auth-check-user-status",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-auth-check-user-status",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/lambda-execution-role",
+    "Handler": "lambda_function.lambda_handler",
+    "CodeSize": 3411,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-10-11T05:09:57.000+0000",
+    "CodeSha256": "9pV8Xvk8yxWpKJnZ1rocP/y3FifIs82u5UaPQsn/pgk=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "USERS_TABLE": "bebco-borrower-staging-users",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "90ee1fdc-fc9f-430f-a983-576363acbcad",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-auth-check-user-status"
+    }
+  },
+  {
+    "FunctionName": "bebco-appsync-list-annual-reports",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-appsync-list-annual-reports",
+    "Runtime": "nodejs18.x",
+    "Role": "arn:aws:iam::303555290462:role/bebco-borrowers-appsync-LambdaExecutionRole-Aprde829FkjT",
+    "Handler": "listAnnualReports.handler",
+    "CodeSize": 3750876,
+    "Description": "",
+    "Timeout": 10,
+    "MemorySize": 128,
+    "LastModified": "2025-10-16T12:29:31.000+0000",
+    "CodeSha256": "oNbXgsPjSfAp73ncOLqOwymRTLnG2CsN/Zjc4oyJBAs=",
+    "Version": "$LATEST",
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "42939d72-8eb4-4e91-8e7b-e9f27dd41784",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-appsync-list-annual-reports"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-accounts-list",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-accounts-list",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-accounts-lambda-role",
+    "Handler": "list_accounts.lambda_handler",
+    "CodeSize": 2915671,
+    "Description": "List accounts with filtering and pagination",
+    "Timeout": 120,
+    "MemorySize": 4096,
+    "LastModified": "2025-10-16T04:12:46.000+0000",
+    "CodeSha256": "FZ2/rZbwP6VXK2GV62AFTZA/l274nfsNJqwcDYDjEYA=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "FILES_TABLE": "bebco-borrower-staging-files",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT",
+        "ACCOUNTS_TABLE": "bebco-borrower-staging-accounts"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "e6f6577f-7e7a-4604-8ae9-afb89a5ddadc",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-accounts-list"
+    }
+  },
+  {
+    "FunctionName": "bebco-borrowers-api-getFinancialOverview",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-borrowers-api-getFinancialOverview",
+    "Runtime": "nodejs18.x",
+    "Role": "arn:aws:iam::303555290462:role/bebco-borrowers-appsync-LambdaExecutionRole-Aprde829FkjT",
+    "Handler": "getFinancialOverview.handler",
+    "CodeSize": 4407,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 128,
+    "LastModified": "2025-09-20T17:00:10.000+0000",
+    "CodeSha256": "RST031o9QpNSG4WbjaXz5XsPytf0lgKP/sJrBPImb94=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "TABLE_NAME": "bebco-borrower-staging-loans"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "88e54c98-80e3-429d-ba18-a9f664f0895b",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-borrowers-api-getFinancialOverview"
+    }
+  },
+  {
+    "FunctionName": "bebco-agent-resolve-company-tool",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-agent-resolve-company-tool",
+    "Runtime": "nodejs20.x",
+    "Role": "arn:aws:iam::303555290462:role/chatkit-dynamodb-agent-ResolveCompanyToolRole-gwZfVDFuLUpj",
+    "Handler": "index.handler",
+    "CodeSize": 125987,
+    "Description": "",
+    "Timeout": 29,
+    "MemorySize": 256,
+    "LastModified": "2025-10-13T06:59:43.000+0000",
+    "CodeSha256": "rZsVC7iXxPL1N7sX/SuqAs2Tr5taikjA+e3Z4sKlmTg=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "COMPANIES_TABLE": "bebco-borrower-staging-companies",
+        "PAYMENTS_TABLE": "bebco-borrower-staging-payments",
+        "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "9bde5498-b102-42ba-ac51-f3d52f3f143a",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-agent-resolve-company-tool"
+    }
+  },
+  {
+    "FunctionName": "bebco-appsync-borrower-annual-reports",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-appsync-borrower-annual-reports",
+    "Runtime": "nodejs18.x",
+    "Role": "arn:aws:iam::303555290462:role/bebco-borrowers-appsync-LambdaExecutionRole-Aprde829FkjT",
+    "Handler": "getBorrowerWithAnnualReports.handler",
+    "CodeSize": 3752034,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 128,
+    "LastModified": "2025-10-16T13:11:31.000+0000",
+    "CodeSha256": "XlEGIDVc2qJwG/AFGhZ2lmzYhYsUKChsUcCeifsEeWw=",
+    "Version": "$LATEST",
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "282ed0a5-c395-4617-93a1-3a3a33875875",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-appsync-borrower-annual-reports"
+    }
+  },
+  {
+    "FunctionName": "bebco-borrower-staging-payments-update",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-borrower-staging-payments-update",
+    "Runtime": "python3.11",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-payments-role",
+    "Handler": "lambda_function.lambda_handler",
+    "CodeSize": 22305798,
+    "Description": "",
+    "Timeout": 90,
+    "MemorySize": 4096,
+    "LastModified": "2025-10-10T18:15:38.000+0000",
+    "CodeSha256": "LPdyl5msXor/yOG3T5JE1mo0B754yfYl3goF7kjGLpE=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "7170da96-f47f-4e6d-9eff-9cac46210097",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-borrower-staging-payments-update"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-banks-list",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-banks-list",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-banks-lambda-execution-role",
+    "Handler": "list_banks.lambda_handler",
+    "CodeSize": 6592790,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-08-19T19:07:46.000+0000",
+    "CodeSha256": "ToUEwDQjBXJGtVw41I4diJukU2CG4ZBFlK1CcT7/bYE=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "BANKS_TABLE": "bebco-borrower-staging-banks",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "ef6a7927-b713-46df-a4fe-81e24c0fa495",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-banks-list"
+    }
+  },
+  {
+    "FunctionName": "bebco-lambda-backup-function",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-lambda-backup-function",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-lambda-backup-role",
+    "Handler": "lambda-backup/lambda_function.lambda_handler",
+    "CodeSize": 4839,
+    "Description": "Automated backup function for all Lambda functions",
+    "Timeout": 900,
+    "MemorySize": 512,
+    "LastModified": "2025-10-06T04:34:11.295+0000",
+    "CodeSha256": "7lDhWeAu0MAw8XFV1B8i3GJDCpL120C5dsr+5y8ga4I=",
+    "Version": "$LATEST",
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "4816f615-f687-48e0-a9ad-7794d4a50144",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-lambda-backup-function"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-invoices-generate-monthly",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-invoices-generate-monthly",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+    "Handler": "invoices.generate_monthly_invoice.lambda_handler",
+    "CodeSize": 25136867,
+    "Description": "",
+    "Timeout": 210,
+    "MemorySize": 4096,
+    "LastModified": "2025-09-17T08:33:46.000+0000",
+    "CodeSha256": "Z4bKGZRaDTUfNHYcthmMpA0Pe22tXvX1rBlxQzTytRI=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "LEDGER_TABLE": "bebco-borrower-staging-ledger-entries",
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "a7f08fc5-f782-40ab-b9d1-0c922ebd7255",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-invoices-generate-monthly"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-cases-update",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-cases-update",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+    "Handler": "cases.update_case.lambda_handler",
+    "CodeSize": 6360274,
+    "Description": "Updates existing cases with validation and conditional updates",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-09-04T15:03:21.000+0000",
+    "CodeSha256": "r3gGDOxnnRKYxwqg/5BbW2suQ/tG9hn3hv8nBybu3a4=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "964643a8-e0ce-4708-a63f-235ac58f7f38",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-cases-update"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-banks-create",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-banks-create",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-banks-lambda-execution-role",
+    "Handler": "create_bank.lambda_handler",
+    "CodeSize": 6592750,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-08-19T21:48:24.000+0000",
+    "CodeSha256": "I/06VYdgQJUwzIIIBd+XH4TeQVm2lEdtFL9GpxDGqXk=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "BANKS_TABLE": "bebco-borrower-staging-banks",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "2a7a36c7-c282-4860-9cc4-1577c6f6c561",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-banks-create"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-auth-refresh-token",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-auth-refresh-token",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/lambda-execution-role",
+    "Handler": "lambda_function.lambda_handler",
+    "CodeSize": 1473,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 128,
+    "LastModified": "2025-09-29T23:47:28.000+0000",
+    "CodeSha256": "TnzKHZ05KlCzI9yDqby0G7jAdVE7GglDkWTb9m+WZMc=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "06c5ac0d-1bd6-4bd6-93f8-c3869bb6f64f",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-auth-refresh-token"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-users-send2fa",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-users-send2fa",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+    "Handler": "send_2fa_code.lambda_handler",
+    "CodeSize": 60755,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-10-03T17:36:51.000+0000",
+    "CodeSha256": "v/tVMTpppjeSOIIGfmbe62cXyLr/0eHK9lbiuBS+/f0=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "ENABLE_SES": "false",
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "OTP_TABLE": "bebco-borrower-staging-otp-codes",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "SendGrid_API_Key_ID": "G-CNESYLTkSfvjghjwSuLw",
+        "USERS_TABLE": "bebco-borrower-staging-users",
+        "FILES_TABLE": "bebco-borrower-staging-files",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT",
+        "ACCOUNTS_TABLE": "bebco-borrower-staging-accounts",
+        "SendGrid_Secret": "PLACEHOLDER_SENDGRID_API_KEY"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "09d9642f-ff2e-48b1-aecf-3f1bbf03a23b",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-users-send2fa"
+    }
+  },
+  {
+    "FunctionName": "bebco-admin-users-change-password",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-admin-users-change-password",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-admin-users-change-password-role",
+    "Handler": "handler.handler",
+    "CodeSize": 1450,
+    "Description": "",
+    "Timeout": 15,
+    "MemorySize": 256,
+    "LastModified": "2025-09-26T22:47:43.000+0000",
+    "CodeSha256": "/GaYgcmonBLkQh8kExEArvbHBFPI9NzgfERzAf6OA0M=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "ae6d9529-f1f6-4d87-87ab-f1f21c20a76e",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-admin-users-change-password"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-users-list",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-users-list",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+    "Handler": "list_users.lambda_handler",
+    "CodeSize": 11437,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-09-16T04:00:17.000+0000",
+    "CodeSha256": "QCao1RkZEcZMoPQmdVxnCpyyP0HF8tsNJdxM2bAFsz0=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "OTP_TABLE": "bebco-borrower-staging-otp-codes",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "USERS_TABLE": "bebco-borrower-staging-users",
+        "FILES_TABLE": "bebco-borrower-staging-files",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT",
+        "ACCOUNTS_TABLE": "bebco-borrower-staging-accounts"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "3ab9c2bd-cfcc-47f9-a02b-c6e949cb13da",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-users-list"
+    }
+  },
+  {
+    "FunctionName": "bebco-docusign-webhook_complete",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-docusign-webhook_complete",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-docusign-lambda-role",
+    "Handler": "app.handler",
+    "CodeSize": 15660386,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 512,
+    "LastModified": "2025-09-09T20:03:11.000+0000",
+    "CodeSha256": "b3o1AyIvyOcG7vtLgZtw8AL3gSZ2gCA8t4W2FLz+oss=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "SHAREPOINT_SECRET_NAME": "SharePoint/Prod",
+        "DOCUSIGN_SECRET_NAME": "DocuSign/Prod",
+        "DYNAMODB_DOCUSIGN_REQUESTS_TABLE": "DocusignRequests"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "ba3604f7-8c78-48bd-ac79-476f969e9920",
+    "Layers": [
+      {
+        "Arn": "arn:aws:lambda:us-east-1:303555290462:layer:bebco-docusign-layer:1",
+        "CodeSize": 34264494
+      }
+    ],
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-docusign-webhook_complete"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-sharepoint-sync-portfolio",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-sharepoint-sync-portfolio",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-portfolio-sync-lambda-execution-role",
+    "Handler": "lambda_function.lambda_handler",
+    "CodeSize": 21372523,
+    "Description": "",
+    "Timeout": 900,
+    "MemorySize": 4096,
+    "LastModified": "2025-08-25T16:46:31.000+0000",
+    "CodeSha256": "f+iWrwOT3eiw2R3dhbY80ua6Qn8OUrPI6hpqtrMpd9U=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "SHAREPOINT_HOST": "netorgft3435832.sharepoint.com",
+        "S3_STAGING_BUCKET": "bebco-borrower-staging-documents",
+        "PORT_RECON_FILE_PATH": "Port Recon Data/Port Recon Data.xlsx",
+        "LOANS_TABLE": "bebco-borrower-staging-loans",
+        "COMPANIES_TABLE": "bebco-borrower-staging-companies",
+        "SHAREPOINT_CLIENT_SECRET": "PLACEHOLDER_AZURE_AD_SECRET",
+        "SHAREPOINT_SITE_PATH": "/sites/Portal",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT",
+        "EAJF_BANK_ID": "8641460d-e1f1-4540-b513-a9548d83bb6c",
+        "SHAREPOINT_CLIENT_ID": "ac9357a3-b2c9-4ed9-a900-c846a34227a3"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "37301510-bdfd-42b7-b139-e4655fcbf643",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 2048
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-sharepoint-sync-portfolio"
+    }
+  },
+  {
+    "FunctionName": "bebco-admin-users-mfa-status",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-admin-users-mfa-status",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-admin-users-mfa-status-role",
+    "Handler": "handler.handler",
+    "CodeSize": 1103,
+    "Description": "",
+    "Timeout": 15,
+    "MemorySize": 256,
+    "LastModified": "2025-09-27T00:08:31.000+0000",
+    "CodeSha256": "4bgfnFoFCWlo57LBa8d4RlyUyspBmCeaKEKMmiOvnM0=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "USERS_TABLE": "bebco-borrower-staging-users"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "8e67a672-4bf4-4cce-b25f-2f1cace18400",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-admin-users-mfa-status"
+    }
+  },
+  {
+    "FunctionName": "bebco-docusignLegacy-send-envelope",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-docusignLegacy-send-envelope",
+    "Runtime": "python3.11",
+    "Role": "arn:aws:iam::303555290462:role/bebco-docusign-lambda-role",
+    "Handler": "send_envelope.handler",
+    "CodeSize": 605073,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-10-02T16:44:47.000+0000",
+    "CodeSha256": "HNxiToo6AQfnCmNmqDcOsePecYo3e6inWbZbeFkh2J4=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "COMPANIES_TABLE": "bebco-borrower-staging-companies",
+        "DOCUSIGN_LEGACY_SECRET_NAME": "docusignLegacyAuth",
+        "LOG_LEVEL": "INFO",
+        "DOCUSIGN_HOST": "https://na4.docusign.net"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "ce89ab53-4a8b-485d-a3e1-3bdbd11e27e7",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-docusignLegacy-send-envelope"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-draws-submit",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-draws-submit",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-draws-lambda-role",
+    "Handler": "submit_draw.lambda_handler",
+    "CodeSize": 6509287,
+    "Description": "Submits queued draw requests for approval",
+    "Timeout": 60,
+    "MemorySize": 512,
+    "LastModified": "2025-08-18T22:41:05.000+0000",
+    "CodeSha256": "pQhMlg5YkaJz84I/lvkVjizzwEOa8xUkztvX/hLg+AE=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "OTP_TABLE": "bebco-borrower-staging-otp-codes",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "USERS_TABLE": "bebco-borrower-staging-users",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "7662cefb-01d7-4fbf-b6da-8e403deadf66",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-draws-submit"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-users-password-complete",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-users-password-complete",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+    "Handler": "password_complete.lambda_handler",
+    "CodeSize": 1510,
+    "Description": "",
+    "Timeout": 3,
+    "MemorySize": 128,
+    "LastModified": "2025-09-25T23:08:22.000+0000",
+    "CodeSha256": "sNm7SkVYC6tqCK+DqDcr7IhlkxVhSc3VWezv6uJbNy8=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "VERIFY2FA_FUNCTION": "bebco-staging-users-verify2fa",
+        "USERS_TABLE": "bebco-borrower-staging-users",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "e00c5674-5c78-46fe-9252-0a8fa111ad42",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-users-password-complete"
+    }
+  },
+  {
+    "FunctionName": "bebcostaging-monthly-reports-scheduler",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebcostaging-monthly-reports-scheduler",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-plaid-transactions-sync-lambda-role",
+    "Handler": "monthly_reports_scheduler.lambda_handler",
+    "CodeSize": 5890,
+    "Description": "",
+    "Timeout": 300,
+    "MemorySize": 512,
+    "LastModified": "2025-09-01T18:36:51.000+0000",
+    "CodeSha256": "N8yOdDunc3v4YmdDZmwrdaTCVfcEF8O5VAngoBlI/HE=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "MONTHLY_REPORTS_TABLE": "bebco-borrower-staging-monthly-reportings",
+        "TRANSACTIONS_TABLE": "bebco-borrower-staging-transactions",
+        "COMPANIES_TABLE": "bebco-borrower-staging-companies",
+        "ACCOUNTS_TABLE": "bebco-borrower-staging-accounts"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "f2c6718f-dd38-4341-be4a-39955ae014ef",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebcostaging-monthly-reports-scheduler"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-users-profile",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-users-profile",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+    "Handler": "update_profile.lambda_handler",
+    "CodeSize": 6507569,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-08-18T16:33:31.000+0000",
+    "CodeSha256": "v9kkdxRSZkHCriHWUIHNkWTCU1wIdagpggSGLGYxJP8=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "OTP_TABLE": "bebco-borrower-staging-otp-codes",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "USERS_TABLE": "bebco-borrower-staging-users",
+        "FILES_TABLE": "bebco-borrower-staging-files",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT",
+        "ACCOUNTS_TABLE": "bebco-borrower-staging-accounts"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "93547735-6103-4b4f-a56b-80e46dcab141",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-users-profile"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-plaid-accounts-preview",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-plaid-accounts-preview",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-plaid-accounts-preview-lambda-role",
+    "Handler": "plaid_accounts_preview.lambda_handler",
+    "CodeSize": 53289634,
+    "Description": "",
+    "Timeout": 60,
+    "MemorySize": 512,
+    "LastModified": "2025-08-27T17:45:07.000+0000",
+    "CodeSha256": "DaIBG98aZom8t4BXnhy7RvzwtVMOMzZs11lWgA8qo0U=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "PLAID_CLIENT_ID": "6244b486e15ce5001ab88980",
+        "WEBHOOK_BASE_URL": "https://api.bebco.com",
+        "TRANSACTIONS_SYNC_QUEUE_URL": "https://sqs.us-east-1.amazonaws.com/303555290462/bebco-staging-plaid-transactions-sync",
+        "SYNC_WORKER_FUNCTION_NAME": "bebco-staging-plaid-transactions-sync",
+        "TRANSACTIONS_TABLE": "bebco-borrower-staging-transactions",
+        "PLAID_WEBHOOK_SECRET": "your_webhook_secret_here",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT",
+        "PLAID_SECRET": "05cfb8e62192096f341a5216d82dd6",
+        "PLAID_ENVIRONMENT": "production",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "FILES_TABLE": "bebco-borrower-staging-files",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "ACCOUNTS_TABLE": "bebco-borrower-staging-accounts",
+        "PLAID_ITEMS_TABLE": "bebco-borrower-staging-plaid-items"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "95c5c54e-c663-4433-aa81-96b00ad89943",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-plaid-accounts-preview"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-admin-borrowers-list-borrowers-function",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-admin-borrowers-list-borrowers-function",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-admin-borrowers-role",
+    "Handler": "list_borrowers.lambda_handler",
+    "CodeSize": 15027871,
+    "Description": "",
+    "Timeout": 300,
+    "MemorySize": 4096,
+    "LastModified": "2025-10-10T21:39:13.000+0000",
+    "CodeSha256": "DI5sCISjL+3FpLoYYc+RylrcJZ10wf2v70ggz2QzYhk=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "LOANS_TABLE": "bebco-borrower-staging-loans",
+        "BANKS_TABLE": "bebco-borrower-staging-banks",
+        "COMPANIES_TABLE": "bebco-borrower-staging-companies",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "09a0369d-1e65-4093-a8e4-0da7a3976d2b",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-admin-borrowers-list-borrowers-function"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-users-get",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-users-get",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+    "Handler": "get_user.lambda_handler",
+    "CodeSize": 10405,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-08-27T20:23:22.000+0000",
+    "CodeSha256": "PnEZm9twtV74EMpJQkwtTjGYBzZIP6M+dnP+a+OmN/A=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "OTP_TABLE": "bebco-borrower-staging-otp-codes",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "USERS_TABLE": "bebco-borrower-staging-users",
+        "FILES_TABLE": "bebco-borrower-staging-files",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT",
+        "ACCOUNTS_TABLE": "bebco-borrower-staging-accounts"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "7d29a146-13b8-47bd-b92a-034d2863eb0b",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-users-get"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-draws-create",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-draws-create",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-draws-lambda-role",
+    "Handler": "create_draw.lambda_handler",
+    "CodeSize": 11348,
+    "Description": "Creates new draw requests with expense validation and DynamoDB transactions",
+    "Timeout": 60,
+    "MemorySize": 512,
+    "LastModified": "2025-10-20T04:11:39.000+0000",
+    "CodeSha256": "yCwUHguJYjb2xK9je9uSv5mxFgi9c9YvVgmCwVlyWkw=",
+    "Version": "$LATEST",
+    "Environment": {
+      "Variables": {
+        "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+        "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+        "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+        "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+        "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+      }
+    },
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "1db51664-2e1b-46e5-b3cc-8b41e7422143",
+    "Layers": [
+      {
+        "Arn": "arn:aws:lambda:us-east-1:303555290462:layer:bebco-staging-python-deps:4",
+        "CodeSize": 5441474
+      }
+    ],
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-draws-create"
+    }
+  },
+  {
+    "FunctionName": "bebco-staging-monthly-reports-submit",
+    "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-monthly-reports-submit",
+    "Runtime": "python3.9",
+    "Role": "arn:aws:iam::303555290462:role/bebco-staging-cases-lambda-role",
+    "Handler": "lambda_function.lambda_handler",
+    "CodeSize": 16959217,
+    "Description": "",
+    "Timeout": 30,
+    "MemorySize": 256,
+    "LastModified": "2025-10-13T20:51:20.000+0000",
+    "CodeSha256": "RbEzkjldQKYvUQLy8mRaguk79Rf7sayZs3YvpocNxr4=",
+    "Version": "$LATEST",
+    "TracingConfig": {
+      "Mode": "PassThrough"
+    },
+    "RevisionId": "37f1f8f3-1c47-437c-836b-a4a1c8783a0f",
+    "PackageType": "Zip",
+    "Architectures": [
+      "x86_64"
+    ],
+    "EphemeralStorage": {
+      "Size": 512
+    },
+    "SnapStart": {
+      "ApplyOn": "None",
+      "OptimizationStatus": "Off"
+    },
+    "LoggingConfig": {
+      "LogFormat": "Text",
+      "LogGroup": "/aws/lambda/bebco-staging-monthly-reports-submit"
+    }
+  }
+]

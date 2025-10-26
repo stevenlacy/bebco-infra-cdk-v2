@@ -1,0 +1,52 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-admin-users-verify2fa",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-admin-users-verify2fa",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/lambda-execution-role",
+        "Handler": "lambda_function.lambda_handler",
+        "CodeSize": 16122961,
+        "Description": "",
+        "Timeout": 30,
+        "MemorySize": 256,
+        "LastModified": "2025-10-03T19:55:17.000+0000",
+        "CodeSha256": "sq+4y45+LXqshNHASJlTMOhHchTF6ZMayjMJLPYL1L8=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "OTP_TABLE": "bebco-borrower-staging-otp-codes",
+                "USERS_TABLE": "bebco-borrower-staging-users",
+                "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+                "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "463eb1d6-80e9-4c15-92e0-9e0311168578",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:82d9ed4427e5b65dd5ccb05b83e6c85772032dd44913231bd8fafeacba7aae8a"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-admin-users-verify2fa"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-admin-users-verify2fa-bdb34409-9429-498d-a4ee-1cfc198a1e94?versionId=T3z6qkTKoaNutWmIAviDKdwpdr.WMwhP&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEL7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCICTVXIvtGvV61SU7NuW76H%2F6baHpk4icwa5S1AGm0%2BieAiA5knblg%2Fx%2Bqs4wEaUu%2FQB0UK7qTeNIGt74Tc3blBiEgCqLAgh3EAQaDDQ3OTIzMzAyNTM3OSIMPCsq%2Bfqw70ONK0qHKugBQGpug%2FjH9ORgFOcHoqzX3Ob3fs8S3M5dqLtge1j%2F6MK0mwkKtDB9Mrenm0qMJ7zLVekMXd13Uiu%2Fzx3ufx97pD02F4%2FWmjYANo3RMsVpjPSJb4Y%2BkGzT%2Fqm2Al8Nbb%2B7bgSYSLstzdHPEzqcIL6MGZAfA5FnDnPPKeI8BmDj1KKCJ%2Bo29FAoSQwXd7oS2yxM8PhVWleXHIzbKAKCG1dxhVeOX3OAUGM%2BGnmuaWMrAUx1RoUeLgYlHYMPvfWv6t0KAIKYDst%2FfMGrmPuGzmAw9u%2BhUAxOpbiSGnhkQ5aj%2BgdReR0NQD99JDCAsfPHBjqOAS1X4wl%2FAw9WyPyEKC6CV%2FL7AdtF4eHDYL9ib4d%2BhOd2kMjw6tZ96RKgE1jm%2BPIvnD%2FRrYHW8PuQwhNehHjS8%2BuFoxQ7vQyOeWb2Igy9lzB7LYouQ1KO2paYP3WJYGexBpUCFvRQ8Loeq7OP9QP5a1vh4icPt2DbuSf3R%2BlcsDsQFkBpwjYYeOItSff08hg%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210553Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVRTNJAUPKZ%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=bca0d3894bd7b1daf6e41a4b11f2e6c0332eb6b8c514b603f24fb5fb7f256a06"
+    }
+}

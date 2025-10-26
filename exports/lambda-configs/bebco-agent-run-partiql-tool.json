@@ -1,0 +1,57 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-agent-run-partiql-tool",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-agent-run-partiql-tool",
+        "Runtime": "nodejs20.x",
+        "Role": "arn:aws:iam::303555290462:role/chatkit-dynamodb-agent-RunPartiqlToolRole-MvBqnFpVhhe9",
+        "Handler": "index.handler",
+        "CodeSize": 126601,
+        "Description": "",
+        "Timeout": 29,
+        "MemorySize": 256,
+        "LastModified": "2025-10-13T06:55:39.675+0000",
+        "CodeSha256": "4z2TAFHoiK2Q26igdV53Q6zafBvyQB3/Sd+DX9MzmX4=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "COMPANIES_TABLE": "bebco-borrower-staging-companies",
+                "PAYMENTS_TABLE": "bebco-borrower-staging-payments",
+                "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "7108619f-e858-4462-9dbd-02a3bd7fc081",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:dd206d5c0479b082438417cc6b87731a870d3c7d4c6f2375bbacade0b935398d"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-agent-run-partiql-tool"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-agent-run-partiql-tool-bf1b24ed-d73e-4df7-b1a8-9c4ce029f404?versionId=uhItMo0tSscPa_ZBT.QHl_ouwC6KoeZ2&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQDyqi1u7s5fEHdASSonDZB0f%2BJviN7xIzfQXQ3FMAuLdQIhANILAaQj6kwhoB%2BArV7PCurAm9LrV3WD0kKZZR%2BbpbOzKosCCHgQBBoMNDc5MjMzMDI1Mzc5IgwJiNJjnb%2B8LNgSesUq6AFmFTaL1LVELUuaP9N%2Br7TwEj%2BhyyYLiUxnyBlhvf%2FHwqhwqbvT1l5%2F6nAIi%2BrXPf9Fshlg5ls%2BKAl6ZYCdO1pQ11skesUiLS0%2FvGOwfrQs8%2BQjAIooUeVGc2bbpVWSdisPVh6h12Mz3XJFIL9O8jFlKECLyRwdmU3KLPUGKfiebnPVMvORDquh53c9A%2FVaLoQvNMyNZ5WwTCh9sBr%2Bbh5uKsoPVjJEc%2B%2Bx1R60%2Bl8jzkK23HFE0EGB4Ui1MpT7ED2b9DFwkQjCdidGSUNNkVgH1MkoRuelN%2Fvde9MEEgeydzZHtm%2B4akDaMLTS88cGOowB7wDc044cbZtHPrqyxpBVVB%2Fbj9Mu0Eit1Ol0q4WvnXzRXs%2Bx2ytIeC52O40t%2FpPLmXGlbph%2BPYwIMyi5KpztKWZDvPpS2%2FKEjvE6XOP0wmymeUzKADxEjFgUpGywQUs5eLTcoGLueGXyZv4UsSwt17Kkt8ozmIV1PqTbg5lPJaf0nDm1gwBFRReNr4o%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210519Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVR7IUUJJC4%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=00ddc88b83c82b961a36df58c8150f627a73554e7360e294fb59f5551ae45730"
+    },
+    "Tags": {
+        "aws:cloudformation:stack-name": "chatkit-dynamodb-agent",
+        "lambda:createdBy": "SAM",
+        "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:303555290462:stack/chatkit-dynamodb-agent/72f15e60-a801-11f0-9161-0e602fff030d",
+        "aws:cloudformation:logical-id": "RunPartiqlTool"
+    }
+}

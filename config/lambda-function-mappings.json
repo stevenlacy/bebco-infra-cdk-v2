@@ -1,0 +1,5 @@
+{
+  "_comment": "Mappings for Lambda functions that are missing or have been renamed",
+  "bebco-staging-accounts-plaid-get-accounts": "bebco-staging-plaid-accounts-preview"
+}
+

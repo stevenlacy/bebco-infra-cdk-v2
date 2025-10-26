@@ -1,0 +1,77 @@
+{
+    "items": [
+        {
+            "id": "2qrydk",
+            "parentId": "uyu6wi",
+            "pathPart": "{id}",
+            "path": "/admin/banks/{id}",
+            "resourceMethods": {
+                "OPTIONS": {},
+                "PUT": {}
+            }
+        },
+        {
+            "id": "7au1gq",
+            "parentId": "lfjinx",
+            "pathPart": "monthly-reports",
+            "path": "/admin/monthly-reports",
+            "resourceMethods": {
+                "GET": {},
+                "OPTIONS": {}
+            }
+        },
+        {
+            "id": "8rh1zt",
+            "parentId": "i4slmj6u34",
+            "pathPart": "banks",
+            "path": "/banks"
+        },
+        {
+            "id": "hkr3dg",
+            "parentId": "ra2ui7",
+            "pathPart": "draws",
+            "path": "/banks/{bankId}/draws",
+            "resourceMethods": {
+                "GET": {},
+                "OPTIONS": {}
+            }
+        },
+        {
+            "id": "i4slmj6u34",
+            "path": "/"
+        },
+        {
+            "id": "lfjinx",
+            "parentId": "i4slmj6u34",
+            "pathPart": "admin",
+            "path": "/admin"
+        },
+        {
+            "id": "ra2ui7",
+            "parentId": "8rh1zt",
+            "pathPart": "{bankId}",
+            "path": "/banks/{bankId}"
+        },
+        {
+            "id": "tudwey",
+            "parentId": "lfjinx",
+            "pathPart": "accounts",
+            "path": "/admin/accounts",
+            "resourceMethods": {
+                "GET": {},
+                "OPTIONS": {}
+            }
+        },
+        {
+            "id": "uyu6wi",
+            "parentId": "lfjinx",
+            "pathPart": "banks",
+            "path": "/admin/banks",
+            "resourceMethods": {
+                "GET": {},
+                "OPTIONS": {},
+                "POST": {}
+            }
+        }
+    ]
+}

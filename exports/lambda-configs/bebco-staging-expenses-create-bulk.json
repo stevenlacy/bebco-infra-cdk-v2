@@ -1,0 +1,53 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-staging-expenses-create-bulk",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-expenses-create-bulk",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-staging-expenses-lambda-role",
+        "Handler": "create_expenses_bulk.lambda_handler",
+        "CodeSize": 6342470,
+        "Description": "Create expenses in bulk with OCR and S3 upload",
+        "Timeout": 60,
+        "MemorySize": 512,
+        "LastModified": "2025-08-13T17:23:30.000+0000",
+        "CodeSha256": "aZCp6yKyhg3vmQ0N5zOBWCSZRhzeaY5PCmEq28jkI48=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+                "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+                "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+                "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+                "USER_POOL_ID": "us-east-1_Uba3sK7HT"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "d1bbef9f-f756-4ff0-962d-e11a85f2dce5",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:af29e10439856e364100c5dec1ce9c55d44feb2772258f7a7e480a95474aa18f"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-staging-expenses-create-bulk"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-staging-expenses-create-bulk-39ce9223-b6c2-453e-999a-93c791c04c8f?versionId=HgUojYKbbtTtKXV_2EiE_OP8R3mDKEUG&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCICDc6QxSG0xbI49dLy0F9S7oRUpUgvbkwCPjxxpNu3BaAiAODEgdqPhDZJpv6Ot4pZqwg%2FwUxqRL6Lca8grxyesIFyqLAgh4EAQaDDQ3OTIzMzAyNTM3OSIMlRMW%2F1IXDPXaOJWrKugB3SBcFSQVMBeKA3UU3ecQmy2Q0P8mnUjDum6hdGMxGy20ogqH8Szbm0zWfHoEgESHURPwse09%2F0cvbLqxtcNgmpHf20%2FAA9osGwhOxhaczWxjBEJnFm%2BLhGdqDtPVY4f7R09r3biEHAlV%2BDGwIuueSHLodZmEQ0SgcwgZ1wA6OufF6vBRav%2FnD%2FtPNPy0eDE0JqwydviTWrsYxq6HPtloRce84bevUm15C0gJCuYeP52hbDozuuRjFvEGLv9Aj6mdIpLrH4qu9pwpbAkPStWNOkp1rV1KUSPZidrJ7tzd2t73C90BsG%2BGwDC00vPHBjqOAcYYJAJm2DThylJPIPPKiny6%2FWO%2FHWjpohPJTjpmxIDkANpH1a3YqrER8QR2cDQm7j%2FPIolbOjnmrNL1Eao1KWSBd7iHwnIDc436eNkU8UEd%2BO3v0if%2F3k9MKTlZ13Hx4IwD45MOyl%2B1XnLLKBO%2FOeov8hkIDV3sQb7J1JIc7clVbiABKehBe%2FWvsa5zTZo%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210608Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVRTMGZD2WY%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=3062e23944fa32c992e09e4e101e4e516ad1c82081d6ebcf762756d74a488c3a"
+    }
+}

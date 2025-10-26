@@ -1,0 +1,214 @@
+schema {
+  query: Query
+}
+
+type AnnualReport {
+  amount: Float
+  approved: Boolean
+  approved_date: String
+  assignee_name: String
+  assignment_document_available: Boolean
+  assignment_document_download_url: String
+  assignment_document_url: String
+  assignment_effective_date: String
+  assignment_received_at: String
+  assignment_rejection_reason: String
+  assignment_status: String
+  comments: String
+  company_id: ID!
+  company_name: String
+  created_at: String!
+  document_available: Boolean
+  document_download_url: String
+  document_name: String
+  expiration_date: String
+  #   Professional Liability fields
+  expiry_date: String
+  extension_filed: Boolean
+  id: ID!
+  insured_individual: String
+  insurer_acknowledged: Boolean
+  metrics: AWSJSON
+  ocr_status: String
+  #   Life Insurance fields
+  policy_number: String
+  premium_amount: Float
+  premium_frequency: String
+  provider: String
+  #   Tax Return fields
+  return_type: String
+  status: AnnualReportStatus!
+  tax_year: Int
+  type: AnnualReportType!
+  updated_at: String!
+  uploaded_by: String
+  uploaded_date: String
+  user_name: String
+  year: String!
+}
+
+type AnnualReportConnection {
+  count: Int!
+  items: [AnnualReport!]!
+  nextToken: String
+}
+
+type AnnualReportingDashboard {
+  allReports: [AnnualReport!]!
+  borrowers: [BorrowerWithCompliance!]!
+  reportsByBorrower: AWSJSON
+  summary: ComplianceSummary!
+}
+
+type Borrower {
+  company: String
+  company_id: ID!
+  consultant: String
+  entity_name: String
+  guarantors: Int
+  interest_rate: Float
+  loan_number: String
+  location: String
+  maturity_date: AWSDate
+  onboarding_date: AWSDate
+  practice_area: String
+  short_name: String
+  status: String
+  total_funding: Float
+}
+
+type BorrowerComplianceConnection {
+  borrowers: [BorrowerWithCompliance!]!
+  summary: ComplianceSummary!
+}
+
+type BorrowerConnection {
+  items: [Borrower!]!
+  nextToken: String
+  summary: BorrowerSummary
+  totalCount: Int
+}
+
+type BorrowerDetailResponse {
+  annualReports: [AnnualReport!]!
+  borrower: BorrowerWithCompliance!
+  financialOverview: FinancialOverview!
+  reportsByType: ReportsByType!
+}
+
+type BorrowerSummary {
+  active_loans: Int!
+  completed_loans: Int!
+  total_borrowers: Int!
+  total_funding: Float!
+  total_outstanding: Float!
+}
+
+type BorrowerWithCompliance {
+  company: String!
+  entity_name: String
+  facilityAmount: Float
+  id: ID!
+  lastUpdated: String
+  lifeInsurance: String!
+  loanNumber: Int
+  loanStatus: String
+  location: String
+  osBalance: Float
+  outstandingBalance: Float
+  professionalLiability: String!
+  short_name: String
+  taxReturns: String!
+  totalFunding: Float
+}
+
+type ComplianceSummary {
+  liabilityCompliant: Int!
+  lifeCompliant: Int!
+  taxCompliant: Int!
+  totalBorrowers: Int!
+}
+
+type FinancialOverview {
+  company_id: ID!
+  outstandingBalance: Float!
+  outstandingFees: Float!
+  outstandingInterest: Float!
+  principalBalance: Float!
+  totalFacility: Float!
+}
+
+type FinancialOverviewConnection {
+  items: [FinancialOverview!]!
+}
+
+type MonthlyReport {
+  bank_id: ID
+  company_id: ID!
+  company_location: String
+  company_name: String
+  company_no: Int
+  created_at: String
+  due_date: AWSDate
+  entity_name: String
+  id: ID!
+  internal_notes: String
+  legacy: Boolean
+  legacy_account_data: String
+  legacy_docusign_id: String
+  legacy_payment_deferred: Boolean
+  legacy_payment_due: Float
+  legacy_payment_received: String
+  legacy_repayment_percentage: Float
+  legacy_sql_id: Int
+  month: String
+  month_name: String
+  month_num: Int
+  report_details: AWSJSON
+  reported_revenue: Float
+  status: String
+  submitted_at: String
+  submitted_data: AWSJSON
+  submitted_date: AWSDate
+  updated_at: String
+  year: Int
+}
+
+type MonthlyReportConnection {
+  items: [MonthlyReport!]!
+  nextToken: String
+}
+
+type Query {
+  batchGetFinancialOverviews: FinancialOverviewConnection!
+  getAnnualReportingDashboard(borrowerStatus: String): AnnualReportingDashboard!
+  getBorrowerWithAnnualReports(borrowerId: ID!): BorrowerDetailResponse!
+  getFinancialOverview(company_id: ID!): FinancialOverview!
+  listAnnualReports(limit: Int, nextToken: String, status: AnnualReportStatus, type: AnnualReportType, year: String): AnnualReportConnection!
+  listBorrowers(limit: Int, nextToken: String): BorrowerConnection!
+  listBorrowersWithCompliance(limit: Int, nextToken: String, status: String): BorrowerComplianceConnection!
+  monthlyReportsByStatus(bank_id: ID, legacy_only: Boolean, limit: Int, nextToken: String, status: String!, year: Int): MonthlyReportConnection!
+}
+
+type ReportsByType {
+  lifeInsurance: [AnnualReport!]!
+  professionalLiability: [AnnualReport!]!
+  taxReturns: [AnnualReport!]!
+}
+
+enum AnnualReportStatus {
+  active
+  approved
+  deleted
+  expired
+  pending
+  rejected
+  required
+  submitted
+}
+
+enum AnnualReportType {
+  life_insurance
+  professional_liability
+  tax_return
+}

@@ -1,0 +1,17 @@
+{
+    "id": "24o2865t5h",
+    "name": "bebco-borrower-staging-api",
+    "description": "BEBCO Borrower Portal API for cases management",
+    "createdDate": "2025-08-12T05:17:23-07:00",
+    "apiKeySource": "HEADER",
+    "endpointConfiguration": {
+        "types": [
+            "REGIONAL"
+        ],
+        "ipAddressType": "ipv4"
+    },
+    "policy": "{\\\"Version\\\":\\\"2012-10-17\\\",\\\"Statement\\\":[{\\\"Effect\\\":\\\"Allow\\\",\\\"Principal\\\":\\\"*\\\",\\\"Action\\\":\\\"execute-api:Invoke\\\",\\\"Resource\\\":\\\"*\\\"}]}",
+    "tags": {},
+    "disableExecuteApiEndpoint": false,
+    "rootResourceId": "jc3ha6lai5"
+}

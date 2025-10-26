@@ -1,0 +1,55 @@
+{
+    "Configuration": {
+        "FunctionName": "bebco-staging-accounts-list",
+        "FunctionArn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-staging-accounts-list",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::303555290462:role/bebco-staging-accounts-lambda-role",
+        "Handler": "list_accounts.lambda_handler",
+        "CodeSize": 2915671,
+        "Description": "List accounts with filtering and pagination",
+        "Timeout": 120,
+        "MemorySize": 4096,
+        "LastModified": "2025-10-16T04:12:46.000+0000",
+        "CodeSha256": "FZ2/rZbwP6VXK2GV62AFTZA/l274nfsNJqwcDYDjEYA=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "DYNAMODB_TABLE": "bebco-borrower-staging-loan-loc",
+                "DOCUMENTS_S3_BUCKET": "bebco-borrower-staging-documents",
+                "FILES_TABLE": "bebco-borrower-staging-files",
+                "IDENTITY_POOL_ID": "us-east-1:8082e68c-bc59-4a01-b2e0-5feed00028a2",
+                "USER_POOL_CLIENT_ID": "698v54ol2kojmbt7jkt6gug5tl",
+                "USER_POOL_ID": "us-east-1_Uba3sK7HT",
+                "ACCOUNTS_TABLE": "bebco-borrower-staging-accounts"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "e6f6577f-7e7a-4604-8ae9-afb89a5ddadc",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:82d9ed4427e5b65dd5ccb05b83e6c85772032dd44913231bd8fafeacba7aae8a"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/bebco-staging-accounts-list"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/303555290462/bebco-staging-accounts-list-4b2e6f75-3fdb-485f-95d6-41941deea427?versionId=TooZTWtaM..cDznT_IPjstTTHYqyV5j5&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCIGlZr8zrk2hmSW7WTe3SpBzyQKYTTzArLn8S77ShMtfhAiA1z0wDXk%2FhPaYeiyY6XygZJSqbPHtqYHwavyGh1GksPyqLAgh4EAQaDDQ3OTIzMzAyNTM3OSIMf%2B6fpAm9dZtbLg9VKugBDtjHBn59g1Dmfq2%2BZpyoyPxDjnzfNKwS1gij0SGMylTMrBPm934KlVh1IpBd2AkmV0ZJUTnxCnkU21tuvpxcxCqL%2Ba1Fy0ccC5gESy3EBzBcPkpavR0XGlq2%2BRYM37Gi0gAh7hxVN5Jm0oY8sZ8Qzxj3hfaHMfU%2FTHhkRqPSO%2B46Fye9wxiGr73KkWJQmxVWL8HqdaHM3C2Uh3Hq%2BWl%2Fzc0dWdGjmKi%2BLNU5lOSnJW0lwcIC3pfYud76DqxMTtJ3YroVTvdhN7gCUITG%2BvWyA6JU%2Be44o%2BTHR2pvd8Lk%2FEFWrMkKcAXF2jC00vPHBjqOAZ%2FXoc7cL%2FEe9UH%2FAFQ9nCKBZxiO45yyD0KQpTjndaY9e7zK4VhbuRGT2sf8fj0SkWjwWL8za%2BcXOAbfMwm5WsLxJSvrW0kieRtjMpZ%2BE2ALluR%2BQu0YJgquOAdSF3uxJMcA6lvjyMpQmDcielRfOCKWS8vXX2nk35cPZyXLJsG3Y6H0fbEE%2F7H1J2f0QAU%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251025T210617Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVR3YBI6MIG%2F20251025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=75c4ad131d6279879b5eae74cd940d2973cd07d3ad61680b43c827bb2344dfab"
+    }
+}

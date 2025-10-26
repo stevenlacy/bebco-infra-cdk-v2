@@ -1,0 +1,73 @@
+scalar AWSURL
+
+type Query
+
+{
+listStatements(companyId: ID!,limit: Int,nextToken: String ): StatementConnection
+
+}
+
+type Statement
+
+{
+id: ID!
+
+
+filename: String!
+
+
+date: String
+
+
+created_at: String
+
+
+updated_at: String
+
+
+company_id: ID!
+
+
+bank_id: ID
+
+
+loan_no: Int
+
+
+borrower_name: String
+
+
+outstanding_principal: Float
+
+
+outstanding_interest: Float
+
+
+outstanding_fees: Float
+
+
+total_balance: Float
+
+
+financial_data_calculated_at: String
+
+
+downloadUrl: AWSURL
+
+}
+
+type StatementConnection
+
+{
+items: [Statement!]!
+
+
+nextToken: String
+
+}
+
+schema 
+{
+query: Query
+}
+

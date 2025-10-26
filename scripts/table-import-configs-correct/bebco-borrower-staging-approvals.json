@@ -1,0 +1,58 @@
+{
+  "TableName": "bebco-borrower-approvals-dev",
+  "KeySchema": [
+    {
+      "AttributeName": "id",
+      "KeyType": "HASH"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "approver_user_id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "draw_request_id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "status",
+      "AttributeType": "S"
+    }
+  ],
+  "BillingMode": "PAY_PER_REQUEST",
+  "GlobalSecondaryIndexes": [
+    {
+      "IndexName": "ApproverIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "approver_user_id",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "status",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    },
+    {
+      "IndexName": "DrawRequestIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "draw_request_id",
+          "KeyType": "HASH"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    }
+  ]
+}
