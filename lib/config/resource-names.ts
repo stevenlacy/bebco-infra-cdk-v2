@@ -35,6 +35,11 @@ export class ResourceNames {
   topic(purpose: string): string {
     return `${this.prefix}-${this.environment}-${purpose}`;
   }
+
+  // IAM roles: bebco-dev-<purpose>
+  iamRole(purpose: string): string {
+    return `${this.prefix}-${this.environment}-${purpose}`;
+  }
   
   // API Gateways: bebco-<domain>-dev-api
   apiGateway(domain: string): string {

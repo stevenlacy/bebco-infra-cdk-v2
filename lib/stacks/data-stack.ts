@@ -199,6 +199,13 @@ export class DataStack extends cdk.Stack {
       { name: 'id', type: dynamodb.AttributeType.STRING }
     );
     
+    const docusignRequestsTableName = props.config.integrations.docusignRequestsTableName ?? 'docusign-requests';
+    this.tables.docusignRequests = createTable(
+      'DocusignRequestsTable',
+      resourceNames.table('integrations', docusignRequestsTableName),
+      { name: 'id', type: dynamodb.AttributeType.STRING }
+    );
+    
     // Expenses table
     this.tables.expenses = createTable(
       'ExpensesTable',

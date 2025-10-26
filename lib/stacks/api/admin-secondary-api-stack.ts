@@ -52,10 +52,17 @@ export class AdminSecondaryApiStack extends cdk.Stack {
     
     // Update Lambda integrations to point to us-east-2 functions
     const specString = JSON.stringify(openApiSpec);
-    const updatedSpecString = specString
+    let updatedSpecString = specString
       .replace(/us-east-1/g, config.region)
       .replace(/staging/g, 'dev')
       .replace(/:303555290462:/g, `:${config.account}:`);
+    if (config.naming.environmentSuffix && config.naming.environmentSuffix !== 'dev') {
+      const suffix = config.naming.environmentSuffix;
+      updatedSpecString = updatedSpecString.replace(/function:(bebco[^/"']+)/g, (_match, fnName: string) => {
+        const updatedName = fnName.endsWith(`-${suffix}`) ? fnName : `${fnName}-${suffix}`;
+        return `function:${updatedName}`;
+      });
+    }
     const updatedSpec = JSON.parse(updatedSpecString);
     
     // Create REST API from OpenAPI spec

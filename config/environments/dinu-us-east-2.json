@@ -24,9 +24,31 @@
   "integrations": {
     "plaidClientId": "use-sandbox-credentials",
     "plaidEnvironment": "sandbox",
+    "plaidWebhookBaseUrl": "https://api-dinu.bebco.dev/plaid/webhook",
+    "plaidSyncQueueName": "plaid-transactions-sync",
+    "plaidSyncQueueFifoName": "plaid-transactions-sync-fifo",
+    "plaidSyncQueueDlqName": "plaid-transactions-sync-dlq",
+    "plaidSyncQueueDlqFifoName": "plaid-transactions-sync-dlq-fifo",
     "docusignSecretName": "bebco/dinu/docusign",
+    "docusignLegacySecretName": "bebco/dinu/docusign-legacy",
+    "docusignHost": "https://na4.docusign.net",
+    "docusignRequestsTableName": "docusign-requests",
     "sharepointSecretName": "bebco/dinu/sharepoint",
-    "sendgridSecretName": "bebco/dinu/sendgrid"
+    "sharepointHost": "netorgft3435832.sharepoint.com",
+    "sharepointSitePath": "/sites/Portal",
+    "sharepointDriveName": "Documents",
+    "sharepointTenantId": "84b99de2-124c-4e49-89f1-c81d9d1ddd3e",
+    "sharepointClientId": "ac9357a3-b2c9-4ed9-a900-c846a34227a3",
+    "sharepointPortReconFilePath": "Port Recon Data/Port Recon Data.xlsx",
+    "sharepointS3Prefix": "sharepoint",
+    "sharepointBankId": "8641460d-e1f1-4540-b513-a9548d83bb6c",
+    "sendgridSecretName": "bebco/dinu/sendgrid",
+    "sendgridFromAddress": "no-reply@bebco.dev",
+    "sendgridApiKeyId": "bebco-sendgrid-api-key"
+  },
+  "textract": {
+    "roleName": "textract-sns-role",
+    "snsTopicName": "textract-results"
   },
   "lambdaDefaults": {
     "runtime": "python3.11",

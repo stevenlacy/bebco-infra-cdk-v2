@@ -19,6 +19,13 @@ export class AdminSecondaryApiStack extends cdk.Stack {
     super(scope, id, props);
     
     const { config, resourceNames, userPool } = props;
+    const withEnvSuffix = (name: string) => {
+      const suffix = config.naming.environmentSuffix;
+      if (!suffix || suffix === 'dev') {
+        return name;
+      }
+      return name.endsWith(`-${suffix}`) ? name : `${name}-${suffix}`;
+    };
     
     // Create REST API
     this.api = new apigateway.RestApi(this, 'Api', {
@@ -46,12 +53,18 @@ export class AdminSecondaryApiStack extends cdk.Stack {
     
     // Lambda functions
 
-    const fn0 = lambda.Function.fromFunctionName(this, 'Fn0', 'bebco-dev-accounts-list');
-    const fn1 = lambda.Function.fromFunctionName(this, 'Fn1', 'bebco-dev-banks-create');
-    const fn2 = lambda.Function.fromFunctionName(this, 'Fn2', 'bebco-dev-banks-list');
-    const fn3 = lambda.Function.fromFunctionName(this, 'Fn3', 'bebco-dev-banks-update');
-    const fn4 = lambda.Function.fromFunctionName(this, 'Fn4', 'bebco-dev-draws-list');
-    const fn5 = lambda.Function.fromFunctionName(this, 'Fn5', 'bebco-dev-monthly-reports-list');
+    const lambdaNames = [
+      'bebco-dev-accounts-list',
+      'bebco-dev-banks-create',
+      'bebco-dev-banks-list',
+      'bebco-dev-banks-update',
+      'bebco-dev-draws-list',
+      'bebco-dev-monthly-reports-list',
+    ];
+
+    const [fn0, fn1, fn2, fn3, fn4, fn5] = lambdaNames.map((name, index) =>
+      lambda.Function.fromFunctionName(this, `Fn${index}`, withEnvSuffix(name))
+    );
 
     // API Resources
 
