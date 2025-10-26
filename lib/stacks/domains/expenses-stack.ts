@@ -30,6 +30,7 @@ export class ExpensesStack extends cdk.Stack {
     const expensesCreateBulk = new BebcoLambda(this, 'ExpensesCreateBulk', {
       sourceFunctionName: 'bebco-staging-expenses-create-bulk',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.expenses.grantReadWriteData(expensesCreateBulk.function);
@@ -39,6 +40,7 @@ export class ExpensesStack extends cdk.Stack {
     const expensesGet = new BebcoLambda(this, 'ExpensesGet', {
       sourceFunctionName: 'bebco-staging-expenses-get',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.expenses.grantReadData(expensesGet.function);
@@ -48,6 +50,7 @@ export class ExpensesStack extends cdk.Stack {
     const expensesList = new BebcoLambda(this, 'ExpensesList', {
       sourceFunctionName: 'bebco-staging-expenses-list',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.expenses.grantReadData(expensesList.function);
@@ -57,6 +60,7 @@ export class ExpensesStack extends cdk.Stack {
     const expensesUpdate = new BebcoLambda(this, 'ExpensesUpdate', {
       sourceFunctionName: 'bebco-staging-expenses-update',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.expenses.grantReadWriteData(expensesUpdate.function);

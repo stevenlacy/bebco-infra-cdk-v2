@@ -30,6 +30,7 @@ export class ReportingStack extends cdk.Stack {
     const monthlyReportsCreate = new BebcoLambda(this, 'MonthlyReportsCreate', {
       sourceFunctionName: 'bebco-staging-monthly-reports-create',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.monthlyReportsCreate = monthlyReportsCreate.function;
@@ -37,6 +38,7 @@ export class ReportingStack extends cdk.Stack {
     const monthlyReportsGet = new BebcoLambda(this, 'MonthlyReportsGet', {
       sourceFunctionName: 'bebco-staging-monthly-reports-get',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.monthlyReportsGet = monthlyReportsGet.function;
@@ -44,6 +46,7 @@ export class ReportingStack extends cdk.Stack {
     const monthlyReportsList = new BebcoLambda(this, 'MonthlyReportsList', {
       sourceFunctionName: 'bebco-staging-monthly-reports-list',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.monthlyReportsList = monthlyReportsList.function;
@@ -51,6 +54,7 @@ export class ReportingStack extends cdk.Stack {
     const monthlyReportsUpdate = new BebcoLambda(this, 'MonthlyReportsUpdate', {
       sourceFunctionName: 'bebco-staging-monthly-reports-update',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.monthlyReportsUpdate = monthlyReportsUpdate.function;
@@ -58,6 +62,7 @@ export class ReportingStack extends cdk.Stack {
     const monthlyReportSharepointUpload = new BebcoLambda(this, 'MonthlyReportSharepointUpload', {
       sourceFunctionName: 'bebco-staging-monthly-report-sharepoint-upload',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.monthlyReportSharepointUpload = monthlyReportSharepointUpload.function;
@@ -65,6 +70,7 @@ export class ReportingStack extends cdk.Stack {
     const monthlyReportsScheduler = new BebcoLambda(this, 'MonthlyReportsScheduler', {
       sourceFunctionName: 'bebcostaging-monthly-reports-scheduler',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.monthlyReportsScheduler = monthlyReportsScheduler.function;
@@ -73,6 +79,7 @@ export class ReportingStack extends cdk.Stack {
     const annualReportsCreate = new BebcoLambda(this, 'AnnualReportsCreate', {
       sourceFunctionName: 'bebco-staging-annual-reports-create-annual-report',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.annualReportsCreate = annualReportsCreate.function;
@@ -80,6 +87,7 @@ export class ReportingStack extends cdk.Stack {
     const annualReportsGet = new BebcoLambda(this, 'AnnualReportsGet', {
       sourceFunctionName: 'bebco-staging-annual-reports-get-annual-report',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.annualReportsGet = annualReportsGet.function;
@@ -87,6 +95,7 @@ export class ReportingStack extends cdk.Stack {
     const annualReportsList = new BebcoLambda(this, 'AnnualReportsList', {
       sourceFunctionName: 'bebco-staging-annual-reports-list-annual-reports',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.annualReportsList = annualReportsList.function;
@@ -94,6 +103,7 @@ export class ReportingStack extends cdk.Stack {
     const annualReportsUpdate = new BebcoLambda(this, 'AnnualReportsUpdate', {
       sourceFunctionName: 'bebco-staging-annual-reports-update-annual-report',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.annualReportsUpdate = annualReportsUpdate.function;
@@ -101,6 +111,7 @@ export class ReportingStack extends cdk.Stack {
     const annualReportsDelete = new BebcoLambda(this, 'AnnualReportsDelete', {
       sourceFunctionName: 'bebco-staging-annual-reports-delete-annual-report',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.annualReportsDelete = annualReportsDelete.function;
@@ -109,6 +120,7 @@ export class ReportingStack extends cdk.Stack {
     const appsyncAnnualReportingDashboard = new BebcoLambda(this, 'AppsyncAnnualReportingDashboard', {
       sourceFunctionName: 'bebco-appsync-annual-reporting-dashboard',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.appsyncAnnualReportingDashboard = appsyncAnnualReportingDashboard.function;
@@ -116,6 +128,7 @@ export class ReportingStack extends cdk.Stack {
     const appsyncListAnnualReports = new BebcoLambda(this, 'AppsyncListAnnualReports', {
       sourceFunctionName: 'bebco-appsync-list-annual-reports',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.appsyncListAnnualReports = appsyncListAnnualReports.function;
@@ -123,6 +136,7 @@ export class ReportingStack extends cdk.Stack {
     const appsyncBorrowerAnnualReports = new BebcoLambda(this, 'AppsyncBorrowerAnnualReports', {
       sourceFunctionName: 'bebco-appsync-borrower-annual-reports',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.appsyncBorrowerAnnualReports = appsyncBorrowerAnnualReports.function;
@@ -131,6 +145,7 @@ export class ReportingStack extends cdk.Stack {
     const adminNotesMonthlyReports = new BebcoLambda(this, 'AdminNotesMonthlyReports', {
       sourceFunctionName: 'bebco-staging-admin-notes-monthly-reports',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.adminNotesMonthlyReports = adminNotesMonthlyReports.function;
@@ -139,6 +154,7 @@ export class ReportingStack extends cdk.Stack {
     const monthlyReportsSubmit = new BebcoLambda(this, 'MonthlyReportsSubmit', {
       sourceFunctionName: 'bebco-staging-monthly-reports-submit',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.monthlyReportings.grantReadWriteData(monthlyReportsSubmit.function);

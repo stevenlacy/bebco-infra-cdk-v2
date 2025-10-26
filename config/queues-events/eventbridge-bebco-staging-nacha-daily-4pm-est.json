@@ -1,0 +1,9 @@
+{
+    "Name": "bebco-staging-nacha-daily-4pm-est",
+    "Arn": "arn:aws:events:us-east-1:303555290462:rule/bebco-staging-nacha-daily-4pm-est",
+    "ScheduleExpression": "cron(0 20 * * ? *)",
+    "State": "ENABLED",
+    "Description": "Automatically process NACHA batch payments and send email daily at 4pm New York time",
+    "EventBusName": "default",
+    "CreatedBy": "303555290462"
+}

@@ -1,0 +1,37 @@
+{
+  "environment": "jaspal",
+  "region": "us-east-2",
+  "account": "303555290462",
+  "stackPrefix": "Bebco",
+  "naming": {
+    "prefix": "bebco",
+    "environmentSuffix": "jpl"
+  },
+  "cognito": {
+    "userPoolName": "bebco-borrower-portal-jaspal",
+    "passwordPolicy": {
+      "minLength": 8,
+      "requireUppercase": true,
+      "requireLowercase": true,
+      "requireNumbers": true,
+      "requireSymbols": true
+    }
+  },
+  "domains": {
+    "api": "api-jaspal.bebco.dev",
+    "graphql": "graphql-jaspal.bebco.dev"
+  },
+  "integrations": {
+    "plaidClientId": "use-sandbox-credentials",
+    "plaidEnvironment": "sandbox",
+    "docusignSecretName": "bebco/jaspal/docusign",
+    "sharepointSecretName": "bebco/jaspal/sharepoint",
+    "sendgridSecretName": "bebco/jaspal/sendgrid"
+  },
+  "lambdaDefaults": {
+    "runtime": "python3.11",
+    "timeout": 30,
+    "memorySize": 256
+  }
+}
+

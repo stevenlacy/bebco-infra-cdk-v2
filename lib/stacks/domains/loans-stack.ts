@@ -30,6 +30,7 @@ export class LoansStack extends cdk.Stack {
     const generateLoanStatements = new BebcoLambda(this, 'GenerateLoanStatements', {
       sourceFunctionName: 'bebco-staging-generate-loan-statements',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.generateLoanStatements = generateLoanStatements.function;
@@ -37,6 +38,7 @@ export class LoansStack extends cdk.Stack {
     const adminBorrowersLoanSummary = new BebcoLambda(this, 'AdminBorrowersLoanSummary', {
       sourceFunctionName: 'bebco-staging-admin-borrowers-loan-summary-function',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.adminBorrowersLoanSummary = adminBorrowersLoanSummary.function;
@@ -44,6 +46,7 @@ export class LoansStack extends cdk.Stack {
     const updateLoan = new BebcoLambda(this, 'UpdateLoan', {
       sourceFunctionName: 'bebcoborroweradmin-update-loan-staging',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.updateLoan = updateLoan.function;

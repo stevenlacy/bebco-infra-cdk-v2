@@ -1,0 +1,37 @@
+{
+    "Topics": [
+        {
+            "TopicArn": "arn:aws:sns:us-east-1:303555290462:DAI-DocumentEvents"
+        },
+        {
+            "TopicArn": "arn:aws:sns:us-east-1:303555290462:DAI-DocumentEvents-1742506037"
+        },
+        {
+            "TopicArn": "arn:aws:sns:us-east-1:303555290462:DAI-DocumentEvents-20250320083154"
+        },
+        {
+            "TopicArn": "arn:aws:sns:us-east-1:303555290462:DAI-DocumentEvents-20250320160338"
+        },
+        {
+            "TopicArn": "arn:aws:sns:us-east-1:303555290462:DAI-DocumentUpload-Topic"
+        },
+        {
+            "TopicArn": "arn:aws:sns:us-east-1:303555290462:DAI-TextExtraction-Topic"
+        },
+        {
+            "TopicArn": "arn:aws:sns:us-east-1:303555290462:TextractCompletionTopic"
+        },
+        {
+            "TopicArn": "arn:aws:sns:us-east-1:303555290462:bebco-backup-notifications"
+        },
+        {
+            "TopicArn": "arn:aws:sns:us-east-1:303555290462:bebco-staging-textract-results"
+        },
+        {
+            "TopicArn": "arn:aws:sns:us-east-1:303555290462:lit-finance-textract-completion"
+        },
+        {
+            "TopicArn": "arn:aws:sns:us-east-1:303555290462:textract-notifications-1742948968"
+        }
+    ]
+}

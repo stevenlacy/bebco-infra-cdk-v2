@@ -39,6 +39,7 @@ export class PlaidStack extends cdk.Stack {
     const linkTokenCreate = new BebcoLambda(this, 'PlaidLinkTokenCreate', {
       sourceFunctionName: 'bebco-staging-plaid-link-token-create',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.accounts.grantReadWriteData(linkTokenCreate.function);
@@ -49,6 +50,7 @@ export class PlaidStack extends cdk.Stack {
     const tokenExchange = new BebcoLambda(this, 'PlaidTokenExchange', {
       sourceFunctionName: 'bebco-staging-plaid-token-exchange',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.accounts.grantReadWriteData(tokenExchange.function);
@@ -59,6 +61,7 @@ export class PlaidStack extends cdk.Stack {
     const accountsPreview = new BebcoLambda(this, 'PlaidAccountsPreview', {
       sourceFunctionName: 'bebco-staging-plaid-accounts-preview',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.accounts.grantReadData(accountsPreview.function);
@@ -69,6 +72,7 @@ export class PlaidStack extends cdk.Stack {
     const createAccountFromPlaid = new BebcoLambda(this, 'CreateAccountFromPlaid', {
       sourceFunctionName: 'bebco-staging-create-account-from-plaid',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.accounts.grantReadWriteData(createAccountFromPlaid.function);
@@ -80,6 +84,7 @@ export class PlaidStack extends cdk.Stack {
     const transactionsSync = new BebcoLambda(this, 'PlaidTransactionsSync', {
       sourceFunctionName: 'bebco-staging-plaid-transactions-sync',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.transactions.grantReadWriteData(transactionsSync.function);
@@ -91,6 +96,7 @@ export class PlaidStack extends cdk.Stack {
     const syncManual = new BebcoLambda(this, 'PlaidSyncManual', {
       sourceFunctionName: 'bebco-staging-plaid-sync-manual',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.transactions.grantReadWriteData(syncManual.function);
@@ -102,6 +108,7 @@ export class PlaidStack extends cdk.Stack {
     const webhookHandler = new BebcoLambda(this, 'PlaidWebhookHandler', {
       sourceFunctionName: 'bebco-staging-plaid-webhook-handler',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.accounts.grantReadWriteData(webhookHandler.function);
@@ -113,6 +120,7 @@ export class PlaidStack extends cdk.Stack {
     const accountTransactions = new BebcoLambda(this, 'PlaidAccountTransactions', {
       sourceFunctionName: 'bebco-staging-plaid-account-transactions',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.transactions.grantReadData(accountTransactions.function);
@@ -123,6 +131,7 @@ export class PlaidStack extends cdk.Stack {
     const itemWebhookBulkUpdate = new BebcoLambda(this, 'PlaidItemWebhookBulkUpdate', {
       sourceFunctionName: 'bebco-staging-plaid-item-webhook-bulk-update',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.plaidItems.grantReadWriteData(itemWebhookBulkUpdate.function);
@@ -132,6 +141,7 @@ export class PlaidStack extends cdk.Stack {
     const plaidDailySync = new BebcoLambda(this, 'PlaidDailySync', {
       sourceFunctionName: 'bebcostaging-plaid-daily-sync',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.plaidItems.grantReadData(plaidDailySync.function);
@@ -142,6 +152,7 @@ export class PlaidStack extends cdk.Stack {
     const generatePlaidMonthlyStatement = new BebcoLambda(this, 'GeneratePlaidMonthlyStatement', {
       sourceFunctionName: 'bebcostaging-generate-plaid-monthly-account-statement',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: {
         ...commonEnv,
         STATEMENTS_S3_BUCKET: buckets.documents.bucketName,

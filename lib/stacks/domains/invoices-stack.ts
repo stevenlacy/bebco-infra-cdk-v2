@@ -33,6 +33,7 @@ export class InvoicesStack extends cdk.Stack {
     const invoicesCreate = new BebcoLambda(this, 'InvoicesCreate', {
       sourceFunctionName: 'bebco-staging-invoices-create',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.invoices.grantReadWriteData(invoicesCreate.function);
@@ -42,6 +43,7 @@ export class InvoicesStack extends cdk.Stack {
     const invoicesGet = new BebcoLambda(this, 'InvoicesGet', {
       sourceFunctionName: 'bebco-staging-invoices-get',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.invoices.grantReadData(invoicesGet.function);
@@ -51,6 +53,7 @@ export class InvoicesStack extends cdk.Stack {
     const invoicesList = new BebcoLambda(this, 'InvoicesList', {
       sourceFunctionName: 'bebco-staging-invoices-list',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.invoices.grantReadData(invoicesList.function);
@@ -60,6 +63,7 @@ export class InvoicesStack extends cdk.Stack {
     const invoicesUpdate = new BebcoLambda(this, 'InvoicesUpdate', {
       sourceFunctionName: 'bebco-staging-invoices-update',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.invoices.grantReadWriteData(invoicesUpdate.function);
@@ -69,6 +73,7 @@ export class InvoicesStack extends cdk.Stack {
     const invoicesGenerateMonthly = new BebcoLambda(this, 'InvoicesGenerateMonthly', {
       sourceFunctionName: 'bebco-staging-invoices-generate-monthly',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.invoices.grantReadWriteData(invoicesGenerateMonthly.function);

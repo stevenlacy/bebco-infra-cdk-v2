@@ -1,0 +1,80 @@
+{
+    "Rules": [
+        {
+            "Name": "DepositionProcessingTrigger",
+            "Arn": "arn:aws:events:us-east-1:303555290462:rule/DepositionProcessingTrigger",
+            "State": "DISABLED",
+            "Description": "Trigger for deposition processing with Claude",
+            "ScheduleExpression": "rate(1 minute)",
+            "EventBusName": "default"
+        },
+        {
+            "Name": "bebco-lambda-backup-schedule",
+            "Arn": "arn:aws:events:us-east-1:303555290462:rule/bebco-lambda-backup-schedule",
+            "State": "ENABLED",
+            "Description": "Trigger Lambda backup function twice daily at 6 AM and 6 PM UTC",
+            "ScheduleExpression": "cron(0 6,18 * * ? *)",
+            "EventBusName": "default"
+        },
+        {
+            "Name": "bebco-portfolio-parse-daily",
+            "Arn": "arn:aws:events:us-east-1:303555290462:rule/bebco-portfolio-parse-daily",
+            "State": "ENABLED",
+            "Description": "Daily Excel parsing at 4:00 AM EST (after SharePoint sync)",
+            "ScheduleExpression": "cron(0 9 * * ? *)",
+            "EventBusName": "default"
+        },
+        {
+            "Name": "bebco-portfolio-sync-daily",
+            "Arn": "arn:aws:events:us-east-1:303555290462:rule/bebco-portfolio-sync-daily",
+            "State": "ENABLED",
+            "Description": "Daily SharePoint portfolio sync at 3:00 AM EST",
+            "ScheduleExpression": "cron(0 8 * * ? *)",
+            "EventBusName": "default"
+        },
+        {
+            "Name": "bebco-staging-nacha-daily-4pm-est",
+            "Arn": "arn:aws:events:us-east-1:303555290462:rule/bebco-staging-nacha-daily-4pm-est",
+            "State": "ENABLED",
+            "Description": "Automatically process NACHA batch payments and send email daily at 4pm New York time",
+            "ScheduleExpression": "cron(0 20 * * ? *)",
+            "EventBusName": "default"
+        },
+        {
+            "Name": "bebcostaging-generate-monthly-statements-rule",
+            "Arn": "arn:aws:events:us-east-1:303555290462:rule/bebcostaging-generate-monthly-statements-rule",
+            "State": "ENABLED",
+            "ScheduleExpression": "cron(15 10 1 * ? *)",
+            "EventBusName": "default"
+        },
+        {
+            "Name": "bebcostaging-monthly-reports-scheduler-rule",
+            "Arn": "arn:aws:events:us-east-1:303555290462:rule/bebcostaging-monthly-reports-scheduler-rule",
+            "State": "ENABLED",
+            "ScheduleExpression": "cron(5 10 1 * ? *)",
+            "EventBusName": "default"
+        },
+        {
+            "Name": "bebcostaging-plaid-daily-sync-rule",
+            "Arn": "arn:aws:events:us-east-1:303555290462:rule/bebcostaging-plaid-daily-sync-rule",
+            "State": "DISABLED",
+            "ScheduleExpression": "cron(0 10 * * ? *)",
+            "EventBusName": "default"
+        },
+        {
+            "Name": "client-uploads-reminders-daily",
+            "Arn": "arn:aws:events:us-east-1:303555290462:rule/client-uploads-reminders-daily",
+            "State": "ENABLED",
+            "ScheduleExpression": "rate(1 day)",
+            "EventBusName": "default"
+        },
+        {
+            "Name": "lit-finance-textract-completion-rule",
+            "Arn": "arn:aws:events:us-east-1:303555290462:rule/lit-finance-textract-completion-rule",
+            "EventPattern": "{\"source\":[\"aws.textract\"],\"detail-type\":[\"Textract AnalyzeDocument Job Status Change\"],\"detail\":{\"Status\":[\"SUCCEEDED\"]}}",
+            "State": "ENABLED",
+            "Description": "Rule to trigger Lambda when Textract job completes",
+            "EventBusName": "default"
+        }
+    ]
+}

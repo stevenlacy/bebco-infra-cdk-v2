@@ -40,6 +40,7 @@ export class AccountsStack extends cdk.Stack {
     const accountTransactionCounts = new BebcoLambda(this, 'AccountTransactionCounts', {
       sourceFunctionName: 'bebco-staging-account-transaction-counts',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: {
         REGION: this.region,
         TRANSACTIONS_TABLE: tables.transactions.tableName,
@@ -52,6 +53,7 @@ export class AccountsStack extends cdk.Stack {
     const accountsUploadStatement = new BebcoLambda(this, 'AccountsUploadStatement', {
       sourceFunctionName: 'bebco-staging-accounts-upload-statement',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: {
         ...commonEnv,
         MONTHLY_REPORTS_TABLE: tables.monthlyReportings.tableName,
@@ -67,6 +69,7 @@ export class AccountsStack extends cdk.Stack {
     const accountsGet = new BebcoLambda(this, 'AccountsGet', {
       sourceFunctionName: 'bebco-staging-accounts-get',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.accounts.grantReadData(accountsGet.function);
@@ -78,6 +81,7 @@ export class AccountsStack extends cdk.Stack {
     const accountsOcrResults = new BebcoLambda(this, 'AccountsOcrResults', {
       sourceFunctionName: 'bebco-staging-accounts-ocr-results',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: {
         REGION: this.region,
         DOCUMENTS_S3_BUCKET: buckets.documents.bucketName,
@@ -92,6 +96,7 @@ export class AccountsStack extends cdk.Stack {
     const adminAccountStatementsDownload = new BebcoLambda(this, 'AdminAccountStatementsDownload', {
       sourceFunctionName: 'bebco-borrower-staging-admin-account-statements-download',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: {
         REGION: this.region,
         DOCUMENTS_BUCKET: buckets.documents.bucketName,
@@ -104,6 +109,7 @@ export class AccountsStack extends cdk.Stack {
     const accountsProcessOcr = new BebcoLambda(this, 'AccountsProcessOcr', {
       sourceFunctionName: 'bebco-staging-accounts-process-ocr',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: {
         REGION: this.region,
         DOCUMENTS_S3_BUCKET: buckets.documents.bucketName,
@@ -122,6 +128,7 @@ export class AccountsStack extends cdk.Stack {
     const accountsCreate = new BebcoLambda(this, 'AccountsCreate', {
       sourceFunctionName: 'bebco-staging-accounts-create',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.accounts.grantReadWriteData(accountsCreate.function);
@@ -133,6 +140,7 @@ export class AccountsStack extends cdk.Stack {
     const knownAccounts = new BebcoLambda(this, 'KnownAccounts', {
       sourceFunctionName: 'bebcoborroweradmin-known-accounts-staging',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: {
         REGION: this.region,
         TABLE_NAME: tables.accounts.tableName,
@@ -145,6 +153,7 @@ export class AccountsStack extends cdk.Stack {
     const accountsList = new BebcoLambda(this, 'AccountsList', {
       sourceFunctionName: 'bebco-staging-accounts-list',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: {
         ...commonEnv,
         DYNAMODB_TABLE: tables.loanLoc.tableName,

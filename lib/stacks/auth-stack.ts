@@ -83,23 +83,20 @@ export class AuthStack extends cdk.Stack {
       }],
     });
     
-    // Outputs
+    // Outputs (no exports needed - values passed via props)
     new cdk.CfnOutput(this, 'UserPoolId', {
       value: this.userPool.userPoolId,
       description: 'Cognito User Pool ID',
-      exportName: `${config.naming.prefix}-${config.naming.environmentSuffix}-user-pool-id`,
     });
     
     new cdk.CfnOutput(this, 'UserPoolClientId', {
       value: this.userPoolClient.userPoolClientId,
       description: 'Cognito User Pool Client ID',
-      exportName: `${config.naming.prefix}-${config.naming.environmentSuffix}-user-pool-client-id`,
     });
     
     new cdk.CfnOutput(this, 'IdentityPoolId', {
       value: this.identityPool.ref,
       description: 'Cognito Identity Pool ID',
-      exportName: `${config.naming.prefix}-${config.naming.environmentSuffix}-identity-pool-id`,
     });
   }
 }

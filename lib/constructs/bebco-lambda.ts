@@ -8,6 +8,7 @@ export interface BebcoLambdaProps {
   sourceFunctionName: string;  // Original name from us-east-1
   newFunctionName?: string;     // New name for us-east-2 (optional, will be generated if not provided)
   resourceNames: ResourceNames;
+  environmentSuffix?: string;   // Environment suffix (dev, jaspal, dinu, brandon, steven) - defaults to 'dev'
   environment?: { [key: string]: string };  // Override/add environment variables
   layers?: lambda.ILayerVersion[];  // Override layers
 }
@@ -30,27 +31,59 @@ export class BebcoLambda extends Construct {
       throw new Error(`Lambda package not found: ${packagePath}. Run download-lambda-packages script first.`);
     }
     
-    // Generate new function name (bebco-staging-X → bebco-dev-X)
-    // For functions without "staging", keep the original name (they're already environment-agnostic)
+    // Get environment suffix (default to 'dev' if not provided)
+    const envSuffix = props.environmentSuffix || 'dev';
+    
+    // Generate new function name with environment suffix
+    // For dev environments: keep dev and add suffix (e.g., bebco-dev-plaid-sync → bebco-dev-plaid-sync-jaspal)
+    // For staging: replace staging with dev first (e.g., bebco-staging-X → bebco-dev-X-jaspal)
     let newName = props.newFunctionName;
     if (!newName) {
-      if (config.name.includes('staging')) {
-        newName = config.name.replace('staging', 'dev').replace('bebco-bebco', 'bebco');
+      // First normalize: replace 'staging' with 'dev'
+      let baseName = config.name.replace(/staging/g, 'dev');
+      
+      // Then add environment suffix if not 'dev'
+      if (envSuffix !== 'dev') {
+        newName = `${baseName}-${envSuffix}`;
       } else {
-        // For functions without staging (bebco-admin-*, bebco-agent-*, bebco-docusign-*, etc.)
-        // Keep original name as they're environment-agnostic or managed via aliases
-        newName = config.name;
+        newName = baseName;
       }
+      
+      // Fix any double prefixes
+      newName = newName.replace(/^bebco-bebco/, 'bebco');
     }
     
     // Map runtime string to CDK Runtime
     const runtime = this.mapRuntime(config.runtime);
     
-    // Merge environment variables
-    const environment = {
-      ...config.environment,
-      ...(props.environment || {})
-    };
+    // Merge environment variables and update table names to match environment
+    const environment: { [key: string]: string } = {};
+    
+    // Update original environment variables to point to correct tables
+    for (const [key, value] of Object.entries(config.environment || {})) {
+      let newValue = value;
+      
+      // Update DynamoDB table names in environment variables
+      // Replace patterns like: bebco-borrower-X-staging → bebco-borrower-X-{env}
+      // Or: bebco-borrower-X-dev → bebco-borrower-X-{env} (for non-dev environments)
+      if (envSuffix !== 'dev') {
+        // Replace staging with environment suffix
+        newValue = newValue.replace(/bebco-borrower-(\w+)-staging/g, `bebco-borrower-$1-${envSuffix}`);
+        // Replace dev with environment suffix  
+        newValue = newValue.replace(/bebco-borrower-(\w+)-dev/g, `bebco-borrower-$1-${envSuffix}`);
+        // Also handle cases without bebco- prefix
+        newValue = newValue.replace(/borrower-(\w+)-staging/g, `borrower-$1-${envSuffix}`);
+        newValue = newValue.replace(/borrower-(\w+)-dev/g, `borrower-$1-${envSuffix}`);
+      } else {
+        // For dev environment, just replace staging with dev
+        newValue = newValue.replace(/staging/g, 'dev');
+      }
+      
+      environment[key] = newValue;
+    }
+    
+    // Merge with any overrides from props
+    Object.assign(environment, props.environment || {});
     
     // Create Lambda function
     this.function = new lambda.Function(this, 'Function', {

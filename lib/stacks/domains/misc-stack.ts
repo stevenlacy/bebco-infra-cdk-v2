@@ -26,6 +26,7 @@ export class MiscStack extends cdk.Stack {
     const changeTracker = new BebcoLambda(this, 'ChangeTracker', {
       sourceFunctionName: 'bebco-change-tracker',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: {
         REGION: this.region,
         CHANGE_TRACKING_BUCKET: buckets.changeTracking.bucketName,
@@ -42,6 +43,7 @@ export class MiscStack extends cdk.Stack {
     const lambdaBackup = new BebcoLambda(this, 'LambdaBackup', {
       sourceFunctionName: 'bebco-lambda-backup-function',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: {
         REGION: this.region,
         BACKUP_BUCKET: buckets.lambdaDeployments.bucketName, // Using lambda deployments bucket for backups
@@ -55,6 +57,7 @@ export class MiscStack extends cdk.Stack {
     const adminNachaDownload = new BebcoLambda(this, 'AdminNachaDownload', {
       sourceFunctionName: 'bebco-borrower-staging-admin-nacha-download',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: {
         REGION: this.region,
         PAYMENTS_TABLE: tables.payments?.tableName || 'bebco-borrower-dev-payments', // Fallback

@@ -37,6 +37,10 @@ import { AdminSecondaryApiStack } from '../lib/stacks/api/admin-secondary-api-st
 import { BorrowersGraphQLStack } from '../lib/stacks/api/borrowers-graphql-stack';
 import { BorrowerStatementsGraphQLStack } from '../lib/stacks/api/borrower-statements-graphql-stack';
 
+// Infrastructure stacks
+import { QueuesStack } from '../lib/stacks/queues-stack';
+import { MonitoringStack } from '../lib/stacks/monitoring-stack';
+
 const app = new cdk.App();
 
 // Load environment configuration from context
@@ -62,22 +66,25 @@ console.log(`Account: ${config.account}`);
 console.log('='.repeat(60));
 console.log('');
 
+// Helper function to create environment-specific stack IDs
+const getStackId = (baseName: string) => `Bebco${baseName}Stack-${config.naming.environmentSuffix}`;
+
 // Foundation stacks (no Lambda dependencies)
-const authStack = new AuthStack(app, 'BebcoAuthStack', {
+const authStack = new AuthStack(app, getStackId('Auth'), {
   env,
   config,
   resourceNames,
   description: 'Cognito User Pool and Identity Pool for Bebco',
 });
 
-const storageStack = new StorageStack(app, 'BebcoStorageStack', {
+const storageStack = new StorageStack(app, getStackId('Storage'), {
   env,
   config,
   resourceNames,
   description: 'S3 buckets for documents, statements, and deployments',
 });
 
-const dataStack = new DataStack(app, 'BebcoDataStack', {
+const dataStack = new DataStack(app, getStackId('Data'), {
   env,
   config,
   resourceNames,
@@ -85,7 +92,7 @@ const dataStack = new DataStack(app, 'BebcoDataStack', {
 });
 
 // Domain Lambda stacks
-const plaidStack = new PlaidStack(app, 'BebcoPlaidStack', {
+const plaidStack = new PlaidStack(app, getStackId('Plaid'), {
   env,
   config,
   resourceNames,
@@ -96,7 +103,7 @@ const plaidStack = new PlaidStack(app, 'BebcoPlaidStack', {
 plaidStack.addDependency(dataStack);
 plaidStack.addDependency(storageStack);
 
-const accountsStack = new AccountsStack(app, 'BebcoAccountsStack', {
+const accountsStack = new AccountsStack(app, getStackId('Accounts'), {
   env,
   config,
   resourceNames,
@@ -111,7 +118,7 @@ accountsStack.addDependency(dataStack);
 accountsStack.addDependency(storageStack);
 accountsStack.addDependency(authStack);
 
-const usersStack = new UsersStack(app, 'BebcoUsersStack', {
+const usersStack = new UsersStack(app, getStackId('Users'), {
   env,
   config,
   resourceNames,
@@ -126,7 +133,7 @@ usersStack.addDependency(dataStack);
 usersStack.addDependency(storageStack);
 usersStack.addDependency(authStack);
 
-const drawsStack = new DrawsStack(app, 'BebcoDrawsStack', {
+const drawsStack = new DrawsStack(app, getStackId('Draws'), {
   env,
   config,
   resourceNames,
@@ -141,7 +148,7 @@ drawsStack.addDependency(dataStack);
 drawsStack.addDependency(storageStack);
 drawsStack.addDependency(authStack);
 
-const reportingStack = new ReportingStack(app, 'BebcoReportingStack', {
+const reportingStack = new ReportingStack(app, getStackId('Reporting'), {
   env,
   config,
   resourceNames,
@@ -152,7 +159,7 @@ const reportingStack = new ReportingStack(app, 'BebcoReportingStack', {
 reportingStack.addDependency(dataStack);
 reportingStack.addDependency(storageStack);
 
-const loansStack = new LoansStack(app, 'BebcoLoansStack', {
+const loansStack = new LoansStack(app, getStackId('Loans'), {
   env,
   config,
   resourceNames,
@@ -163,7 +170,7 @@ const loansStack = new LoansStack(app, 'BebcoLoansStack', {
 loansStack.addDependency(dataStack);
 loansStack.addDependency(storageStack);
 
-const paymentsStack = new PaymentsStack(app, 'BebcoPaymentsStack', {
+const paymentsStack = new PaymentsStack(app, getStackId('Payments'), {
   env,
   config,
   resourceNames,
@@ -174,7 +181,7 @@ const paymentsStack = new PaymentsStack(app, 'BebcoPaymentsStack', {
 paymentsStack.addDependency(dataStack);
 paymentsStack.addDependency(storageStack);
 
-const casesStack = new CasesStack(app, 'BebcoCasesStack', {
+const casesStack = new CasesStack(app, getStackId('Cases'), {
   env,
   config,
   resourceNames,
@@ -185,7 +192,7 @@ const casesStack = new CasesStack(app, 'BebcoCasesStack', {
 casesStack.addDependency(dataStack);
 casesStack.addDependency(storageStack);
 
-const authLambdasStack = new AuthLambdasStack(app, 'BebcoAuthLambdasStack', {
+const authLambdasStack = new AuthLambdasStack(app, getStackId('AuthLambdas'), {
   env,
   config,
   resourceNames,
@@ -198,7 +205,7 @@ const authLambdasStack = new AuthLambdasStack(app, 'BebcoAuthLambdasStack', {
 authLambdasStack.addDependency(dataStack);
 authLambdasStack.addDependency(authStack);
 
-const docusignStack = new DocuSignStack(app, 'BebcoDocuSignStack', {
+const docusignStack = new DocuSignStack(app, getStackId('DocuSign'), {
   env,
   config,
   resourceNames,
@@ -209,7 +216,7 @@ const docusignStack = new DocuSignStack(app, 'BebcoDocuSignStack', {
 docusignStack.addDependency(dataStack);
 docusignStack.addDependency(storageStack);
 
-const borrowersStack = new BorrowersStack(app, 'BebcoBorrowersStack', {
+const borrowersStack = new BorrowersStack(app, getStackId('Borrowers'), {
   env,
   config,
   resourceNames,
@@ -220,7 +227,7 @@ const borrowersStack = new BorrowersStack(app, 'BebcoBorrowersStack', {
 borrowersStack.addDependency(dataStack);
 borrowersStack.addDependency(storageStack);
 
-const expensesStack = new ExpensesStack(app, 'BebcoExpensesStack', {
+const expensesStack = new ExpensesStack(app, getStackId('Expenses'), {
   env,
   config,
   resourceNames,
@@ -229,7 +236,7 @@ const expensesStack = new ExpensesStack(app, 'BebcoExpensesStack', {
 });
 expensesStack.addDependency(dataStack);
 
-const invoicesStack = new InvoicesStack(app, 'BebcoInvoicesStack', {
+const invoicesStack = new InvoicesStack(app, getStackId('Invoices'), {
   env,
   config,
   resourceNames,
@@ -240,7 +247,7 @@ const invoicesStack = new InvoicesStack(app, 'BebcoInvoicesStack', {
 invoicesStack.addDependency(dataStack);
 invoicesStack.addDependency(storageStack);
 
-const banksStack = new BanksStack(app, 'BebcoBanksStack', {
+const banksStack = new BanksStack(app, getStackId('Banks'), {
   env,
   config,
   resourceNames,
@@ -249,7 +256,7 @@ const banksStack = new BanksStack(app, 'BebcoBanksStack', {
 });
 banksStack.addDependency(dataStack);
 
-const statementsStack = new StatementsStack(app, 'BebcoStatementsStack', {
+const statementsStack = new StatementsStack(app, getStackId('Statements'), {
   env,
   config,
   resourceNames,
@@ -260,7 +267,7 @@ const statementsStack = new StatementsStack(app, 'BebcoStatementsStack', {
 statementsStack.addDependency(dataStack);
 statementsStack.addDependency(storageStack);
 
-const integrationsStack = new IntegrationsStack(app, 'BebcoIntegrationsStack', {
+const integrationsStack = new IntegrationsStack(app, getStackId('Integrations'), {
   env,
   config,
   resourceNames,
@@ -271,7 +278,7 @@ const integrationsStack = new IntegrationsStack(app, 'BebcoIntegrationsStack', {
 integrationsStack.addDependency(dataStack);
 integrationsStack.addDependency(storageStack);
 
-const miscStack = new MiscStack(app, 'BebcoMiscStack', {
+const miscStack = new MiscStack(app, getStackId('Misc'), {
   env,
   config,
   resourceNames,
@@ -283,7 +290,7 @@ miscStack.addDependency(dataStack);
 miscStack.addDependency(storageStack);
 
 // API Layer Stacks
-const borrowerApiStack = new BorrowerApiStack(app, 'BebcoBorrowerApiStack', {
+const borrowerApiStack = new BorrowerApiStack(app, getStackId('BorrowerApi'), {
   env,
   config,
   resourceNames,
@@ -295,7 +302,7 @@ borrowerApiStack.addDependency(plaidStack);
 borrowerApiStack.addDependency(accountsStack);
 borrowerApiStack.addDependency(usersStack);
 
-const adminApiStack = new AdminApiStack(app, 'BebcoAdminApiStack', {
+const adminApiStack = new AdminApiStack(app, getStackId('AdminApi'), {
   env,
   config,
   resourceNames,
@@ -306,7 +313,7 @@ adminApiStack.addDependency(authStack);
 adminApiStack.addDependency(borrowersStack);
 adminApiStack.addDependency(usersStack);
 
-const adminSecondaryApiStack = new AdminSecondaryApiStack(app, 'BebcoAdminSecondaryApiStack', {
+const adminSecondaryApiStack = new AdminSecondaryApiStack(app, getStackId('AdminSecondaryApi'), {
   env,
   config,
   resourceNames,
@@ -316,7 +323,7 @@ const adminSecondaryApiStack = new AdminSecondaryApiStack(app, 'BebcoAdminSecond
 adminSecondaryApiStack.addDependency(authStack);
 adminSecondaryApiStack.addDependency(banksStack);
 
-const borrowersGraphQLStack = new BorrowersGraphQLStack(app, 'BebcoBorrowersGraphQLStack', {
+const borrowersGraphQLStack = new BorrowersGraphQLStack(app, getStackId('BorrowersGraphQL'), {
   env,
   config,
   resourceNames,
@@ -324,7 +331,7 @@ const borrowersGraphQLStack = new BorrowersGraphQLStack(app, 'BebcoBorrowersGrap
 });
 borrowersGraphQLStack.addDependency(borrowersStack);
 
-const borrowerStatementsGraphQLStack = new BorrowerStatementsGraphQLStack(app, 'BebcoBorrowerStatementsGraphQLStack', {
+const borrowerStatementsGraphQLStack = new BorrowerStatementsGraphQLStack(app, getStackId('BorrowerStatementsGraphQL'), {
   env,
   config,
   resourceNames,
@@ -334,5 +341,54 @@ const borrowerStatementsGraphQLStack = new BorrowerStatementsGraphQLStack(app, '
 });
 borrowerStatementsGraphQLStack.addDependency(authStack);
 borrowerStatementsGraphQLStack.addDependency(dataStack);
+
+// Collect all Lambda functions for Queues Stack
+const allLambdaFunctions: { [key: string]: lambda.IFunction } = {
+  ...plaidStack.functions,
+  ...accountsStack.functions,
+  ...usersStack.functions,
+  ...drawsStack.functions,
+  ...reportingStack.functions,
+  ...loansStack.functions,
+  ...paymentsStack.functions,
+  ...casesStack.functions,
+  ...authLambdasStack.functions,
+  ...docusignStack.functions,
+  ...borrowersStack.functions,
+  ...expensesStack.functions,
+  ...invoicesStack.functions,
+  ...banksStack.functions,
+  ...statementsStack.functions,
+  ...integrationsStack.functions,
+  ...miscStack.functions,
+};
+
+// Queues & Events Stack (SQS, SNS, EventBridge)
+const queuesStack = new QueuesStack(app, getStackId('Queues'), {
+  env,
+  config,
+  resourceNames,
+  lambdaFunctions: allLambdaFunctions,
+  description: 'SQS Queues, SNS Topics, and EventBridge Rules',
+});
+queuesStack.addDependency(plaidStack);
+queuesStack.addDependency(paymentsStack);
+queuesStack.addDependency(integrationsStack);
+queuesStack.addDependency(statementsStack);
+queuesStack.addDependency(reportingStack);
+queuesStack.addDependency(miscStack);
+
+// Monitoring Stack (CloudWatch Alarms, Dashboards, Log Groups)
+const monitoringStack = new MonitoringStack(app, getStackId('Monitoring'), {
+  env,
+  config,
+  resourceNames,
+  lambdaFunctions: allLambdaFunctions,
+  description: 'CloudWatch Alarms, Dashboards, and Log Group configurations',
+});
+monitoringStack.addDependency(plaidStack);
+monitoringStack.addDependency(paymentsStack);
+monitoringStack.addDependency(usersStack);
+monitoringStack.addDependency(miscStack);
 
 app.synth();

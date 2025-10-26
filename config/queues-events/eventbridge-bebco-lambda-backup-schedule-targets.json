@@ -1,0 +1,8 @@
+{
+    "Targets": [
+        {
+            "Id": "1",
+            "Arn": "arn:aws:lambda:us-east-1:303555290462:function:bebco-lambda-backup-function"
+        }
+    ]
+}

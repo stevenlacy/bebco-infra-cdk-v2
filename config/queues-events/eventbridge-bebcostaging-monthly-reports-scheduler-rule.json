@@ -1,0 +1,8 @@
+{
+    "Name": "bebcostaging-monthly-reports-scheduler-rule",
+    "Arn": "arn:aws:events:us-east-1:303555290462:rule/bebcostaging-monthly-reports-scheduler-rule",
+    "ScheduleExpression": "cron(5 10 1 * ? *)",
+    "State": "ENABLED",
+    "EventBusName": "default",
+    "CreatedBy": "303555290462"
+}

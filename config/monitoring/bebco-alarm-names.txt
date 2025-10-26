@@ -1,0 +1,2 @@
+bebco-lambda-backup-function-duration
+bebco-lambda-backup-function-errors

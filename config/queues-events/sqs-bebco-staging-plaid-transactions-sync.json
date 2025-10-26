@@ -1,0 +1,16 @@
+{
+    "Attributes": {
+        "QueueArn": "arn:aws:sqs:us-east-1:303555290462:bebco-staging-plaid-transactions-sync",
+        "ApproximateNumberOfMessages": "0",
+        "ApproximateNumberOfMessagesNotVisible": "0",
+        "ApproximateNumberOfMessagesDelayed": "0",
+        "CreatedTimestamp": "1756002856",
+        "LastModifiedTimestamp": "1760303917",
+        "VisibilityTimeout": "960",
+        "MaximumMessageSize": "1048576",
+        "MessageRetentionPeriod": "345600",
+        "DelaySeconds": "0",
+        "ReceiveMessageWaitTimeSeconds": "0",
+        "SqsManagedSseEnabled": "true"
+    }
+}

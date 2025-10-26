@@ -1,0 +1,9 @@
+{
+    "QueueUrls": [
+        "https://sqs.us-east-1.amazonaws.com/303555290462/bebco-staging-document-ocr-dlq",
+        "https://sqs.us-east-1.amazonaws.com/303555290462/bebco-staging-document-ocr-queue",
+        "https://sqs.us-east-1.amazonaws.com/303555290462/bebco-staging-plaid-transactions-sync",
+        "https://sqs.us-east-1.amazonaws.com/303555290462/bebco-staging-plaid-transactions-sync-dlq.fifo",
+        "https://sqs.us-east-1.amazonaws.com/303555290462/bebco-staging-plaid-transactions-sync-fifo.fifo"
+    ]
+}

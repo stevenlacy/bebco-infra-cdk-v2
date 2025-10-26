@@ -1,0 +1,9 @@
+{
+    "Name": "bebco-portfolio-parse-daily",
+    "Arn": "arn:aws:events:us-east-1:303555290462:rule/bebco-portfolio-parse-daily",
+    "ScheduleExpression": "cron(0 9 * * ? *)",
+    "State": "ENABLED",
+    "Description": "Daily Excel parsing at 4:00 AM EST (after SharePoint sync)",
+    "EventBusName": "default",
+    "CreatedBy": "303555290462"
+}

@@ -29,6 +29,7 @@ export class CasesStack extends cdk.Stack {
     const casesCreate = new BebcoLambda(this, 'CasesCreate', {
       sourceFunctionName: 'bebco-staging-cases-create',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.casesCreate = casesCreate.function;
@@ -36,6 +37,7 @@ export class CasesStack extends cdk.Stack {
     const casesGet = new BebcoLambda(this, 'CasesGet', {
       sourceFunctionName: 'bebco-staging-cases-get',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.casesGet = casesGet.function;
@@ -43,6 +45,7 @@ export class CasesStack extends cdk.Stack {
     const casesList = new BebcoLambda(this, 'CasesList', {
       sourceFunctionName: 'bebco-staging-cases-list',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.casesList = casesList.function;
@@ -50,6 +53,7 @@ export class CasesStack extends cdk.Stack {
     const casesUpdate = new BebcoLambda(this, 'CasesUpdate', {
       sourceFunctionName: 'bebco-staging-cases-update',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.casesUpdate = casesUpdate.function;
@@ -57,6 +61,7 @@ export class CasesStack extends cdk.Stack {
     const casesClose = new BebcoLambda(this, 'CasesClose', {
       sourceFunctionName: 'bebco-staging-cases-close',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.casesClose = casesClose.function;
@@ -64,6 +69,7 @@ export class CasesStack extends cdk.Stack {
     const casesDocketVerification = new BebcoLambda(this, 'CasesDocketVerification', {
       sourceFunctionName: 'bebco-staging-cases-docket-verification',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.casesDocketVerification = casesDocketVerification.function;

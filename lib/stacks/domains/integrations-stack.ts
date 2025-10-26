@@ -34,6 +34,7 @@ export class IntegrationsStack extends cdk.Stack {
     const sharepointSyncPortfolio = new BebcoLambda(this, 'SharepointSyncPortfolio', {
       sourceFunctionName: 'bebco-staging-sharepoint-sync-portfolio',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     buckets.documents.grantReadWrite(sharepointSyncPortfolio.function);
@@ -44,6 +45,7 @@ export class IntegrationsStack extends cdk.Stack {
     const sharepointManualSync = new BebcoLambda(this, 'SharepointManualSync', {
       sourceFunctionName: 'bebco-staging-sharepoint-manual-sync',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     buckets.documents.grantReadWrite(sharepointManualSync.function);
@@ -54,6 +56,7 @@ export class IntegrationsStack extends cdk.Stack {
     const sharepointSyncStatus = new BebcoLambda(this, 'SharepointSyncStatus', {
       sourceFunctionName: 'bebco-staging-sharepoint-sync-status',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     // TODO: Grant Secrets Manager permissions for SharePoint
@@ -64,6 +67,7 @@ export class IntegrationsStack extends cdk.Stack {
     const analyzeDocuments = new BebcoLambda(this, 'AnalyzeDocuments', {
       sourceFunctionName: 'bebco-staging-analyze-documents',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: {
         ...commonEnv,
         TEXTRACT_ROLE_ARN: 'arn:aws:iam::303555290462:role/bebco-dev-textract-role', // Placeholder
@@ -78,6 +82,7 @@ export class IntegrationsStack extends cdk.Stack {
     const processDocumentOcr = new BebcoLambda(this, 'ProcessDocumentOcr', {
       sourceFunctionName: 'bebco-borrower-staging-process-document-ocr',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: {
         ...commonEnv,
         TEXTRACT_ROLE_ARN: 'arn:aws:iam::303555290462:role/bebco-dev-textract-role', // Placeholder
@@ -93,6 +98,7 @@ export class IntegrationsStack extends cdk.Stack {
     const excelParser = new BebcoLambda(this, 'ExcelParser', {
       sourceFunctionName: 'bebco-staging-excel-parser',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     buckets.documents.grantRead(excelParser.function);
@@ -103,6 +109,7 @@ export class IntegrationsStack extends cdk.Stack {
     const agentResolveCompanyTool = new BebcoLambda(this, 'AgentResolveCompanyTool', {
       sourceFunctionName: 'bebco-agent-resolve-company-tool',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: {
         REGION: this.region,
         COMPANIES_TABLE: tables.companies.tableName,
@@ -115,6 +122,7 @@ export class IntegrationsStack extends cdk.Stack {
     const agentRunPartiqlTool = new BebcoLambda(this, 'AgentRunPartiqlTool', {
       sourceFunctionName: 'bebco-agent-run-partiql-tool',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: {
         REGION: this.region,
       },

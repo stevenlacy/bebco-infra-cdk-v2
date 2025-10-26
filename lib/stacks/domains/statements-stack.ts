@@ -34,6 +34,7 @@ export class StatementsStack extends cdk.Stack {
     const adminListStatements = new BebcoLambda(this, 'AdminListStatements', {
       sourceFunctionName: 'bebco-staging-admin-list-statements',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.monthlyReportings.grantReadData(adminListStatements.function);
@@ -44,6 +45,7 @@ export class StatementsStack extends cdk.Stack {
     const adminUploadStatements = new BebcoLambda(this, 'AdminUploadStatements', {
       sourceFunctionName: 'bebco-staging-admin-upload-statements',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.monthlyReportings.grantReadWriteData(adminUploadStatements.function);
@@ -54,6 +56,7 @@ export class StatementsStack extends cdk.Stack {
     const statementsFinancials = new BebcoLambda(this, 'StatementsFinancials', {
       sourceFunctionName: 'bebco-staging-statements-financials',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.monthlyReportings.grantReadData(statementsFinancials.function);
@@ -64,6 +67,7 @@ export class StatementsStack extends cdk.Stack {
     const statementsGetUrl = new BebcoLambda(this, 'StatementsGetUrl', {
       sourceFunctionName: 'bebco-staging-statements-get-url',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     buckets.documents.grantRead(statementsGetUrl.function);
@@ -73,6 +77,7 @@ export class StatementsStack extends cdk.Stack {
     const statementsStreamPublisher = new BebcoLambda(this, 'StatementsStreamPublisher', {
       sourceFunctionName: 'bebco-statements-stream-publisher',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.monthlyReportings.grantStreamRead(statementsStreamPublisher.function);

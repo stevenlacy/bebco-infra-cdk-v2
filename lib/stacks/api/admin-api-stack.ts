@@ -94,7 +94,6 @@ export class AdminApiStack extends cdk.Stack {
     new cdk.CfnOutput(this, 'ApiEndpoint', {
       value: this.api.url,
       description: 'Admin Portal API endpoint',
-      exportName: 'AdminApiEndpoint',
     });
     
     new cdk.CfnOutput(this, 'ApiId', {

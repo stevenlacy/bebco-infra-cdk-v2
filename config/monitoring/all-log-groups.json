@@ -1,0 +1,1797 @@
+{
+    "logGroups": [
+        {
+            "logGroupName": "/aws/OpenSearchService/domains/bkhmlexlink/index-logs",
+            "creationTime": 1728167686291,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/OpenSearchService/domains/bkhmlexlink/index-logs:*",
+            "storedBytes": 240,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/OpenSearchService/domains/bkhmlexlink/index-logs"
+        },
+        {
+            "logGroupName": "/aws/amplify/d12e5se14r05xt",
+            "creationTime": 1754587507426,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/amplify/d12e5se14r05xt:*",
+            "storedBytes": 217782,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/amplify/d12e5se14r05xt"
+        },
+        {
+            "logGroupName": "/aws/amplify/d1hnl8vu285lqk",
+            "creationTime": 1754522256853,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/amplify/d1hnl8vu285lqk:*",
+            "storedBytes": 76204,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/amplify/d1hnl8vu285lqk"
+        },
+        {
+            "logGroupName": "/aws/amplify/d1j3j4iec5kz1f",
+            "creationTime": 1756234846840,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/amplify/d1j3j4iec5kz1f:*",
+            "storedBytes": 438805,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/amplify/d1j3j4iec5kz1f"
+        },
+        {
+            "logGroupName": "/aws/amplify/d1jubakmes2r6h",
+            "creationTime": 1754587831798,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/amplify/d1jubakmes2r6h:*",
+            "storedBytes": 122036,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/amplify/d1jubakmes2r6h"
+        },
+        {
+            "logGroupName": "/aws/amplify/d2o0gw79f06ng5",
+            "creationTime": 1748043320237,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/amplify/d2o0gw79f06ng5:*",
+            "storedBytes": 32782,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/amplify/d2o0gw79f06ng5"
+        },
+        {
+            "logGroupName": "/aws/amplify/d2uacw83qedw3i",
+            "creationTime": 1742679117613,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/amplify/d2uacw83qedw3i:*",
+            "storedBytes": 16938269,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/amplify/d2uacw83qedw3i"
+        },
+        {
+            "logGroupName": "/aws/amplify/d2unowlt32ble3",
+            "creationTime": 1742327677420,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/amplify/d2unowlt32ble3:*",
+            "storedBytes": 613316,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/amplify/d2unowlt32ble3"
+        },
+        {
+            "logGroupName": "/aws/amplify/d2wvvc9d2ch8ib",
+            "creationTime": 1756230352177,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/amplify/d2wvvc9d2ch8ib:*",
+            "storedBytes": 1101942,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/amplify/d2wvvc9d2ch8ib"
+        },
+        {
+            "logGroupName": "/aws/amplify/d3ar3vjecl5u30",
+            "creationTime": 1758093739552,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/amplify/d3ar3vjecl5u30:*",
+            "storedBytes": 185758,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/amplify/d3ar3vjecl5u30"
+        },
+        {
+            "logGroupName": "/aws/amplify/d3ln9tigllda5d",
+            "creationTime": 1749831723621,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/amplify/d3ln9tigllda5d:*",
+            "storedBytes": 1159605,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/amplify/d3ln9tigllda5d"
+        },
+        {
+            "logGroupName": "/aws/amplify/dzeinutgz3zpd",
+            "creationTime": 1749789565984,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/amplify/dzeinutgz3zpd:*",
+            "storedBytes": 659276,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/amplify/dzeinutgz3zpd"
+        },
+        {
+            "logGroupName": "/aws/apigateway/welcome",
+            "creationTime": 1729455924651,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/apigateway/welcome:*",
+            "storedBytes": 218,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/apigateway/welcome"
+        },
+        {
+            "logGroupName": "/aws/appsync/apis/y2w7tmzakjb53pounh4a536p6u",
+            "creationTime": 1758158558426,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/appsync/apis/y2w7tmzakjb53pounh4a536p6u:*",
+            "storedBytes": 1799433,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/appsync/apis/y2w7tmzakjb53pounh4a536p6u"
+        },
+        {
+            "logGroupName": "/aws/lambda/BackendStack-BackendLambdaD93C7B96-Xn77AdT6HtQS",
+            "creationTime": 1728093864215,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/BackendStack-BackendLambdaD93C7B96-Xn77AdT6HtQS:*",
+            "storedBytes": 762374,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/BackendStack-BackendLambdaD93C7B96-Xn77AdT6HtQS"
+        },
+        {
+            "logGroupName": "/aws/lambda/CaseLawLex",
+            "creationTime": 1734558389873,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/CaseLawLex:*",
+            "storedBytes": 1752112,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/CaseLawLex"
+        },
+        {
+            "logGroupName": "/aws/lambda/CaseManagementFunction",
+            "creationTime": 1729276160316,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/CaseManagementFunction:*",
+            "storedBytes": 245941,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/CaseManagementFunction"
+        },
+        {
+            "logGroupName": "/aws/lambda/ChatGPTLambda",
+            "creationTime": 1726617728076,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/ChatGPTLambda:*",
+            "storedBytes": 659265,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/ChatGPTLambda"
+        },
+        {
+            "logGroupName": "/aws/lambda/ChatMessagesLex",
+            "creationTime": 1733949992699,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/ChatMessagesLex:*",
+            "storedBytes": 1488405,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/ChatMessagesLex"
+        },
+        {
+            "logGroupName": "/aws/lambda/DAI-ClaudeAnalyzer",
+            "creationTime": 1742587521232,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/DAI-ClaudeAnalyzer:*",
+            "storedBytes": 0,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/DAI-ClaudeAnalyzer"
+        },
+        {
+            "logGroupName": "/aws/lambda/DAI-ClaudeAnalyzer-1742506037",
+            "creationTime": 1742506133336,
+            "retentionInDays": 30,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/DAI-ClaudeAnalyzer-1742506037:*",
+            "storedBytes": 0,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/DAI-ClaudeAnalyzer-1742506037"
+        },
+        {
+            "logGroupName": "/aws/lambda/DAI-GetTextractJobStatus",
+            "creationTime": 1743264525111,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/DAI-GetTextractJobStatus:*",
+            "storedBytes": 522860,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/DAI-GetTextractJobStatus"
+        },
+        {
+            "logGroupName": "/aws/lambda/DAI-S3UploadHandler",
+            "creationTime": 1743200644905,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/DAI-S3UploadHandler:*",
+            "storedBytes": 8096254,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/DAI-S3UploadHandler"
+        },
+        {
+            "logGroupName": "/aws/lambda/DAI-SimpleClaudeAnalyzer-1742589922",
+            "creationTime": 1742589958662,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/DAI-SimpleClaudeAnalyzer-1742589922:*",
+            "storedBytes": 52774,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/DAI-SimpleClaudeAnalyzer-1742589922"
+        },
+        {
+            "logGroupName": "/aws/lambda/DAI-SimpleUpload",
+            "creationTime": 1742517322049,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/DAI-SimpleUpload:*",
+            "storedBytes": 3185970,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/DAI-SimpleUpload"
+        },
+        {
+            "logGroupName": "/aws/lambda/DAI-StartTextractJob",
+            "creationTime": 1743200807769,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/DAI-StartTextractJob:*",
+            "storedBytes": 74219,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/DAI-StartTextractJob"
+        },
+        {
+            "logGroupName": "/aws/lambda/DAI-StoreTextractResults",
+            "creationTime": 1743206225668,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/DAI-StoreTextractResults:*",
+            "storedBytes": 86327,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/DAI-StoreTextractResults"
+        },
+        {
+            "logGroupName": "/aws/lambda/DAI-TextExtractor-20250320083154",
+            "creationTime": 1742484797155,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/DAI-TextExtractor-20250320083154:*",
+            "storedBytes": 1052689,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/DAI-TextExtractor-20250320083154"
+        },
+        {
+            "logGroupName": "/aws/lambda/DAI-TextExtractor-20250320160338",
+            "creationTime": 1742511895393,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/DAI-TextExtractor-20250320160338:*",
+            "storedBytes": 965664,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/DAI-TextExtractor-20250320160338"
+        },
+        {
+            "logGroupName": "/aws/lambda/DepositionDataHandler",
+            "creationTime": 1741543922706,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/DepositionDataHandler:*",
+            "storedBytes": 588046,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/DepositionDataHandler"
+        },
+        {
+            "logGroupName": "/aws/lambda/DynamoDBToESSync",
+            "creationTime": 1734296506132,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/DynamoDBToESSync:*",
+            "storedBytes": 4703203,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/DynamoDBToESSync"
+        },
+        {
+            "logGroupName": "/aws/lambda/FolderItemsLex",
+            "creationTime": 1734478339632,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/FolderItemsLex:*",
+            "storedBytes": 555130,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/FolderItemsLex"
+        },
+        {
+            "logGroupName": "/aws/lambda/GPTCodeInterpreter",
+            "creationTime": 1727395310931,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/GPTCodeInterpreter:*",
+            "storedBytes": 70324,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/GPTCodeInterpreter"
+        },
+        {
+            "logGroupName": "/aws/lambda/InsertIntoV6files",
+            "creationTime": 1729454653700,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/InsertIntoV6files:*",
+            "storedBytes": 10760,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/InsertIntoV6files"
+        },
+        {
+            "logGroupName": "/aws/lambda/MattersLex",
+            "creationTime": 1733812728394,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/MattersLex:*",
+            "storedBytes": 1482709,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/MattersLex"
+        },
+        {
+            "logGroupName": "/aws/lambda/MyOpenSearchLambda",
+            "creationTime": 1734923115331,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/MyOpenSearchLambda:*",
+            "storedBytes": 1940312,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/MyOpenSearchLambda"
+        },
+        {
+            "logGroupName": "/aws/lambda/NLPProcessing",
+            "creationTime": 1734062959602,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/NLPProcessing:*",
+            "storedBytes": 2249839,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/NLPProcessing"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-admin-auth-check-user-status",
+            "creationTime": 1759430733454,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-admin-auth-check-user-status:*",
+            "storedBytes": 337366,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-admin-auth-check-user-status"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-admin-auth-complete-setup",
+            "creationTime": 1759433708370,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-admin-auth-complete-setup:*",
+            "storedBytes": 47572,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-admin-auth-complete-setup"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-admin-auth-refresh-token",
+            "creationTime": 1759430763682,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-admin-auth-refresh-token:*",
+            "storedBytes": 530302,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-admin-auth-refresh-token"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-admin-auth-validate-password",
+            "creationTime": 1759432823014,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-admin-auth-validate-password:*",
+            "storedBytes": 408124,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-admin-auth-validate-password"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-admin-users-change-password",
+            "creationTime": 1758926812969,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-admin-users-change-password:*",
+            "storedBytes": 1950,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-admin-users-change-password"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-admin-users-mfa-status",
+            "creationTime": 1758931242769,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-admin-users-mfa-status:*",
+            "storedBytes": 24462,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-admin-users-mfa-status"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-admin-users-mfa-totp-begin",
+            "creationTime": 1758928083543,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-admin-users-mfa-totp-begin:*",
+            "storedBytes": 12669,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-admin-users-mfa-totp-begin"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-admin-users-mfa-totp-verify",
+            "creationTime": 1758929851353,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-admin-users-mfa-totp-verify:*",
+            "storedBytes": 4527,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-admin-users-mfa-totp-verify"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-admin-users-mfa-totp-verify-login",
+            "creationTime": 1758933030904,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-admin-users-mfa-totp-verify-login:*",
+            "storedBytes": 16110,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-admin-users-mfa-totp-verify-login"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-admin-users-send2fa",
+            "creationTime": 1759430745169,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-admin-users-send2fa:*",
+            "storedBytes": 396321,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-admin-users-send2fa"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-admin-users-update-name",
+            "creationTime": 1758905207670,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-admin-users-update-name:*",
+            "storedBytes": 17686,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-admin-users-update-name"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-admin-users-verify2fa",
+            "creationTime": 1759430755815,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-admin-users-verify2fa:*",
+            "storedBytes": 383900,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-admin-users-verify2fa"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-agent-resolve-company-tool",
+            "creationTime": 1760338554654,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-agent-resolve-company-tool:*",
+            "storedBytes": 4103,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-agent-resolve-company-tool"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-agent-run-partiql-tool",
+            "creationTime": 1760338939564,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-agent-run-partiql-tool:*",
+            "storedBytes": 2586,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-agent-run-partiql-tool"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-appsync-annual-reporting-dashboard",
+            "creationTime": 1760605362042,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-appsync-annual-reporting-dashboard:*",
+            "storedBytes": 44320,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-appsync-annual-reporting-dashboard"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-appsync-borrower-annual-reports",
+            "creationTime": 1760605665285,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-appsync-borrower-annual-reports:*",
+            "storedBytes": 12981,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-appsync-borrower-annual-reports"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-appsync-list-annual-reports",
+            "creationTime": 1760609787566,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-appsync-list-annual-reports:*",
+            "storedBytes": 68716,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-appsync-list-annual-reports"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-borrower-staging-admin-account-statements-download",
+            "creationTime": 1759867623900,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-borrower-staging-admin-account-statements-download:*",
+            "storedBytes": 15067,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-borrower-staging-admin-account-statements-download"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-borrower-staging-admin-nacha-download",
+            "creationTime": 1759704994810,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-borrower-staging-admin-nacha-download:*",
+            "storedBytes": 1619461,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-borrower-staging-admin-nacha-download"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-borrower-staging-payments-update",
+            "creationTime": 1757672206996,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-borrower-staging-payments-update:*",
+            "storedBytes": 7926497,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-borrower-staging-payments-update"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-borrower-staging-process-document-ocr",
+            "creationTime": 1760479782977,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-borrower-staging-process-document-ocr:*",
+            "storedBytes": 121348,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-borrower-staging-process-document-ocr"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-borrowers-api-batchGetFinancialOverviews",
+            "creationTime": 1760620051303,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-borrowers-api-batchGetFinancialOverviews:*",
+            "storedBytes": 45622,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-borrowers-api-batchGetFinancialOverviews"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-borrowers-api-getFinancialOverview",
+            "creationTime": 1758336073214,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-borrowers-api-getFinancialOverview:*",
+            "storedBytes": 15509166,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-borrowers-api-getFinancialOverview"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-borrowers-api-listBorrowers",
+            "creationTime": 1758335852064,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-borrowers-api-listBorrowers:*",
+            "storedBytes": 8491357,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-borrowers-api-listBorrowers"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-change-tracker",
+            "creationTime": 1759727553012,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-change-tracker:*",
+            "storedBytes": 2247756,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-change-tracker"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-docusign-send_envelope",
+            "creationTime": 1757459973135,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-docusign-send_envelope:*",
+            "storedBytes": 77302,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-docusign-send_envelope"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-docusign-templates_sync",
+            "creationTime": 1757371114431,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-docusign-templates_sync:*",
+            "storedBytes": 17474,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-docusign-templates_sync"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-docusignLegacy-send-envelope",
+            "creationTime": 1759420840658,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-docusignLegacy-send-envelope:*",
+            "storedBytes": 86201,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-docusignLegacy-send-envelope"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-lambda-backup-function",
+            "creationTime": 1759725309480,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-lambda-backup-function:*",
+            "storedBytes": 900225,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-lambda-backup-function"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-account-transaction-counts",
+            "creationTime": 1756398316122,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-account-transaction-counts:*",
+            "storedBytes": 1087249,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-account-transaction-counts"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-accounts-create",
+            "creationTime": 1755303658204,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-accounts-create:*",
+            "storedBytes": 406151,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-accounts-create"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-accounts-list",
+            "creationTime": 1755301223846,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-accounts-list:*",
+            "storedBytes": 21000516,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-accounts-list"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-accounts-ocr-results",
+            "creationTime": 1757720762220,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-accounts-ocr-results:*",
+            "storedBytes": 148220,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-accounts-ocr-results"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-accounts-process-ocr",
+            "creationTime": 1757720449090,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-accounts-process-ocr:*",
+            "storedBytes": 110181,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-accounts-process-ocr"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-accounts-upload-statement",
+            "creationTime": 1756401857781,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-accounts-upload-statement:*",
+            "storedBytes": 285545,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-accounts-upload-statement"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-admin-borrower-settings",
+            "creationTime": 1756189784974,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-admin-borrower-settings:*",
+            "storedBytes": 6293780,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-admin-borrower-settings"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-admin-borrowers-get-borrower-function",
+            "creationTime": 1755713045336,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-admin-borrowers-get-borrower-function:*",
+            "storedBytes": 5394666,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-admin-borrowers-get-borrower-function"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-admin-borrowers-get-borrower-summary-function",
+            "creationTime": 1755713046664,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-admin-borrowers-get-borrower-summary-function:*",
+            "storedBytes": 563,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-admin-borrowers-get-borrower-summary-function"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-admin-borrowers-get-borrower-transactions-function",
+            "creationTime": 1755793136673,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-admin-borrowers-get-borrower-transactions-function:*",
+            "storedBytes": 21283488,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-admin-borrowers-get-borrower-transactions-function"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-admin-borrowers-list-borrowers-function",
+            "creationTime": 1755712293924,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-admin-borrowers-list-borrowers-function:*",
+            "storedBytes": 110549729,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-admin-borrowers-list-borrowers-function"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-admin-borrowers-loan-summary-function",
+            "creationTime": 1757289571056,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-admin-borrowers-loan-summary-function:*",
+            "storedBytes": 3748044,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-admin-borrowers-loan-summary-function"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-admin-borrowers-update-borrower-function",
+            "creationTime": 1756838899911,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-admin-borrowers-update-borrower-function:*",
+            "storedBytes": 356229,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-admin-borrowers-update-borrower-function"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-admin-list-statements",
+            "creationTime": 1756991320683,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-admin-list-statements:*",
+            "storedBytes": 12247,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-admin-list-statements"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-admin-notes-monthly-reports",
+            "creationTime": 1757357729003,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-admin-notes-monthly-reports:*",
+            "storedBytes": 181298,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-admin-notes-monthly-reports"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-admin-payments-waive",
+            "creationTime": 1758089382973,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-admin-payments-waive:*",
+            "storedBytes": 581009,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-admin-payments-waive"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-admin-upload-statements",
+            "creationTime": 1758199054027,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-admin-upload-statements:*",
+            "storedBytes": 311246,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-admin-upload-statements"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-analyze-documents",
+            "creationTime": 1755217653892,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-analyze-documents:*",
+            "storedBytes": 21103497,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-analyze-documents"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-annual-reports-create-annual-report",
+            "creationTime": 1755199898015,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-annual-reports-create-annual-report:*",
+            "storedBytes": 13366740,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-annual-reports-create-annual-report"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-annual-reports-delete-annual-report",
+            "creationTime": 1760424225094,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-annual-reports-delete-annual-report:*",
+            "storedBytes": 13409,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-annual-reports-delete-annual-report"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-annual-reports-list-annual-reports",
+            "creationTime": 1755201520926,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-annual-reports-list-annual-reports:*",
+            "storedBytes": 23796782,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-annual-reports-list-annual-reports"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-annual-reports-update-annual-report",
+            "creationTime": 1760432886591,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-annual-reports-update-annual-report:*",
+            "storedBytes": 7349875,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-annual-reports-update-annual-report"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-auth-check-user-status",
+            "creationTime": 1759180261743,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-auth-check-user-status:*",
+            "storedBytes": 470651,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-auth-check-user-status"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-auth-complete-setup",
+            "creationTime": 1759185051965,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-auth-complete-setup:*",
+            "storedBytes": 113731,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-auth-complete-setup"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-auth-refresh-token",
+            "creationTime": 1759189625210,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-auth-refresh-token:*",
+            "storedBytes": 209498,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-auth-refresh-token"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-auth-validate-password",
+            "creationTime": 1759185977170,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-auth-validate-password:*",
+            "storedBytes": 305435,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-auth-validate-password"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-banks-create",
+            "creationTime": 1755636254604,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-banks-create:*",
+            "storedBytes": 15121,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-banks-create"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-banks-list",
+            "creationTime": 1755629860668,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-banks-list:*",
+            "storedBytes": 307341,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-banks-list"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-banks-update",
+            "creationTime": 1755638442729,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-banks-update:*",
+            "storedBytes": 25522,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-banks-update"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-cases-close",
+            "creationTime": 1755042218611,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-cases-close:*",
+            "storedBytes": 29240,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-cases-close"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-cases-create",
+            "creationTime": 1754997638848,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-cases-create:*",
+            "storedBytes": 685105,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-cases-create"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-cases-docket-verification",
+            "creationTime": 1755134566339,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-cases-docket-verification:*",
+            "storedBytes": 4821351,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-cases-docket-verification"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-cases-list",
+            "creationTime": 1755004301628,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-cases-list:*",
+            "storedBytes": 13303044,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-cases-list"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-cases-update",
+            "creationTime": 1756944882248,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-cases-update:*",
+            "storedBytes": 502351,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-cases-update"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-create-account-from-plaid",
+            "creationTime": 1756004636339,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-create-account-from-plaid:*",
+            "storedBytes": 3985,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-create-account-from-plaid"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-draws-approve",
+            "creationTime": 1755108039149,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-draws-approve:*",
+            "storedBytes": 31103,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-draws-approve"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-draws-create",
+            "creationTime": 1755107844815,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-draws-create:*",
+            "storedBytes": 94022,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-draws-create"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-draws-fund",
+            "creationTime": 1755108052679,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-draws-fund:*",
+            "storedBytes": 604,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-draws-fund"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-draws-get",
+            "creationTime": 1755108027884,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-draws-get:*",
+            "storedBytes": 528,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-draws-get"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-draws-list",
+            "creationTime": 1755107839444,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-draws-list:*",
+            "storedBytes": 690373,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-draws-list"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-draws-reject",
+            "creationTime": 1755108045412,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-draws-reject:*",
+            "storedBytes": 528,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-draws-reject"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-draws-submit",
+            "creationTime": 1755108033914,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-draws-submit:*",
+            "storedBytes": 64662,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-draws-submit"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-excel-parser",
+            "creationTime": 1756138758677,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-excel-parser:*",
+            "storedBytes": 69821417,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-excel-parser"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-expenses-create-bulk",
+            "creationTime": 1755049954781,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-expenses-create-bulk:*",
+            "storedBytes": 6603782,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-expenses-create-bulk"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-expenses-get",
+            "creationTime": 1755066075986,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-expenses-get:*",
+            "storedBytes": 60111,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-expenses-get"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-expenses-list",
+            "creationTime": 1755065541914,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-expenses-list:*",
+            "storedBytes": 7070,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-expenses-list"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-generate-loan-statements",
+            "creationTime": 1760655239254,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-generate-loan-statements:*",
+            "storedBytes": 56753,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-generate-loan-statements"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-invoices-create",
+            "creationTime": 1756403517536,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-invoices-create:*",
+            "storedBytes": 64958,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-invoices-create"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-invoices-generate-monthly",
+            "creationTime": 1755191382473,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-invoices-generate-monthly:*",
+            "storedBytes": 309260,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-invoices-generate-monthly"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-invoices-get",
+            "creationTime": 1755195750810,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-invoices-get:*",
+            "storedBytes": 2339316,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-invoices-get"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-invoices-list",
+            "creationTime": 1755193494492,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-invoices-list:*",
+            "storedBytes": 397408693,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-invoices-list"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-monthly-report-sharepoint-upload",
+            "creationTime": 1760018027450,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-monthly-report-sharepoint-upload:*",
+            "storedBytes": 323763,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-monthly-report-sharepoint-upload"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-monthly-reports-get",
+            "creationTime": 1756745637316,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-monthly-reports-get:*",
+            "storedBytes": 2457863,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-monthly-reports-get"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-monthly-reports-list",
+            "creationTime": 1755143656117,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-monthly-reports-list:*",
+            "storedBytes": 128793397,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-monthly-reports-list"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-monthly-reports-submit",
+            "creationTime": 1755146449914,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-monthly-reports-submit:*",
+            "storedBytes": 448657,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-monthly-reports-submit"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-monthly-reports-update",
+            "creationTime": 1757796373953,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-monthly-reports-update:*",
+            "storedBytes": 3213130,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-monthly-reports-update"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-payments-ach-batches",
+            "creationTime": 1757589527371,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-payments-ach-batches:*",
+            "storedBytes": 686984,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-payments-ach-batches"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-payments-ach-consent-create",
+            "creationTime": 1757714915635,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-payments-ach-consent-create:*",
+            "storedBytes": 330888,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-payments-ach-consent-create"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-payments-create",
+            "creationTime": 1757570800634,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-payments-create:*",
+            "storedBytes": 186289,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-payments-create"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-payments-list",
+            "creationTime": 1757569006775,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-payments-list:*",
+            "storedBytes": 14221352,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-payments-list"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-plaid-account-transactions",
+            "creationTime": 1756336478766,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-plaid-account-transactions:*",
+            "storedBytes": 1174349,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-plaid-account-transactions"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-plaid-accounts-preview",
+            "creationTime": 1756004635595,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-plaid-accounts-preview:*",
+            "storedBytes": 78121,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-plaid-accounts-preview"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-plaid-balance-refresh",
+            "creationTime": 1756004638130,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-plaid-balance-refresh:*",
+            "storedBytes": 3978,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-plaid-balance-refresh"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-plaid-item-webhook-bulk-update",
+            "creationTime": 1756960149900,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-plaid-item-webhook-bulk-update:*",
+            "storedBytes": 4480,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-plaid-item-webhook-bulk-update"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-plaid-link-token-create",
+            "creationTime": 1756004634088,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-plaid-link-token-create:*",
+            "storedBytes": 144815,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-plaid-link-token-create"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-plaid-sync-manual",
+            "creationTime": 1756004636882,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-plaid-sync-manual:*",
+            "storedBytes": 3950,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-plaid-sync-manual"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-plaid-token-exchange",
+            "creationTime": 1756004634802,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-plaid-token-exchange:*",
+            "storedBytes": 107175,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-plaid-token-exchange"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-plaid-transactions-sync",
+            "creationTime": 1756240404226,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-plaid-transactions-sync:*",
+            "storedBytes": 1953628115,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-plaid-transactions-sync"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-plaid-webhook-handler",
+            "creationTime": 1756004633153,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-plaid-webhook-handler:*",
+            "storedBytes": 7656855,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-plaid-webhook-handler"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-sharepoint-sync-portfolio",
+            "creationTime": 1756075876857,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-sharepoint-sync-portfolio:*",
+            "storedBytes": 2571663,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-sharepoint-sync-portfolio"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-sharepoint-test-download",
+            "creationTime": 1756069595147,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-sharepoint-test-download:*",
+            "storedBytes": 23889,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-sharepoint-test-download"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-sharepoint-test-parser",
+            "creationTime": 1756075164303,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-sharepoint-test-parser:*",
+            "storedBytes": 7241,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-sharepoint-test-parser"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-statements-financials",
+            "creationTime": 1759604584975,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-statements-financials:*",
+            "storedBytes": 2749408,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-statements-financials"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-statements-get-url",
+            "creationTime": 1759525484922,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-statements-get-url:*",
+            "storedBytes": 120108,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-statements-get-url"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-users-create",
+            "creationTime": 1755542652817,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-users-create:*",
+            "storedBytes": 2081396,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-users-create"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-users-get",
+            "creationTime": 1755322611772,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-users-get:*",
+            "storedBytes": 9460277,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-users-get"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-users-list",
+            "creationTime": 1755321873499,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-users-list:*",
+            "storedBytes": 53248612,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-users-list"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-users-password",
+            "creationTime": 1755322608782,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-users-password:*",
+            "storedBytes": 27686,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-users-password"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-users-password-complete",
+            "creationTime": 1758836609460,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-users-password-complete:*",
+            "storedBytes": 26782,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-users-password-complete"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-users-password-start",
+            "creationTime": 1758829699426,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-users-password-start:*",
+            "storedBytes": 24060,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-users-password-start"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-users-profile",
+            "creationTime": 1755322608153,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-users-profile:*",
+            "storedBytes": 98078,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-users-profile"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-users-send2fa",
+            "creationTime": 1755322480507,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-users-send2fa:*",
+            "storedBytes": 6403862,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-users-send2fa"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-users-update",
+            "creationTime": 1755546059447,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-users-update:*",
+            "storedBytes": 14377,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-users-update"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-staging-users-verify2fa",
+            "creationTime": 1755536775769,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-users-verify2fa:*",
+            "storedBytes": 536589,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-staging-users-verify2fa"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-statements-stream-publisher",
+            "creationTime": 1758205883830,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-statements-stream-publisher:*",
+            "storedBytes": 5383910,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-statements-stream-publisher"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebco-test-docket-verification",
+            "creationTime": 1755133892673,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-test-docket-verification:*",
+            "storedBytes": 1866,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebco-test-docket-verification"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebcoborroweradmin-known-accounts-staging",
+            "creationTime": 1757284450777,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebcoborroweradmin-known-accounts-staging:*",
+            "storedBytes": 132661,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebcoborroweradmin-known-accounts-staging"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebcoborroweradmin-update-loan-staging",
+            "creationTime": 1757277474679,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebcoborroweradmin-update-loan-staging:*",
+            "storedBytes": 76760,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebcoborroweradmin-update-loan-staging"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebcostaging-generate-plaid-monthly-account-statement",
+            "creationTime": 1756758653532,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebcostaging-generate-plaid-monthly-account-statement:*",
+            "storedBytes": 829401,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebcostaging-generate-plaid-monthly-account-statement"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebcostaging-monthly-reports-scheduler",
+            "creationTime": 1756751416134,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebcostaging-monthly-reports-scheduler:*",
+            "storedBytes": 143095,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebcostaging-monthly-reports-scheduler"
+        },
+        {
+            "logGroupName": "/aws/lambda/bebcostaging-plaid-daily-sync",
+            "creationTime": 1756748698416,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebcostaging-plaid-daily-sync:*",
+            "storedBytes": 28782,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/bebcostaging-plaid-daily-sync"
+        },
+        {
+            "logGroupName": "/aws/lambda/claude-deposition-api",
+            "creationTime": 1741655311251,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/claude-deposition-api:*",
+            "storedBytes": 5657,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/claude-deposition-api"
+        },
+        {
+            "logGroupName": "/aws/lambda/claude-document-processor",
+            "creationTime": 1758213590889,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/claude-document-processor:*",
+            "storedBytes": 1473199,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/claude-document-processor"
+        },
+        {
+            "logGroupName": "/aws/lambda/client-uploads-complete",
+            "creationTime": 1758073458911,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/client-uploads-complete:*",
+            "storedBytes": 28624,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/client-uploads-complete"
+        },
+        {
+            "logGroupName": "/aws/lambda/client-uploads-opt-out",
+            "creationTime": 1758131120738,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/client-uploads-opt-out:*",
+            "storedBytes": 23157,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/client-uploads-opt-out"
+        },
+        {
+            "logGroupName": "/aws/lambda/client-uploads-register",
+            "creationTime": 1758073450608,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/client-uploads-register:*",
+            "storedBytes": 90686,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/client-uploads-register"
+        },
+        {
+            "logGroupName": "/aws/lambda/client-uploads-reminders",
+            "creationTime": 1758073097888,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/client-uploads-reminders:*",
+            "storedBytes": 150490,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/client-uploads-reminders"
+        },
+        {
+            "logGroupName": "/aws/lambda/client-uploads-send-verification",
+            "creationTime": 1761002023060,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/client-uploads-send-verification:*",
+            "storedBytes": 2702,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/client-uploads-send-verification"
+        },
+        {
+            "logGroupName": "/aws/lambda/client-uploads-verify-code",
+            "creationTime": 1761002037277,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/client-uploads-verify-code:*",
+            "storedBytes": 2744,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/client-uploads-verify-code"
+        },
+        {
+            "logGroupName": "/aws/lambda/dai-uploader-stack-UploaderFunction-WaJDcwtTYcIk",
+            "creationTime": 1742431599194,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/dai-uploader-stack-UploaderFunction-WaJDcwtTYcIk:*",
+            "storedBytes": 112209,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/dai-uploader-stack-UploaderFunction-WaJDcwtTYcIk"
+        },
+        {
+            "logGroupName": "/aws/lambda/deposition-ai-form-handler",
+            "creationTime": 1742412214525,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/deposition-ai-form-handler:*",
+            "storedBytes": 14846,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/deposition-ai-form-handler"
+        },
+        {
+            "logGroupName": "/aws/lambda/deposition-ai-handler",
+            "creationTime": 1741725658812,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/deposition-ai-handler:*",
+            "storedBytes": 111726,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/deposition-ai-handler"
+        },
+        {
+            "logGroupName": "/aws/lambda/deposition-ai-process-pdf",
+            "creationTime": 1742332883753,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/deposition-ai-process-pdf:*",
+            "storedBytes": 956609,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/deposition-ai-process-pdf"
+        },
+        {
+            "logGroupName": "/aws/lambda/deposition-metadata-extractor",
+            "creationTime": 1741639820031,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/deposition-metadata-extractor:*",
+            "storedBytes": 60665,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/deposition-metadata-extractor"
+        },
+        {
+            "logGroupName": "/aws/lambda/email-analysis-function",
+            "creationTime": 1727193626302,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/email-analysis-function:*",
+            "storedBytes": 21497453,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/email-analysis-function"
+        },
+        {
+            "logGroupName": "/aws/lambda/formatlambdarouter",
+            "creationTime": 1734061760445,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/formatlambdarouter:*",
+            "storedBytes": 3914252,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/formatlambdarouter"
+        },
+        {
+            "logGroupName": "/aws/lambda/lit-finance-api-cases",
+            "creationTime": 1742356092340,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-api-cases:*",
+            "storedBytes": 25316267,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-api-cases"
+        },
+        {
+            "logGroupName": "/aws/lambda/lit-finance-api-clients",
+            "creationTime": 1742356104094,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-api-clients:*",
+            "storedBytes": 8293703,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-api-clients"
+        },
+        {
+            "logGroupName": "/aws/lambda/lit-finance-api-dis",
+            "creationTime": 1744083539000,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-api-dis:*",
+            "storedBytes": 10394864,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-api-dis"
+        },
+        {
+            "logGroupName": "/aws/lambda/lit-finance-api-documents",
+            "creationTime": 1742356095255,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-api-documents:*",
+            "storedBytes": 122121762,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-api-documents"
+        },
+        {
+            "logGroupName": "/aws/lambda/lit-finance-api-rfis",
+            "creationTime": 1742356099541,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-api-rfis:*",
+            "storedBytes": 27081586,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-api-rfis"
+        },
+        {
+            "logGroupName": "/aws/lambda/lit-finance-api-send-verification",
+            "creationTime": 1747521429985,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-api-send-verification:*",
+            "storedBytes": 4004,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-api-send-verification"
+        },
+        {
+            "logGroupName": "/aws/lambda/lit-finance-dis",
+            "creationTime": 1742246269745,
+            "retentionInDays": 30,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-dis:*",
+            "storedBytes": 0,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-dis"
+        },
+        {
+            "logGroupName": "/aws/lambda/lit-finance-document-processor",
+            "creationTime": 1742929107183,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-document-processor:*",
+            "storedBytes": 63111,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-document-processor"
+        },
+        {
+            "logGroupName": "/aws/lambda/lit-finance-office-extraction",
+            "creationTime": 1747271218135,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-office-extraction:*",
+            "storedBytes": 100400,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-office-extraction"
+        },
+        {
+            "logGroupName": "/aws/lambda/lit-finance-sendVerificationCode",
+            "creationTime": 1747534085609,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-sendVerificationCode:*",
+            "storedBytes": 1381539,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-sendVerificationCode"
+        },
+        {
+            "logGroupName": "/aws/lambda/lit-finance-storeUploadToken",
+            "creationTime": 1747532586532,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-storeUploadToken:*",
+            "storedBytes": 242111,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-storeUploadToken"
+        },
+        {
+            "logGroupName": "/aws/lambda/lit-finance-textract-retrieval",
+            "creationTime": 1742953009587,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-textract-retrieval:*",
+            "storedBytes": 40513,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-textract-retrieval"
+        },
+        {
+            "logGroupName": "/aws/lambda/lit-finance-textract-start",
+            "creationTime": 1742940402785,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-textract-start:*",
+            "storedBytes": 153315,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-textract-start"
+        },
+        {
+            "logGroupName": "/aws/lambda/lit-finance-verifyCode",
+            "creationTime": 1747534424160,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-verifyCode:*",
+            "storedBytes": 195625,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/lit-finance-verifyCode"
+        },
+        {
+            "logGroupName": "/aws/lambda/mailchimp",
+            "creationTime": 1721198712587,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/mailchimp:*",
+            "storedBytes": 76474,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/mailchimp"
+        },
+        {
+            "logGroupName": "/aws/lambda/sendemail",
+            "creationTime": 1721209487609,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/sendemail:*",
+            "storedBytes": 20010,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/sendemail"
+        },
+        {
+            "logGroupName": "/aws/lambda/stripe-payment",
+            "creationTime": 1741891855173,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/stripe-payment:*",
+            "storedBytes": 3432,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/stripe-payment"
+        },
+        {
+            "logGroupName": "/aws/lambda/textblob-sentiment-analysis",
+            "creationTime": 1726979946606,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/textblob-sentiment-analysis:*",
+            "storedBytes": 7523,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/textblob-sentiment-analysis"
+        },
+        {
+            "logGroupName": "/aws/lambda/textract-document-processor",
+            "creationTime": 1758223211279,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/textract-document-processor:*",
+            "storedBytes": 1375601,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/textract-document-processor"
+        },
+        {
+            "logGroupName": "/aws/lambda/updateEmailBodyContent",
+            "creationTime": 1727309665622,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/updateEmailBodyContent:*",
+            "storedBytes": 16771948,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/updateEmailBodyContent"
+        },
+        {
+            "logGroupName": "/aws/lambda/uploadHandler",
+            "creationTime": 1734052078505,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/uploadHandler:*",
+            "storedBytes": 444865,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:/aws/lambda/uploadHandler"
+        },
+        {
+            "logGroupName": "API-Gateway-Execution-Logs_24o2865t5h/staging",
+            "creationTime": 1760215287061,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:API-Gateway-Execution-Logs_24o2865t5h/staging:*",
+            "storedBytes": 5034587,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:API-Gateway-Execution-Logs_24o2865t5h/staging"
+        },
+        {
+            "logGroupName": "API-Gateway-Execution-Logs_3rrafjqruf/staging",
+            "creationTime": 1756838801715,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:API-Gateway-Execution-Logs_3rrafjqruf/staging:*",
+            "storedBytes": 276981208,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:API-Gateway-Execution-Logs_3rrafjqruf/staging"
+        },
+        {
+            "logGroupName": "API-Gateway-Execution-Logs_dg4lnvlsw8/prod",
+            "creationTime": 1729456488819,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:API-Gateway-Execution-Logs_dg4lnvlsw8/prod:*",
+            "storedBytes": 0,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:API-Gateway-Execution-Logs_dg4lnvlsw8/prod"
+        },
+        {
+            "logGroupName": "API-Gateway-Execution-Logs_qil0l9jemd/prod",
+            "creationTime": 1729455945702,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:API-Gateway-Execution-Logs_qil0l9jemd/prod:*",
+            "storedBytes": 0,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:API-Gateway-Execution-Logs_qil0l9jemd/prod"
+        },
+        {
+            "logGroupName": "API-Gateway-Execution-Logs_s0qj57cb5i/Prod",
+            "creationTime": 1742430018932,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:API-Gateway-Execution-Logs_s0qj57cb5i/Prod:*",
+            "storedBytes": 194515,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:API-Gateway-Execution-Logs_s0qj57cb5i/Prod"
+        },
+        {
+            "logGroupName": "lexlinktransloadit",
+            "creationTime": 1706988118537,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:303555290462:log-group:lexlinktransloadit:*",
+            "storedBytes": 4385834509,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:303555290462:log-group:lexlinktransloadit"
+        }
+    ]
+}

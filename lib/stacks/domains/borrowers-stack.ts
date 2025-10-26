@@ -36,6 +36,7 @@ export class BorrowersStack extends cdk.Stack {
     const adminBorrowersCreate = new BebcoLambda(this, 'AdminBorrowersCreate', {
       sourceFunctionName: 'bebco-staging-admin-borrowers-create-borrower-function',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.companies.grantReadWriteData(adminBorrowersCreate.function);
@@ -46,6 +47,7 @@ export class BorrowersStack extends cdk.Stack {
     const adminBorrowersGet = new BebcoLambda(this, 'AdminBorrowersGet', {
       sourceFunctionName: 'bebco-staging-admin-borrowers-get-borrower-function',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.companies.grantReadData(adminBorrowersGet.function);
@@ -57,6 +59,7 @@ export class BorrowersStack extends cdk.Stack {
     const adminBorrowersList = new BebcoLambda(this, 'AdminBorrowersList', {
       sourceFunctionName: 'bebco-staging-admin-borrowers-list-borrowers-function',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.companies.grantReadData(adminBorrowersList.function);
@@ -67,6 +70,7 @@ export class BorrowersStack extends cdk.Stack {
     const adminBorrowersUpdate = new BebcoLambda(this, 'AdminBorrowersUpdate', {
       sourceFunctionName: 'bebco-staging-admin-borrowers-update-borrower-function',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.companies.grantReadWriteData(adminBorrowersUpdate.function);
@@ -77,6 +81,7 @@ export class BorrowersStack extends cdk.Stack {
     const adminBorrowersSummary = new BebcoLambda(this, 'AdminBorrowersSummary', {
       sourceFunctionName: 'bebco-staging-admin-borrowers-get-borrower-summary-function',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.companies.grantReadData(adminBorrowersSummary.function);
@@ -88,6 +93,7 @@ export class BorrowersStack extends cdk.Stack {
     const adminBorrowersTransactions = new BebcoLambda(this, 'AdminBorrowersTransactions', {
       sourceFunctionName: 'bebco-staging-admin-borrowers-get-borrower-transactions-function',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.transactions.grantReadData(adminBorrowersTransactions.function);
@@ -98,6 +104,7 @@ export class BorrowersStack extends cdk.Stack {
     const adminBorrowerSettings = new BebcoLambda(this, 'AdminBorrowerSettings', {
       sourceFunctionName: 'bebco-staging-admin-borrower-settings',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.companies.grantReadWriteData(adminBorrowerSettings.function);
@@ -107,6 +114,7 @@ export class BorrowersStack extends cdk.Stack {
     const borrowersApiList = new BebcoLambda(this, 'BorrowersApiList', {
       sourceFunctionName: 'bebco-borrowers-api-listBorrowers',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.companies.grantReadData(borrowersApiList.function);
@@ -116,6 +124,7 @@ export class BorrowersStack extends cdk.Stack {
     const borrowersApiFinancialOverview = new BebcoLambda(this, 'BorrowersApiFinancialOverview', {
       sourceFunctionName: 'bebco-borrowers-api-getFinancialOverview',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.companies.grantReadData(borrowersApiFinancialOverview.function);
@@ -127,6 +136,7 @@ export class BorrowersStack extends cdk.Stack {
     const borrowersApiBatchFinancialOverviews = new BebcoLambda(this, 'BorrowersApiBatchFinancialOverviews', {
       sourceFunctionName: 'bebco-borrowers-api-batchGetFinancialOverviews',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.companies.grantReadData(borrowersApiBatchFinancialOverviews.function);

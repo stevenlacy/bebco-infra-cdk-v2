@@ -1,0 +1,9 @@
+{
+    "Name": "bebco-portfolio-sync-daily",
+    "Arn": "arn:aws:events:us-east-1:303555290462:rule/bebco-portfolio-sync-daily",
+    "ScheduleExpression": "cron(0 8 * * ? *)",
+    "State": "ENABLED",
+    "Description": "Daily SharePoint portfolio sync at 3:00 AM EST",
+    "EventBusName": "default",
+    "CreatedBy": "303555290462"
+}

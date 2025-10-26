@@ -1,0 +1,20 @@
+{
+    "Attributes": {
+        "QueueArn": "arn:aws:sqs:us-east-1:303555290462:bebco-staging-plaid-transactions-sync-dlq.fifo",
+        "ApproximateNumberOfMessages": "0",
+        "ApproximateNumberOfMessagesNotVisible": "0",
+        "ApproximateNumberOfMessagesDelayed": "0",
+        "CreatedTimestamp": "1756941368",
+        "LastModifiedTimestamp": "1756941368",
+        "VisibilityTimeout": "30",
+        "MaximumMessageSize": "1048576",
+        "MessageRetentionPeriod": "1209600",
+        "DelaySeconds": "0",
+        "ReceiveMessageWaitTimeSeconds": "0",
+        "SqsManagedSseEnabled": "true",
+        "FifoQueue": "true",
+        "DeduplicationScope": "queue",
+        "FifoThroughputLimit": "perQueue",
+        "ContentBasedDeduplication": "true"
+    }
+}

@@ -30,6 +30,7 @@ export class PaymentsStack extends cdk.Stack {
     const paymentsCreate = new BebcoLambda(this, 'PaymentsCreate', {
       sourceFunctionName: 'bebco-staging-payments-create',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.paymentsCreate = paymentsCreate.function;
@@ -37,6 +38,7 @@ export class PaymentsStack extends cdk.Stack {
     const paymentsGet = new BebcoLambda(this, 'PaymentsGet', {
       sourceFunctionName: 'bebco-staging-payments-get',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.paymentsGet = paymentsGet.function;
@@ -44,6 +46,7 @@ export class PaymentsStack extends cdk.Stack {
     const paymentsList = new BebcoLambda(this, 'PaymentsList', {
       sourceFunctionName: 'bebco-staging-payments-list',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.paymentsList = paymentsList.function;
@@ -51,6 +54,7 @@ export class PaymentsStack extends cdk.Stack {
     const paymentsUpdate = new BebcoLambda(this, 'PaymentsUpdate', {
       sourceFunctionName: 'bebco-borrower-staging-payments-update',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.paymentsUpdate = paymentsUpdate.function;
@@ -59,6 +63,7 @@ export class PaymentsStack extends cdk.Stack {
     const paymentsAchBatches = new BebcoLambda(this, 'PaymentsAchBatches', {
       sourceFunctionName: 'bebco-staging-payments-ach-batches',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.paymentsAchBatches = paymentsAchBatches.function;
@@ -66,6 +71,7 @@ export class PaymentsStack extends cdk.Stack {
     const paymentsAchConsentCreate = new BebcoLambda(this, 'PaymentsAchConsentCreate', {
       sourceFunctionName: 'bebco-staging-payments-ach-consent-create',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.paymentsAchConsentCreate = paymentsAchConsentCreate.function;
@@ -74,6 +80,7 @@ export class PaymentsStack extends cdk.Stack {
     const adminPaymentsWaive = new BebcoLambda(this, 'AdminPaymentsWaive', {
       sourceFunctionName: 'bebco-staging-admin-payments-waive',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.adminPaymentsWaive = adminPaymentsWaive.function;

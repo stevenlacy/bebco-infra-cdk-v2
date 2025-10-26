@@ -30,6 +30,7 @@ export class DocuSignStack extends cdk.Stack {
     const docusignSendEnvelope = new BebcoLambda(this, 'DocuSignSendEnvelope', {
       sourceFunctionName: 'bebco-docusign-send_envelope',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.docusignSendEnvelope = docusignSendEnvelope.function;
@@ -37,6 +38,7 @@ export class DocuSignStack extends cdk.Stack {
     const docusignGetEnvelope = new BebcoLambda(this, 'DocuSignGetEnvelope', {
       sourceFunctionName: 'bebco-docusign-get_envelope',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.docusignGetEnvelope = docusignGetEnvelope.function;
@@ -44,6 +46,7 @@ export class DocuSignStack extends cdk.Stack {
     const docusignResendEnvelope = new BebcoLambda(this, 'DocuSignResendEnvelope', {
       sourceFunctionName: 'bebco-docusign-resend_envelope',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.docusignResendEnvelope = docusignResendEnvelope.function;
@@ -51,6 +54,7 @@ export class DocuSignStack extends cdk.Stack {
     const docusignWebhookComplete = new BebcoLambda(this, 'DocuSignWebhookComplete', {
       sourceFunctionName: 'bebco-docusign-webhook_complete',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.docusignWebhookComplete = docusignWebhookComplete.function;
@@ -58,6 +62,7 @@ export class DocuSignStack extends cdk.Stack {
     const docusignTemplatesSync = new BebcoLambda(this, 'DocuSignTemplatesSync', {
       sourceFunctionName: 'bebco-docusign-templates_sync',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.docusignTemplatesSync = docusignTemplatesSync.function;
@@ -65,6 +70,7 @@ export class DocuSignStack extends cdk.Stack {
     const docusignLegacySendEnvelope = new BebcoLambda(this, 'DocuSignLegacySendEnvelope', {
       sourceFunctionName: 'bebco-docusignLegacy-send-envelope',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.docusignLegacySendEnvelope = docusignLegacySendEnvelope.function;

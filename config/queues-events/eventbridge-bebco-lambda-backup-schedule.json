@@ -1,0 +1,9 @@
+{
+    "Name": "bebco-lambda-backup-schedule",
+    "Arn": "arn:aws:events:us-east-1:303555290462:rule/bebco-lambda-backup-schedule",
+    "ScheduleExpression": "cron(0 6,18 * * ? *)",
+    "State": "ENABLED",
+    "Description": "Trigger Lambda backup function twice daily at 6 AM and 6 PM UTC",
+    "EventBusName": "default",
+    "CreatedBy": "303555290462"
+}

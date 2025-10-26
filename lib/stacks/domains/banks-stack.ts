@@ -29,6 +29,7 @@ export class BanksStack extends cdk.Stack {
     const banksCreate = new BebcoLambda(this, 'BanksCreate', {
       sourceFunctionName: 'bebco-staging-banks-create',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.banks.grantReadWriteData(banksCreate.function);
@@ -38,6 +39,7 @@ export class BanksStack extends cdk.Stack {
     const banksList = new BebcoLambda(this, 'BanksList', {
       sourceFunctionName: 'bebco-staging-banks-list',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.banks.grantReadData(banksList.function);
@@ -47,6 +49,7 @@ export class BanksStack extends cdk.Stack {
     const banksUpdate = new BebcoLambda(this, 'BanksUpdate', {
       sourceFunctionName: 'bebco-staging-banks-update',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.banks.grantReadWriteData(banksUpdate.function);

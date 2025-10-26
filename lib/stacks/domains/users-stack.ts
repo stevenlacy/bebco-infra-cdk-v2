@@ -48,6 +48,7 @@ export class UsersStack extends cdk.Stack {
     const usersCreate = new BebcoLambda(this, 'UsersCreate', {
       sourceFunctionName: 'bebco-staging-users-create',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: extendedEnv,
     });
     tables.users.grantReadWriteData(usersCreate.function);
@@ -60,6 +61,7 @@ export class UsersStack extends cdk.Stack {
     const usersGet = new BebcoLambda(this, 'UsersGet', {
       sourceFunctionName: 'bebco-staging-users-get',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: extendedEnv,
     });
     tables.users.grantReadData(usersGet.function);
@@ -72,6 +74,7 @@ export class UsersStack extends cdk.Stack {
     const usersList = new BebcoLambda(this, 'UsersList', {
       sourceFunctionName: 'bebco-staging-users-list',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: extendedEnv,
     });
     tables.users.grantReadData(usersList.function);
@@ -82,6 +85,7 @@ export class UsersStack extends cdk.Stack {
     const usersUpdate = new BebcoLambda(this, 'UsersUpdate', {
       sourceFunctionName: 'bebco-staging-users-update',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: extendedEnv,
     });
     tables.users.grantReadWriteData(usersUpdate.function);
@@ -92,6 +96,7 @@ export class UsersStack extends cdk.Stack {
     const usersDelete = new BebcoLambda(this, 'UsersDelete', {
       sourceFunctionName: 'bebco-staging-users-delete',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.users.grantReadWriteData(usersDelete.function);
@@ -102,6 +107,7 @@ export class UsersStack extends cdk.Stack {
     const usersProfile = new BebcoLambda(this, 'UsersProfile', {
       sourceFunctionName: 'bebco-staging-users-profile',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: extendedEnv,
     });
     tables.users.grantReadData(usersProfile.function);
@@ -111,6 +117,7 @@ export class UsersStack extends cdk.Stack {
     const usersSend2fa = new BebcoLambda(this, 'UsersSend2fa', {
       sourceFunctionName: 'bebco-staging-users-send2fa',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: {
         ...commonEnv,
         ENABLE_SES: 'false',
@@ -125,6 +132,7 @@ export class UsersStack extends cdk.Stack {
     const usersVerify2fa = new BebcoLambda(this, 'UsersVerify2fa', {
       sourceFunctionName: 'bebco-staging-users-verify2fa',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: extendedEnv,
     });
     tables.users.grantReadData(usersVerify2fa.function);
@@ -135,6 +143,7 @@ export class UsersStack extends cdk.Stack {
     const usersPasswordStart = new BebcoLambda(this, 'UsersPasswordStart', {
       sourceFunctionName: 'bebco-staging-users-password-start',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.users.grantReadData(usersPasswordStart.function);
@@ -144,6 +153,7 @@ export class UsersStack extends cdk.Stack {
     const usersPassword = new BebcoLambda(this, 'UsersPassword', {
       sourceFunctionName: 'bebco-staging-users-password',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: extendedEnv,
     });
     tables.users.grantReadData(usersPassword.function);
@@ -154,6 +164,7 @@ export class UsersStack extends cdk.Stack {
     const usersPasswordComplete = new BebcoLambda(this, 'UsersPasswordComplete', {
       sourceFunctionName: 'bebco-staging-users-password-complete',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.users.grantReadData(usersPasswordComplete.function);
@@ -163,6 +174,7 @@ export class UsersStack extends cdk.Stack {
     const authCheckUserStatus = new BebcoLambda(this, 'AuthCheckUserStatus', {
       sourceFunctionName: 'bebco-staging-auth-check-user-status',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.users.grantReadData(authCheckUserStatus.function);
@@ -174,6 +186,7 @@ export class UsersStack extends cdk.Stack {
     const adminUsersSend2fa = new BebcoLambda(this, 'AdminUsersSend2fa', {
       sourceFunctionName: 'bebco-admin-users-send2fa',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: {
         ...commonEnv,
         ENABLE_SES: 'false',
@@ -188,6 +201,7 @@ export class UsersStack extends cdk.Stack {
     const adminUsersVerify2fa = new BebcoLambda(this, 'AdminUsersVerify2fa', {
       sourceFunctionName: 'bebco-admin-users-verify2fa',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.users.grantReadData(adminUsersVerify2fa.function);
@@ -198,6 +212,7 @@ export class UsersStack extends cdk.Stack {
     const adminUsersChangePassword = new BebcoLambda(this, 'AdminUsersChangePassword', {
       sourceFunctionName: 'bebco-admin-users-change-password',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.users.grantReadData(adminUsersChangePassword.function);
@@ -207,6 +222,7 @@ export class UsersStack extends cdk.Stack {
     const adminUsersUpdateName = new BebcoLambda(this, 'AdminUsersUpdateName', {
       sourceFunctionName: 'bebco-admin-users-update-name',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.users.grantReadWriteData(adminUsersUpdateName.function);
@@ -216,6 +232,7 @@ export class UsersStack extends cdk.Stack {
     const adminAuthCheckUserStatus = new BebcoLambda(this, 'AdminAuthCheckUserStatus', {
       sourceFunctionName: 'bebco-admin-auth-check-user-status',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.users.grantReadData(adminAuthCheckUserStatus.function);
@@ -225,6 +242,7 @@ export class UsersStack extends cdk.Stack {
     const adminUsersMfaStatus = new BebcoLambda(this, 'AdminUsersMfaStatus', {
       sourceFunctionName: 'bebco-admin-users-mfa-status',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.users.grantReadData(adminUsersMfaStatus.function);
@@ -234,6 +252,7 @@ export class UsersStack extends cdk.Stack {
     const adminUsersMfaTotpBegin = new BebcoLambda(this, 'AdminUsersMfaTotpBegin', {
       sourceFunctionName: 'bebco-admin-users-mfa-totp-begin',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: {
         REGION: this.region,
         USERS_TABLE: tables.users.tableName,
@@ -246,6 +265,7 @@ export class UsersStack extends cdk.Stack {
     const adminUsersMfaTotpVerify = new BebcoLambda(this, 'AdminUsersMfaTotpVerify', {
       sourceFunctionName: 'bebco-admin-users-mfa-totp-verify',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     tables.users.grantReadData(adminUsersMfaTotpVerify.function);
@@ -255,6 +275,7 @@ export class UsersStack extends cdk.Stack {
     const adminUsersMfaTotpVerifyLogin = new BebcoLambda(this, 'AdminUsersMfaTotpVerifyLogin', {
       sourceFunctionName: 'bebco-admin-users-mfa-totp-verify-login',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: {
         REGION: this.region,
         USERS_TABLE: tables.users.tableName,

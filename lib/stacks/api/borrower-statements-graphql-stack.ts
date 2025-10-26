@@ -76,7 +76,6 @@ export class BorrowerStatementsGraphQLStack extends cdk.Stack {
     new cdk.CfnOutput(this, 'GraphQLApiEndpoint', {
       value: this.api.graphqlUrl,
       description: 'Borrower Statements GraphQL API endpoint',
-      exportName: 'BorrowerStatementsGraphQLApiEndpoint',
     });
     
     new cdk.CfnOutput(this, 'GraphQLApiKey', {

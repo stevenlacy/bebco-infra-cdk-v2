@@ -37,6 +37,7 @@ export class DrawsStack extends cdk.Stack {
     const drawsCreate = new BebcoLambda(this, 'DrawsCreate', {
       sourceFunctionName: 'bebco-staging-draws-create',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     // Grant permissions as needed
@@ -46,6 +47,7 @@ export class DrawsStack extends cdk.Stack {
     const drawsGet = new BebcoLambda(this, 'DrawsGet', {
       sourceFunctionName: 'bebco-staging-draws-get',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.drawsGet = drawsGet.function;
@@ -54,6 +56,7 @@ export class DrawsStack extends cdk.Stack {
     const drawsList = new BebcoLambda(this, 'DrawsList', {
       sourceFunctionName: 'bebco-staging-draws-list',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.drawsList = drawsList.function;
@@ -62,6 +65,7 @@ export class DrawsStack extends cdk.Stack {
     const drawsApprove = new BebcoLambda(this, 'DrawsApprove', {
       sourceFunctionName: 'bebco-staging-draws-approve',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.drawsApprove = drawsApprove.function;
@@ -70,6 +74,7 @@ export class DrawsStack extends cdk.Stack {
     const drawsReject = new BebcoLambda(this, 'DrawsReject', {
       sourceFunctionName: 'bebco-staging-draws-reject',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.drawsReject = drawsReject.function;
@@ -78,6 +83,7 @@ export class DrawsStack extends cdk.Stack {
     const drawsSubmit = new BebcoLambda(this, 'DrawsSubmit', {
       sourceFunctionName: 'bebco-staging-draws-submit',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.drawsSubmit = drawsSubmit.function;
@@ -86,6 +92,7 @@ export class DrawsStack extends cdk.Stack {
     const drawsFund = new BebcoLambda(this, 'DrawsFund', {
       sourceFunctionName: 'bebco-staging-draws-fund',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.drawsFund = drawsFund.function;

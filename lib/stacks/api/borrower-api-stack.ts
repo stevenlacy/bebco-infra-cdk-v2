@@ -104,7 +104,6 @@ export class BorrowerApiStack extends cdk.Stack {
     new cdk.CfnOutput(this, 'ApiEndpoint', {
       value: this.api.url,
       description: 'Borrower Portal API endpoint',
-      exportName: 'BorrowerApiEndpoint',
     });
     
     new cdk.CfnOutput(this, 'ApiId', {

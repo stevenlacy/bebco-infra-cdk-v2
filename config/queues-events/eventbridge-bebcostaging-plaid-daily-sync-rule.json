@@ -1,0 +1,8 @@
+{
+    "Name": "bebcostaging-plaid-daily-sync-rule",
+    "Arn": "arn:aws:events:us-east-1:303555290462:rule/bebcostaging-plaid-daily-sync-rule",
+    "ScheduleExpression": "cron(0 10 * * ? *)",
+    "State": "DISABLED",
+    "EventBusName": "default",
+    "CreatedBy": "303555290462"
+}

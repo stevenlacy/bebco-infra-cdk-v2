@@ -34,6 +34,7 @@ export class AuthLambdasStack extends cdk.Stack {
     const authCompleteSetup = new BebcoLambda(this, 'AuthCompleteSetup', {
       sourceFunctionName: 'bebco-staging-auth-complete-setup',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.authCompleteSetup = authCompleteSetup.function;
@@ -41,6 +42,7 @@ export class AuthLambdasStack extends cdk.Stack {
     const authRefreshToken = new BebcoLambda(this, 'AuthRefreshToken', {
       sourceFunctionName: 'bebco-staging-auth-refresh-token',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.authRefreshToken = authRefreshToken.function;
@@ -48,6 +50,7 @@ export class AuthLambdasStack extends cdk.Stack {
     const authValidatePassword = new BebcoLambda(this, 'AuthValidatePassword', {
       sourceFunctionName: 'bebco-staging-auth-validate-password',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.authValidatePassword = authValidatePassword.function;
@@ -56,6 +59,7 @@ export class AuthLambdasStack extends cdk.Stack {
     const adminAuthCompleteSetup = new BebcoLambda(this, 'AdminAuthCompleteSetup', {
       sourceFunctionName: 'bebco-admin-auth-complete-setup',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.adminAuthCompleteSetup = adminAuthCompleteSetup.function;
@@ -63,6 +67,7 @@ export class AuthLambdasStack extends cdk.Stack {
     const adminAuthRefreshToken = new BebcoLambda(this, 'AdminAuthRefreshToken', {
       sourceFunctionName: 'bebco-admin-auth-refresh-token',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.adminAuthRefreshToken = adminAuthRefreshToken.function;
@@ -70,6 +75,7 @@ export class AuthLambdasStack extends cdk.Stack {
     const adminAuthValidatePassword = new BebcoLambda(this, 'AdminAuthValidatePassword', {
       sourceFunctionName: 'bebco-admin-auth-validate-password',
       resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
     this.functions.adminAuthValidatePassword = adminAuthValidatePassword.function;

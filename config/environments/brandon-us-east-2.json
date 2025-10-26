@@ -1,0 +1,37 @@
+{
+  "environment": "brandon",
+  "region": "us-east-2",
+  "account": "303555290462",
+  "stackPrefix": "Bebco",
+  "naming": {
+    "prefix": "bebco",
+    "environmentSuffix": "bdn"
+  },
+  "cognito": {
+    "userPoolName": "bebco-borrower-portal-brandon",
+    "passwordPolicy": {
+      "minLength": 8,
+      "requireUppercase": true,
+      "requireLowercase": true,
+      "requireNumbers": true,
+      "requireSymbols": true
+    }
+  },
+  "domains": {
+    "api": "api-brandon.bebco.dev",
+    "graphql": "graphql-brandon.bebco.dev"
+  },
+  "integrations": {
+    "plaidClientId": "use-sandbox-credentials",
+    "plaidEnvironment": "sandbox",
+    "docusignSecretName": "bebco/brandon/docusign",
+    "sharepointSecretName": "bebco/brandon/sharepoint",
+    "sendgridSecretName": "bebco/brandon/sendgrid"
+  },
+  "lambdaDefaults": {
+    "runtime": "python3.11",
+    "timeout": 30,
+    "memorySize": 256
+  }
+}
+
