@@ -98,6 +98,12 @@ export class AdminApiStack extends cdk.Stack {
       'bebco-dev-users-verify2fa',
       'bebcoborroweradmin-known-accounts-dev',
       'bebcoborroweradmin-update-loan-dev',
+      'bebco-admin-auth-check-user-status',
+      'bebco-admin-auth-validate-password',
+      'bebco-admin-auth-complete-setup',
+      'bebco-admin-auth-refresh-token',
+      'bebco-admin-users-send2fa',
+      'bebco-admin-users-verify2fa',
     ];
 
     const [
@@ -145,6 +151,12 @@ export class AdminApiStack extends cdk.Stack {
       fn41,
       fn42,
       fn43,
+      fn44,
+      fn45,
+      fn46,
+      fn47,
+      fn48,
+      fn49,
     ] = lambdaNames.map((name, index) =>
       lambda.Function.fromFunctionName(this, `Fn${index}`, withEnvSuffix(name))
     );
@@ -229,6 +241,13 @@ export class AdminApiStack extends cdk.Stack {
     const admin_companies_companyId_users_userId_approve = admin_companies_companyId_users_userId.addResource('approve');
     const banks_bankId_borrowers_borrowerId_accounts_accountId = banks_bankId_borrowers_borrowerId_accounts.addResource('{accountId}');
     const banks_bankId_borrowers_borrowerId_accounts_accountId_transactions = banks_bankId_borrowers_borrowerId_accounts_accountId.addResource('transactions');
+    const admin_auth = admin.addResource('auth');
+    const admin_auth_check_user_status = admin_auth.addResource('check-user-status');
+    const admin_auth_validate_password = admin_auth.addResource('validate-password');
+    const admin_auth_complete_setup = admin_auth.addResource('complete-setup');
+    const admin_auth_refresh = admin_auth.addResource('refresh');
+    const admin_auth_send_2fa = admin_auth.addResource('send-2fa');
+    const admin_auth_verify_2fa = admin_auth.addResource('verify-2fa');
 
     // API Methods
 
@@ -300,6 +319,12 @@ export class AdminApiStack extends cdk.Stack {
     admin_companies_companyId_loans_loanNo_summary.addMethod('PUT', new apigateway.LambdaIntegration(fn16), { authorizer });
     admin_companies_companyId_users_userId_approve.addMethod('PUT', new apigateway.LambdaIntegration(fn36), { authorizer });
     banks_bankId_borrowers_borrowerId_accounts_accountId_transactions.addMethod('GET', new apigateway.LambdaIntegration(fn34), { authorizer });
+    admin_auth_check_user_status.addMethod('POST', new apigateway.LambdaIntegration(fn44));
+    admin_auth_validate_password.addMethod('POST', new apigateway.LambdaIntegration(fn45));
+    admin_auth_complete_setup.addMethod('POST', new apigateway.LambdaIntegration(fn46));
+    admin_auth_refresh.addMethod('POST', new apigateway.LambdaIntegration(fn47));
+    admin_auth_send_2fa.addMethod('POST', new apigateway.LambdaIntegration(fn48));
+    admin_auth_verify_2fa.addMethod('POST', new apigateway.LambdaIntegration(fn49));
 
     // Outputs
     new cdk.CfnOutput(this, 'ApiEndpoint', {

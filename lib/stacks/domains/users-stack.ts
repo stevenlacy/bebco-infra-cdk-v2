@@ -3,6 +3,7 @@ import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as dynamodb from 'aws-cdk-lib/aws-dynamodb';
 import * as s3 from 'aws-cdk-lib/aws-s3';
 import * as secretsmanager from 'aws-cdk-lib/aws-secretsmanager';
+import * as iam from 'aws-cdk-lib/aws-iam';
 import { Construct } from 'constructs';
 import { EnvironmentConfig } from '../../config/environment-config';
 import { ResourceNames } from '../../config/resource-names';
@@ -31,6 +32,35 @@ export class UsersStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
     };
     const sendgridSecret = secretsmanager.Secret.fromSecretNameV2(this, 'SendgridSecret', props.config.integrations.sendgridSecretName);
+    const stack = cdk.Stack.of(this);
+    const cognitoUserPoolArn = stack.formatArn({
+      service: 'cognito-idp',
+      resource: 'userpool',
+      resourceName: props.userPoolId,
+    });
+    const usersTableArn = tables.users.tableArn;
+    const grantAdminAuthPermissions = (fn: lambda.IFunction) => {
+      fn.addToRolePolicy(new iam.PolicyStatement({
+        actions: [
+          'cognito-idp:AdminGetUser',
+          'cognito-idp:AdminCreateUser',
+          'cognito-idp:AdminSetUserPassword',
+          'cognito-idp:AdminUpdateUserAttributes',
+          'cognito-idp:ListUsers',
+        ],
+        resources: [cognitoUserPoolArn],
+      }));
+      fn.addToRolePolicy(new iam.PolicyStatement({
+        actions: [
+          'dynamodb:GetItem',
+          'dynamodb:PutItem',
+          'dynamodb:UpdateItem',
+          'dynamodb:Scan',
+          'dynamodb:Query',
+        ],
+        resources: [usersTableArn],
+      }));
+    };
     
     // Common environment variables for user functions
     const commonEnv = {
@@ -227,7 +257,8 @@ export class UsersStack extends cdk.Stack {
       sourceFunctionName: 'bebco-admin-auth-check-user-status',
       environment: commonEnv,
     });
-    tables.users.grantReadData(adminAuthCheckUserStatus.function);
+    tables.users.grantReadWriteData(adminAuthCheckUserStatus.function);
+    grantAdminAuthPermissions(adminAuthCheckUserStatus.function);
     this.functions.adminAuthCheckUserStatus = adminAuthCheckUserStatus.function;
     
     // 18. Admin Users MFA Status

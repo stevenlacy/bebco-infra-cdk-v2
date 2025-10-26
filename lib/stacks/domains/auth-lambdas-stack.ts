@@ -5,6 +5,7 @@ import { Construct } from 'constructs';
 import { EnvironmentConfig } from '../../config/environment-config';
 import { ResourceNames } from '../../config/resource-names';
 import { BebcoLambda } from '../../constructs/bebco-lambda';
+import * as iam from 'aws-cdk-lib/aws-iam';
 
 export interface AuthLambdasStackProps extends cdk.StackProps {
   config: EnvironmentConfig;
@@ -28,6 +29,35 @@ export class AuthLambdasStack extends cdk.Stack {
       USER_POOL_ID: props.userPoolId,
       USER_POOL_CLIENT_ID: props.userPoolClientId,
       IDENTITY_POOL_ID: props.identityPoolId,
+    };
+    const stack = cdk.Stack.of(this);
+    const cognitoUserPoolArn = stack.formatArn({
+      service: 'cognito-idp',
+      resource: 'userpool',
+      resourceName: props.userPoolId,
+    });
+    const usersTableArn = tables.users.tableArn;
+    const grantAdminAuthPermissions = (fn: lambda.IFunction) => {
+      fn.addToRolePolicy(new iam.PolicyStatement({
+        actions: [
+          'cognito-idp:AdminGetUser',
+          'cognito-idp:AdminCreateUser',
+          'cognito-idp:AdminSetUserPassword',
+          'cognito-idp:AdminUpdateUserAttributes',
+          'cognito-idp:ListUsers',
+        ],
+        resources: [cognitoUserPoolArn],
+      }));
+      fn.addToRolePolicy(new iam.PolicyStatement({
+        actions: [
+          'dynamodb:GetItem',
+          'dynamodb:PutItem',
+          'dynamodb:UpdateItem',
+          'dynamodb:Scan',
+          'dynamodb:Query',
+        ],
+        resources: [usersTableArn],
+      }));
     };
     
     // Borrower Portal Auth
@@ -62,6 +92,7 @@ export class AuthLambdasStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
+    grantAdminAuthPermissions(adminAuthCompleteSetup.function);
     this.functions.adminAuthCompleteSetup = adminAuthCompleteSetup.function;
     
     const adminAuthRefreshToken = new BebcoLambda(this, 'AdminAuthRefreshToken', {
@@ -70,6 +101,7 @@ export class AuthLambdasStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
+    grantAdminAuthPermissions(adminAuthRefreshToken.function);
     this.functions.adminAuthRefreshToken = adminAuthRefreshToken.function;
     
     const adminAuthValidatePassword = new BebcoLambda(this, 'AdminAuthValidatePassword', {
@@ -78,6 +110,7 @@ export class AuthLambdasStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
+    grantAdminAuthPermissions(adminAuthValidatePassword.function);
     this.functions.adminAuthValidatePassword = adminAuthValidatePassword.function;
     
     new cdk.CfnOutput(this, 'AuthCompleteSetupArn', {

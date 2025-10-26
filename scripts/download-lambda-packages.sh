@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-SOURCE_REGION="${SOURCE_REGION:-us-east-1}"
+SOURCE_REGION="${SOURCE_REGION:-us-east-2}"
 OUTPUT_DIR="${OUTPUT_DIR:-dist/lambda-packages}"
 CONFIG_FILE="${CONFIG_FILE:-config/lambda-packages.json}"
 
@@ -28,24 +28,10 @@ resolve_function_name() {
     return 0
   fi
 
-  local global_sub
-  global_sub=$(echo "$original" | sed 's/staging/dev/g')
-  if grep -Fxq "$global_sub" "$AVAILABLE_FILE"; then
-    echo "$global_sub"
-    return 0
-  fi
-
-  local hyphen_sub
-  hyphen_sub=$(echo "$original" | sed 's/-staging/-dev/g')
-  if grep -Fxq "$hyphen_sub" "$AVAILABLE_FILE"; then
-    echo "$hyphen_sub"
-    return 0
-  fi
-
-  local suffix_sub
-  suffix_sub=$(echo "$original" | sed 's/staging$/dev/')
-  if grep -Fxq "$suffix_sub" "$AVAILABLE_FILE"; then
-    echo "$suffix_sub"
+  local dev_name
+  dev_name=$(echo "$original" | sed 's/staging/dev/g')
+  if grep -Fxq "$dev_name" "$AVAILABLE_FILE"; then
+    echo "$dev_name"
     return 0
   fi
 
