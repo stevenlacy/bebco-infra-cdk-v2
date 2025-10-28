@@ -5,10 +5,12 @@ import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as s3 from 'aws-cdk-lib/aws-s3';
 import * as secretsmanager from 'aws-cdk-lib/aws-secretsmanager';
 import * as sns from 'aws-cdk-lib/aws-sns';
+import * as kms from 'aws-cdk-lib/aws-kms';
 import { Construct } from 'constructs';
 import { EnvironmentConfig } from '../../config/environment-config';
 import { ResourceNames } from '../../config/resource-names';
 import { BebcoLambda } from '../../constructs/bebco-lambda';
+import { grantReadDataWithQuery, grantReadWriteDataWithQuery } from '../../utils/dynamodb-permissions';
 
 export interface IntegrationsStackProps extends cdk.StackProps {
   config: EnvironmentConfig;
@@ -17,6 +19,7 @@ export interface IntegrationsStackProps extends cdk.StackProps {
   buckets: { [key: string]: s3.IBucket };
   textractRole: iam.IRole;
   textractResultsTopic: sns.ITopic;
+  documentsKey?: kms.IKey;
 }
 
 export class IntegrationsStack extends cdk.Stack {
@@ -25,7 +28,7 @@ export class IntegrationsStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props: IntegrationsStackProps) {
     super(scope, id, props);
 
-    const { resourceNames, tables, buckets, config, textractRole, textractResultsTopic } = props;
+    const { resourceNames, tables, buckets, config, textractRole, textractResultsTopic, documentsKey } = props;
     const baseLambdaProps = {
       resourceNames,
       config,
@@ -52,6 +55,9 @@ export class IntegrationsStack extends cdk.Stack {
     }
     if (config.integrations.sharepointClientId) {
       sharepointEnvBase.SHAREPOINT_CLIENT_ID = config.integrations.sharepointClientId;
+    }
+    if (config.integrations.sharepointClientSecret) {
+      sharepointEnvBase.SHAREPOINT_CLIENT_SECRET = config.integrations.sharepointClientSecret;
     }
     if (config.integrations.sharepointPortReconFilePath) {
       sharepointEnvBase.PORT_RECON_FILE_PATH = config.integrations.sharepointPortReconFilePath;
@@ -95,8 +101,10 @@ export class IntegrationsStack extends cdk.Stack {
       secrets: [sharepointSecret],
     });
     buckets.documents.grantReadWrite(sharepointSyncPortfolio.function);
-    tables.loans.grantReadData(sharepointSyncPortfolio.function);
-    tables.companies.grantReadData(sharepointSyncPortfolio.function);
+    if (documentsKey) {
+      documentsKey.grantEncryptDecrypt(sharepointSyncPortfolio.function);
+    }
+    grantReadDataWithQuery(sharepointSyncPortfolio.function, tables.loans, tables.companies);
     this.functions.sharepointSyncPortfolio = sharepointSyncPortfolio.function;
 
     // 2. bebco-staging-sharepoint-manual-sync
@@ -113,8 +121,10 @@ export class IntegrationsStack extends cdk.Stack {
       secrets: [sharepointSecret],
     });
     buckets.documents.grantReadWrite(sharepointManualSync.function);
-    tables.loans.grantReadData(sharepointManualSync.function);
-    tables.companies.grantReadData(sharepointManualSync.function);
+    if (documentsKey) {
+      documentsKey.grantEncryptDecrypt(sharepointManualSync.function);
+    }
+    grantReadDataWithQuery(sharepointManualSync.function, tables.loans, tables.companies);
     this.functions.sharepointManualSync = sharepointManualSync.function;
 
     // 3. bebco-staging-sharepoint-sync-status
@@ -143,7 +153,10 @@ export class IntegrationsStack extends cdk.Stack {
       additionalPolicies: textractPolicies,
     });
     buckets.documents.grantRead(analyzeDocuments.function);
-    tables.files.grantReadWriteData(analyzeDocuments.function);
+    if (documentsKey) {
+      documentsKey.grantDecrypt(analyzeDocuments.function);
+    }
+    grantReadWriteDataWithQuery(analyzeDocuments.function, tables.files);
     this.functions.analyzeDocuments = analyzeDocuments.function;
 
     // 5. bebco-borrower-staging-process-document-ocr
@@ -162,7 +175,10 @@ export class IntegrationsStack extends cdk.Stack {
       additionalPolicies: textractPolicies,
     });
     buckets.documents.grantReadWrite(processDocumentOcr.function);
-    tables.files.grantReadWriteData(processDocumentOcr.function);
+    if (documentsKey) {
+      documentsKey.grantEncryptDecrypt(processDocumentOcr.function);
+    }
+    grantReadWriteDataWithQuery(processDocumentOcr.function, tables.files);
     this.functions.processDocumentOcr = processDocumentOcr.function;
 
     // Excel Parser
@@ -180,6 +196,9 @@ export class IntegrationsStack extends cdk.Stack {
       secrets: [sharepointSecret],
     });
     buckets.documents.grantRead(excelParser.function);
+    if (documentsKey) {
+      documentsKey.grantDecrypt(excelParser.function);
+    }
     this.functions.excelParser = excelParser.function;
 
     // Agent Functions (AI/Automation)
@@ -192,7 +211,7 @@ export class IntegrationsStack extends cdk.Stack {
         COMPANIES_TABLE: tables.companies.tableName,
       },
     });
-    tables.companies.grantReadData(agentResolveCompanyTool.function);
+    grantReadDataWithQuery(agentResolveCompanyTool.function, tables.companies);
     this.functions.agentResolveCompanyTool = agentResolveCompanyTool.function;
 
     // 8. bebco-agent-run-partiql-tool

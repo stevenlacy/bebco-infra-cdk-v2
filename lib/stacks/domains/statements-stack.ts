@@ -6,6 +6,7 @@ import { Construct } from 'constructs';
 import { EnvironmentConfig } from '../../config/environment-config';
 import { ResourceNames } from '../../config/resource-names';
 import { BebcoLambda } from '../../constructs/bebco-lambda';
+import { grantReadDataWithQuery, grantReadWriteDataWithQuery } from '../../utils/dynamodb-permissions';
 
 export interface StatementsStackProps extends cdk.StackProps {
   config: EnvironmentConfig;
@@ -37,7 +38,7 @@ export class StatementsStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    tables.monthlyReportings.grantReadData(adminListStatements.function);
+    grantReadDataWithQuery(adminListStatements.function, tables.monthlyReportings);
     buckets.documents.grantRead(adminListStatements.function);
     this.functions.adminListStatements = adminListStatements.function;
 
@@ -48,7 +49,7 @@ export class StatementsStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    tables.monthlyReportings.grantReadWriteData(adminUploadStatements.function);
+    grantReadWriteDataWithQuery(adminUploadStatements.function, tables.monthlyReportings);
     buckets.documents.grantReadWrite(adminUploadStatements.function);
     this.functions.adminUploadStatements = adminUploadStatements.function;
 
@@ -59,8 +60,7 @@ export class StatementsStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    tables.monthlyReportings.grantReadData(statementsFinancials.function);
-    tables.accounts.grantReadData(statementsFinancials.function);
+    grantReadDataWithQuery(statementsFinancials.function, tables.monthlyReportings, tables.accounts);
     this.functions.statementsFinancials = statementsFinancials.function;
 
     // 4. bebco-staging-statements-get-url

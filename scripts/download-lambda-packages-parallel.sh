@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+# region for prod comparison
 SOURCE_REGION="us-east-1"
 OUTPUT_DIR="dist/lambda-packages"
 CONFIG_FILE="config/lambda-packages.json"

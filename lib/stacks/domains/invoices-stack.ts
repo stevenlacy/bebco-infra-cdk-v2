@@ -6,6 +6,7 @@ import { Construct } from 'constructs';
 import { EnvironmentConfig } from '../../config/environment-config';
 import { ResourceNames } from '../../config/resource-names';
 import { BebcoLambda } from '../../constructs/bebco-lambda';
+import { grantReadDataWithQuery, grantReadWriteDataWithQuery } from '../../utils/dynamodb-permissions';
 
 export interface InvoicesStackProps extends cdk.StackProps {
   config: EnvironmentConfig;
@@ -36,7 +37,7 @@ export class InvoicesStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    tables.invoices.grantReadWriteData(invoicesCreate.function);
+    grantReadWriteDataWithQuery(invoicesCreate.function, tables.invoices);
     this.functions.invoicesCreate = invoicesCreate.function;
 
     // 2. bebco-staging-invoices-get
@@ -46,7 +47,7 @@ export class InvoicesStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    tables.invoices.grantReadData(invoicesGet.function);
+    grantReadDataWithQuery(invoicesGet.function, tables.invoices);
     this.functions.invoicesGet = invoicesGet.function;
 
     // 3. bebco-staging-invoices-list
@@ -56,7 +57,7 @@ export class InvoicesStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    tables.invoices.grantReadData(invoicesList.function);
+    grantReadDataWithQuery(invoicesList.function, tables.invoices);
     this.functions.invoicesList = invoicesList.function;
 
     // 4. bebco-staging-invoices-update
@@ -66,7 +67,7 @@ export class InvoicesStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    tables.invoices.grantReadWriteData(invoicesUpdate.function);
+    grantReadWriteDataWithQuery(invoicesUpdate.function, tables.invoices);
     this.functions.invoicesUpdate = invoicesUpdate.function;
 
     // 5. bebco-staging-invoices-generate-monthly
@@ -76,8 +77,8 @@ export class InvoicesStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    tables.invoices.grantReadWriteData(invoicesGenerateMonthly.function);
-    tables.companies.grantReadData(invoicesGenerateMonthly.function);
+    grantReadWriteDataWithQuery(invoicesGenerateMonthly.function, tables.invoices);
+    grantReadDataWithQuery(invoicesGenerateMonthly.function, tables.companies);
     buckets.documents.grantReadWrite(invoicesGenerateMonthly.function);
     this.functions.invoicesGenerateMonthly = invoicesGenerateMonthly.function;
   }

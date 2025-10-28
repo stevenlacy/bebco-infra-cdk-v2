@@ -24,6 +24,7 @@ export class PaymentsStack extends cdk.Stack {
     
     const commonEnv = {
       REGION: this.region,
+      MAX_PAGE_SIZE: '1000',
     };
     
     // Payment operations

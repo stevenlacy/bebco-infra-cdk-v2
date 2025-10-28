@@ -4,6 +4,7 @@ import * as dynamodb from 'aws-cdk-lib/aws-dynamodb';
 import * as s3 from 'aws-cdk-lib/aws-s3';
 import * as secretsmanager from 'aws-cdk-lib/aws-secretsmanager';
 import * as iam from 'aws-cdk-lib/aws-iam';
+import { grantReadDataWithQuery, grantReadWriteDataWithQuery } from '../../utils/dynamodb-permissions';
 import { Construct } from 'constructs';
 import { EnvironmentConfig } from '../../config/environment-config';
 import { ResourceNames } from '../../config/resource-names';
@@ -31,7 +32,12 @@ export class UsersStack extends cdk.Stack {
       config: props.config,
       environmentSuffix: props.config.naming.environmentSuffix,
     };
-    const sendgridSecret = secretsmanager.Secret.fromSecretNameV2(this, 'SendgridSecret', props.config.integrations.sendgridSecretName);
+    const sendgridSecretName = props.config.integrations.sendgridSecretName;
+    const sendgridSecretValue = props.config.integrations.sendgridSecretValue;
+    const sendgridSecretResource = sendgridSecretValue
+      ? undefined
+      : secretsmanager.Secret.fromSecretNameV2(this, 'SendgridSecret', sendgridSecretName);
+    const sendgridSecrets = sendgridSecretResource ? [sendgridSecretResource] : undefined;
     const stack = cdk.Stack.of(this);
     const cognitoUserPoolArn = stack.formatArn({
       service: 'cognito-idp',
@@ -87,9 +93,9 @@ export class UsersStack extends cdk.Stack {
       sourceFunctionName: 'bebco-staging-users-create',
       environment: extendedEnv,
     });
-    tables.users.grantReadWriteData(usersCreate.function);
-    tables.accounts.grantReadData(usersCreate.function);
-    tables.files.grantReadData(usersCreate.function);
+    grantReadWriteDataWithQuery(usersCreate.function, tables.users);
+    grantReadDataWithQuery(usersCreate.function, tables.accounts);
+    grantReadDataWithQuery(usersCreate.function, tables.files);
     buckets.documents.grantRead(usersCreate.function);
     this.functions.usersCreate = usersCreate.function;
     
@@ -99,9 +105,9 @@ export class UsersStack extends cdk.Stack {
       sourceFunctionName: 'bebco-staging-users-get',
       environment: extendedEnv,
     });
-    tables.users.grantReadData(usersGet.function);
-    tables.accounts.grantReadData(usersGet.function);
-    tables.files.grantReadData(usersGet.function);
+    grantReadDataWithQuery(usersGet.function, tables.users);
+    grantReadDataWithQuery(usersGet.function, tables.accounts);
+    grantReadDataWithQuery(usersGet.function, tables.files);
     buckets.documents.grantRead(usersGet.function);
     this.functions.usersGet = usersGet.function;
     
@@ -111,8 +117,8 @@ export class UsersStack extends cdk.Stack {
       sourceFunctionName: 'bebco-staging-users-list',
       environment: extendedEnv,
     });
-    tables.users.grantReadData(usersList.function);
-    tables.loanLoc.grantReadData(usersList.function);
+    grantReadDataWithQuery(usersList.function, tables.users);
+    grantReadDataWithQuery(usersList.function, tables.loanLoc);
     this.functions.usersList = usersList.function;
     
     // 4. Users Update
@@ -121,8 +127,8 @@ export class UsersStack extends cdk.Stack {
       sourceFunctionName: 'bebco-staging-users-update',
       environment: extendedEnv,
     });
-    tables.users.grantReadWriteData(usersUpdate.function);
-    tables.accounts.grantReadData(usersUpdate.function);
+    grantReadWriteDataWithQuery(usersUpdate.function, tables.users);
+    grantReadDataWithQuery(usersUpdate.function, tables.accounts);
     this.functions.usersUpdate = usersUpdate.function;
     
     // 5. Users Delete
@@ -131,8 +137,8 @@ export class UsersStack extends cdk.Stack {
       sourceFunctionName: 'bebco-staging-users-delete',
       environment: commonEnv,
     });
-    tables.users.grantReadWriteData(usersDelete.function);
-    tables.otpCodes.grantReadWriteData(usersDelete.function);
+    grantReadWriteDataWithQuery(usersDelete.function, tables.users);
+    grantReadWriteDataWithQuery(usersDelete.function, tables.otpCodes);
     this.functions.usersDelete = usersDelete.function;
     
     // 6. Users Profile
@@ -141,7 +147,7 @@ export class UsersStack extends cdk.Stack {
       sourceFunctionName: 'bebco-staging-users-profile',
       environment: extendedEnv,
     });
-    tables.users.grantReadData(usersProfile.function);
+    grantReadDataWithQuery(usersProfile.function, tables.users);
     this.functions.usersProfile = usersProfile.function;
     
     // 7. Users Send 2FA
@@ -151,12 +157,12 @@ export class UsersStack extends cdk.Stack {
       environment: {
         ...commonEnv,
         ENABLE_SES: 'false',
-        SendGrid_Secret: props.config.integrations.sendgridSecretName,
+        SendGrid_Secret: sendgridSecretValue ?? sendgridSecretName,
       },
-      secrets: [sendgridSecret],
+      secrets: sendgridSecrets,
     });
-    tables.users.grantReadData(usersSend2fa.function);
-    tables.otpCodes.grantReadWriteData(usersSend2fa.function);
+    grantReadDataWithQuery(usersSend2fa.function, tables.users);
+    grantReadWriteDataWithQuery(usersSend2fa.function, tables.otpCodes);
     this.functions.usersSend2fa = usersSend2fa.function;
     
     // 8. Users Verify 2FA
@@ -165,8 +171,8 @@ export class UsersStack extends cdk.Stack {
       sourceFunctionName: 'bebco-staging-users-verify2fa',
       environment: extendedEnv,
     });
-    tables.users.grantReadData(usersVerify2fa.function);
-    tables.otpCodes.grantReadWriteData(usersVerify2fa.function);
+    grantReadDataWithQuery(usersVerify2fa.function, tables.users);
+    grantReadWriteDataWithQuery(usersVerify2fa.function, tables.otpCodes);
     this.functions.usersVerify2fa = usersVerify2fa.function;
     
     // 9. Users Password Start
@@ -175,7 +181,7 @@ export class UsersStack extends cdk.Stack {
       sourceFunctionName: 'bebco-staging-users-password-start',
       environment: commonEnv,
     });
-    tables.users.grantReadData(usersPasswordStart.function);
+    grantReadDataWithQuery(usersPasswordStart.function, tables.users);
     this.functions.usersPasswordStart = usersPasswordStart.function;
     
     // 10. Users Password (Change)
@@ -184,8 +190,8 @@ export class UsersStack extends cdk.Stack {
       sourceFunctionName: 'bebco-staging-users-password',
       environment: extendedEnv,
     });
-    tables.users.grantReadData(usersPassword.function);
-    tables.otpCodes.grantReadData(usersPassword.function);
+    grantReadDataWithQuery(usersPassword.function, tables.users);
+    grantReadDataWithQuery(usersPassword.function, tables.otpCodes);
     this.functions.usersPassword = usersPassword.function;
     
     // 11. Users Password Complete
@@ -194,7 +200,7 @@ export class UsersStack extends cdk.Stack {
       sourceFunctionName: 'bebco-staging-users-password-complete',
       environment: commonEnv,
     });
-    tables.users.grantReadData(usersPasswordComplete.function);
+    grantReadDataWithQuery(usersPasswordComplete.function, tables.users);
     this.functions.usersPasswordComplete = usersPasswordComplete.function;
     
     // 12. Auth Check User Status (Staging)
@@ -203,7 +209,7 @@ export class UsersStack extends cdk.Stack {
       sourceFunctionName: 'bebco-staging-auth-check-user-status',
       environment: commonEnv,
     });
-    tables.users.grantReadData(authCheckUserStatus.function);
+    grantReadDataWithQuery(authCheckUserStatus.function, tables.users);
     this.functions.authCheckUserStatus = authCheckUserStatus.function;
     
     // Admin portal functions (13-21)
@@ -215,12 +221,12 @@ export class UsersStack extends cdk.Stack {
       environment: {
         ...commonEnv,
         ENABLE_SES: 'false',
-        SendGrid_Secret: props.config.integrations.sendgridSecretName,
+        SendGrid_Secret: sendgridSecretValue ?? sendgridSecretName,
       },
-      secrets: [sendgridSecret],
+      secrets: sendgridSecrets,
     });
-    tables.users.grantReadData(adminUsersSend2fa.function);
-    tables.otpCodes.grantReadWriteData(adminUsersSend2fa.function);
+    grantReadDataWithQuery(adminUsersSend2fa.function, tables.users);
+    grantReadWriteDataWithQuery(adminUsersSend2fa.function, tables.otpCodes);
     this.functions.adminUsersSend2fa = adminUsersSend2fa.function;
     
     // 14. Admin Users Verify 2FA
@@ -229,8 +235,8 @@ export class UsersStack extends cdk.Stack {
       sourceFunctionName: 'bebco-admin-users-verify2fa',
       environment: commonEnv,
     });
-    tables.users.grantReadData(adminUsersVerify2fa.function);
-    tables.otpCodes.grantReadWriteData(adminUsersVerify2fa.function);
+    grantReadDataWithQuery(adminUsersVerify2fa.function, tables.users);
+    grantReadWriteDataWithQuery(adminUsersVerify2fa.function, tables.otpCodes);
     this.functions.adminUsersVerify2fa = adminUsersVerify2fa.function;
     
     // 15. Admin Users Change Password
@@ -239,7 +245,7 @@ export class UsersStack extends cdk.Stack {
       sourceFunctionName: 'bebco-admin-users-change-password',
       environment: commonEnv,
     });
-    tables.users.grantReadData(adminUsersChangePassword.function);
+    grantReadDataWithQuery(adminUsersChangePassword.function, tables.users);
     this.functions.adminUsersChangePassword = adminUsersChangePassword.function;
     
     // 16. Admin Users Update Name
@@ -248,7 +254,7 @@ export class UsersStack extends cdk.Stack {
       sourceFunctionName: 'bebco-admin-users-update-name',
       environment: commonEnv,
     });
-    tables.users.grantReadWriteData(adminUsersUpdateName.function);
+    grantReadWriteDataWithQuery(adminUsersUpdateName.function, tables.users);
     this.functions.adminUsersUpdateName = adminUsersUpdateName.function;
     
     // 17. Admin Auth Check User Status
@@ -257,7 +263,7 @@ export class UsersStack extends cdk.Stack {
       sourceFunctionName: 'bebco-admin-auth-check-user-status',
       environment: commonEnv,
     });
-    tables.users.grantReadWriteData(adminAuthCheckUserStatus.function);
+    grantReadWriteDataWithQuery(adminAuthCheckUserStatus.function, tables.users);
     grantAdminAuthPermissions(adminAuthCheckUserStatus.function);
     this.functions.adminAuthCheckUserStatus = adminAuthCheckUserStatus.function;
     
@@ -267,7 +273,7 @@ export class UsersStack extends cdk.Stack {
       sourceFunctionName: 'bebco-admin-users-mfa-status',
       environment: commonEnv,
     });
-    tables.users.grantReadData(adminUsersMfaStatus.function);
+    grantReadDataWithQuery(adminUsersMfaStatus.function, tables.users);
     this.functions.adminUsersMfaStatus = adminUsersMfaStatus.function;
     
     // 19. Admin Users MFA TOTP Begin
@@ -279,7 +285,7 @@ export class UsersStack extends cdk.Stack {
         USERS_TABLE: tables.users.tableName,
       },
     });
-    tables.users.grantReadWriteData(adminUsersMfaTotpBegin.function);
+    grantReadWriteDataWithQuery(adminUsersMfaTotpBegin.function, tables.users);
     this.functions.adminUsersMfaTotpBegin = adminUsersMfaTotpBegin.function;
     
     // 20. Admin Users MFA TOTP Verify
@@ -288,7 +294,7 @@ export class UsersStack extends cdk.Stack {
       sourceFunctionName: 'bebco-admin-users-mfa-totp-verify',
       environment: commonEnv,
     });
-    tables.users.grantReadData(adminUsersMfaTotpVerify.function);
+    grantReadDataWithQuery(adminUsersMfaTotpVerify.function, tables.users);
     this.functions.adminUsersMfaTotpVerify = adminUsersMfaTotpVerify.function;
     
     // 21. Admin Users MFA TOTP Verify Login
@@ -300,7 +306,7 @@ export class UsersStack extends cdk.Stack {
         USERS_TABLE: tables.users.tableName,
       },
     });
-    tables.users.grantReadData(adminUsersMfaTotpVerifyLogin.function);
+    grantReadDataWithQuery(adminUsersMfaTotpVerifyLogin.function, tables.users);
     this.functions.adminUsersMfaTotpVerifyLogin = adminUsersMfaTotpVerifyLogin.function;
     
     // Stack outputs

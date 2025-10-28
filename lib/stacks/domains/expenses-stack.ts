@@ -5,6 +5,7 @@ import { Construct } from 'constructs';
 import { EnvironmentConfig } from '../../config/environment-config';
 import { ResourceNames } from '../../config/resource-names';
 import { BebcoLambda } from '../../constructs/bebco-lambda';
+import { grantReadDataWithQuery, grantReadWriteDataWithQuery } from '../../utils/dynamodb-permissions';
 
 export interface ExpensesStackProps extends cdk.StackProps {
   config: EnvironmentConfig;
@@ -33,7 +34,7 @@ export class ExpensesStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    tables.expenses.grantReadWriteData(expensesCreateBulk.function);
+    grantReadWriteDataWithQuery(expensesCreateBulk.function, tables.expenses);
     this.functions.expensesCreateBulk = expensesCreateBulk.function;
 
     // 2. bebco-staging-expenses-get
@@ -43,7 +44,7 @@ export class ExpensesStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    tables.expenses.grantReadData(expensesGet.function);
+    grantReadDataWithQuery(expensesGet.function, tables.expenses);
     this.functions.expensesGet = expensesGet.function;
 
     // 3. bebco-staging-expenses-list
@@ -53,7 +54,7 @@ export class ExpensesStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    tables.expenses.grantReadData(expensesList.function);
+    grantReadDataWithQuery(expensesList.function, tables.expenses);
     this.functions.expensesList = expensesList.function;
 
     // 4. bebco-staging-expenses-update
@@ -63,7 +64,7 @@ export class ExpensesStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    tables.expenses.grantReadWriteData(expensesUpdate.function);
+    grantReadWriteDataWithQuery(expensesUpdate.function, tables.expenses);
     this.functions.expensesUpdate = expensesUpdate.function;
   }
 }

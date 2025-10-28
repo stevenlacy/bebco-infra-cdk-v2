@@ -19,6 +19,28 @@ export class AdminApiStack extends cdk.Stack {
     super(scope, id, props);
     
     const { config, resourceNames, userPool } = props;
+    const corsAllowedOrigins = Array.from(
+      new Set(
+        [
+          'http://localhost:3000',
+          'http://localhost:3001',
+          config?.domains?.api ? `https://${config.domains.api}` : undefined,
+        ].filter(Boolean) as string[],
+      ),
+    );
+    const corsAllowedHeaders = [
+      'Content-Type',
+      'Authorization',
+      'X-Amz-Date',
+      'X-Api-Key',
+      'X-Amz-Security-Token',
+      'X-Amz-User-Agent',
+      'Origin',
+      'Accept',
+    ];
+    const corsAllowedMethods = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'];
+    const corsAllowedHeadersString = corsAllowedHeaders.join(', ');
+    const corsAllowedMethodsString = corsAllowedMethods.join(', ');
     const withEnvSuffix = (name: string) => {
       const suffix = config.naming.environmentSuffix;
       if (!suffix || suffix === 'dev') {
@@ -31,9 +53,10 @@ export class AdminApiStack extends cdk.Stack {
     this.api = new apigateway.RestApi(this, 'Api', {
       restApiName: resourceNames.apiGateway('adminapi'),
       defaultCorsPreflightOptions: {
-        allowOrigins: apigateway.Cors.ALL_ORIGINS,
-        allowMethods: apigateway.Cors.ALL_METHODS,
-        allowHeaders: ['Content-Type', 'X-Amz-Date', 'Authorization', 'X-Api-Key'],
+        allowOrigins: corsAllowedOrigins,
+        allowMethods: corsAllowedMethods,
+        allowHeaders: corsAllowedHeaders,
+        allowCredentials: false,
       },
       deployOptions: {
         stageName: 'dev',
@@ -43,6 +66,20 @@ export class AdminApiStack extends cdk.Stack {
         tracingEnabled: true,
       },
       cloudWatchRole: true,
+    });
+
+    const gatewayResponseHeaders: { [key: string]: string } = {
+      'Access-Control-Allow-Origin': "'*'",
+      'Access-Control-Allow-Headers': `'${corsAllowedHeadersString}'`,
+      'Access-Control-Allow-Methods': `'${corsAllowedMethodsString}'`,
+    };
+    this.api.addGatewayResponse('Default4xxGatewayResponse', {
+      type: apigateway.ResponseType.DEFAULT_4XX,
+      responseHeaders: gatewayResponseHeaders,
+    });
+    this.api.addGatewayResponse('Default5xxGatewayResponse', {
+      type: apigateway.ResponseType.DEFAULT_5XX,
+      responseHeaders: gatewayResponseHeaders,
     });
     
     // Create Cognito authorizer
@@ -161,6 +198,20 @@ export class AdminApiStack extends cdk.Stack {
       lambda.Function.fromFunctionName(this, `Fn${index}`, withEnvSuffix(name))
     );
 
+    const paymentsListFn = lambda.Function.fromFunctionName(this, 'PaymentsListFn', withEnvSuffix('bebco-dev-payments-list'));
+    const adminNachaLatestIntegration = new apigateway.LambdaIntegration(fn7, {
+      proxy: true,
+      requestParameters: {
+        'integration.request.querystring.limit': 'method.request.querystring.limit',
+      },
+    });
+    const paymentsListIntegration = new apigateway.LambdaIntegration(paymentsListFn, {
+      proxy: true,
+      requestParameters: {
+        'integration.request.querystring.sortOrder': 'method.request.querystring.sort',
+      },
+    });
+
     // API Resources
 
     const admin = this.api.root.addResource('admin');
@@ -257,7 +308,12 @@ export class AdminApiStack extends cdk.Stack {
     admin_borrowers.addMethod('GET', new apigateway.LambdaIntegration(fn15), { authorizer });
     admin_borrowers.addMethod('POST', new apigateway.LambdaIntegration(fn11), { authorizer });
     admin_invoices.addMethod('GET', new apigateway.LambdaIntegration(fn32), { authorizer });
-    admin_payments.addMethod('GET', new apigateway.LambdaIntegration(fn8), { authorizer });
+    admin_payments.addMethod('GET', paymentsListIntegration, {
+      authorizer,
+      requestParameters: {
+        'method.request.querystring.sort': false,
+      },
+    });
     admin_users.addMethod('GET', new apigateway.LambdaIntegration(fn36), { authorizer });
     admin_users.addMethod('POST', new apigateway.LambdaIntegration(fn36), { authorizer });
     profile_name.addMethod('PATCH', new apigateway.LambdaIntegration(fn5), { authorizer });
@@ -293,7 +349,12 @@ export class AdminApiStack extends cdk.Stack {
     admin_monthly_reports_reportId_notes.addMethod('POST', new apigateway.LambdaIntegration(fn19), { authorizer });
     admin_monthly_reports_reportId_waive.addMethod('GET', new apigateway.LambdaIntegration(fn20), { authorizer });
     admin_monthly_reports_reportId_waive.addMethod('POST', new apigateway.LambdaIntegration(fn20), { authorizer });
-    admin_payments_nacha_latest.addMethod('GET', new apigateway.LambdaIntegration(fn7), { authorizer });
+    admin_payments_nacha_latest.addMethod('GET', adminNachaLatestIntegration, {
+      authorizer,
+      requestParameters: {
+        'method.request.querystring.limit': false,
+      },
+    });
     admin_payments_paymentId_allocations.addMethod('GET', new apigateway.LambdaIntegration(fn8), { authorizer });
     admin_payments_paymentId_allocations.addMethod('PUT', new apigateway.LambdaIntegration(fn8), { authorizer });
     admin_users_userId_approve.addMethod('PUT', new apigateway.LambdaIntegration(fn36), { authorizer });

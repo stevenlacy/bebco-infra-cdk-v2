@@ -6,6 +6,7 @@ import { EnvironmentConfig } from '../../config/environment-config';
 import { ResourceNames } from '../../config/resource-names';
 import { BebcoLambda } from '../../constructs/bebco-lambda';
 import * as iam from 'aws-cdk-lib/aws-iam';
+import { addQueryScan, grantReadDataWithQuery, grantReadWriteDataWithQuery } from '../../utils/dynamodb-permissions';
 
 export interface AuthLambdasStackProps extends cdk.StackProps {
   config: EnvironmentConfig;
@@ -61,12 +62,26 @@ export class AuthLambdasStack extends cdk.Stack {
     };
     
     // Borrower Portal Auth
+    const addCognitoPermissions = (fn: lambda.IFunction, actions: string[]) => {
+      fn.addToRolePolicy(new iam.PolicyStatement({
+        actions,
+        resources: [cognitoUserPoolArn],
+      }));
+    };
+
     const authCompleteSetup = new BebcoLambda(this, 'AuthCompleteSetup', {
       sourceFunctionName: 'bebco-staging-auth-complete-setup',
       resourceNames,
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
+    grantReadWriteDataWithQuery(authCompleteSetup.function, tables.otpCodes, tables.users);
+    addCognitoPermissions(authCompleteSetup.function, [
+      'cognito-idp:AdminSetUserPassword',
+      'cognito-idp:AdminGetUser',
+      'cognito-idp:AdminUpdateUserAttributes',
+      'cognito-idp:AdminInitiateAuth',
+    ]);
     this.functions.authCompleteSetup = authCompleteSetup.function;
     
     const authRefreshToken = new BebcoLambda(this, 'AuthRefreshToken', {
@@ -75,6 +90,10 @@ export class AuthLambdasStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
+    addCognitoPermissions(authRefreshToken.function, [
+      'cognito-idp:AdminInitiateAuth',
+      'cognito-idp:AdminGetUser',
+    ]);
     this.functions.authRefreshToken = authRefreshToken.function;
     
     const authValidatePassword = new BebcoLambda(this, 'AuthValidatePassword', {
@@ -83,6 +102,11 @@ export class AuthLambdasStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
+    grantReadDataWithQuery(authValidatePassword.function, tables.users);
+    addCognitoPermissions(authValidatePassword.function, [
+      'cognito-idp:AdminInitiateAuth',
+      'cognito-idp:AdminGetUser',
+    ]);
     this.functions.authValidatePassword = authValidatePassword.function;
     
     // Admin Portal Auth
@@ -92,7 +116,11 @@ export class AuthLambdasStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
+    grantReadWriteDataWithQuery(adminAuthCompleteSetup.function, tables.users, tables.otpCodes);
     grantAdminAuthPermissions(adminAuthCompleteSetup.function);
+    addCognitoPermissions(adminAuthCompleteSetup.function, [
+      'cognito-idp:AdminInitiateAuth',
+    ]);
     this.functions.adminAuthCompleteSetup = adminAuthCompleteSetup.function;
     
     const adminAuthRefreshToken = new BebcoLambda(this, 'AdminAuthRefreshToken', {
@@ -101,6 +129,10 @@ export class AuthLambdasStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
+    addCognitoPermissions(adminAuthRefreshToken.function, [
+      'cognito-idp:AdminInitiateAuth',
+      'cognito-idp:AdminGetUser',
+    ]);
     grantAdminAuthPermissions(adminAuthRefreshToken.function);
     this.functions.adminAuthRefreshToken = adminAuthRefreshToken.function;
     
@@ -110,6 +142,11 @@ export class AuthLambdasStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
+    grantReadDataWithQuery(adminAuthValidatePassword.function, tables.users);
+    addCognitoPermissions(adminAuthValidatePassword.function, [
+      'cognito-idp:AdminInitiateAuth',
+      'cognito-idp:AdminGetUser',
+    ]);
     grantAdminAuthPermissions(adminAuthValidatePassword.function);
     this.functions.adminAuthValidatePassword = adminAuthValidatePassword.function;
     

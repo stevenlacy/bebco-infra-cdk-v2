@@ -19,6 +19,15 @@ export class BorrowerApiStack extends cdk.Stack {
     super(scope, id, props);
     
     const { config, resourceNames, userPool } = props;
+    const corsAllowedOrigins = Array.from(
+      new Set(
+        [
+          'http://localhost:3000',
+          'http://localhost:3001',
+          config?.domains?.api ? `https://${config.domains.api}` : undefined,
+        ].filter(Boolean) as string[],
+      ),
+    );
     const withEnvSuffix = (name: string) => {
       const suffix = config.naming.environmentSuffix;
       if (!suffix || suffix === 'dev') {
@@ -31,9 +40,10 @@ export class BorrowerApiStack extends cdk.Stack {
     this.api = new apigateway.RestApi(this, 'Api', {
       restApiName: resourceNames.apiGateway('borrowerapi'),
       defaultCorsPreflightOptions: {
-        allowOrigins: apigateway.Cors.ALL_ORIGINS,
+        allowOrigins: corsAllowedOrigins,
         allowMethods: apigateway.Cors.ALL_METHODS,
-        allowHeaders: ['Content-Type', 'X-Amz-Date', 'Authorization', 'X-Api-Key'],
+        allowHeaders: apigateway.Cors.DEFAULT_HEADERS,
+        allowCredentials: false,
       },
       deployOptions: {
         stageName: 'dev',

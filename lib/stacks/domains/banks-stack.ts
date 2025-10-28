@@ -5,6 +5,7 @@ import { Construct } from 'constructs';
 import { EnvironmentConfig } from '../../config/environment-config';
 import { ResourceNames } from '../../config/resource-names';
 import { BebcoLambda } from '../../constructs/bebco-lambda';
+import { grantReadDataWithQuery, grantReadWriteDataWithQuery } from '../../utils/dynamodb-permissions';
 
 export interface BanksStackProps extends cdk.StackProps {
   config: EnvironmentConfig;
@@ -32,7 +33,7 @@ export class BanksStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    tables.banks.grantReadWriteData(banksCreate.function);
+    grantReadWriteDataWithQuery(banksCreate.function, tables.banks);
     this.functions.banksCreate = banksCreate.function;
 
     // 2. bebco-staging-banks-list
@@ -42,7 +43,7 @@ export class BanksStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    tables.banks.grantReadData(banksList.function);
+    grantReadDataWithQuery(banksList.function, tables.banks);
     this.functions.banksList = banksList.function;
 
     // 3. bebco-staging-banks-update
@@ -52,7 +53,7 @@ export class BanksStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    tables.banks.grantReadWriteData(banksUpdate.function);
+    grantReadWriteDataWithQuery(banksUpdate.function, tables.banks);
     this.functions.banksUpdate = banksUpdate.function;
   }
 }

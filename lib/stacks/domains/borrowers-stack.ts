@@ -6,6 +6,7 @@ import { Construct } from 'constructs';
 import { EnvironmentConfig } from '../../config/environment-config';
 import { ResourceNames } from '../../config/resource-names';
 import { BebcoLambda } from '../../constructs/bebco-lambda';
+import { grantReadDataWithQuery, grantReadWriteDataWithQuery } from '../../utils/dynamodb-permissions';
 
 export interface BorrowersStackProps extends cdk.StackProps {
   config: EnvironmentConfig;
@@ -39,8 +40,7 @@ export class BorrowersStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    tables.companies.grantReadWriteData(adminBorrowersCreate.function);
-    tables.users.grantReadWriteData(adminBorrowersCreate.function);
+    grantReadWriteDataWithQuery(adminBorrowersCreate.function, tables.companies, tables.users);
     this.functions.adminBorrowersCreate = adminBorrowersCreate.function;
 
     // 2. bebco-staging-admin-borrowers-get-borrower-function
@@ -50,9 +50,7 @@ export class BorrowersStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    tables.companies.grantReadData(adminBorrowersGet.function);
-    tables.users.grantReadData(adminBorrowersGet.function);
-    tables.accounts.grantReadData(adminBorrowersGet.function);
+    grantReadDataWithQuery(adminBorrowersGet.function, tables.companies, tables.users, tables.accounts);
     this.functions.adminBorrowersGet = adminBorrowersGet.function;
 
     // 3. bebco-staging-admin-borrowers-list-borrowers-function
@@ -62,8 +60,7 @@ export class BorrowersStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    tables.companies.grantReadData(adminBorrowersList.function);
-    tables.users.grantReadData(adminBorrowersList.function);
+    grantReadDataWithQuery(adminBorrowersList.function, tables.companies, tables.users);
     this.functions.adminBorrowersList = adminBorrowersList.function;
 
     // 4. bebco-staging-admin-borrowers-update-borrower-function
@@ -73,8 +70,7 @@ export class BorrowersStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    tables.companies.grantReadWriteData(adminBorrowersUpdate.function);
-    tables.users.grantReadWriteData(adminBorrowersUpdate.function);
+    grantReadWriteDataWithQuery(adminBorrowersUpdate.function, tables.companies, tables.users);
     this.functions.adminBorrowersUpdate = adminBorrowersUpdate.function;
 
     // 5. bebco-staging-admin-borrowers-get-borrower-summary-function
@@ -84,9 +80,7 @@ export class BorrowersStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    tables.companies.grantReadData(adminBorrowersSummary.function);
-    tables.loans.grantReadData(adminBorrowersSummary.function);
-    tables.accounts.grantReadData(adminBorrowersSummary.function);
+    grantReadDataWithQuery(adminBorrowersSummary.function, tables.companies, tables.loans, tables.accounts);
     this.functions.adminBorrowersSummary = adminBorrowersSummary.function;
 
     // 6. bebco-staging-admin-borrowers-get-borrower-transactions-function
@@ -96,8 +90,7 @@ export class BorrowersStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    tables.transactions.grantReadData(adminBorrowersTransactions.function);
-    tables.accounts.grantReadData(adminBorrowersTransactions.function);
+    grantReadDataWithQuery(adminBorrowersTransactions.function, tables.transactions, tables.accounts);
     this.functions.adminBorrowersTransactions = adminBorrowersTransactions.function;
 
     // 7. bebco-staging-admin-borrower-settings
@@ -107,7 +100,7 @@ export class BorrowersStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    tables.companies.grantReadWriteData(adminBorrowerSettings.function);
+    grantReadWriteDataWithQuery(adminBorrowerSettings.function, tables.companies);
     this.functions.adminBorrowerSettings = adminBorrowerSettings.function;
 
     // 8. bebco-borrowers-api-listBorrowers (AppSync resolver)
@@ -117,7 +110,7 @@ export class BorrowersStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    tables.companies.grantReadData(borrowersApiList.function);
+    grantReadDataWithQuery(borrowersApiList.function, tables.companies);
     this.functions.borrowersApiList = borrowersApiList.function;
 
     // 9. bebco-borrowers-api-getFinancialOverview (AppSync resolver)
@@ -127,9 +120,7 @@ export class BorrowersStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    tables.companies.grantReadData(borrowersApiFinancialOverview.function);
-    tables.accounts.grantReadData(borrowersApiFinancialOverview.function);
-    tables.transactions.grantReadData(borrowersApiFinancialOverview.function);
+    grantReadDataWithQuery(borrowersApiFinancialOverview.function, tables.companies, tables.accounts, tables.transactions);
     this.functions.borrowersApiFinancialOverview = borrowersApiFinancialOverview.function;
 
     // 10. bebco-borrowers-api-batchGetFinancialOverviews (AppSync resolver)
@@ -139,9 +130,7 @@ export class BorrowersStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    tables.companies.grantReadData(borrowersApiBatchFinancialOverviews.function);
-    tables.accounts.grantReadData(borrowersApiBatchFinancialOverviews.function);
-    tables.transactions.grantReadData(borrowersApiBatchFinancialOverviews.function);
+    grantReadDataWithQuery(borrowersApiBatchFinancialOverviews.function, tables.companies, tables.accounts, tables.transactions);
     this.functions.borrowersApiBatchFinancialOverviews = borrowersApiBatchFinancialOverviews.function;
   }
 }

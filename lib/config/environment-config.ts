@@ -46,9 +46,11 @@ export interface EnvironmentConfig {
     sharepointPortReconFilePath?: string;
     sharepointS3Prefix?: string;
     sharepointBankId?: string;
+    sharepointClientSecret?: string;
     sendgridSecretName: string;
     sendgridFromAddress?: string;
     sendgridApiKeyId?: string;
+    sendgridSecretValue?: string;
   };
   textract: {
     roleName: string;

@@ -8,6 +8,7 @@ import { Construct } from 'constructs';
 import { EnvironmentConfig } from '../../config/environment-config';
 import { ResourceNames } from '../../config/resource-names';
 import { BebcoLambda } from '../../constructs/bebco-lambda';
+import { addQueryScan, grantReadDataWithQuery, grantReadWriteDataWithQuery } from '../../utils/dynamodb-permissions';
 
 export interface AccountsStackProps extends cdk.StackProps {
   config: EnvironmentConfig;
@@ -55,6 +56,7 @@ export class AccountsStack extends cdk.Stack {
       },
     });
     tables.transactions.grantReadData(accountTransactionCounts.function);
+    addQueryScan(accountTransactionCounts.function, tables.transactions);
     this.functions.accountTransactionCounts = accountTransactionCounts.function;
     
     // 2. Accounts Upload Statement
@@ -67,8 +69,11 @@ export class AccountsStack extends cdk.Stack {
       },
     });
     tables.accounts.grantReadWriteData(accountsUploadStatement.function);
+    addQueryScan(accountsUploadStatement.function, tables.accounts);
     tables.files.grantReadWriteData(accountsUploadStatement.function);
+    addQueryScan(accountsUploadStatement.function, tables.files);
     tables.monthlyReportings.grantReadData(accountsUploadStatement.function);
+    addQueryScan(accountsUploadStatement.function, tables.monthlyReportings);
     buckets.documents.grantReadWrite(accountsUploadStatement.function);
     this.functions.accountsUploadStatement = accountsUploadStatement.function;
     
@@ -79,7 +84,9 @@ export class AccountsStack extends cdk.Stack {
       environment: commonEnv,
     });
     tables.accounts.grantReadData(accountsGet.function);
+    addQueryScan(accountsGet.function, tables.accounts);
     tables.files.grantReadData(accountsGet.function);
+    addQueryScan(accountsGet.function, tables.files);
     buckets.documents.grantRead(accountsGet.function);
     this.functions.accountsGet = accountsGet.function;
     
@@ -94,6 +101,7 @@ export class AccountsStack extends cdk.Stack {
       },
     });
     tables.files.grantReadWriteData(accountsOcrResults.function);
+    addQueryScan(accountsOcrResults.function, tables.files);
     buckets.documents.grantReadWrite(accountsOcrResults.function);
     this.functions.accountsOcrResults = accountsOcrResults.function;
     
@@ -138,6 +146,7 @@ export class AccountsStack extends cdk.Stack {
       ],
     });
     tables.files.grantReadWriteData(accountsProcessOcr.function);
+    addQueryScan(accountsProcessOcr.function, tables.files);
     buckets.documents.grantReadWrite(accountsProcessOcr.function);
     // Note: Will need Textract and SNS permissions added
     this.functions.accountsProcessOcr = accountsProcessOcr.function;
@@ -148,8 +157,7 @@ export class AccountsStack extends cdk.Stack {
       sourceFunctionName: 'bebco-staging-accounts-create',
       environment: commonEnv,
     });
-    tables.accounts.grantReadWriteData(accountsCreate.function);
-    tables.files.grantReadWriteData(accountsCreate.function);
+    grantReadWriteDataWithQuery(accountsCreate.function, tables.accounts, tables.files);
     buckets.documents.grantReadWrite(accountsCreate.function);
     this.functions.accountsCreate = accountsCreate.function;
     
@@ -162,7 +170,7 @@ export class AccountsStack extends cdk.Stack {
         TABLE_NAME: tables.accounts.tableName,
       },
     });
-    tables.accounts.grantReadData(knownAccounts.function);
+    grantReadDataWithQuery(knownAccounts.function, tables.accounts);
     this.functions.knownAccounts = knownAccounts.function;
     
     // 9. Accounts List
@@ -174,9 +182,7 @@ export class AccountsStack extends cdk.Stack {
         DYNAMODB_TABLE: tables.loanLoc.tableName,
       },
     });
-    tables.accounts.grantReadData(accountsList.function);
-    tables.files.grantReadData(accountsList.function);
-    tables.loanLoc.grantReadData(accountsList.function);
+    grantReadDataWithQuery(accountsList.function, tables.accounts, tables.files, tables.loanLoc);
     buckets.documents.grantRead(accountsList.function);
     this.functions.accountsList = accountsList.function;
     
