@@ -276,15 +276,17 @@ export class DataStack extends cdk.Stack {
     // Backcompat: Provision legacy-named staging tables some packaged Lambdas still reference directly
     // Note: legacy staging tables may already exist outside this stack; do not attempt to create here
 
-    // Create legacy-named statements table in this region for packaged code
-    new dynamodb.Table(this, 'LegacyStatementsStaging', {
-      tableName: 'bebco-borrower-staging-statements',
-      partitionKey: { name: 'company_id', type: dynamodb.AttributeType.STRING },
-      sortKey: { name: 'date', type: dynamodb.AttributeType.STRING },
-      billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
-      pointInTimeRecovery: true,
-      removalPolicy: cdk.RemovalPolicy.DESTROY,
-    });
+    if (props.config.environment === 'dev') {
+      // Create legacy-named statements table in this region for packaged code
+      new dynamodb.Table(this, 'LegacyStatementsStaging', {
+        tableName: 'bebco-borrower-staging-statements',
+        partitionKey: { name: 'company_id', type: dynamodb.AttributeType.STRING },
+        sortKey: { name: 'date', type: dynamodb.AttributeType.STRING },
+        billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
+        pointInTimeRecovery: true,
+        removalPolicy: cdk.RemovalPolicy.DESTROY,
+      });
+    }
  
     // Outputs
     new cdk.CfnOutput(this, 'AccountsTableName', {
