@@ -1,0 +1,88 @@
+{
+    "KeySchema": [
+        {
+            "AttributeName": "id",
+            "KeyType": "HASH"
+        }
+    ],
+    "AttributeDefinitions": [
+        {
+            "AttributeName": "channel",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "expires_at",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "id",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "user_id",
+            "AttributeType": "S"
+        }
+    ],
+    "GlobalSecondaryIndexes": [
+        {
+            "IndexName": "ExpiryIndex",
+            "KeySchema": [
+                {
+                    "AttributeName": "expires_at",
+                    "KeyType": "HASH"
+                }
+            ],
+            "Projection": {
+                "ProjectionType": "ALL"
+            },
+            "IndexStatus": "ACTIVE",
+            "ProvisionedThroughput": {
+                "LastDecreaseDateTime": "2025-10-26T08:51:09.630000-07:00",
+                "NumberOfDecreasesToday": 0,
+                "ReadCapacityUnits": 0,
+                "WriteCapacityUnits": 0
+            },
+            "IndexSizeBytes": 0,
+            "ItemCount": 0,
+            "IndexArn": "arn:aws:dynamodb:us-east-2:303555290462:table/bebco-borrower-otp-codes-dev/index/ExpiryIndex",
+            "WarmThroughput": {
+                "ReadUnitsPerSecond": 12000,
+                "WriteUnitsPerSecond": 4000,
+                "Status": "ACTIVE"
+            }
+        },
+        {
+            "IndexName": "UserChannelIndex",
+            "KeySchema": [
+                {
+                    "AttributeName": "user_id",
+                    "KeyType": "HASH"
+                },
+                {
+                    "AttributeName": "channel",
+                    "KeyType": "RANGE"
+                }
+            ],
+            "Projection": {
+                "ProjectionType": "ALL"
+            },
+            "IndexStatus": "ACTIVE",
+            "ProvisionedThroughput": {
+                "LastDecreaseDateTime": "2025-10-26T08:51:10.833000-07:00",
+                "NumberOfDecreasesToday": 0,
+                "ReadCapacityUnits": 0,
+                "WriteCapacityUnits": 0
+            },
+            "IndexSizeBytes": 0,
+            "ItemCount": 0,
+            "IndexArn": "arn:aws:dynamodb:us-east-2:303555290462:table/bebco-borrower-otp-codes-dev/index/UserChannelIndex",
+            "WarmThroughput": {
+                "ReadUnitsPerSecond": 12000,
+                "WriteUnitsPerSecond": 4000,
+                "Status": "ACTIVE"
+            }
+        }
+    ],
+    "LocalSecondaryIndexes": null,
+    "StreamSpecification": null
+}

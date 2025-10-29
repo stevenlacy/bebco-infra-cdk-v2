@@ -1,0 +1,15 @@
+{
+  "start_time": "2025-10-28T23:18:30Z",
+  "region": "us-east-2",
+  "source_env": "dev",
+  "target_env": "bdn",
+  "total_tables": 33,
+  "tables_created": 33,
+  "tables_failed": [
+    ""
+  ],
+  "copy_jobs_started": 33,
+  "status": "RUNNING",
+  "table_creation_complete": "2025-10-28T23:20:50Z",
+  "copy_start_time": "2025-10-28T23:21:24Z"
+}

@@ -1,6 +1,7 @@
 import * as cdk from 'aws-cdk-lib';
 import * as dynamodb from 'aws-cdk-lib/aws-dynamodb';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
+import * as iam from 'aws-cdk-lib/aws-iam';
 import * as s3 from 'aws-cdk-lib/aws-s3';
 import { Construct } from 'constructs';
 import { EnvironmentConfig } from '../../config/environment-config';
@@ -28,6 +29,10 @@ export class InvoicesStack extends cdk.Stack {
       INVOICES_TABLE: tables.invoices.tableName,
       COMPANIES_TABLE: tables.companies.tableName,
       DOCUMENTS_S3_BUCKET: buckets.documents.bucketName,
+      // Backcompat for packaged code that still reads DYNAMODB_TABLE
+      DYNAMODB_TABLE: tables.loans.tableName,
+      DYNAMODB_TABLE_NAME: tables.loans.tableName,
+      TABLE_NAME: tables.loans.tableName,
     };
 
     // 1. bebco-staging-invoices-create
@@ -57,8 +62,24 @@ export class InvoicesStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    grantReadDataWithQuery(invoicesList.function, tables.invoices);
+    grantReadDataWithQuery(invoicesList.function, tables.invoices, tables.companies);
     this.functions.invoicesList = invoicesList.function;
+
+    // TEMP: Allow access to legacy-named staging companies table referenced by packaged code
+    invoicesList.function.addToRolePolicy(new iam.PolicyStatement({
+      actions: ['dynamodb:Scan', 'dynamodb:GetItem', 'dynamodb:Query'],
+      resources: [
+        `arn:aws:dynamodb:${this.region}:${this.account}:table/bebco-borrower-staging-companies`,
+      ],
+    }));
+
+    // TEMP: Allow access to legacy-named staging invoices storage still used by packaged code
+    invoicesList.function.addToRolePolicy(new iam.PolicyStatement({
+      actions: ['dynamodb:Scan', 'dynamodb:GetItem', 'dynamodb:Query'],
+      resources: [
+        `arn:aws:dynamodb:${this.region}:${this.account}:table/bebco-borrower-staging-loan-loc`,
+      ],
+    }));
 
     // 4. bebco-staging-invoices-update
     const invoicesUpdate = new BebcoLambda(this, 'InvoicesUpdate', {

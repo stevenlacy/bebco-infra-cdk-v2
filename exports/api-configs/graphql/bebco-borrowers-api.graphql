@@ -184,10 +184,10 @@ type Query {
   getAnnualReportingDashboard(borrowerStatus: String): AnnualReportingDashboard!
   getBorrowerWithAnnualReports(borrowerId: ID!): BorrowerDetailResponse!
   getFinancialOverview(company_id: ID!): FinancialOverview!
-  listAnnualReports(limit: Int, nextToken: String, status: AnnualReportStatus, type: AnnualReportType, year: String): AnnualReportConnection!
+  listAnnualReports(limit: Int, nextToken: String, status: AnnualReportStatus, type: AnnualReportType, year: String): AnnualReportConnection
   listBorrowers(limit: Int, nextToken: String): BorrowerConnection!
   listBorrowersWithCompliance(limit: Int, nextToken: String, status: String): BorrowerComplianceConnection!
-  monthlyReportsByStatus(bank_id: ID, legacy_only: Boolean, limit: Int, nextToken: String, status: String!, year: Int): MonthlyReportConnection!
+  monthlyReportsByStatus(bank_id: ID, legacy_only: Boolean, limit: Int, nextToken: String, status: String!, year: Int): MonthlyReportConnection
 }
 
 type ReportsByType {

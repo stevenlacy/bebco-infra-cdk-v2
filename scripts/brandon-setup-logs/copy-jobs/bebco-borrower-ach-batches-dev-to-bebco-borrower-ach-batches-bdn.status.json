@@ -1,0 +1,15 @@
+{
+  "source": "bebco-borrower-ach-batches-dev",
+  "target": "bebco-borrower-ach-batches-bdn",
+  "status": "COMPLETED",
+  "start_time": "2025-10-28T23:21:25Z",
+  "items_copied": 26,
+  "progress": "100%",
+  "pid": 37029,
+  "total_items_estimate": 26,
+  "last_update": "2025-10-28T16:21:26.923971",
+  "items_failed": 0,
+  "batch_number": 1,
+  "end_time": "2025-10-28T16:21:26.923684",
+  "success": true
+}

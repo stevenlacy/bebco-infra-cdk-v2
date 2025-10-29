@@ -1,11 +1,13 @@
 import * as cdk from 'aws-cdk-lib';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
+import * as iam from 'aws-cdk-lib/aws-iam';
 import * as dynamodb from 'aws-cdk-lib/aws-dynamodb';
 import * as s3 from 'aws-cdk-lib/aws-s3';
 import { Construct } from 'constructs';
 import { EnvironmentConfig } from '../../config/environment-config';
 import { ResourceNames } from '../../config/resource-names';
 import { BebcoLambda } from '../../constructs/bebco-lambda';
+import { grantReadDataWithQuery } from '../../utils/dynamodb-permissions';
 
 export interface PaymentsStackProps extends cdk.StackProps {
   config: EnvironmentConfig;
@@ -25,6 +27,12 @@ export class PaymentsStack extends cdk.Stack {
     const commonEnv = {
       REGION: this.region,
       MAX_PAGE_SIZE: '1000',
+      PAYMENTS_TABLE: tables.payments.tableName,
+      COMPANIES_TABLE: tables.companies.tableName,
+      // Backcompat for packaged code that still reads DYNAMODB_TABLE
+      DYNAMODB_TABLE: tables.loans.tableName,
+      DYNAMODB_TABLE_NAME: tables.loans.tableName,
+      TABLE_NAME: tables.loans.tableName,
     };
     
     // Payment operations
@@ -51,6 +59,17 @@ export class PaymentsStack extends cdk.Stack {
       environment: commonEnv,
     });
     this.functions.paymentsList = paymentsList.function;
+    grantReadDataWithQuery(paymentsList.function, tables.payments, tables.companies);
+
+    // TEMP: Allow access to legacy-named staging tables referenced by packaged code
+    paymentsList.function.addToRolePolicy(new iam.PolicyStatement({
+      actions: ['dynamodb:Scan', 'dynamodb:Query', 'dynamodb:GetItem'],
+      resources: [
+        `arn:aws:dynamodb:${this.region}:${this.account}:table/bebco-borrower-staging-loan-loc`,
+        `arn:aws:dynamodb:${this.region}:${this.account}:table/bebco-borrower-staging-payments`,
+        `arn:aws:dynamodb:${this.region}:${this.account}:table/bebco-borrower-staging-companies`,
+      ],
+    }));
     
     const paymentsUpdate = new BebcoLambda(this, 'PaymentsUpdate', {
       sourceFunctionName: 'bebco-borrower-staging-payments-update',

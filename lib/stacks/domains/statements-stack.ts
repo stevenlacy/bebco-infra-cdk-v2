@@ -7,6 +7,7 @@ import { EnvironmentConfig } from '../../config/environment-config';
 import { ResourceNames } from '../../config/resource-names';
 import { BebcoLambda } from '../../constructs/bebco-lambda';
 import { grantReadDataWithQuery, grantReadWriteDataWithQuery } from '../../utils/dynamodb-permissions';
+import * as path from 'path';
 
 export interface StatementsStackProps extends cdk.StackProps {
   config: EnvironmentConfig;
@@ -40,6 +41,14 @@ export class StatementsStack extends cdk.Stack {
     });
     grantReadDataWithQuery(adminListStatements.function, tables.monthlyReportings);
     buckets.documents.grantRead(adminListStatements.function);
+    // TEMP: packaged code queries legacy-named statements table directly
+    adminListStatements.function.addToRolePolicy(new cdk.aws_iam.PolicyStatement({
+      actions: ['dynamodb:Query', 'dynamodb:Scan', 'dynamodb:GetItem', 'dynamodb:DescribeTable', 'dynamodb:BatchGetItem'],
+      resources: [
+        `arn:aws:dynamodb:${this.region}:${this.account}:table/bebco-borrower-staging-statements`,
+        `arn:aws:dynamodb:${this.region}:${this.account}:table/bebco-borrower-staging-statements/index/*`,
+      ],
+    }));
     this.functions.adminListStatements = adminListStatements.function;
 
     // 2. bebco-staging-admin-upload-statements
@@ -83,6 +92,19 @@ export class StatementsStack extends cdk.Stack {
     tables.monthlyReportings.grantStreamRead(statementsStreamPublisher.function);
     // TODO: Add EventBridge/SNS permissions if needed
     this.functions.statementsStreamPublisher = statementsStreamPublisher.function;
+
+    // 6. repo-managed fallback for listing company statements (returns empty list if none)
+    const listCompanyStatements = new BebcoLambda(this, 'ListCompanyStatements', {
+      sourceFunctionName: 'bebco-staging-admin-list-statements', // placeholder for metadata
+      newFunctionName: `bebco-admin-list-company-statements-${props.config.naming.environmentSuffix}`,
+      resourceNames,
+      environmentSuffix: props.config.naming.environmentSuffix,
+      environment: commonEnv,
+      codeAsset: lambda.Code.fromAsset(path.join(__dirname, '../../../..', 'AdminPortal', 'lambda_functions', 'statements')),
+      runtimeOverride: lambda.Runtime.PYTHON_3_12,
+      handlerOverride: 'list_company_statements.lambda_handler',
+    });
+    this.functions.listCompanyStatements = listCompanyStatements.function;
   }
 }
 

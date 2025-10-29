@@ -44,7 +44,7 @@
     "sharepointBankId": "8641460d-e1f1-4540-b513-a9548d83bb6c",
     "sendgridSecretName": "bebco/jaspal/sendgrid",
     "sendgridFromAddress": "no-reply@bebco.dev",
-    "sendgridApiKeyId": "bebco-sendgrid-api-key",
+    "sendgridApiKeyId": "bebco-sendgrid-api-key"
   },
   "textract": {
     "roleName": "textract-sns-role",

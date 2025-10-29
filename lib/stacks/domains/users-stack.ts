@@ -34,9 +34,17 @@ export class UsersStack extends cdk.Stack {
     };
     const sendgridSecretName = props.config.integrations.sendgridSecretName;
     const sendgridSecretValue = props.config.integrations.sendgridSecretValue;
-    const sendgridSecretResource = sendgridSecretValue
-      ? undefined
-      : secretsmanager.Secret.fromSecretNameV2(this, 'SendgridSecret', sendgridSecretName);
+    // If a secret value is provided via context, create (or overwrite) a regional secret so future deploys work without passing the key again
+    let sendgridSecretResource: secretsmanager.ISecret | undefined;
+    if (sendgridSecretValue) {
+      const created = new secretsmanager.Secret(this, 'SendgridSecretManaged', {
+        secretName: sendgridSecretName,
+        secretStringValue: cdk.SecretValue.unsafePlainText(sendgridSecretValue),
+      });
+      sendgridSecretResource = created;
+    } else {
+      sendgridSecretResource = secretsmanager.Secret.fromSecretNameV2(this, 'SendgridSecret', sendgridSecretName);
+    }
     const sendgridSecrets = sendgridSecretResource ? [sendgridSecretResource] : undefined;
     const stack = cdk.Stack.of(this);
     const cognitoUserPoolArn = stack.formatArn({
@@ -53,6 +61,8 @@ export class UsersStack extends cdk.Stack {
           'cognito-idp:AdminSetUserPassword',
           'cognito-idp:AdminUpdateUserAttributes',
           'cognito-idp:ListUsers',
+          'cognito-idp:AdminListGroupsForUser',
+          'cognito-idp:AdminInitiateAuth',
         ],
         resources: [cognitoUserPoolArn],
       }));
@@ -227,6 +237,7 @@ export class UsersStack extends cdk.Stack {
     });
     grantReadDataWithQuery(adminUsersSend2fa.function, tables.users);
     grantReadWriteDataWithQuery(adminUsersSend2fa.function, tables.otpCodes);
+    grantAdminAuthPermissions(adminUsersSend2fa.function);
     this.functions.adminUsersSend2fa = adminUsersSend2fa.function;
     
     // 14. Admin Users Verify 2FA
@@ -235,8 +246,9 @@ export class UsersStack extends cdk.Stack {
       sourceFunctionName: 'bebco-admin-users-verify2fa',
       environment: commonEnv,
     });
-    grantReadDataWithQuery(adminUsersVerify2fa.function, tables.users);
-    grantReadWriteDataWithQuery(adminUsersVerify2fa.function, tables.otpCodes);
+    // Needs to update users table (2FA timestamp) and call Cognito admin APIs
+    grantReadWriteDataWithQuery(adminUsersVerify2fa.function, tables.users, tables.otpCodes);
+    grantAdminAuthPermissions(adminUsersVerify2fa.function);
     this.functions.adminUsersVerify2fa = adminUsersVerify2fa.function;
     
     // 15. Admin Users Change Password

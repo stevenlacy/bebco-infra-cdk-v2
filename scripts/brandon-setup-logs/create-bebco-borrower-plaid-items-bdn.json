@@ -1,0 +1,127 @@
+{
+    "TableDescription": {
+        "AttributeDefinitions": [
+            {
+                "AttributeName": "bank_id",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "company_id",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "institution_id",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "item_id",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "status",
+                "AttributeType": "S"
+            }
+        ],
+        "TableName": "bebco-borrower-plaid-items-bdn",
+        "KeySchema": [
+            {
+                "AttributeName": "item_id",
+                "KeyType": "HASH"
+            }
+        ],
+        "TableStatus": "CREATING",
+        "CreationDateTime": "2025-10-28T16:20:23.812000-07:00",
+        "ProvisionedThroughput": {
+            "NumberOfDecreasesToday": 0,
+            "ReadCapacityUnits": 0,
+            "WriteCapacityUnits": 0
+        },
+        "TableSizeBytes": 0,
+        "ItemCount": 0,
+        "TableArn": "arn:aws:dynamodb:us-east-2:303555290462:table/bebco-borrower-plaid-items-bdn",
+        "TableId": "2d1425c3-38a8-4ad9-abb9-9eb61fc85d31",
+        "BillingModeSummary": {
+            "BillingMode": "PAY_PER_REQUEST"
+        },
+        "GlobalSecondaryIndexes": [
+            {
+                "IndexName": "BankIndex",
+                "KeySchema": [
+                    {
+                        "AttributeName": "bank_id",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "status",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "CREATING",
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                },
+                "IndexSizeBytes": 0,
+                "ItemCount": 0,
+                "IndexArn": "arn:aws:dynamodb:us-east-2:303555290462:table/bebco-borrower-plaid-items-bdn/index/BankIndex"
+            },
+            {
+                "IndexName": "InstitutionIndex",
+                "KeySchema": [
+                    {
+                        "AttributeName": "institution_id",
+                        "KeyType": "HASH"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "CREATING",
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                },
+                "IndexSizeBytes": 0,
+                "ItemCount": 0,
+                "IndexArn": "arn:aws:dynamodb:us-east-2:303555290462:table/bebco-borrower-plaid-items-bdn/index/InstitutionIndex"
+            },
+            {
+                "IndexName": "CompanyIndex",
+                "KeySchema": [
+                    {
+                        "AttributeName": "company_id",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "status",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "CREATING",
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                },
+                "IndexSizeBytes": 0,
+                "ItemCount": 0,
+                "IndexArn": "arn:aws:dynamodb:us-east-2:303555290462:table/bebco-borrower-plaid-items-bdn/index/CompanyIndex"
+            }
+        ],
+        "StreamSpecification": {
+            "StreamEnabled": true,
+            "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "LatestStreamLabel": "2025-10-28T23:20:23.812",
+        "LatestStreamArn": "arn:aws:dynamodb:us-east-2:303555290462:table/bebco-borrower-plaid-items-bdn/stream/2025-10-28T23:20:23.812",
+        "DeletionProtectionEnabled": false
+    }
+}

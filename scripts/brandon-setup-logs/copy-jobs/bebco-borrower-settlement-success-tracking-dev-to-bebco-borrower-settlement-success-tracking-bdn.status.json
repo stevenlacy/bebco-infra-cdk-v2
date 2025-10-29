@@ -1,0 +1,14 @@
+{
+  "source": "bebco-borrower-settlement-success-tracking-dev",
+  "target": "bebco-borrower-settlement-success-tracking-bdn",
+  "status": "COMPLETED",
+  "start_time": "2025-10-28T23:21:28Z",
+  "items_copied": 0,
+  "progress": "100%",
+  "pid": 37162,
+  "total_items_estimate": 0,
+  "last_update": "2025-10-28T16:21:30.762834",
+  "items_failed": 0,
+  "end_time": "2025-10-28T16:21:30.762429",
+  "success": true
+}

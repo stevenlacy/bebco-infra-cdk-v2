@@ -1,0 +1,14 @@
+{
+  "source": "bebco-borrower-docket-review-case-details-dev",
+  "target": "bebco-borrower-docket-review-case-details-bdn",
+  "status": "COMPLETED",
+  "start_time": "2025-10-28T23:21:26Z",
+  "items_copied": 0,
+  "progress": "100%",
+  "pid": 37083,
+  "total_items_estimate": 0,
+  "last_update": "2025-10-28T16:21:27.819552",
+  "items_failed": 0,
+  "end_time": "2025-10-28T16:21:27.819354",
+  "success": true
+}

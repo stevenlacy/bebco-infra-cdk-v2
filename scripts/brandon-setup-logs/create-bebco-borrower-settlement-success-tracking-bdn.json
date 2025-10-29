@@ -1,0 +1,38 @@
+{
+    "TableDescription": {
+        "AttributeDefinitions": [
+            {
+                "AttributeName": "id",
+                "AttributeType": "S"
+            }
+        ],
+        "TableName": "bebco-borrower-settlement-success-tracking-bdn",
+        "KeySchema": [
+            {
+                "AttributeName": "id",
+                "KeyType": "HASH"
+            }
+        ],
+        "TableStatus": "CREATING",
+        "CreationDateTime": "2025-10-28T16:20:27.949000-07:00",
+        "ProvisionedThroughput": {
+            "NumberOfDecreasesToday": 0,
+            "ReadCapacityUnits": 0,
+            "WriteCapacityUnits": 0
+        },
+        "TableSizeBytes": 0,
+        "ItemCount": 0,
+        "TableArn": "arn:aws:dynamodb:us-east-2:303555290462:table/bebco-borrower-settlement-success-tracking-bdn",
+        "TableId": "97b7a985-5fc8-4312-9f64-4d89d09cb7d8",
+        "BillingModeSummary": {
+            "BillingMode": "PAY_PER_REQUEST"
+        },
+        "StreamSpecification": {
+            "StreamEnabled": true,
+            "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "LatestStreamLabel": "2025-10-28T23:20:27.949",
+        "LatestStreamArn": "arn:aws:dynamodb:us-east-2:303555290462:table/bebco-borrower-settlement-success-tracking-bdn/stream/2025-10-28T23:20:27.949",
+        "DeletionProtectionEnabled": false
+    }
+}

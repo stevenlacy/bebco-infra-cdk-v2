@@ -79,6 +79,12 @@ export class EnvironmentConfigLoader {
     
     const configData = fs.readFileSync(configPath, 'utf8');
     const config: EnvironmentConfig = JSON.parse(configData);
+    // Allow sensitive values to be supplied via context at deploy time (avoid committing secrets)
+    const sgValue = app.node.tryGetContext('sendgridSecretValue');
+    if (sgValue) {
+      (config.integrations as any).sendgridSecretValue = sgValue;
+      console.log('Integrations: sendgridSecretValue provided via context');
+    }
     
     console.log(`Loaded configuration: ${environment} @ ${region}`);
     return config;

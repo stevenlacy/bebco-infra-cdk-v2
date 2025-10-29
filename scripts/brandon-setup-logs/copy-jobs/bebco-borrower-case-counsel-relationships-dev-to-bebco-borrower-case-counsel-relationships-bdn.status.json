@@ -1,0 +1,14 @@
+{
+  "source": "bebco-borrower-case-counsel-relationships-dev",
+  "target": "bebco-borrower-case-counsel-relationships-bdn",
+  "status": "COMPLETED",
+  "start_time": "2025-10-28T23:21:25Z",
+  "items_copied": 0,
+  "progress": "100%",
+  "pid": 37049,
+  "total_items_estimate": 0,
+  "last_update": "2025-10-28T16:21:26.877092",
+  "items_failed": 0,
+  "end_time": "2025-10-28T16:21:26.876849",
+  "success": true
+}

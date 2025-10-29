@@ -1,0 +1,15 @@
+{
+  "source": "bebco-borrower-users-dev",
+  "target": "bebco-borrower-users-bdn",
+  "status": "COMPLETED",
+  "start_time": "2025-10-28T23:21:28Z",
+  "items_copied": 317,
+  "progress": "100%",
+  "pid": 37179,
+  "total_items_estimate": 317,
+  "last_update": "2025-10-28T16:21:36.638153",
+  "items_failed": 0,
+  "batch_number": 1,
+  "end_time": "2025-10-28T16:21:36.638062",
+  "success": true
+}

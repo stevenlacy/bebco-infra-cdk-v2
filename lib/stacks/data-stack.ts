@@ -102,6 +102,12 @@ export class DataStack extends cdk.Stack {
       sortKey: { name: 'date', type: dynamodb.AttributeType.STRING },
       projectionType: dynamodb.ProjectionType.ALL,
     });
+    this.tables.transactions.addGlobalSecondaryIndex({
+      indexName: 'LoanNumberIndex',
+      partitionKey: { name: 'loan_no', type: dynamodb.AttributeType.NUMBER },
+      sortKey: { name: 'date', type: dynamodb.AttributeType.STRING },
+      projectionType: dynamodb.ProjectionType.ALL,
+    });
     
     // Payments table
     this.tables.payments = createTable(
@@ -249,13 +255,37 @@ export class DataStack extends cdk.Stack {
     
     additionalTables.forEach(tableName => {
       const camelCaseName = tableName.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
-      this.tables[camelCaseName] = createTable(
+      const table = createTable(
         `${camelCaseName.charAt(0).toUpperCase() + camelCaseName.slice(1)}Table`,
         resourceNames.table('borrower', tableName),
         { name: 'id', type: dynamodb.AttributeType.STRING }
       );
+      
+      // Add CompanyIndex GSI to loan-loc table for cases queries
+      if (tableName === 'loan-loc') {
+        table.addGlobalSecondaryIndex({
+          indexName: 'CompanyIndex',
+          partitionKey: { name: 'company_id', type: dynamodb.AttributeType.STRING },
+          projectionType: dynamodb.ProjectionType.ALL,
+        });
+      }
+      
+      this.tables[camelCaseName] = table;
     });
-    
+
+    // Backcompat: Provision legacy-named staging tables some packaged Lambdas still reference directly
+    // Note: legacy staging tables may already exist outside this stack; do not attempt to create here
+
+    // Create legacy-named statements table in this region for packaged code
+    new dynamodb.Table(this, 'LegacyStatementsStaging', {
+      tableName: 'bebco-borrower-staging-statements',
+      partitionKey: { name: 'company_id', type: dynamodb.AttributeType.STRING },
+      sortKey: { name: 'date', type: dynamodb.AttributeType.STRING },
+      billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
+      pointInTimeRecovery: true,
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
+    });
+ 
     // Outputs
     new cdk.CfnOutput(this, 'AccountsTableName', {
       value: this.tables.accounts.tableName,

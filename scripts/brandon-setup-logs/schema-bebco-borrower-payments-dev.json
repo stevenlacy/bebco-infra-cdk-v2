@@ -1,0 +1,57 @@
+{
+    "KeySchema": [
+        {
+            "AttributeName": "id",
+            "KeyType": "HASH"
+        }
+    ],
+    "AttributeDefinitions": [
+        {
+            "AttributeName": "date",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "id",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "loan_id",
+            "AttributeType": "S"
+        }
+    ],
+    "GlobalSecondaryIndexes": [
+        {
+            "IndexName": "LoanDateIndex",
+            "KeySchema": [
+                {
+                    "AttributeName": "loan_id",
+                    "KeyType": "HASH"
+                },
+                {
+                    "AttributeName": "date",
+                    "KeyType": "RANGE"
+                }
+            ],
+            "Projection": {
+                "ProjectionType": "ALL"
+            },
+            "IndexStatus": "ACTIVE",
+            "ProvisionedThroughput": {
+                "LastDecreaseDateTime": "2025-10-26T08:51:05.730000-07:00",
+                "NumberOfDecreasesToday": 0,
+                "ReadCapacityUnits": 0,
+                "WriteCapacityUnits": 0
+            },
+            "IndexSizeBytes": 327512,
+            "ItemCount": 1163,
+            "IndexArn": "arn:aws:dynamodb:us-east-2:303555290462:table/bebco-borrower-payments-dev/index/LoanDateIndex",
+            "WarmThroughput": {
+                "ReadUnitsPerSecond": 12000,
+                "WriteUnitsPerSecond": 4000,
+                "Status": "ACTIVE"
+            }
+        }
+    ],
+    "LocalSecondaryIndexes": null,
+    "StreamSpecification": null
+}

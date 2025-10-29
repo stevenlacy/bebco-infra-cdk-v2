@@ -1,0 +1,14 @@
+{
+  "source": "bebco-borrower-variance-tracking-dev",
+  "target": "bebco-borrower-variance-tracking-bdn",
+  "status": "COMPLETED",
+  "start_time": "2025-10-28T23:21:28Z",
+  "items_copied": 0,
+  "progress": "100%",
+  "pid": 37187,
+  "total_items_estimate": 0,
+  "last_update": "2025-10-28T16:21:31.030944",
+  "items_failed": 0,
+  "end_time": "2025-10-28T16:21:31.030771",
+  "success": true
+}

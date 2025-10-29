@@ -1,0 +1,74 @@
+{
+  "start_time": "2025-10-26T16:28:58.439202",
+  "tables_processed": 30,
+  "tables_failed": 3,
+  "total_items_copied": 73898,
+  "failed_items": [],
+  "completed_tables": [
+    "bebco-borrower-accounts-dev",
+    "bebco-borrower-ach-batches-dev",
+    "bebco-borrower-annual-reportings-dev",
+    "bebco-borrower-approvals-dev",
+    "bebco-borrower-borrower-value-config-settings-dev",
+    "bebco-borrower-case-counsel-relationships-dev",
+    "bebco-borrower-case-financials-current-dev",
+    "bebco-borrower-case-underwritings-dev",
+    "bebco-borrower-cases-dev",
+    "bebco-borrower-companies-dev",
+    "bebco-borrower-discount-rate-matrix-dev",
+    "bebco-borrower-docket-review-case-details-dev",
+    "bebco-borrower-expenses-dev",
+    "bebco-borrower-files-dev",
+    "bebco-borrower-invoices-dev",
+    "bebco-borrower-ledger-entries-dev",
+    "bebco-borrower-lines-of-credit-dev",
+    "bebco-borrower-loans-dev",
+    "bebco-borrower-mass-tort-general-dev",
+    "bebco-borrower-mass-tort-plaintiffs-dev",
+    "bebco-borrower-monthly-reportings-dev",
+    "bebco-borrower-notifications-dev",
+    "bebco-borrower-otp-codes-dev",
+    "bebco-borrower-payments-dev",
+    "bebco-borrower-plaid-items-dev",
+    "bebco-borrower-settlement-success-tracking-dev",
+    "bebco-borrower-statements-dev",
+    "bebco-borrower-users-dev",
+    "bebco-borrower-valuations-summary-dev",
+    "bebco-borrower-variance-tracking-dev"
+  ],
+  "failed_tables": [
+    {
+      "source": "bebco-borrower-banks-dev",
+      "target": "bebco-borrower-banks-jpl",
+      "error": "An error occurred (ValidationException) when calling the BatchWriteItem operation: The provided key element does not match the schema"
+    },
+    {
+      "source": "bebco-borrower-banks-dev",
+      "target": "bebco-borrower-banks-din",
+      "error": "An error occurred (ValidationException) when calling the BatchWriteItem operation: The provided key element does not match the schema"
+    },
+    {
+      "source": "bebco-borrower-loan-loc-dev",
+      "target": "bebco-borrower-loan-loc-jpl",
+      "error": null
+    },
+    {
+      "source": "bebco-borrower-loan-loc-dev",
+      "target": "bebco-borrower-loan-loc-din",
+      "error": null
+    },
+    {
+      "source": "bebco-borrower-transactions-dev",
+      "target": "bebco-borrower-transactions-jpl",
+      "error": "An error occurred (ValidationException) when calling the BatchWriteItem operation: The provided key element does not match the schema"
+    },
+    {
+      "source": "bebco-borrower-transactions-dev",
+      "target": "bebco-borrower-transactions-din",
+      "error": "An error occurred (ValidationException) when calling the BatchWriteItem operation: The provided key element does not match the schema"
+    }
+  ],
+  "end_time": "2025-10-26T16:35:22.691924",
+  "duration_seconds": 384.252722,
+  "duration_human": "6m 24s"
+}

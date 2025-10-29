@@ -1,0 +1,14 @@
+{
+  "source": "bebco-borrower-ledger-entries-dev",
+  "target": "bebco-borrower-ledger-entries-bdn",
+  "status": "COMPLETED",
+  "start_time": "2025-10-28T23:21:26Z",
+  "items_copied": 0,
+  "progress": "100%",
+  "pid": 37113,
+  "total_items_estimate": 0,
+  "last_update": "2025-10-28T16:21:28.433959",
+  "items_failed": 0,
+  "end_time": "2025-10-28T16:21:28.433534",
+  "success": true
+}

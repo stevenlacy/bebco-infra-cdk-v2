@@ -1,0 +1,242 @@
+{
+    "TableDescription": {
+        "AttributeDefinitions": [
+            {
+                "AttributeName": "GSI1PK",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "GSI1SK",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "GSI2PK",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "GSI2SK",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "GSI3PK",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "GSI3SK",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "GSI4PK",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "GSI4SK",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "KeyCasesPK",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "KeyCasesSK",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "PK",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "SK",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "monthly_report_id",
+                "AttributeType": "S"
+            }
+        ],
+        "TableName": "bebco-borrower-loan-loc-bdn",
+        "KeySchema": [
+            {
+                "AttributeName": "PK",
+                "KeyType": "HASH"
+            },
+            {
+                "AttributeName": "SK",
+                "KeyType": "RANGE"
+            }
+        ],
+        "TableStatus": "CREATING",
+        "CreationDateTime": "2025-10-28T16:19:50.082000-07:00",
+        "ProvisionedThroughput": {
+            "NumberOfDecreasesToday": 0,
+            "ReadCapacityUnits": 0,
+            "WriteCapacityUnits": 0
+        },
+        "TableSizeBytes": 0,
+        "ItemCount": 0,
+        "TableArn": "arn:aws:dynamodb:us-east-2:303555290462:table/bebco-borrower-loan-loc-bdn",
+        "TableId": "6d03f974-638a-4047-a030-ed08bd0e9a2a",
+        "BillingModeSummary": {
+            "BillingMode": "PAY_PER_REQUEST"
+        },
+        "GlobalSecondaryIndexes": [
+            {
+                "IndexName": "GSI2",
+                "KeySchema": [
+                    {
+                        "AttributeName": "GSI2PK",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "GSI2SK",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "CREATING",
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                },
+                "IndexSizeBytes": 0,
+                "ItemCount": 0,
+                "IndexArn": "arn:aws:dynamodb:us-east-2:303555290462:table/bebco-borrower-loan-loc-bdn/index/GSI2"
+            },
+            {
+                "IndexName": "GSI4",
+                "KeySchema": [
+                    {
+                        "AttributeName": "GSI4PK",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "GSI4SK",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "CREATING",
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                },
+                "IndexSizeBytes": 0,
+                "ItemCount": 0,
+                "IndexArn": "arn:aws:dynamodb:us-east-2:303555290462:table/bebco-borrower-loan-loc-bdn/index/GSI4"
+            },
+            {
+                "IndexName": "GSI3",
+                "KeySchema": [
+                    {
+                        "AttributeName": "GSI3PK",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "GSI3SK",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "CREATING",
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                },
+                "IndexSizeBytes": 0,
+                "ItemCount": 0,
+                "IndexArn": "arn:aws:dynamodb:us-east-2:303555290462:table/bebco-borrower-loan-loc-bdn/index/GSI3"
+            },
+            {
+                "IndexName": "MonthlyReportIndex",
+                "KeySchema": [
+                    {
+                        "AttributeName": "monthly_report_id",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "SK",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "CREATING",
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                },
+                "IndexSizeBytes": 0,
+                "ItemCount": 0,
+                "IndexArn": "arn:aws:dynamodb:us-east-2:303555290462:table/bebco-borrower-loan-loc-bdn/index/MonthlyReportIndex"
+            },
+            {
+                "IndexName": "GSI1",
+                "KeySchema": [
+                    {
+                        "AttributeName": "GSI1PK",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "GSI1SK",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "CREATING",
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                },
+                "IndexSizeBytes": 0,
+                "ItemCount": 0,
+                "IndexArn": "arn:aws:dynamodb:us-east-2:303555290462:table/bebco-borrower-loan-loc-bdn/index/GSI1"
+            },
+            {
+                "IndexName": "KeyCasesIndex",
+                "KeySchema": [
+                    {
+                        "AttributeName": "KeyCasesPK",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "KeyCasesSK",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "CREATING",
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0,
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                },
+                "IndexSizeBytes": 0,
+                "ItemCount": 0,
+                "IndexArn": "arn:aws:dynamodb:us-east-2:303555290462:table/bebco-borrower-loan-loc-bdn/index/KeyCasesIndex"
+            }
+        ],
+        "StreamSpecification": {
+            "StreamEnabled": true,
+            "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "LatestStreamLabel": "2025-10-28T23:19:50.082",
+        "LatestStreamArn": "arn:aws:dynamodb:us-east-2:303555290462:table/bebco-borrower-loan-loc-bdn/stream/2025-10-28T23:19:50.082",
+        "DeletionProtectionEnabled": false
+    }
+}

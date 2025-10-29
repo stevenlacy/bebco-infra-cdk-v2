@@ -1,0 +1,92 @@
+{
+    "KeySchema": [
+        {
+            "AttributeName": "id",
+            "KeyType": "HASH"
+        }
+    ],
+    "AttributeDefinitions": [
+        {
+            "AttributeName": "company_id",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "id",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "month",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "status",
+            "AttributeType": "S"
+        }
+    ],
+    "GlobalSecondaryIndexes": [
+        {
+            "IndexName": "StatusIndex",
+            "KeySchema": [
+                {
+                    "AttributeName": "status",
+                    "KeyType": "HASH"
+                },
+                {
+                    "AttributeName": "month",
+                    "KeyType": "RANGE"
+                }
+            ],
+            "Projection": {
+                "ProjectionType": "ALL"
+            },
+            "IndexStatus": "ACTIVE",
+            "ProvisionedThroughput": {
+                "LastDecreaseDateTime": "2025-10-26T08:49:58.456000-07:00",
+                "NumberOfDecreasesToday": 0,
+                "ReadCapacityUnits": 0,
+                "WriteCapacityUnits": 0
+            },
+            "IndexSizeBytes": 5656012,
+            "ItemCount": 3499,
+            "IndexArn": "arn:aws:dynamodb:us-east-2:303555290462:table/bebco-borrower-monthly-reportings-dev/index/StatusIndex",
+            "WarmThroughput": {
+                "ReadUnitsPerSecond": 12000,
+                "WriteUnitsPerSecond": 4000,
+                "Status": "ACTIVE"
+            }
+        },
+        {
+            "IndexName": "CompanyMonthIndex",
+            "KeySchema": [
+                {
+                    "AttributeName": "company_id",
+                    "KeyType": "HASH"
+                },
+                {
+                    "AttributeName": "month",
+                    "KeyType": "RANGE"
+                }
+            ],
+            "Projection": {
+                "ProjectionType": "ALL"
+            },
+            "IndexStatus": "ACTIVE",
+            "ProvisionedThroughput": {
+                "LastDecreaseDateTime": "2025-10-26T08:49:57.688000-07:00",
+                "NumberOfDecreasesToday": 0,
+                "ReadCapacityUnits": 0,
+                "WriteCapacityUnits": 0
+            },
+            "IndexSizeBytes": 5656012,
+            "ItemCount": 3499,
+            "IndexArn": "arn:aws:dynamodb:us-east-2:303555290462:table/bebco-borrower-monthly-reportings-dev/index/CompanyMonthIndex",
+            "WarmThroughput": {
+                "ReadUnitsPerSecond": 12000,
+                "WriteUnitsPerSecond": 4000,
+                "Status": "ACTIVE"
+            }
+        }
+    ],
+    "LocalSecondaryIndexes": null,
+    "StreamSpecification": null
+}

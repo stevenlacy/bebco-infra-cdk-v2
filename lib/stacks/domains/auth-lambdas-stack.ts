@@ -102,7 +102,19 @@ export class AuthLambdasStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    grantReadDataWithQuery(authValidatePassword.function, tables.users);
+    // Needs to read session tokens from OTP table and update users login timestamp
+    grantReadWriteDataWithQuery(authValidatePassword.function, tables.users);
+    grantReadDataWithQuery(authValidatePassword.function, tables.otpCodes);
+    const otpTableName = props.resourceNames.table('borrower', 'otp-codes');
+    const otpTableArn = cdk.Stack.of(this).formatArn({
+      service: 'dynamodb',
+      resource: 'table',
+      resourceName: otpTableName,
+    });
+    authValidatePassword.function.addToRolePolicy(new iam.PolicyStatement({
+      actions: ['dynamodb:GetItem','dynamodb:Query','dynamodb:Scan'],
+      resources: [otpTableArn, `${otpTableArn}/index/*`],
+    }));
     addCognitoPermissions(authValidatePassword.function, [
       'cognito-idp:AdminInitiateAuth',
       'cognito-idp:AdminGetUser',

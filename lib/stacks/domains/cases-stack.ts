@@ -1,11 +1,13 @@
 import * as cdk from 'aws-cdk-lib';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
+import * as iam from 'aws-cdk-lib/aws-iam';
 import * as dynamodb from 'aws-cdk-lib/aws-dynamodb';
 import * as s3 from 'aws-cdk-lib/aws-s3';
 import { Construct } from 'constructs';
 import { EnvironmentConfig } from '../../config/environment-config';
 import { ResourceNames } from '../../config/resource-names';
 import { BebcoLambda } from '../../constructs/bebco-lambda';
+import { grantReadDataWithQuery } from '../../utils/dynamodb-permissions';
 
 export interface CasesStackProps extends cdk.StackProps {
   config: EnvironmentConfig;
@@ -24,6 +26,9 @@ export class CasesStack extends cdk.Stack {
     
     const commonEnv = {
       REGION: this.region,
+      // Backcompat: packaged code reads DYNAMODB_TABLE, point to us-east-1 where data lives
+      DYNAMODB_TABLE: 'bebco-borrower-staging-loan-loc',
+      DYNAMODB_REGION: 'us-east-1',
     };
     
     const casesCreate = new BebcoLambda(this, 'CasesCreate', {
@@ -48,6 +53,17 @@ export class CasesStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
+    grantReadDataWithQuery(casesList.function, tables.loanLoc);
+    // TEMP: Allow access to legacy-named staging loan-loc table in both regions
+    casesList.function.addToRolePolicy(new iam.PolicyStatement({
+      actions: ['dynamodb:Scan', 'dynamodb:Query', 'dynamodb:GetItem', 'dynamodb:DescribeTable'],
+      resources: [
+        `arn:aws:dynamodb:${this.region}:${this.account}:table/bebco-borrower-staging-loan-loc`,
+        `arn:aws:dynamodb:${this.region}:${this.account}:table/bebco-borrower-staging-loan-loc/index/*`,
+        `arn:aws:dynamodb:us-east-1:${this.account}:table/bebco-borrower-staging-loan-loc`,
+        `arn:aws:dynamodb:us-east-1:${this.account}:table/bebco-borrower-staging-loan-loc/index/*`,
+      ],
+    }));
     this.functions.casesList = casesList.function;
     
     const casesUpdate = new BebcoLambda(this, 'CasesUpdate', {

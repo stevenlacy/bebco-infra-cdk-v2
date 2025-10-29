@@ -1,0 +1,88 @@
+{
+    "KeySchema": [
+        {
+            "AttributeName": "id",
+            "KeyType": "HASH"
+        }
+    ],
+    "AttributeDefinitions": [
+        {
+            "AttributeName": "approver_user_id",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "draw_request_id",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "id",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "status",
+            "AttributeType": "S"
+        }
+    ],
+    "GlobalSecondaryIndexes": [
+        {
+            "IndexName": "ApproverIndex",
+            "KeySchema": [
+                {
+                    "AttributeName": "approver_user_id",
+                    "KeyType": "HASH"
+                },
+                {
+                    "AttributeName": "status",
+                    "KeyType": "RANGE"
+                }
+            ],
+            "Projection": {
+                "ProjectionType": "ALL"
+            },
+            "IndexStatus": "ACTIVE",
+            "ProvisionedThroughput": {
+                "LastDecreaseDateTime": "2025-10-26T08:51:05.738000-07:00",
+                "NumberOfDecreasesToday": 0,
+                "ReadCapacityUnits": 0,
+                "WriteCapacityUnits": 0
+            },
+            "IndexSizeBytes": 0,
+            "ItemCount": 0,
+            "IndexArn": "arn:aws:dynamodb:us-east-2:303555290462:table/bebco-borrower-approvals-dev/index/ApproverIndex",
+            "WarmThroughput": {
+                "ReadUnitsPerSecond": 12000,
+                "WriteUnitsPerSecond": 4000,
+                "Status": "ACTIVE"
+            }
+        },
+        {
+            "IndexName": "DrawRequestIndex",
+            "KeySchema": [
+                {
+                    "AttributeName": "draw_request_id",
+                    "KeyType": "HASH"
+                }
+            ],
+            "Projection": {
+                "ProjectionType": "ALL"
+            },
+            "IndexStatus": "ACTIVE",
+            "ProvisionedThroughput": {
+                "LastDecreaseDateTime": "2025-10-26T08:51:04.980000-07:00",
+                "NumberOfDecreasesToday": 0,
+                "ReadCapacityUnits": 0,
+                "WriteCapacityUnits": 0
+            },
+            "IndexSizeBytes": 0,
+            "ItemCount": 0,
+            "IndexArn": "arn:aws:dynamodb:us-east-2:303555290462:table/bebco-borrower-approvals-dev/index/DrawRequestIndex",
+            "WarmThroughput": {
+                "ReadUnitsPerSecond": 12000,
+                "WriteUnitsPerSecond": 4000,
+                "Status": "ACTIVE"
+            }
+        }
+    ],
+    "LocalSecondaryIndexes": null,
+    "StreamSpecification": null
+}

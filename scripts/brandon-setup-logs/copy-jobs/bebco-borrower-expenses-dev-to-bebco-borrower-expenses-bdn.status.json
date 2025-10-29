@@ -1,0 +1,14 @@
+{
+  "source": "bebco-borrower-expenses-dev",
+  "target": "bebco-borrower-expenses-bdn",
+  "status": "COMPLETED",
+  "start_time": "2025-10-28T23:21:26Z",
+  "items_copied": 0,
+  "progress": "100%",
+  "pid": 37090,
+  "total_items_estimate": 0,
+  "last_update": "2025-10-28T16:21:28.082997",
+  "items_failed": 0,
+  "end_time": "2025-10-28T16:21:28.082796",
+  "success": true
+}

@@ -1,0 +1,14 @@
+{
+  "source": "bebco-borrower-mass-tort-plaintiffs-dev",
+  "target": "bebco-borrower-mass-tort-plaintiffs-bdn",
+  "status": "COMPLETED",
+  "start_time": "2025-10-28T23:21:27Z",
+  "items_copied": 0,
+  "progress": "100%",
+  "pid": 37133,
+  "total_items_estimate": 0,
+  "last_update": "2025-10-28T16:21:29.066723",
+  "items_failed": 0,
+  "end_time": "2025-10-28T16:21:29.066539",
+  "success": true
+}

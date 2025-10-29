@@ -18,6 +18,13 @@ export class BorrowersGraphQLStack extends cdk.Stack {
     super(scope, id, props);
     
     const { config, resourceNames } = props;
+    const withEnvSuffix = (name: string) => {
+      const suffix = config.naming.environmentSuffix;
+      if (!suffix || suffix === 'dev') {
+        return name;
+      }
+      return name.endsWith(`-${suffix}`) ? name : `${name}-${suffix}`;
+    };
     
     // Create AppSync GraphQL API
     this.api = new appsync.GraphqlApi(this, 'BorrowersApi', {
@@ -44,7 +51,7 @@ export class BorrowersGraphQLStack extends cdk.Stack {
     const listBorrowersFn = lambda.Function.fromFunctionName(
       this,
       'ListBorrowersFn',
-      'bebco-borrowers-api-listBorrowers'
+      withEnvSuffix('bebco-borrowers-api-listBorrowers')
     );
     const listBorrowersDs = this.api.addLambdaDataSource(
       'ListBorrowersDataSource',
@@ -59,7 +66,7 @@ export class BorrowersGraphQLStack extends cdk.Stack {
     const getFinancialOverviewFn = lambda.Function.fromFunctionName(
       this,
       'GetFinancialOverviewFn',
-      'bebco-borrowers-api-getFinancialOverview'
+      withEnvSuffix('bebco-borrowers-api-getFinancialOverview')
     );
     const getFinancialOverviewDs = this.api.addLambdaDataSource(
       'GetFinancialOverviewDataSource',
@@ -74,7 +81,7 @@ export class BorrowersGraphQLStack extends cdk.Stack {
     const batchGetFinancialOverviewsFn = lambda.Function.fromFunctionName(
       this,
       'BatchGetFinancialOverviewsFn',
-      'bebco-borrowers-api-batchGetFinancialOverviews'
+      withEnvSuffix('bebco-borrowers-api-batchGetFinancialOverviews')
     );
     const batchGetFinancialOverviewsDs = this.api.addLambdaDataSource(
       'BatchGetFinancialOverviewsDataSource',
@@ -85,24 +92,61 @@ export class BorrowersGraphQLStack extends cdk.Stack {
       }
     );
     
-    // Create resolvers (these will be created based on the schema)
-    // The actual field names will depend on the GraphQL schema
-    // Uncomment and adjust once we verify the schema structure
+    // Lambda data source for listAnnualReports (admin dashboard)
+    const listAnnualReportsFn = lambda.Function.fromFunctionName(
+      this,
+      'ListAnnualReportsFn',
+      withEnvSuffix('bebco-appsync-list-annual-reports')
+    );
+    const listAnnualReportsDs = this.api.addLambdaDataSource(
+      'ListAnnualReportsDataSource',
+      listAnnualReportsFn,
+      {
+        name: 'ListAnnualReportsDataSource',
+        description: 'Lambda data source for listAnnualReports query',
+      }
+    );
+
+    // Lambda data source for annual reporting dashboard summary
+    const annualReportingDashboardFn = lambda.Function.fromFunctionName(
+      this,
+      'AnnualReportingDashboardFn',
+      withEnvSuffix('bebco-appsync-annual-reporting-dashboard')
+    );
+    const annualReportingDashboardDs = this.api.addLambdaDataSource(
+      'AnnualReportingDashboardDataSource',
+      annualReportingDashboardFn,
+      {
+        name: 'AnnualReportingDashboardDataSource',
+        description: 'Lambda data source for getAnnualReportingDashboard query',
+      }
+    );
+
+    // Create resolvers
+    listBorrowersDs.createResolver('ListBorrowersResolver', {
+      typeName: 'Query',
+      fieldName: 'listBorrowers',
+    });
     
-    // listBorrowersDs.createResolver('ListBorrowersResolver', {
-    //   typeName: 'Query',
-    //   fieldName: 'listBorrowers',
-    // });
+    getFinancialOverviewDs.createResolver('GetFinancialOverviewResolver', {
+      typeName: 'Query',
+      fieldName: 'getFinancialOverview',
+    });
     
-    // getFinancialOverviewDs.createResolver('GetFinancialOverviewResolver', {
-    //   typeName: 'Query',
-    //   fieldName: 'getFinancialOverview',
-    // });
-    
-    // batchGetFinancialOverviewsDs.createResolver('BatchGetFinancialOverviewsResolver', {
-    //   typeName: 'Query',
-    //   fieldName: 'batchGetFinancialOverviews',
-    // });
+    batchGetFinancialOverviewsDs.createResolver('BatchGetFinancialOverviewsResolver', {
+      typeName: 'Query',
+      fieldName: 'batchGetFinancialOverviews',
+    });
+
+    listAnnualReportsDs.createResolver('ListAnnualReportsResolver', {
+      typeName: 'Query',
+      fieldName: 'listAnnualReports',
+    });
+
+    annualReportingDashboardDs.createResolver('GetAnnualReportingDashboardResolver', {
+      typeName: 'Query',
+      fieldName: 'getAnnualReportingDashboard',
+    });
     
     // Outputs
     new cdk.CfnOutput(this, 'GraphQLApiEndpoint', {

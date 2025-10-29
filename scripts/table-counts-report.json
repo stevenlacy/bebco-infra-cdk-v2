@@ -1,0 +1,295 @@
+{
+  "timestamp": "2025-10-28T16:13:15.654609",
+  "region": "us-east-2",
+  "summary": {
+    "total": {
+      "dev": 229634,
+      "jpl": 229643,
+      "din": 229609
+    },
+    "tables_with_data": 14,
+    "tables_empty": 20,
+    "mismatches": [
+      {
+        "table": "bebco-borrower-loan-loc",
+        "dev": 2567,
+        "jpl": 2542,
+        "din": 2542
+      }
+    ]
+  },
+  "tables": {
+    "bebco-borrower-accounts": {
+      "dev": 319,
+      "jpl": 319,
+      "din": 319,
+      "dev_table": "bebco-borrower-accounts-dev",
+      "jpl_table": "bebco-borrower-accounts-jpl",
+      "din_table": "bebco-borrower-accounts-din"
+    },
+    "bebco-borrower-ach-batches": {
+      "dev": 26,
+      "jpl": 26,
+      "din": 26,
+      "dev_table": "bebco-borrower-ach-batches-dev",
+      "jpl_table": "bebco-borrower-ach-batches-jpl",
+      "din_table": "bebco-borrower-ach-batches-din"
+    },
+    "bebco-borrower-annual-reportings": {
+      "dev": 56,
+      "jpl": 56,
+      "din": 56,
+      "dev_table": "bebco-borrower-annual-reportings-dev",
+      "jpl_table": "bebco-borrower-annual-reportings-jpl",
+      "din_table": "bebco-borrower-annual-reportings-din"
+    },
+    "bebco-borrower-approvals": {
+      "dev": 0,
+      "jpl": 0,
+      "din": 0,
+      "dev_table": "bebco-borrower-approvals-dev",
+      "jpl_table": "bebco-borrower-approvals-jpl",
+      "din_table": "bebco-borrower-approvals-din"
+    },
+    "bebco-borrower-banks": {
+      "dev": 9,
+      "jpl": 9,
+      "din": 9,
+      "dev_table": "bebco-borrower-banks-dev",
+      "jpl_table": "bebco-borrower-banks-jpl",
+      "din_table": "bebco-borrower-banks-din"
+    },
+    "bebco-borrower-borrower-value-config-settings": {
+      "dev": 0,
+      "jpl": 0,
+      "din": 0,
+      "dev_table": "bebco-borrower-borrower-value-config-settings-dev",
+      "jpl_table": "bebco-borrower-borrower-value-config-settings-jpl",
+      "din_table": "bebco-borrower-borrower-value-config-settings-din"
+    },
+    "bebco-borrower-case-counsel-relationships": {
+      "dev": 0,
+      "jpl": 0,
+      "din": 0,
+      "dev_table": "bebco-borrower-case-counsel-relationships-dev",
+      "jpl_table": "bebco-borrower-case-counsel-relationships-jpl",
+      "din_table": "bebco-borrower-case-counsel-relationships-din"
+    },
+    "bebco-borrower-case-financials-current": {
+      "dev": 0,
+      "jpl": 0,
+      "din": 0,
+      "dev_table": "bebco-borrower-case-financials-current-dev",
+      "jpl_table": "bebco-borrower-case-financials-current-jpl",
+      "din_table": "bebco-borrower-case-financials-current-din"
+    },
+    "bebco-borrower-case-underwritings": {
+      "dev": 0,
+      "jpl": 0,
+      "din": 0,
+      "dev_table": "bebco-borrower-case-underwritings-dev",
+      "jpl_table": "bebco-borrower-case-underwritings-jpl",
+      "din_table": "bebco-borrower-case-underwritings-din"
+    },
+    "bebco-borrower-cases": {
+      "dev": 0,
+      "jpl": 0,
+      "din": 0,
+      "dev_table": "bebco-borrower-cases-dev",
+      "jpl_table": "bebco-borrower-cases-jpl",
+      "din_table": "bebco-borrower-cases-din"
+    },
+    "bebco-borrower-companies": {
+      "dev": 134,
+      "jpl": 134,
+      "din": 134,
+      "dev_table": "bebco-borrower-companies-dev",
+      "jpl_table": "bebco-borrower-companies-jpl",
+      "din_table": "bebco-borrower-companies-din"
+    },
+    "bebco-borrower-discount-rate-matrix": {
+      "dev": 0,
+      "jpl": 0,
+      "din": 0,
+      "dev_table": "bebco-borrower-discount-rate-matrix-dev",
+      "jpl_table": "bebco-borrower-discount-rate-matrix-jpl",
+      "din_table": "bebco-borrower-discount-rate-matrix-din"
+    },
+    "bebco-borrower-docket-review-case-details": {
+      "dev": 0,
+      "jpl": 0,
+      "din": 0,
+      "dev_table": "bebco-borrower-docket-review-case-details-dev",
+      "jpl_table": "bebco-borrower-docket-review-case-details-jpl",
+      "din_table": "bebco-borrower-docket-review-case-details-din"
+    },
+    "bebco-borrower-expenses": {
+      "dev": 0,
+      "jpl": 0,
+      "din": 0,
+      "dev_table": "bebco-borrower-expenses-dev",
+      "jpl_table": "bebco-borrower-expenses-jpl",
+      "din_table": "bebco-borrower-expenses-din"
+    },
+    "bebco-borrower-files": {
+      "dev": 77,
+      "jpl": 77,
+      "din": 77,
+      "dev_table": "bebco-borrower-files-dev",
+      "jpl_table": "bebco-borrower-files-jpl",
+      "din_table": "bebco-borrower-files-din"
+    },
+    "bebco-borrower-invoices": {
+      "dev": 0,
+      "jpl": 0,
+      "din": 0,
+      "dev_table": "bebco-borrower-invoices-dev",
+      "jpl_table": "bebco-borrower-invoices-jpl",
+      "din_table": "bebco-borrower-invoices-din"
+    },
+    "bebco-borrower-ledger-entries": {
+      "dev": 0,
+      "jpl": 0,
+      "din": 0,
+      "dev_table": "bebco-borrower-ledger-entries-dev",
+      "jpl_table": "bebco-borrower-ledger-entries-jpl",
+      "din_table": "bebco-borrower-ledger-entries-din"
+    },
+    "bebco-borrower-lines-of-credit": {
+      "dev": 0,
+      "jpl": 0,
+      "din": 0,
+      "dev_table": "bebco-borrower-lines-of-credit-dev",
+      "jpl_table": "bebco-borrower-lines-of-credit-jpl",
+      "din_table": "bebco-borrower-lines-of-credit-din"
+    },
+    "bebco-borrower-loan-loc": {
+      "dev": 2567,
+      "jpl": 2542,
+      "din": 2542,
+      "dev_table": "bebco-borrower-loan-loc-dev",
+      "jpl_table": "bebco-borrower-loan-loc-jpl",
+      "din_table": "bebco-borrower-loan-loc-din"
+    },
+    "bebco-borrower-loans": {
+      "dev": 22959,
+      "jpl": 22959,
+      "din": 22959,
+      "dev_table": "bebco-borrower-loans-dev",
+      "jpl_table": "bebco-borrower-loans-jpl",
+      "din_table": "bebco-borrower-loans-din"
+    },
+    "bebco-borrower-mass-tort-general": {
+      "dev": 0,
+      "jpl": 0,
+      "din": 0,
+      "dev_table": "bebco-borrower-mass-tort-general-dev",
+      "jpl_table": "bebco-borrower-mass-tort-general-jpl",
+      "din_table": "bebco-borrower-mass-tort-general-din"
+    },
+    "bebco-borrower-mass-tort-plaintiffs": {
+      "dev": 0,
+      "jpl": 0,
+      "din": 0,
+      "dev_table": "bebco-borrower-mass-tort-plaintiffs-dev",
+      "jpl_table": "bebco-borrower-mass-tort-plaintiffs-jpl",
+      "din_table": "bebco-borrower-mass-tort-plaintiffs-din"
+    },
+    "bebco-borrower-monthly-reportings": {
+      "dev": 3499,
+      "jpl": 3499,
+      "din": 3499,
+      "dev_table": "bebco-borrower-monthly-reportings-dev",
+      "jpl_table": "bebco-borrower-monthly-reportings-jpl",
+      "din_table": "bebco-borrower-monthly-reportings-din"
+    },
+    "bebco-borrower-notifications": {
+      "dev": 0,
+      "jpl": 0,
+      "din": 0,
+      "dev_table": "bebco-borrower-notifications-dev",
+      "jpl_table": "bebco-borrower-notifications-jpl",
+      "din_table": "bebco-borrower-notifications-din"
+    },
+    "bebco-borrower-otp-codes": {
+      "dev": 0,
+      "jpl": 34,
+      "din": 0,
+      "dev_table": "bebco-borrower-otp-codes-dev",
+      "jpl_table": "bebco-borrower-otp-codes-jpl",
+      "din_table": "bebco-borrower-otp-codes-din"
+    },
+    "bebco-borrower-payments": {
+      "dev": 2267,
+      "jpl": 2267,
+      "din": 2267,
+      "dev_table": "bebco-borrower-payments-dev",
+      "jpl_table": "bebco-borrower-payments-jpl",
+      "din_table": "bebco-borrower-payments-din"
+    },
+    "bebco-borrower-plaid-items": {
+      "dev": 79,
+      "jpl": 79,
+      "din": 79,
+      "dev_table": "bebco-borrower-plaid-items-dev",
+      "jpl_table": "bebco-borrower-plaid-items-jpl",
+      "din_table": "bebco-borrower-plaid-items-din"
+    },
+    "bebco-borrower-settlement-success-tracking": {
+      "dev": 0,
+      "jpl": 0,
+      "din": 0,
+      "dev_table": "bebco-borrower-settlement-success-tracking-dev",
+      "jpl_table": "bebco-borrower-settlement-success-tracking-jpl",
+      "din_table": "bebco-borrower-settlement-success-tracking-din"
+    },
+    "bebco-borrower-statements": {
+      "dev": 7216,
+      "jpl": 7216,
+      "din": 7216,
+      "dev_table": "bebco-borrower-statements-dev",
+      "jpl_table": "bebco-borrower-statements-jpl",
+      "din_table": "bebco-borrower-statements-din"
+    },
+    "bebco-borrower-transactions": {
+      "dev": 190109,
+      "jpl": 190109,
+      "din": 190109,
+      "dev_table": "bebco-borrower-transactions-dev",
+      "jpl_table": "bebco-borrower-transactions-jpl",
+      "din_table": "bebco-borrower-transactions-din"
+    },
+    "bebco-borrower-users": {
+      "dev": 317,
+      "jpl": 317,
+      "din": 317,
+      "dev_table": "bebco-borrower-users-dev",
+      "jpl_table": "bebco-borrower-users-jpl",
+      "din_table": "bebco-borrower-users-din"
+    },
+    "bebco-borrower-valuations-summary": {
+      "dev": 0,
+      "jpl": 0,
+      "din": 0,
+      "dev_table": "bebco-borrower-valuations-summary-dev",
+      "jpl_table": "bebco-borrower-valuations-summary-jpl",
+      "din_table": "bebco-borrower-valuations-summary-din"
+    },
+    "bebco-borrower-variance-tracking": {
+      "dev": 0,
+      "jpl": 0,
+      "din": 0,
+      "dev_table": "bebco-borrower-variance-tracking-dev",
+      "jpl_table": "bebco-borrower-variance-tracking-jpl",
+      "din_table": "bebco-borrower-variance-tracking-din"
+    },
+    "bebco-integrations-docusign-requests": {
+      "dev": 0,
+      "jpl": 0,
+      "din": 0,
+      "dev_table": "",
+      "jpl_table": "bebco-integrations-docusign-requests-jpl",
+      "din_table": ""
+    }
+  }
+}

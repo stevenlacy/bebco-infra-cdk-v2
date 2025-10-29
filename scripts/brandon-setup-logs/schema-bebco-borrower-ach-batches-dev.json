@@ -1,0 +1,17 @@
+{
+    "KeySchema": [
+        {
+            "AttributeName": "id",
+            "KeyType": "HASH"
+        }
+    ],
+    "AttributeDefinitions": [
+        {
+            "AttributeName": "id",
+            "AttributeType": "S"
+        }
+    ],
+    "GlobalSecondaryIndexes": null,
+    "LocalSecondaryIndexes": null,
+    "StreamSpecification": null
+}

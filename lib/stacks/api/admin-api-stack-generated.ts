@@ -207,10 +207,14 @@ export class AdminApiStack extends cdk.Stack {
     });
     const paymentsListIntegration = new apigateway.LambdaIntegration(paymentsListFn, {
       proxy: true,
-      requestParameters: {
-        'integration.request.querystring.sortOrder': 'method.request.querystring.sort',
-      },
     });
+
+    // Additional Lambda integrations (Accounts list, Monthly reports list)
+    const accountsListFn = lambda.Function.fromFunctionName(this, 'AccountsListFn', withEnvSuffix('bebco-dev-accounts-list'));
+    const accountsListIntegration = new apigateway.LambdaIntegration(accountsListFn, { proxy: true });
+
+    const monthlyReportsListFn = lambda.Function.fromFunctionName(this, 'MonthlyReportsListFn', withEnvSuffix('bebco-dev-monthly-reports-list'));
+    const monthlyReportsListIntegration = new apigateway.LambdaIntegration(monthlyReportsListFn, { proxy: true });
 
     // API Resources
 
@@ -308,12 +312,11 @@ export class AdminApiStack extends cdk.Stack {
     admin_borrowers.addMethod('GET', new apigateway.LambdaIntegration(fn15), { authorizer });
     admin_borrowers.addMethod('POST', new apigateway.LambdaIntegration(fn11), { authorizer });
     admin_invoices.addMethod('GET', new apigateway.LambdaIntegration(fn32), { authorizer });
+    admin_accounts.addMethod('GET', accountsListIntegration, { authorizer });
     admin_payments.addMethod('GET', paymentsListIntegration, {
       authorizer,
-      requestParameters: {
-        'method.request.querystring.sort': false,
-      },
     });
+    admin_monthly_reports.addMethod('GET', monthlyReportsListIntegration, { authorizer });
     admin_users.addMethod('GET', new apigateway.LambdaIntegration(fn36), { authorizer });
     admin_users.addMethod('POST', new apigateway.LambdaIntegration(fn36), { authorizer });
     profile_name.addMethod('PATCH', new apigateway.LambdaIntegration(fn5), { authorizer });
@@ -342,7 +345,9 @@ export class AdminApiStack extends cdk.Stack {
     admin_companies_companyId_known_accounts.addMethod('POST', new apigateway.LambdaIntegration(fn42), { authorizer });
     admin_companies_companyId_settings.addMethod('GET', new apigateway.LambdaIntegration(fn10), { authorizer });
     admin_companies_companyId_settings.addMethod('PUT', new apigateway.LambdaIntegration(fn17), { authorizer });
-    admin_companies_companyId_statements.addMethod('GET', new apigateway.LambdaIntegration(fn18), { authorizer });
+    // Route statements listing to repo-managed fallback lambda to avoid 502s from legacy package
+    const listCompanyStatementsFn = lambda.Function.fromFunctionName(this, 'ListCompanyStatementsFn', withEnvSuffix('bebco-admin-list-company-statements'));
+    admin_companies_companyId_statements.addMethod('GET', new apigateway.LambdaIntegration(listCompanyStatementsFn), { authorizer });
     admin_companies_companyId_users.addMethod('GET', new apigateway.LambdaIntegration(fn37), { authorizer });
     admin_monthly_reports_reportId_notes.addMethod('DELETE', new apigateway.LambdaIntegration(fn19), { authorizer });
     admin_monthly_reports_reportId_notes.addMethod('GET', new apigateway.LambdaIntegration(fn19), { authorizer });

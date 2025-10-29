@@ -1,0 +1,36 @@
+{
+  "TableName": "bebco-borrower-transactions-jpl",
+  "KeySchema": [
+    {"AttributeName": "account_id", "KeyType": "HASH"},
+    {"AttributeName": "posted_date_tx_id", "KeyType": "RANGE"}
+  ],
+  "AttributeDefinitions": [
+    {"AttributeName": "account_id", "AttributeType": "S"},
+    {"AttributeName": "posted_date_tx_id", "AttributeType": "S"},
+    {"AttributeName": "company_id", "AttributeType": "S"},
+    {"AttributeName": "posted_date_account_id", "AttributeType": "S"},
+    {"AttributeName": "plaid_transaction_id", "AttributeType": "S"}
+  ],
+  "BillingMode": "PAY_PER_REQUEST",
+  "GlobalSecondaryIndexes": [
+    {
+      "IndexName": "CompanyIndex",
+      "KeySchema": [
+        {"AttributeName": "company_id", "KeyType": "HASH"},
+        {"AttributeName": "posted_date_account_id", "KeyType": "RANGE"}
+      ],
+      "Projection": {"ProjectionType": "ALL"}
+    },
+    {
+      "IndexName": "PlaidTxIndex",
+      "KeySchema": [
+        {"AttributeName": "plaid_transaction_id", "KeyType": "HASH"}
+      ],
+      "Projection": {"ProjectionType": "ALL"}
+    }
+  ],
+  "StreamSpecification": {
+    "StreamEnabled": true,
+    "StreamViewType": "NEW_AND_OLD_IMAGES"
+  }
+}

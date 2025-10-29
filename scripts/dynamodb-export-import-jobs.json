@@ -1,0 +1,17 @@
+{
+  "jobs": [
+    {
+      "type": "export",
+      "source": "bebco-borrower-banks-dev",
+      "arn": "\u001b[0;34mExporting bebco-borrower-banks-dev...\u001b[0m\n\u001b[0;32m✓ Export started\u001b[0m\n  Export ARN: ",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "type": "export",
+      "source": "bebco-borrower-transactions-dev",
+      "arn": "\u001b[0;34mExporting bebco-borrower-transactions-dev...\u001b[0m\n\u001b[0;32m✓ Export started\u001b[0m\n  Export ARN: ",
+      "status": "IN_PROGRESS"
+    }
+  ],
+  "created": "2025-10-26T23:46:30Z"
+}

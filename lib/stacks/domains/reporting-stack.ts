@@ -1,11 +1,13 @@
 import * as cdk from 'aws-cdk-lib';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
+import * as iam from 'aws-cdk-lib/aws-iam';
 import * as dynamodb from 'aws-cdk-lib/aws-dynamodb';
 import * as s3 from 'aws-cdk-lib/aws-s3';
 import { Construct } from 'constructs';
 import { EnvironmentConfig } from '../../config/environment-config';
 import { ResourceNames } from '../../config/resource-names';
 import { BebcoLambda } from '../../constructs/bebco-lambda';
+import { grantReadDataWithQuery } from '../../utils/dynamodb-permissions';
 
 export interface ReportingStackProps extends cdk.StackProps {
   config: EnvironmentConfig;
@@ -99,6 +101,14 @@ export class ReportingStack extends cdk.Stack {
       environment: commonEnv,
     });
     this.functions.annualReportsList = annualReportsList.function;
+    // TEMP: Allow packaged annual-reports list lambda to read legacy-named staging table in this region
+    annualReportsList.function.addToRolePolicy(new iam.PolicyStatement({
+      actions: ['dynamodb:Scan', 'dynamodb:Query', 'dynamodb:GetItem', 'dynamodb:DescribeTable', 'dynamodb:BatchGetItem'],
+      resources: [
+        `arn:aws:dynamodb:${this.region}:${this.account}:table/bebco-borrower-staging-annual-reportings`,
+        `arn:aws:dynamodb:${this.region}:${this.account}:table/bebco-borrower-staging-annual-reportings/index/*`,
+      ],
+    }));
     
     const annualReportsUpdate = new BebcoLambda(this, 'AnnualReportsUpdate', {
       sourceFunctionName: 'bebco-staging-annual-reports-update-annual-report',
@@ -121,7 +131,7 @@ export class ReportingStack extends cdk.Stack {
       sourceFunctionName: 'bebco-appsync-annual-reporting-dashboard',
       resourceNames,
       environmentSuffix: props.config.naming.environmentSuffix,
-      environment: commonEnv,
+      environment: { ...commonEnv, DESCRIPTION: 'force-update-annual-dashboard' },
     });
     this.functions.appsyncAnnualReportingDashboard = appsyncAnnualReportingDashboard.function;
     
@@ -129,7 +139,7 @@ export class ReportingStack extends cdk.Stack {
       sourceFunctionName: 'bebco-appsync-list-annual-reports',
       resourceNames,
       environmentSuffix: props.config.naming.environmentSuffix,
-      environment: commonEnv,
+      environment: { ...commonEnv, DESCRIPTION: 'force-update-annual-list' },
     });
     this.functions.appsyncListAnnualReports = appsyncListAnnualReports.function;
     
@@ -137,9 +147,39 @@ export class ReportingStack extends cdk.Stack {
       sourceFunctionName: 'bebco-appsync-borrower-annual-reports',
       resourceNames,
       environmentSuffix: props.config.naming.environmentSuffix,
-      environment: commonEnv,
+      environment: { ...commonEnv, DESCRIPTION: 'force-update-annual-borrower' },
     });
     this.functions.appsyncBorrowerAnnualReports = appsyncBorrowerAnnualReports.function;
+
+    // TEMP: Cross-region access for legacy staging tables referenced by packaged code (us-east-1)
+    const legacyStagingArns = [
+      // Tables
+      `arn:aws:dynamodb:us-east-1:${this.account}:table/bebco-borrower-staging-annual-reportings`,
+      `arn:aws:dynamodb:us-east-1:${this.account}:table/bebco-borrower-staging-loans`,
+      `arn:aws:dynamodb:us-east-1:${this.account}:table/bebco-borrower-staging-companies`,
+      // Indexes (some scans/queries may target GSIs)
+      `arn:aws:dynamodb:us-east-1:${this.account}:table/bebco-borrower-staging-annual-reportings/index/*`,
+      `arn:aws:dynamodb:us-east-1:${this.account}:table/bebco-borrower-staging-loans/index/*`,
+      `arn:aws:dynamodb:us-east-1:${this.account}:table/bebco-borrower-staging-companies/index/*`,
+    ];
+    [
+      appsyncAnnualReportingDashboard.function,
+      appsyncListAnnualReports.function,
+      appsyncBorrowerAnnualReports.function,
+    ].forEach(fn => {
+      fn.addToRolePolicy(new iam.PolicyStatement({
+        actions: ['dynamodb:Scan', 'dynamodb:Query', 'dynamodb:GetItem', 'dynamodb:BatchGetItem', 'dynamodb:DescribeTable'],
+        resources: legacyStagingArns,
+      }));
+      // Broad backcompat for us-east-1 legacy resources referenced by packaged code
+      fn.addToRolePolicy(new iam.PolicyStatement({
+        actions: ['dynamodb:Scan', 'dynamodb:Query', 'dynamodb:GetItem', 'dynamodb:BatchGetItem', 'dynamodb:DescribeTable'],
+        resources: [
+          `arn:aws:dynamodb:us-east-1:${this.account}:table/*`,
+          `arn:aws:dynamodb:us-east-1:${this.account}:table/*/index/*`,
+        ],
+      }));
+    });
     
     // Admin (1 function)
     const adminNotesMonthlyReports = new BebcoLambda(this, 'AdminNotesMonthlyReports', {

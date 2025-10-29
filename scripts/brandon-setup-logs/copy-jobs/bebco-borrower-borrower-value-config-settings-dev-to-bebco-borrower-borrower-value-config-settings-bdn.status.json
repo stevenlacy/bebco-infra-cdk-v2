@@ -1,0 +1,14 @@
+{
+  "source": "bebco-borrower-borrower-value-config-settings-dev",
+  "target": "bebco-borrower-borrower-value-config-settings-bdn",
+  "status": "COMPLETED",
+  "start_time": "2025-10-28T23:21:25Z",
+  "items_copied": 0,
+  "progress": "100%",
+  "pid": 37045,
+  "total_items_estimate": 0,
+  "last_update": "2025-10-28T16:21:26.685701",
+  "items_failed": 0,
+  "end_time": "2025-10-28T16:21:26.682486",
+  "success": true
+}

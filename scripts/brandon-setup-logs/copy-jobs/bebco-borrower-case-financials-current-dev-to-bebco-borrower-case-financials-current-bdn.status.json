@@ -1,0 +1,14 @@
+{
+  "source": "bebco-borrower-case-financials-current-dev",
+  "target": "bebco-borrower-case-financials-current-bdn",
+  "status": "COMPLETED",
+  "start_time": "2025-10-28T23:21:25Z",
+  "items_copied": 0,
+  "progress": "100%",
+  "pid": 37053,
+  "total_items_estimate": 0,
+  "last_update": "2025-10-28T16:21:27.157538",
+  "items_failed": 0,
+  "end_time": "2025-10-28T16:21:27.157351",
+  "success": true
+}

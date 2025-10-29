@@ -22,6 +22,10 @@ export interface BebcoLambdaProps {
   queuesToSend?: sqs.IQueue[];
   queuesToConsume?: sqs.IQueue[];
   additionalPolicies?: iam.PolicyStatement[];
+  // Optional overrides to supply custom code/runtime/handler instead of downloaded package
+  codeAsset?: lambda.Code;
+  runtimeOverride?: lambda.Runtime;
+  handlerOverride?: string;
 }
 
 export class BebcoLambda extends Construct {
@@ -56,7 +60,7 @@ export class BebcoLambda extends Construct {
     }
     
     // Map runtime string to CDK Runtime
-    const runtime = this.mapRuntime(config.runtime);
+    const runtime = props.runtimeOverride ?? this.mapRuntime(config.runtime);
     
     // Merge environment variables and update table names to match environment
     const environment: { [key: string]: string } = {};
@@ -161,8 +165,8 @@ export class BebcoLambda extends Construct {
     this.function = new lambda.Function(this, 'Function', {
       functionName: newName,
       runtime: runtime,
-      handler: config.handler,
-      code: lambda.Code.fromAsset(packagePath),
+      handler: props.handlerOverride ?? config.handler,
+      code: props.codeAsset ?? lambda.Code.fromAsset(packagePath),
       timeout: cdk.Duration.seconds(config.timeout),
       memorySize: config.memorySize,
       environment: environment,
