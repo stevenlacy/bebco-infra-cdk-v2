@@ -15,6 +15,8 @@ export interface BorrowersStackProps extends cdk.StackProps {
   resourceNames: ResourceNames;
   tables: { [key: string]: dynamodb.Table };
   buckets: { [key: string]: s3.IBucket };
+  userPoolId: string;
+  userPoolClientId: string;
 }
 
 export class BorrowersStack extends cdk.Stack {
@@ -34,6 +36,8 @@ export class BorrowersStack extends cdk.Stack {
       LOANS_TABLE: tables.loans.tableName,
       TRANSACTIONS_TABLE: tables.transactions.tableName,
       DOCUMENTS_S3_BUCKET: buckets.documents.bucketName,
+      USER_POOL_ID: props.userPoolId,
+      USER_POOL_CLIENT_ID: props.userPoolClientId,
     };
 
     // 1. bebco-staging-admin-borrowers-create-borrower-function
