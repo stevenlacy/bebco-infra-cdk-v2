@@ -343,8 +343,11 @@ const borrowersGraphQLStack = new BorrowersGraphQLStack(app, getStackId('Borrowe
   env,
   config,
   resourceNames,
+  monthlyReportsTable: dataStack.tables.monthlyReportings,
+  companiesTable: dataStack.tables.companies,
   description: 'Borrowers GraphQL API',
 });
+borrowersGraphQLStack.addDependency(dataStack);
 borrowersGraphQLStack.addDependency(borrowersStack);
 
 const borrowerStatementsGraphQLStack = new BorrowerStatementsGraphQLStack(app, getStackId('BorrowerStatementsGraphQL'), {
@@ -377,6 +380,7 @@ const allLambdaFunctions: { [key: string]: lambda.IFunction } = {
   ...statementsStack.functions,
   ...integrationsStack.functions,
   ...miscStack.functions,
+  ...borrowersGraphQLStack.functions,
 };
 
 // Queues & Events Stack (SQS, SNS, EventBridge)

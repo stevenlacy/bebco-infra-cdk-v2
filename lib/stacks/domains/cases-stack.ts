@@ -26,9 +26,8 @@ export class CasesStack extends cdk.Stack {
     
     const commonEnv = {
       REGION: this.region,
-      // Backcompat: packaged code reads DYNAMODB_TABLE, point to us-east-1 where data lives
-      DYNAMODB_TABLE: 'bebco-borrower-staging-loan-loc',
-      DYNAMODB_REGION: 'us-east-1',
+      DYNAMODB_TABLE: tables.loanLoc.tableName,
+      DYNAMODB_REGION: this.region,
     };
     
     const casesCreate = new BebcoLambda(this, 'CasesCreate', {

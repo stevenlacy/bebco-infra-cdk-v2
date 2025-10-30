@@ -89,23 +89,34 @@ export class DataStack extends cdk.Stack {
       partitionKey: { name: 'company_id', type: dynamodb.AttributeType.STRING },
       projectionType: dynamodb.ProjectionType.ALL,
     });
+    this.tables.loans.addGlobalSecondaryIndex({
+      indexName: 'LoanNumberIndex',
+      partitionKey: { name: 'loan_no', type: dynamodb.AttributeType.NUMBER },
+      projectionType: dynamodb.ProjectionType.ALL,
+    });
     
     // Transactions table
     this.tables.transactions = createTable(
       'TransactionsTable',
       resourceNames.table('borrower', 'transactions'),
-      { name: 'id', type: dynamodb.AttributeType.STRING }
+      { name: 'account_id', type: dynamodb.AttributeType.STRING },
+      { name: 'posted_date_tx_id', type: dynamodb.AttributeType.STRING }
     );
     this.tables.transactions.addGlobalSecondaryIndex({
-      indexName: 'AccountIndex',
-      partitionKey: { name: 'account_id', type: dynamodb.AttributeType.STRING },
-      sortKey: { name: 'date', type: dynamodb.AttributeType.STRING },
+      indexName: 'CompanyIndex',
+      partitionKey: { name: 'company_id', type: dynamodb.AttributeType.STRING },
+      sortKey: { name: 'posted_date_account_id', type: dynamodb.AttributeType.STRING },
       projectionType: dynamodb.ProjectionType.ALL,
     });
     this.tables.transactions.addGlobalSecondaryIndex({
       indexName: 'LoanNumberIndex',
       partitionKey: { name: 'loan_no', type: dynamodb.AttributeType.NUMBER },
       sortKey: { name: 'date', type: dynamodb.AttributeType.STRING },
+      projectionType: dynamodb.ProjectionType.ALL,
+    });
+    this.tables.transactions.addGlobalSecondaryIndex({
+      indexName: 'PlaidTxIndex',
+      partitionKey: { name: 'plaid_transaction_id', type: dynamodb.AttributeType.STRING },
       projectionType: dynamodb.ProjectionType.ALL,
     });
     
@@ -277,14 +288,20 @@ export class DataStack extends cdk.Stack {
     // Note: legacy staging tables may already exist outside this stack; do not attempt to create here
 
     // Create legacy-named statements table in this region for packaged code
-    new dynamodb.Table(this, 'LegacyStatementsStaging', {
-      tableName: 'bebco-borrower-staging-statements',
-      partitionKey: { name: 'company_id', type: dynamodb.AttributeType.STRING },
-      sortKey: { name: 'date', type: dynamodb.AttributeType.STRING },
-      billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
-      pointInTimeRecovery: true,
-      removalPolicy: cdk.RemovalPolicy.DESTROY,
-    });
+    if (props.config.naming.environmentSuffix === 'dev') {
+      new dynamodb.Table(this, 'LegacyStatementsStaging', {
+        tableName: 'bebco-borrower-staging-statements',
+        partitionKey: { name: 'company_id', type: dynamodb.AttributeType.STRING },
+        sortKey: { name: 'date', type: dynamodb.AttributeType.STRING },
+        billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
+        pointInTimeRecovery: true,
+        removalPolicy: cdk.RemovalPolicy.DESTROY,
+      });
+    } else {
+      cdk.Annotations.of(this).addInfo(
+        'Skipping legacy staging statements table creation; table is shared across environments.'
+      );
+    }
  
     // Outputs
     new cdk.CfnOutput(this, 'AccountsTableName', {
