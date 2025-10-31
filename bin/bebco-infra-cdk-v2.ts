@@ -29,6 +29,7 @@ import { BanksStack } from '../lib/stacks/domains/banks-stack';
 import { StatementsStack } from '../lib/stacks/domains/statements-stack';
 import { IntegrationsStack } from '../lib/stacks/domains/integrations-stack';
 import { MiscStack } from '../lib/stacks/domains/misc-stack';
+import { MigrationStack } from '../lib/stacks/domains/migration-stack';
 import { SharedServicesStack } from '../lib/stacks/shared-services-stack';
 
 // API stacks
@@ -304,6 +305,15 @@ const miscStack = new MiscStack(app, getStackId('Misc'), {
 });
 miscStack.addDependency(dataStack);
 miscStack.addDependency(storageStack);
+
+const migrationStack = new MigrationStack(app, getStackId('Migration'), {
+  env,
+  config,
+  resourceNames,
+  tables: dataStack.tables,
+  description: 'Data migration Lambda functions',
+});
+migrationStack.addDependency(dataStack);
 
 // API Layer Stacks
 const borrowerApiStack = new BorrowerApiStack(app, getStackId('BorrowerApi'), {

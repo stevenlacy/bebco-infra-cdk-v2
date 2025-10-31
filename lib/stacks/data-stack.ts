@@ -89,23 +89,45 @@ export class DataStack extends cdk.Stack {
       partitionKey: { name: 'company_id', type: dynamodb.AttributeType.STRING },
       projectionType: dynamodb.ProjectionType.ALL,
     });
+    this.tables.loans.addGlobalSecondaryIndex({
+      indexName: 'BankCompanyIndex',
+      partitionKey: { name: 'bank_id', type: dynamodb.AttributeType.STRING },
+      sortKey: { name: 'company_id', type: dynamodb.AttributeType.STRING },
+      projectionType: dynamodb.ProjectionType.ALL,
+    });
+    this.tables.loans.addGlobalSecondaryIndex({
+      indexName: 'LoanNumberIndex',
+      partitionKey: { name: 'loan_no', type: dynamodb.AttributeType.NUMBER },
+      projectionType: dynamodb.ProjectionType.ALL,
+    });
     
-    // Transactions table
+    // Transactions table - matches jpl schema
+    // Primary Key: account_id (HASH) + posted_date_tx_id (RANGE)
+    // GSIs: CompanyIndex, LoanNumberIndex, PlaidTxIndex
     this.tables.transactions = createTable(
       'TransactionsTable',
       resourceNames.table('borrower', 'transactions'),
-      { name: 'id', type: dynamodb.AttributeType.STRING }
+      { name: 'account_id', type: dynamodb.AttributeType.STRING },
+      { name: 'posted_date_tx_id', type: dynamodb.AttributeType.STRING }
     );
+    // CompanyIndex: company_id (HASH) + posted_date_account_id (RANGE)
     this.tables.transactions.addGlobalSecondaryIndex({
-      indexName: 'AccountIndex',
-      partitionKey: { name: 'account_id', type: dynamodb.AttributeType.STRING },
-      sortKey: { name: 'date', type: dynamodb.AttributeType.STRING },
+      indexName: 'CompanyIndex',
+      partitionKey: { name: 'company_id', type: dynamodb.AttributeType.STRING },
+      sortKey: { name: 'posted_date_account_id', type: dynamodb.AttributeType.STRING },
       projectionType: dynamodb.ProjectionType.ALL,
     });
+    // LoanNumberIndex: loan_no (HASH) + date (RANGE)
     this.tables.transactions.addGlobalSecondaryIndex({
       indexName: 'LoanNumberIndex',
       partitionKey: { name: 'loan_no', type: dynamodb.AttributeType.NUMBER },
       sortKey: { name: 'date', type: dynamodb.AttributeType.STRING },
+      projectionType: dynamodb.ProjectionType.ALL,
+    });
+    // PlaidTxIndex: plaid_transaction_id (HASH) - no sort key
+    this.tables.transactions.addGlobalSecondaryIndex({
+      indexName: 'PlaidTxIndex',
+      partitionKey: { name: 'plaid_transaction_id', type: dynamodb.AttributeType.STRING },
       projectionType: dynamodb.ProjectionType.ALL,
     });
     
@@ -255,17 +277,38 @@ export class DataStack extends cdk.Stack {
     
     additionalTables.forEach(tableName => {
       const camelCaseName = tableName.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
+
+      const partitionKey: { name: string; type: dynamodb.AttributeType } = { name: 'id', type: dynamodb.AttributeType.STRING };
+      const sortKey: { name: string; type: dynamodb.AttributeType } | undefined = undefined;
+
       const table = createTable(
         `${camelCaseName.charAt(0).toUpperCase() + camelCaseName.slice(1)}Table`,
         resourceNames.table('borrower', tableName),
-        { name: 'id', type: dynamodb.AttributeType.STRING }
+        partitionKey,
+        sortKey
       );
       
-      // Add CompanyIndex GSI to loan-loc table for cases queries
       if (tableName === 'loan-loc') {
         table.addGlobalSecondaryIndex({
           indexName: 'CompanyIndex',
           partitionKey: { name: 'company_id', type: dynamodb.AttributeType.STRING },
+          projectionType: dynamodb.ProjectionType.ALL,
+        });
+        table.addGlobalSecondaryIndex({
+          indexName: 'GSI2',
+          partitionKey: { name: 'GSI2PK', type: dynamodb.AttributeType.STRING },
+          sortKey: { name: 'GSI2SK', type: dynamodb.AttributeType.STRING },
+          projectionType: dynamodb.ProjectionType.ALL,
+        });
+        table.addGlobalSecondaryIndex({
+          indexName: 'KeyCasesIndex',
+          partitionKey: { name: 'KeyCasesPK', type: dynamodb.AttributeType.STRING },
+          sortKey: { name: 'KeyCasesSK', type: dynamodb.AttributeType.STRING },
+          projectionType: dynamodb.ProjectionType.ALL,
+        });
+        table.addGlobalSecondaryIndex({
+          indexName: 'MonthlyReportIndex',
+          partitionKey: { name: 'monthly_report_id', type: dynamodb.AttributeType.STRING },
           projectionType: dynamodb.ProjectionType.ALL,
         });
       }
@@ -273,18 +316,18 @@ export class DataStack extends cdk.Stack {
       this.tables[camelCaseName] = table;
     });
 
-    // Backcompat: Provision legacy-named staging tables some packaged Lambdas still reference directly
-    // Note: legacy staging tables may already exist outside this stack; do not attempt to create here
-
-    // Create legacy-named statements table in this region for packaged code
-    new dynamodb.Table(this, 'LegacyStatementsStaging', {
-      tableName: 'bebco-borrower-staging-statements',
+    // Legacy statements table (using environment-specific naming)
+    const legacyStatementsTable = new dynamodb.Table(this, 'LegacyStatementsStaging', {
+      tableName: resourceNames.table('borrower', 'legacy-statements'),
       partitionKey: { name: 'company_id', type: dynamodb.AttributeType.STRING },
       sortKey: { name: 'date', type: dynamodb.AttributeType.STRING },
       billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
       pointInTimeRecovery: true,
+      stream: dynamodb.StreamViewType.NEW_AND_OLD_IMAGES,
       removalPolicy: cdk.RemovalPolicy.DESTROY,
     });
+    
+    this.tables['legacyStatements'] = legacyStatementsTable;
  
     // Outputs
     new cdk.CfnOutput(this, 'AccountsTableName', {

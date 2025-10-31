@@ -45,6 +45,8 @@ export class AuthLambdasStack extends cdk.Stack {
           'cognito-idp:AdminCreateUser',
           'cognito-idp:AdminSetUserPassword',
           'cognito-idp:AdminUpdateUserAttributes',
+          'cognito-idp:AdminAddUserToGroup',
+          'cognito-idp:AdminListGroupsForUser',
           'cognito-idp:ListUsers',
         ],
         resources: [cognitoUserPoolArn],

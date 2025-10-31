@@ -26,6 +26,12 @@ export class ReportingStack extends cdk.Stack {
     
     const commonEnv = {
       REGION: this.region,
+      MONTHLY_REPORTINGS_TABLE: tables.monthlyReportings.tableName,
+      COMPANIES_TABLE: tables.companies.tableName,
+      ANNUAL_REPORTINGS_TABLE: tables.annualReportings.tableName,
+      LOANS_TABLE: tables.loans.tableName,
+      DOCUMENTS_S3_BUCKET: buckets.documents.bucketName,
+      TABLE_NAME: tables.monthlyReportings.tableName, // Override hardcoded TABLE_NAME
     };
     
     // Monthly Reports (6 functions)
@@ -35,6 +41,13 @@ export class ReportingStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
+    tables.monthlyReportings.grantReadWriteData(monthlyReportsCreate.function);
+    tables.companies.grantReadData(monthlyReportsCreate.function);
+    // Grant permission to query GSIs
+    monthlyReportsCreate.function.addToRolePolicy(new cdk.aws_iam.PolicyStatement({
+      actions: ['dynamodb:Query'],
+      resources: [`${tables.monthlyReportings.tableArn}/index/*`],
+    }));
     this.functions.monthlyReportsCreate = monthlyReportsCreate.function;
     
     const monthlyReportsGet = new BebcoLambda(this, 'MonthlyReportsGet', {
@@ -43,6 +56,13 @@ export class ReportingStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
+    tables.monthlyReportings.grantReadData(monthlyReportsGet.function);
+    tables.companies.grantReadData(monthlyReportsGet.function);
+    // Grant permission to query GSIs
+    monthlyReportsGet.function.addToRolePolicy(new cdk.aws_iam.PolicyStatement({
+      actions: ['dynamodb:Query'],
+      resources: [`${tables.monthlyReportings.tableArn}/index/*`],
+    }));
     this.functions.monthlyReportsGet = monthlyReportsGet.function;
     
     const monthlyReportsList = new BebcoLambda(this, 'MonthlyReportsList', {
@@ -51,6 +71,15 @@ export class ReportingStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
+    tables.monthlyReportings.grantReadData(monthlyReportsList.function);
+    tables.companies.grantReadData(monthlyReportsList.function);
+    // Grant permission to query GSIs
+    monthlyReportsList.function.addToRolePolicy(new cdk.aws_iam.PolicyStatement({
+      actions: ['dynamodb:Query'],
+      resources: [
+        `${tables.monthlyReportings.tableArn}/index/*`,
+      ],
+    }));
     this.functions.monthlyReportsList = monthlyReportsList.function;
     
     const monthlyReportsUpdate = new BebcoLambda(this, 'MonthlyReportsUpdate', {
@@ -59,6 +88,13 @@ export class ReportingStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
+    tables.monthlyReportings.grantReadWriteData(monthlyReportsUpdate.function);
+    tables.companies.grantReadData(monthlyReportsUpdate.function);
+    // Grant permission to query GSIs
+    monthlyReportsUpdate.function.addToRolePolicy(new cdk.aws_iam.PolicyStatement({
+      actions: ['dynamodb:Query'],
+      resources: [`${tables.monthlyReportings.tableArn}/index/*`],
+    }));
     this.functions.monthlyReportsUpdate = monthlyReportsUpdate.function;
     
     const monthlyReportSharepointUpload = new BebcoLambda(this, 'MonthlyReportSharepointUpload', {
@@ -82,17 +118,31 @@ export class ReportingStack extends cdk.Stack {
       sourceFunctionName: 'bebco-staging-annual-reports-create-annual-report',
       resourceNames,
       environmentSuffix: props.config.naming.environmentSuffix,
-      environment: commonEnv,
+      environment: {
+        ...commonEnv,
+        DYNAMODB_TABLE: tables.annualReportings.tableName, // Override hardcoded DYNAMODB_TABLE
+      },
     });
     this.functions.annualReportsCreate = annualReportsCreate.function;
+    // Grant write permissions to annual reportings table
+    tables.annualReportings.grantReadWriteData(annualReportsCreate.function);
+    tables.companies.grantReadData(annualReportsCreate.function);
+    buckets.documents.grantReadWrite(annualReportsCreate.function);
     
     const annualReportsGet = new BebcoLambda(this, 'AnnualReportsGet', {
       sourceFunctionName: 'bebco-staging-annual-reports-get-annual-report',
       resourceNames,
       environmentSuffix: props.config.naming.environmentSuffix,
-      environment: commonEnv,
+      environment: {
+        ...commonEnv,
+        DYNAMODB_TABLE: tables.annualReportings.tableName, // Override hardcoded DYNAMODB_TABLE
+      },
     });
     this.functions.annualReportsGet = annualReportsGet.function;
+    // Grant read permissions
+    tables.annualReportings.grantReadData(annualReportsGet.function);
+    tables.companies.grantReadData(annualReportsGet.function);
+    buckets.documents.grantRead(annualReportsGet.function);
     
     const annualReportsList = new BebcoLambda(this, 'AnnualReportsList', {
       sourceFunctionName: 'bebco-staging-annual-reports-list-annual-reports',
@@ -101,12 +151,17 @@ export class ReportingStack extends cdk.Stack {
       environment: commonEnv,
     });
     this.functions.annualReportsList = annualReportsList.function;
-    // TEMP: Allow packaged annual-reports list lambda to read legacy-named staging table in this region
+    // Grant read, query, and scan permissions for annual reports
+    tables.annualReportings.grantReadData(annualReportsList.function);
+    tables.companies.grantReadData(annualReportsList.function);
+    tables.loans.grantReadData(annualReportsList.function);
+    buckets.documents.grantRead(annualReportsList.function);
     annualReportsList.function.addToRolePolicy(new iam.PolicyStatement({
-      actions: ['dynamodb:Scan', 'dynamodb:Query', 'dynamodb:GetItem', 'dynamodb:DescribeTable', 'dynamodb:BatchGetItem'],
+      actions: ['dynamodb:Query', 'dynamodb:Scan'],
       resources: [
-        `arn:aws:dynamodb:${this.region}:${this.account}:table/bebco-borrower-staging-annual-reportings`,
-        `arn:aws:dynamodb:${this.region}:${this.account}:table/bebco-borrower-staging-annual-reportings/index/*`,
+        tables.annualReportings.tableArn,
+        `${tables.annualReportings.tableArn}/index/*`,
+        `${tables.loans.tableArn}/index/*`,
       ],
     }));
     
@@ -114,17 +169,29 @@ export class ReportingStack extends cdk.Stack {
       sourceFunctionName: 'bebco-staging-annual-reports-update-annual-report',
       resourceNames,
       environmentSuffix: props.config.naming.environmentSuffix,
-      environment: commonEnv,
+      environment: {
+        ...commonEnv,
+        DYNAMODB_TABLE: tables.annualReportings.tableName, // Override hardcoded DYNAMODB_TABLE
+      },
     });
     this.functions.annualReportsUpdate = annualReportsUpdate.function;
+    // Grant write permissions
+    tables.annualReportings.grantReadWriteData(annualReportsUpdate.function);
+    tables.companies.grantReadData(annualReportsUpdate.function);
+    buckets.documents.grantReadWrite(annualReportsUpdate.function);
     
     const annualReportsDelete = new BebcoLambda(this, 'AnnualReportsDelete', {
       sourceFunctionName: 'bebco-staging-annual-reports-delete-annual-report',
       resourceNames,
       environmentSuffix: props.config.naming.environmentSuffix,
-      environment: commonEnv,
+      environment: {
+        ...commonEnv,
+        DYNAMODB_TABLE: tables.annualReportings.tableName, // Override hardcoded DYNAMODB_TABLE
+      },
     });
     this.functions.annualReportsDelete = annualReportsDelete.function;
+    // Grant write permissions
+    tables.annualReportings.grantReadWriteData(annualReportsDelete.function);
     
     // AppSync Resolvers (3 functions)
     const appsyncAnnualReportingDashboard = new BebcoLambda(this, 'AppsyncAnnualReportingDashboard', {
@@ -151,32 +218,28 @@ export class ReportingStack extends cdk.Stack {
     });
     this.functions.appsyncBorrowerAnnualReports = appsyncBorrowerAnnualReports.function;
 
-    // TEMP: Cross-region access for legacy staging tables referenced by packaged code (us-east-1)
-    const legacyStagingArns = [
-      // Tables
-      `arn:aws:dynamodb:us-east-1:${this.account}:table/bebco-borrower-staging-annual-reportings`,
-      `arn:aws:dynamodb:us-east-1:${this.account}:table/bebco-borrower-staging-loans`,
-      `arn:aws:dynamodb:us-east-1:${this.account}:table/bebco-borrower-staging-companies`,
-      // Indexes (some scans/queries may target GSIs)
-      `arn:aws:dynamodb:us-east-1:${this.account}:table/bebco-borrower-staging-annual-reportings/index/*`,
-      `arn:aws:dynamodb:us-east-1:${this.account}:table/bebco-borrower-staging-loans/index/*`,
-      `arn:aws:dynamodb:us-east-1:${this.account}:table/bebco-borrower-staging-companies/index/*`,
-    ];
+    // Grant environment-specific table access for AppSync annual reporting functions
     [
       appsyncAnnualReportingDashboard.function,
       appsyncListAnnualReports.function,
       appsyncBorrowerAnnualReports.function,
     ].forEach(fn => {
+      // Grant table read access
+      tables.annualReportings.grantReadData(fn);
+      tables.loans.grantReadData(fn);
+      tables.companies.grantReadData(fn);
+      
+      // Grant S3 bucket read access for documents
+      buckets.documents.grantRead(fn);
+      
+      // Grant GSI query and Scan permissions
       fn.addToRolePolicy(new iam.PolicyStatement({
-        actions: ['dynamodb:Scan', 'dynamodb:Query', 'dynamodb:GetItem', 'dynamodb:BatchGetItem', 'dynamodb:DescribeTable'],
-        resources: legacyStagingArns,
-      }));
-      // Broad backcompat for us-east-1 legacy resources referenced by packaged code
-      fn.addToRolePolicy(new iam.PolicyStatement({
-        actions: ['dynamodb:Scan', 'dynamodb:Query', 'dynamodb:GetItem', 'dynamodb:BatchGetItem', 'dynamodb:DescribeTable'],
+        actions: ['dynamodb:Query', 'dynamodb:Scan'],
         resources: [
-          `arn:aws:dynamodb:us-east-1:${this.account}:table/*`,
-          `arn:aws:dynamodb:us-east-1:${this.account}:table/*/index/*`,
+          tables.annualReportings.tableArn,
+          `${tables.annualReportings.tableArn}/index/*`,
+          `${tables.loans.tableArn}/index/*`,
+          `${tables.companies.tableArn}/index/*`,
         ],
       }));
     });
@@ -189,6 +252,8 @@ export class ReportingStack extends cdk.Stack {
       environment: commonEnv,
     });
     this.functions.adminNotesMonthlyReports = adminNotesMonthlyReports.function;
+    // Grant permissions to read and write monthly reports
+    tables.monthlyReportings.grantReadWriteData(adminNotesMonthlyReports.function);
     
     // Monthly Reports Submit (missing function)
     const monthlyReportsSubmit = new BebcoLambda(this, 'MonthlyReportsSubmit', {
@@ -198,6 +263,12 @@ export class ReportingStack extends cdk.Stack {
       environment: commonEnv,
     });
     tables.monthlyReportings.grantReadWriteData(monthlyReportsSubmit.function);
+    tables.companies.grantReadData(monthlyReportsSubmit.function);
+    // Grant permission to query GSIs
+    monthlyReportsSubmit.function.addToRolePolicy(new cdk.aws_iam.PolicyStatement({
+      actions: ['dynamodb:Query'],
+      resources: [`${tables.monthlyReportings.tableArn}/index/*`],
+    }));
     this.functions.monthlyReportsSubmit = monthlyReportsSubmit.function;
     
     new cdk.CfnOutput(this, 'MonthlyReportsCreateArn', {

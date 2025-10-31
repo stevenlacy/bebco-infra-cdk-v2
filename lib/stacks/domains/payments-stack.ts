@@ -7,7 +7,7 @@ import { Construct } from 'constructs';
 import { EnvironmentConfig } from '../../config/environment-config';
 import { ResourceNames } from '../../config/resource-names';
 import { BebcoLambda } from '../../constructs/bebco-lambda';
-import { grantReadDataWithQuery } from '../../utils/dynamodb-permissions';
+import { grantReadDataWithQuery, grantReadWriteDataWithQuery } from '../../utils/dynamodb-permissions';
 
 export interface PaymentsStackProps extends cdk.StackProps {
   config: EnvironmentConfig;
@@ -29,6 +29,12 @@ export class PaymentsStack extends cdk.Stack {
       MAX_PAGE_SIZE: '1000',
       PAYMENTS_TABLE: tables.payments.tableName,
       COMPANIES_TABLE: tables.companies.tableName,
+      LOANS_TABLE: tables.loans.tableName,
+      INVOICES_TABLE: tables.invoices.tableName,
+      BANKS_TABLE: tables.banks.tableName,
+      MONTHLY_REPORTINGS_TABLE: tables.monthlyReportings.tableName,
+      DOCUMENTS_S3_BUCKET: buckets.documents.bucketName,
+      ACH_BATCHES_TABLE: tables.achBatches.tableName,
       // Backcompat for packaged code that still reads DYNAMODB_TABLE
       DYNAMODB_TABLE: tables.loans.tableName,
       DYNAMODB_TABLE_NAME: tables.loans.tableName,
@@ -42,6 +48,8 @@ export class PaymentsStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
+    grantReadWriteDataWithQuery(paymentsCreate.function, tables.payments, tables.loans);
+    grantReadDataWithQuery(paymentsCreate.function, tables.companies, tables.invoices, tables.monthlyReportings);
     this.functions.paymentsCreate = paymentsCreate.function;
     
     const paymentsGet = new BebcoLambda(this, 'PaymentsGet', {
@@ -61,15 +69,10 @@ export class PaymentsStack extends cdk.Stack {
     this.functions.paymentsList = paymentsList.function;
     grantReadDataWithQuery(paymentsList.function, tables.payments, tables.companies);
 
-    // TEMP: Allow access to legacy-named staging tables referenced by packaged code
-    paymentsList.function.addToRolePolicy(new iam.PolicyStatement({
-      actions: ['dynamodb:Scan', 'dynamodb:Query', 'dynamodb:GetItem'],
-      resources: [
-        `arn:aws:dynamodb:${this.region}:${this.account}:table/bebco-borrower-staging-loan-loc`,
-        `arn:aws:dynamodb:${this.region}:${this.account}:table/bebco-borrower-staging-payments`,
-        `arn:aws:dynamodb:${this.region}:${this.account}:table/bebco-borrower-staging-companies`,
-      ],
-    }));
+    // Grant access to tables via environment-specific ARNs
+    tables.loanLoc.grantReadData(paymentsList.function);
+    tables.payments.grantReadData(paymentsList.function);
+    tables.companies.grantReadData(paymentsList.function);
     
     const paymentsUpdate = new BebcoLambda(this, 'PaymentsUpdate', {
       sourceFunctionName: 'bebco-borrower-staging-payments-update',
@@ -86,6 +89,9 @@ export class PaymentsStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
+    grantReadWriteDataWithQuery(paymentsAchBatches.function, tables.payments, tables.invoices, tables.achBatches);
+    grantReadDataWithQuery(paymentsAchBatches.function, tables.companies, tables.banks, tables.loans);
+    buckets.documents.grantReadWrite(paymentsAchBatches.function);
     this.functions.paymentsAchBatches = paymentsAchBatches.function;
     
     const paymentsAchConsentCreate = new BebcoLambda(this, 'PaymentsAchConsentCreate', {
@@ -101,9 +107,18 @@ export class PaymentsStack extends cdk.Stack {
       sourceFunctionName: 'bebco-staging-admin-payments-waive',
       resourceNames,
       environmentSuffix: props.config.naming.environmentSuffix,
-      environment: commonEnv,
+      environment: {
+        ...commonEnv,
+        MONTHLY_REPORTINGS_TABLE: tables.monthlyReportings.tableName,
+        MONTHLY_REPORTS_TABLE: tables.monthlyReportings.tableName,
+        INVOICES_TABLE: tables.loanLoc.tableName,
+      },
     });
     this.functions.adminPaymentsWaive = adminPaymentsWaive.function;
+    // Grant permissions to read monthly reports and update invoices in loan-loc
+    tables.monthlyReportings.grantReadWriteData(adminPaymentsWaive.function);
+    tables.loanLoc.grantReadWriteData(adminPaymentsWaive.function);
+    tables.payments.grantReadWriteData(adminPaymentsWaive.function);
     
     new cdk.CfnOutput(this, 'PaymentsCreateArn', {
       value: this.functions.paymentsCreate.functionArn,

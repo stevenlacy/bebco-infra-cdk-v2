@@ -41,14 +41,10 @@ export class StatementsStack extends cdk.Stack {
     });
     grantReadDataWithQuery(adminListStatements.function, tables.monthlyReportings);
     buckets.documents.grantRead(adminListStatements.function);
-    // TEMP: packaged code queries legacy-named statements table directly
-    adminListStatements.function.addToRolePolicy(new cdk.aws_iam.PolicyStatement({
-      actions: ['dynamodb:Query', 'dynamodb:Scan', 'dynamodb:GetItem', 'dynamodb:DescribeTable', 'dynamodb:BatchGetItem'],
-      resources: [
-        `arn:aws:dynamodb:${this.region}:${this.account}:table/bebco-borrower-staging-statements`,
-        `arn:aws:dynamodb:${this.region}:${this.account}:table/bebco-borrower-staging-statements/index/*`,
-      ],
-    }));
+    // Grant access to legacy statements table (if it exists in tables)
+    if (tables.legacyStatements) {
+      grantReadDataWithQuery(adminListStatements.function, tables.legacyStatements);
+    }
     this.functions.adminListStatements = adminListStatements.function;
 
     // 2. bebco-staging-admin-upload-statements

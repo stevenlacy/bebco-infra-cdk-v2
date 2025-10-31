@@ -60,6 +60,25 @@ export class AuthStack extends cdk.Stack {
       removalPolicy: cdk.RemovalPolicy.RETAIN,
     });
     
+    // Cognito Groups - Created by CDK
+    new cognito.CfnUserPoolGroup(this, 'AdminUsersGroup', {
+      userPoolId: this.userPool.userPoolId,
+      groupName: 'AdminUsers',
+      description: 'Admin Users',
+    });
+    
+    new cognito.CfnUserPoolGroup(this, 'SuperAdminsGroup', {
+      userPoolId: this.userPool.userPoolId,
+      groupName: 'SuperAdmins',
+      description: 'Super Admin Users',
+    });
+    
+    new cognito.CfnUserPoolGroup(this, 'BEBCOAdminsGroup', {
+      userPoolId: this.userPool.userPoolId,
+      groupName: 'BEBCOAdmins',
+      description: 'BEBCO Super Administrators',
+    });
+    
     // Create User Pool Client
     this.userPoolClient = this.userPool.addClient('UserPoolClient', {
       authFlows: {

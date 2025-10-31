@@ -54,6 +54,23 @@ export class AdminSecondaryApiStack extends cdk.Stack {
       },
       cloudWatchRole: true,
     });
+
+    // Add CORS headers to error responses (4xx, 5xx)
+    const corsHeaders = {
+      'Access-Control-Allow-Origin': "'*'",
+      'Access-Control-Allow-Headers': "'Content-Type,Authorization,X-Amz-Date,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent,Origin,Accept'",
+      'Access-Control-Allow-Methods': "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'",
+    };
+    
+    this.api.addGatewayResponse('Default4xxGatewayResponse', {
+      type: apigateway.ResponseType.DEFAULT_4XX,
+      responseHeaders: corsHeaders,
+    });
+    
+    this.api.addGatewayResponse('Default5xxGatewayResponse', {
+      type: apigateway.ResponseType.DEFAULT_5XX,
+      responseHeaders: corsHeaders,
+    });
     
     // Create Cognito authorizer
     const authorizer = new apigateway.CognitoUserPoolsAuthorizer(this, 'Authorizer', {

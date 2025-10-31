@@ -39,8 +39,10 @@ export class AccountsStack extends cdk.Stack {
     const commonEnv = {
       REGION: this.region,
       ACCOUNTS_TABLE: tables.accounts.tableName,
+      COMPANIES_TABLE: tables.companies.tableName,
       FILES_TABLE: tables.files.tableName,
       DOCUMENTS_S3_BUCKET: buckets.documents.bucketName,
+      OUTPUT_BUCKET: buckets.documents.bucketName,
       USER_POOL_ID: props.userPoolId,
       USER_POOL_CLIENT_ID: props.userPoolClientId,
       IDENTITY_POOL_ID: props.identityPoolId,
@@ -170,7 +172,7 @@ export class AccountsStack extends cdk.Stack {
         TABLE_NAME: tables.accounts.tableName,
       },
     });
-    grantReadDataWithQuery(knownAccounts.function, tables.accounts);
+    grantReadWriteDataWithQuery(knownAccounts.function, tables.accounts);
     this.functions.knownAccounts = knownAccounts.function;
     
     // 9. Accounts List
@@ -182,7 +184,7 @@ export class AccountsStack extends cdk.Stack {
         DYNAMODB_TABLE: tables.loanLoc.tableName,
       },
     });
-    grantReadDataWithQuery(accountsList.function, tables.accounts, tables.files, tables.loanLoc);
+    grantReadDataWithQuery(accountsList.function, tables.accounts, tables.files, tables.loanLoc, tables.companies);
     buckets.documents.grantRead(accountsList.function);
     this.functions.accountsList = accountsList.function;
     

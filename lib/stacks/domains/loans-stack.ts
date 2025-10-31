@@ -6,6 +6,7 @@ import { Construct } from 'constructs';
 import { EnvironmentConfig } from '../../config/environment-config';
 import { ResourceNames } from '../../config/resource-names';
 import { BebcoLambda } from '../../constructs/bebco-lambda';
+import { grantReadDataWithQuery, grantReadWriteDataWithQuery } from '../../utils/dynamodb-permissions';
 
 export interface LoansStackProps extends cdk.StackProps {
   config: EnvironmentConfig;
@@ -33,6 +34,8 @@ export class LoansStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
+    grantReadDataWithQuery(generateLoanStatements.function, tables.loans, tables.companies, tables.statements);
+    buckets.documents.grantReadWrite(generateLoanStatements.function);
     this.functions.generateLoanStatements = generateLoanStatements.function;
     
     const adminBorrowersLoanSummary = new BebcoLambda(this, 'AdminBorrowersLoanSummary', {
@@ -41,14 +44,20 @@ export class LoansStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
+    grantReadWriteDataWithQuery(adminBorrowersLoanSummary.function, tables.loans);
+    grantReadDataWithQuery(adminBorrowersLoanSummary.function, tables.banks, tables.companies);
     this.functions.adminBorrowersLoanSummary = adminBorrowersLoanSummary.function;
     
     const updateLoan = new BebcoLambda(this, 'UpdateLoan', {
       sourceFunctionName: 'bebcoborroweradmin-update-loan-staging',
       resourceNames,
       environmentSuffix: props.config.naming.environmentSuffix,
-      environment: commonEnv,
+      environment: {
+        ...commonEnv,
+        TABLE_NAME: tables.loans.tableName,
+      },
     });
+    grantReadWriteDataWithQuery(updateLoan.function, tables.loans);
     this.functions.updateLoan = updateLoan.function;
     
     new cdk.CfnOutput(this, 'GenerateLoanStatementsArn', {

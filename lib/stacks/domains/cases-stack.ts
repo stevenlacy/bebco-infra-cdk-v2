@@ -26,9 +26,9 @@ export class CasesStack extends cdk.Stack {
     
     const commonEnv = {
       REGION: this.region,
-      // Backcompat: packaged code reads DYNAMODB_TABLE, point to us-east-1 where data lives
-      DYNAMODB_TABLE: 'bebco-borrower-staging-loan-loc',
-      DYNAMODB_REGION: 'us-east-1',
+      // Backcompat: packaged code reads DYNAMODB_TABLE, point to current region's table
+      DYNAMODB_TABLE: tables.loanLoc.tableName,
+      DYNAMODB_REGION: this.region,
     };
     
     const casesCreate = new BebcoLambda(this, 'CasesCreate', {
@@ -37,6 +37,7 @@ export class CasesStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
+    tables.loanLoc.grantReadWriteData(casesCreate.function);
     this.functions.casesCreate = casesCreate.function;
     
     const casesGet = new BebcoLambda(this, 'CasesGet', {
@@ -45,6 +46,7 @@ export class CasesStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
+    tables.loanLoc.grantReadData(casesGet.function);
     this.functions.casesGet = casesGet.function;
     
     const casesList = new BebcoLambda(this, 'CasesList', {
@@ -54,15 +56,10 @@ export class CasesStack extends cdk.Stack {
       environment: commonEnv,
     });
     grantReadDataWithQuery(casesList.function, tables.loanLoc);
-    // TEMP: Allow access to legacy-named staging loan-loc table in both regions
+    // Grant GSI query permissions
     casesList.function.addToRolePolicy(new iam.PolicyStatement({
-      actions: ['dynamodb:Scan', 'dynamodb:Query', 'dynamodb:GetItem', 'dynamodb:DescribeTable'],
-      resources: [
-        `arn:aws:dynamodb:${this.region}:${this.account}:table/bebco-borrower-staging-loan-loc`,
-        `arn:aws:dynamodb:${this.region}:${this.account}:table/bebco-borrower-staging-loan-loc/index/*`,
-        `arn:aws:dynamodb:us-east-1:${this.account}:table/bebco-borrower-staging-loan-loc`,
-        `arn:aws:dynamodb:us-east-1:${this.account}:table/bebco-borrower-staging-loan-loc/index/*`,
-      ],
+      actions: ['dynamodb:Query'],
+      resources: [`${tables.loanLoc.tableArn}/index/*`],
     }));
     this.functions.casesList = casesList.function;
     
@@ -72,6 +69,7 @@ export class CasesStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
+    tables.loanLoc.grantReadWriteData(casesUpdate.function);
     this.functions.casesUpdate = casesUpdate.function;
     
     const casesClose = new BebcoLambda(this, 'CasesClose', {
@@ -80,6 +78,7 @@ export class CasesStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
+    tables.loanLoc.grantReadWriteData(casesClose.function);
     this.functions.casesClose = casesClose.function;
     
     const casesDocketVerification = new BebcoLambda(this, 'CasesDocketVerification', {

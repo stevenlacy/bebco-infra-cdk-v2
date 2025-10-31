@@ -124,6 +124,7 @@ export class AdminApiStack extends cdk.Stack {
       'bebco-dev-draws-list',
       'bebco-dev-invoices-create',
       'bebco-dev-invoices-list',
+      'bebco-dev-invoices-update',
       'bebco-dev-payments-ach-batches',
       'bebco-dev-plaid-account-transactions',
       'bebco-dev-plaid-transactions-sync',
@@ -194,6 +195,7 @@ export class AdminApiStack extends cdk.Stack {
       fn47,
       fn48,
       fn49,
+      fn50,
     ] = lambdaNames.map((name, index) =>
       lambda.Function.fromFunctionName(this, `Fn${index}`, withEnvSuffix(name))
     );
@@ -228,6 +230,7 @@ export class AdminApiStack extends cdk.Stack {
     const admin_borrowers = admin.addResource('borrowers');
     const admin_companies = admin.addResource('companies');
     const admin_invoices = admin.addResource('invoices');
+    const admin_invoices_invoiceId = admin_invoices.addResource('{invoiceId}');
     const admin_monthly_reports = admin.addResource('monthly-reports');
     const admin_payments = admin.addResource('payments');
     const admin_plaid = admin.addResource('plaid');
@@ -312,13 +315,14 @@ export class AdminApiStack extends cdk.Stack {
     admin_borrowers.addMethod('GET', new apigateway.LambdaIntegration(fn15), { authorizer });
     admin_borrowers.addMethod('POST', new apigateway.LambdaIntegration(fn11), { authorizer });
     admin_invoices.addMethod('GET', new apigateway.LambdaIntegration(fn32), { authorizer });
+    admin_invoices_invoiceId.addMethod('PUT', new apigateway.LambdaIntegration(fn33), { authorizer });
     admin_accounts.addMethod('GET', accountsListIntegration, { authorizer });
     admin_payments.addMethod('GET', paymentsListIntegration, {
       authorizer,
     });
     admin_monthly_reports.addMethod('GET', monthlyReportsListIntegration, { authorizer });
-    admin_users.addMethod('GET', new apigateway.LambdaIntegration(fn36), { authorizer });
-    admin_users.addMethod('POST', new apigateway.LambdaIntegration(fn36), { authorizer });
+    admin_users.addMethod('GET', new apigateway.LambdaIntegration(fn37), { authorizer });
+    admin_users.addMethod('POST', new apigateway.LambdaIntegration(fn37), { authorizer });
     profile_name.addMethod('PATCH', new apigateway.LambdaIntegration(fn5), { authorizer });
     profile_password.addMethod('POST', new apigateway.LambdaIntegration(fn0), { authorizer });
     admin_accounts_transaction_counts.addMethod('POST', new apigateway.LambdaIntegration(fn9), { authorizer });
@@ -327,28 +331,28 @@ export class AdminApiStack extends cdk.Stack {
     admin_borrowers_summary.addMethod('GET', new apigateway.LambdaIntegration(fn13), { authorizer });
     admin_borrowers_borrower_id.addMethod('GET', new apigateway.LambdaIntegration(fn12), { authorizer });
     admin_borrowers_borrower_id.addMethod('PUT', new apigateway.LambdaIntegration(fn17), { authorizer });
-    admin_payments_process_batch.addMethod('POST', new apigateway.LambdaIntegration(fn33), { authorizer });
-    admin_payments_paymentId.addMethod('PUT', new apigateway.LambdaIntegration(fn33), { authorizer });
-    admin_plaid_sync.addMethod('POST', new apigateway.LambdaIntegration(fn35), { authorizer });
+    admin_payments_process_batch.addMethod('POST', new apigateway.LambdaIntegration(fn34), { authorizer });
+    admin_payments_paymentId.addMethod('PUT', new apigateway.LambdaIntegration(fn34), { authorizer });
+    admin_plaid_sync.addMethod('POST', new apigateway.LambdaIntegration(fn36), { authorizer });
     admin_statements_download.addMethod('POST', new apigateway.LambdaIntegration(fn6), { authorizer });
     admin_statements_upload.addMethod('POST', new apigateway.LambdaIntegration(fn21), { authorizer });
-    admin_users_userId.addMethod('DELETE', new apigateway.LambdaIntegration(fn36), { authorizer });
-    auth_password_send_code.addMethod('POST', new apigateway.LambdaIntegration(fn40), { authorizer });
-    auth_password_verify_code.addMethod('POST', new apigateway.LambdaIntegration(fn41), { authorizer });
+    admin_users_userId.addMethod('DELETE', new apigateway.LambdaIntegration(fn37), { authorizer });
+    auth_password_send_code.addMethod('POST', new apigateway.LambdaIntegration(fn41), { authorizer });
+    auth_password_verify_code.addMethod('POST', new apigateway.LambdaIntegration(fn42), { authorizer });
     banks_bankId_draws.addMethod('GET', new apigateway.LambdaIntegration(fn30), { authorizer });
     profile_mfa_status.addMethod('GET', new apigateway.LambdaIntegration(fn1), { authorizer });
-    admin_accounts_accountId_sync.addMethod('POST', new apigateway.LambdaIntegration(fn35), { authorizer });
+    admin_accounts_accountId_sync.addMethod('POST', new apigateway.LambdaIntegration(fn36), { authorizer });
     admin_borrowers_borrower_id_transactions.addMethod('GET', new apigateway.LambdaIntegration(fn14), { authorizer });
     admin_companies_companyId_cases.addMethod('GET', new apigateway.LambdaIntegration(fn28), { authorizer });
     admin_companies_companyId_cases.addMethod('POST', new apigateway.LambdaIntegration(fn27), { authorizer });
-    admin_companies_companyId_known_accounts.addMethod('GET', new apigateway.LambdaIntegration(fn42), { authorizer });
-    admin_companies_companyId_known_accounts.addMethod('POST', new apigateway.LambdaIntegration(fn42), { authorizer });
+    admin_companies_companyId_known_accounts.addMethod('GET', new apigateway.LambdaIntegration(fn43), { authorizer });
+    admin_companies_companyId_known_accounts.addMethod('POST', new apigateway.LambdaIntegration(fn43), { authorizer });
     admin_companies_companyId_settings.addMethod('GET', new apigateway.LambdaIntegration(fn10), { authorizer });
     admin_companies_companyId_settings.addMethod('PUT', new apigateway.LambdaIntegration(fn17), { authorizer });
     // Route statements listing to repo-managed fallback lambda to avoid 502s from legacy package
     const listCompanyStatementsFn = lambda.Function.fromFunctionName(this, 'ListCompanyStatementsFn', withEnvSuffix('bebco-admin-list-company-statements'));
     admin_companies_companyId_statements.addMethod('GET', new apigateway.LambdaIntegration(listCompanyStatementsFn), { authorizer });
-    admin_companies_companyId_users.addMethod('GET', new apigateway.LambdaIntegration(fn37), { authorizer });
+    admin_companies_companyId_users.addMethod('GET', new apigateway.LambdaIntegration(fn38), { authorizer });
     admin_monthly_reports_reportId_notes.addMethod('DELETE', new apigateway.LambdaIntegration(fn19), { authorizer });
     admin_monthly_reports_reportId_notes.addMethod('GET', new apigateway.LambdaIntegration(fn19), { authorizer });
     admin_monthly_reports_reportId_notes.addMethod('POST', new apigateway.LambdaIntegration(fn19), { authorizer });
@@ -362,35 +366,35 @@ export class AdminApiStack extends cdk.Stack {
     });
     admin_payments_paymentId_allocations.addMethod('GET', new apigateway.LambdaIntegration(fn8), { authorizer });
     admin_payments_paymentId_allocations.addMethod('PUT', new apigateway.LambdaIntegration(fn8), { authorizer });
-    admin_users_userId_approve.addMethod('PUT', new apigateway.LambdaIntegration(fn36), { authorizer });
-    admin_users_userId_deny.addMethod('PUT', new apigateway.LambdaIntegration(fn36), { authorizer });
+    admin_users_userId_approve.addMethod('PUT', new apigateway.LambdaIntegration(fn37), { authorizer });
+    admin_users_userId_deny.addMethod('PUT', new apigateway.LambdaIntegration(fn37), { authorizer });
     profile_mfa_totp_begin.addMethod('POST', new apigateway.LambdaIntegration(fn2), { authorizer });
     profile_mfa_totp_verify.addMethod('POST', new apigateway.LambdaIntegration(fn3), { authorizer });
     profile_mfa_totp_verify_login.addMethod('POST', new apigateway.LambdaIntegration(fn4), { authorizer });
     admin_companies_companyId_cases_key.addMethod('POST', new apigateway.LambdaIntegration(fn29), { authorizer });
-    admin_companies_companyId_known_accounts_accountId.addMethod('DELETE', new apigateway.LambdaIntegration(fn42), { authorizer });
-    admin_companies_companyId_known_accounts_accountId.addMethod('GET', new apigateway.LambdaIntegration(fn42), { authorizer });
-    admin_companies_companyId_known_accounts_accountId.addMethod('PUT', new apigateway.LambdaIntegration(fn42), { authorizer });
-    admin_companies_companyId_loans_loanNo.addMethod('GET', new apigateway.LambdaIntegration(fn43), { authorizer });
-    admin_companies_companyId_loans_loanNo.addMethod('PUT', new apigateway.LambdaIntegration(fn43), { authorizer });
+    admin_companies_companyId_known_accounts_accountId.addMethod('DELETE', new apigateway.LambdaIntegration(fn43), { authorizer });
+    admin_companies_companyId_known_accounts_accountId.addMethod('GET', new apigateway.LambdaIntegration(fn43), { authorizer });
+    admin_companies_companyId_known_accounts_accountId.addMethod('PUT', new apigateway.LambdaIntegration(fn43), { authorizer });
+    admin_companies_companyId_loans_loanNo.addMethod('GET', new apigateway.LambdaIntegration(fn44), { authorizer });
+    admin_companies_companyId_loans_loanNo.addMethod('PUT', new apigateway.LambdaIntegration(fn44), { authorizer });
     admin_payments_nacha_batch_id_download.addMethod('GET', new apigateway.LambdaIntegration(fn7), { authorizer });
-    admin_users_userId_password_complete.addMethod('POST', new apigateway.LambdaIntegration(fn38), { authorizer });
-    admin_users_userId_password_start.addMethod('POST', new apigateway.LambdaIntegration(fn39), { authorizer });
+    admin_users_userId_password_complete.addMethod('POST', new apigateway.LambdaIntegration(fn39), { authorizer });
+    admin_users_userId_password_start.addMethod('POST', new apigateway.LambdaIntegration(fn40), { authorizer });
     banks_bankId_borrowers_borrowerId_invoices.addMethod('POST', new apigateway.LambdaIntegration(fn31), { authorizer });
-    banks_bankId_borrowers_borrowerId_users.addMethod('POST', new apigateway.LambdaIntegration(fn36), { authorizer });
+    banks_bankId_borrowers_borrowerId_users.addMethod('POST', new apigateway.LambdaIntegration(fn37), { authorizer });
     banks_bankId_draws_drawId_approve.addMethod('PUT', new apigateway.LambdaIntegration(fn30), { authorizer });
     banks_bankId_draws_drawId_reject.addMethod('PUT', new apigateway.LambdaIntegration(fn30), { authorizer });
     banks_bankId_draws_drawId_return_to_pending.addMethod('PUT', new apigateway.LambdaIntegration(fn30), { authorizer });
     admin_companies_companyId_loans_loanNo_summary.addMethod('GET', new apigateway.LambdaIntegration(fn16), { authorizer });
     admin_companies_companyId_loans_loanNo_summary.addMethod('PUT', new apigateway.LambdaIntegration(fn16), { authorizer });
-    admin_companies_companyId_users_userId_approve.addMethod('PUT', new apigateway.LambdaIntegration(fn36), { authorizer });
-    banks_bankId_borrowers_borrowerId_accounts_accountId_transactions.addMethod('GET', new apigateway.LambdaIntegration(fn34), { authorizer });
-    admin_auth_check_user_status.addMethod('POST', new apigateway.LambdaIntegration(fn44));
-    admin_auth_validate_password.addMethod('POST', new apigateway.LambdaIntegration(fn45));
-    admin_auth_complete_setup.addMethod('POST', new apigateway.LambdaIntegration(fn46));
-    admin_auth_refresh.addMethod('POST', new apigateway.LambdaIntegration(fn47));
-    admin_auth_send_2fa.addMethod('POST', new apigateway.LambdaIntegration(fn48));
-    admin_auth_verify_2fa.addMethod('POST', new apigateway.LambdaIntegration(fn49));
+    admin_companies_companyId_users_userId_approve.addMethod('PUT', new apigateway.LambdaIntegration(fn37), { authorizer });
+    banks_bankId_borrowers_borrowerId_accounts_accountId_transactions.addMethod('GET', new apigateway.LambdaIntegration(fn35), { authorizer });
+    admin_auth_check_user_status.addMethod('POST', new apigateway.LambdaIntegration(fn45));
+    admin_auth_validate_password.addMethod('POST', new apigateway.LambdaIntegration(fn46));
+    admin_auth_complete_setup.addMethod('POST', new apigateway.LambdaIntegration(fn47));
+    admin_auth_refresh.addMethod('POST', new apigateway.LambdaIntegration(fn48));
+    admin_auth_send_2fa.addMethod('POST', new apigateway.LambdaIntegration(fn49));
+    admin_auth_verify_2fa.addMethod('POST', new apigateway.LambdaIntegration(fn50));
 
     // Outputs
     new cdk.CfnOutput(this, 'ApiEndpoint', {

@@ -60,6 +60,7 @@ export class UsersStack extends cdk.Stack {
           'cognito-idp:AdminCreateUser',
           'cognito-idp:AdminSetUserPassword',
           'cognito-idp:AdminUpdateUserAttributes',
+          'cognito-idp:AdminAddUserToGroup',
           'cognito-idp:ListUsers',
           'cognito-idp:AdminListGroupsForUser',
           'cognito-idp:AdminInitiateAuth',

@@ -32,6 +32,7 @@ export class BorrowersStack extends cdk.Stack {
       USERS_TABLE: tables.users.tableName,
       ACCOUNTS_TABLE: tables.accounts.tableName,
       LOANS_TABLE: tables.loans.tableName,
+      BANKS_TABLE: tables.banks.tableName,
       TRANSACTIONS_TABLE: tables.transactions.tableName,
       DOCUMENTS_S3_BUCKET: buckets.documents.bucketName,
     };
@@ -63,7 +64,7 @@ export class BorrowersStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    grantReadDataWithQuery(adminBorrowersList.function, tables.companies, tables.users);
+    grantReadDataWithQuery(adminBorrowersList.function, tables.companies, tables.users, tables.loans, tables.banks);
     this.functions.adminBorrowersList = adminBorrowersList.function;
 
     // 4. bebco-staging-admin-borrowers-update-borrower-function
@@ -141,13 +142,10 @@ export class BorrowersStack extends cdk.Stack {
       environment: { ...commonEnv, FORCE_UPDATE: 'iam-refresh-20251028' },
     });
     grantReadDataWithQuery(borrowersApiBatchFinancialOverviews.function, tables.companies, tables.accounts, tables.transactions, tables.loans);
-    // TEMP: Allow access to legacy-named staging loans table referenced by packaged code
+    // Grant GSI query permissions
     borrowersApiBatchFinancialOverviews.function.addToRolePolicy(new iam.PolicyStatement({
-      actions: ['dynamodb:Scan', 'dynamodb:Query', 'dynamodb:GetItem', 'dynamodb:BatchGetItem', 'dynamodb:DescribeTable'],
-      resources: [
-        `arn:aws:dynamodb:${this.region}:${this.account}:table/bebco-borrower-staging-loans`,
-        `arn:aws:dynamodb:${this.region}:${this.account}:table/bebco-borrower-staging-loans/index/*`,
-      ],
+      actions: ['dynamodb:Query'],
+      resources: [`${tables.loans.tableArn}/index/*`],
     }));
     this.functions.borrowersApiBatchFinancialOverviews = borrowersApiBatchFinancialOverviews.function;
   }

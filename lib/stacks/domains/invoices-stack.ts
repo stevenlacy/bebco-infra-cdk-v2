@@ -26,13 +26,14 @@ export class InvoicesStack extends cdk.Stack {
 
     const commonEnv = {
       REGION: this.region,
-      INVOICES_TABLE: tables.invoices.tableName,
+      INVOICES_TABLE: tables.loanLoc.tableName,  // Invoices stored in loan-loc table with PK/SK pattern
       COMPANIES_TABLE: tables.companies.tableName,
+      LEDGER_ENTRIES_TABLE: tables.ledgerEntries.tableName,
       DOCUMENTS_S3_BUCKET: buckets.documents.bucketName,
       // Backcompat for packaged code that still reads DYNAMODB_TABLE
-      DYNAMODB_TABLE: tables.loans.tableName,
-      DYNAMODB_TABLE_NAME: tables.loans.tableName,
-      TABLE_NAME: tables.loans.tableName,
+      DYNAMODB_TABLE: tables.loanLoc.tableName,
+      DYNAMODB_TABLE_NAME: tables.loanLoc.tableName,
+      TABLE_NAME: tables.loanLoc.tableName,
     };
 
     // 1. bebco-staging-invoices-create
@@ -42,7 +43,8 @@ export class InvoicesStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    grantReadWriteDataWithQuery(invoicesCreate.function, tables.invoices);
+    grantReadWriteDataWithQuery(invoicesCreate.function, tables.loanLoc);
+    grantReadDataWithQuery(invoicesCreate.function, tables.companies);
     this.functions.invoicesCreate = invoicesCreate.function;
 
     // 2. bebco-staging-invoices-get
@@ -52,7 +54,8 @@ export class InvoicesStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    grantReadDataWithQuery(invoicesGet.function, tables.invoices);
+    grantReadDataWithQuery(invoicesGet.function, tables.loanLoc, tables.companies);
+    tables.ledgerEntries.grantReadData(invoicesGet.function);
     this.functions.invoicesGet = invoicesGet.function;
 
     // 3. bebco-staging-invoices-list
@@ -62,24 +65,8 @@ export class InvoicesStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    grantReadDataWithQuery(invoicesList.function, tables.invoices, tables.companies);
+    grantReadDataWithQuery(invoicesList.function, tables.loanLoc, tables.companies);
     this.functions.invoicesList = invoicesList.function;
-
-    // TEMP: Allow access to legacy-named staging companies table referenced by packaged code
-    invoicesList.function.addToRolePolicy(new iam.PolicyStatement({
-      actions: ['dynamodb:Scan', 'dynamodb:GetItem', 'dynamodb:Query'],
-      resources: [
-        `arn:aws:dynamodb:${this.region}:${this.account}:table/bebco-borrower-staging-companies`,
-      ],
-    }));
-
-    // TEMP: Allow access to legacy-named staging invoices storage still used by packaged code
-    invoicesList.function.addToRolePolicy(new iam.PolicyStatement({
-      actions: ['dynamodb:Scan', 'dynamodb:GetItem', 'dynamodb:Query'],
-      resources: [
-        `arn:aws:dynamodb:${this.region}:${this.account}:table/bebco-borrower-staging-loan-loc`,
-      ],
-    }));
 
     // 4. bebco-staging-invoices-update
     const invoicesUpdate = new BebcoLambda(this, 'InvoicesUpdate', {
@@ -88,7 +75,8 @@ export class InvoicesStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    grantReadWriteDataWithQuery(invoicesUpdate.function, tables.invoices);
+    grantReadWriteDataWithQuery(invoicesUpdate.function, tables.loanLoc);
+    grantReadDataWithQuery(invoicesUpdate.function, tables.companies);
     this.functions.invoicesUpdate = invoicesUpdate.function;
 
     // 5. bebco-staging-invoices-generate-monthly
@@ -98,8 +86,8 @@ export class InvoicesStack extends cdk.Stack {
       environmentSuffix: props.config.naming.environmentSuffix,
       environment: commonEnv,
     });
-    grantReadWriteDataWithQuery(invoicesGenerateMonthly.function, tables.invoices);
-    grantReadDataWithQuery(invoicesGenerateMonthly.function, tables.companies);
+    grantReadWriteDataWithQuery(invoicesGenerateMonthly.function, tables.loanLoc);
+    grantReadDataWithQuery(invoicesGenerateMonthly.function, tables.companies, tables.loans);
     buckets.documents.grantReadWrite(invoicesGenerateMonthly.function);
     this.functions.invoicesGenerateMonthly = invoicesGenerateMonthly.function;
   }
