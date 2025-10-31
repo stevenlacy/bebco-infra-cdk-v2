@@ -354,11 +354,11 @@ const borrowersGraphQLStack = new BorrowersGraphQLStack(app, getStackId('Borrowe
   config,
   resourceNames,
   monthlyReportsTable: dataStack.tables.monthlyReportings,
-  companiesTable: dataStack.tables.companies,
   description: 'Borrowers GraphQL API',
 });
 borrowersGraphQLStack.addDependency(dataStack);
 borrowersGraphQLStack.addDependency(borrowersStack);
+borrowersGraphQLStack.addDependency(dataStack);
 
 const borrowerStatementsGraphQLStack = new BorrowerStatementsGraphQLStack(app, getStackId('BorrowerStatementsGraphQL'), {
   env,

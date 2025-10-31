@@ -77,4 +77,3 @@ def wait_for_index():
 
     raise TimeoutError(f'Timed out waiting for index {INDEX_NAME} to become ACTIVE')
 
-
