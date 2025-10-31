@@ -89,23 +89,34 @@ export class DataStack extends cdk.Stack {
       partitionKey: { name: 'company_id', type: dynamodb.AttributeType.STRING },
       projectionType: dynamodb.ProjectionType.ALL,
     });
+    this.tables.loans.addGlobalSecondaryIndex({
+      indexName: 'LoanNumberIndex',
+      partitionKey: { name: 'loan_no', type: dynamodb.AttributeType.NUMBER },
+      projectionType: dynamodb.ProjectionType.ALL,
+    });
     
     // Transactions table
     this.tables.transactions = createTable(
       'TransactionsTable',
       resourceNames.table('borrower', 'transactions'),
-      { name: 'id', type: dynamodb.AttributeType.STRING }
+      { name: 'account_id', type: dynamodb.AttributeType.STRING },
+      { name: 'posted_date_tx_id', type: dynamodb.AttributeType.STRING }
     );
     this.tables.transactions.addGlobalSecondaryIndex({
-      indexName: 'AccountIndex',
-      partitionKey: { name: 'account_id', type: dynamodb.AttributeType.STRING },
-      sortKey: { name: 'date', type: dynamodb.AttributeType.STRING },
+      indexName: 'CompanyIndex',
+      partitionKey: { name: 'company_id', type: dynamodb.AttributeType.STRING },
+      sortKey: { name: 'posted_date_account_id', type: dynamodb.AttributeType.STRING },
       projectionType: dynamodb.ProjectionType.ALL,
     });
     this.tables.transactions.addGlobalSecondaryIndex({
       indexName: 'LoanNumberIndex',
       partitionKey: { name: 'loan_no', type: dynamodb.AttributeType.NUMBER },
       sortKey: { name: 'date', type: dynamodb.AttributeType.STRING },
+      projectionType: dynamodb.ProjectionType.ALL,
+    });
+    this.tables.transactions.addGlobalSecondaryIndex({
+      indexName: 'PlaidTxIndex',
+      partitionKey: { name: 'plaid_transaction_id', type: dynamodb.AttributeType.STRING },
       projectionType: dynamodb.ProjectionType.ALL,
     });
     
