@@ -189,10 +189,13 @@ const paymentsStack = new PaymentsStack(app, getStackId('Payments'), {
   resourceNames,
   tables: dataStack.tables,
   buckets: storageStack.buckets,
+  userPoolId: authStack.userPool.userPoolId,
+  userPoolClientId: authStack.userPoolClient.userPoolClientId,
   description: '7 Payment and ACH Lambda functions',
 });
 paymentsStack.addDependency(dataStack);
 paymentsStack.addDependency(storageStack);
+paymentsStack.addDependency(authStack);
 
 const casesStack = new CasesStack(app, getStackId('Cases'), {
   env,
@@ -235,10 +238,13 @@ const borrowersStack = new BorrowersStack(app, getStackId('Borrowers'), {
   resourceNames,
   tables: dataStack.tables,
   buckets: storageStack.buckets,
+  userPoolId: authStack.userPool.userPoolId,
+  userPoolClientId: authStack.userPoolClient.userPoolClientId,
   description: '10 Borrower management Lambda functions',
 });
 borrowersStack.addDependency(dataStack);
 borrowersStack.addDependency(storageStack);
+borrowersStack.addDependency(authStack);
 
 const expensesStack = new ExpensesStack(app, getStackId('Expenses'), {
   env,
@@ -255,10 +261,14 @@ const invoicesStack = new InvoicesStack(app, getStackId('Invoices'), {
   resourceNames,
   tables: dataStack.tables,
   buckets: storageStack.buckets,
+  userPoolId: authStack.userPool.userPoolId,
+  userPoolClientId: authStack.userPoolClient.userPoolClientId,
+  identityPoolId: authStack.identityPool.ref,
   description: '5 Invoice management Lambda functions',
 });
 invoicesStack.addDependency(dataStack);
 invoicesStack.addDependency(storageStack);
+invoicesStack.addDependency(authStack);
 
 const banksStack = new BanksStack(app, getStackId('Banks'), {
   env,

@@ -14,6 +14,8 @@ export interface PaymentsStackProps extends cdk.StackProps {
   resourceNames: ResourceNames;
   tables: { [key: string]: dynamodb.Table };
   buckets: { [key: string]: s3.IBucket };
+  userPoolId: string;
+  userPoolClientId: string;
 }
 
 export class PaymentsStack extends cdk.Stack {
@@ -33,6 +35,8 @@ export class PaymentsStack extends cdk.Stack {
       DYNAMODB_TABLE: tables.loans.tableName,
       DYNAMODB_TABLE_NAME: tables.loans.tableName,
       TABLE_NAME: tables.loans.tableName,
+      USER_POOL_ID: props.userPoolId,
+      USER_POOL_CLIENT_ID: props.userPoolClientId,
     };
     
     // Payment operations
